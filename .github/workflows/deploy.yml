@@ -1,0 +1,26 @@
+name: Deploy CI
+
+on:
+  [pull_request, push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: install
+        run: pip install -r requirements.txt
+
+      - name: version
+        run: mkdocs --version
+
+      - name: build
+        run: mkdocs build --strict --verbose
+
+      - name: gh-deploy
+        if: github.ref == 'refs/heads/master'
+        run: mkdocs gh-deploy --force

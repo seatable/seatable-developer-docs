@@ -1,0 +1,4 @@
+# Mkdocs build directory
+/site/
+/.idea
+Dockerfile

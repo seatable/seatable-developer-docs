@@ -1,0 +1,124 @@
+site_name: SeaTable Developer Manual
+site_url: https://developer.seatable.io/
+site_author: SeaTable GmbH
+site_description: >-
+  Official SeaTable Developer Manual.
+
+# Repository
+repo_name: seatable/seatable-developer-docs
+repo_url: https://github.com/seatable/seatable-developer-docs/
+
+# Copyright
+copyright: Copyright &copy; 2022 - 2023 SeaTable GmbH
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.footer
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections   # top-level sections are rendered as groups in the sidebar for viewports above 1220px
+    - navigation.indexes    # documents can be directly attached to sections
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate # offer a comfortable and friendly way to attach arbitrary content to specific sections of code
+  
+  # icon & favicon
+  logo: media/SeaTable256-256.png
+  favicon: media/seatable-favicon.ico
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  #- redirects:
+  #    redirect_maps:
+  #      'changelog/server-changelog.md': 'https://seatable.io/docs/changelog/'
+  #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.io/docs/changelog/'
+  # - git-revision-date-localized
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/seatable/
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/seatable/seatable-enterprise
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/seatable/
+
+extra_css:
+  - stylesheets/extra.css
+
+# Extensions: https://squidfunk.github.io/mkdocs-material/reference/
+# PyMdown Extension: https://facelessuser.github.io/pymdown-extensions/extensions/
+
+markdown_extensions:
+  #- abbr
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+  - codehilite:
+      guess_lang: true
+  - pymdownx.details      # creates collapsible elements that hide their content
+  - pymdownx.superfences  # allows 1) nesting of fences 2) custom fences 3) disable indented code
+  - pymdownx.keys         # make entering and styling keyboard key presses easier
+  - pymdownx.tabbed:      # provides a syntax to easily add tabbed Markdown content
+      alternate_style: true
+  #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
+  #  custom_checkbox: true
+  #- pymdownx.tilde       # allows del and sub tags
+
+# Page tree
+nav:
+  - Home: README.md
+  - Basic Setup:
+    - Developer Edition: abc.md
+  #  - Enterprise Edition: docker/Enterprise-Edition/Deploy SeaTable-EE with Docker.md
+  #  - Python Runner:
+  #    - Deploy: docker/Python-Runner/Deploy SeaTable Python Runner.md
+  #    - Upgrading: docker/Python-Runner/Update SeaTable Python Runner.md
+  #    - Customization: docker/Python-Runner/Customize SeaTable Python Runner.md
+  #  - Migrate SeaTable DE to EE: docker/Enterprise-Edition/migrate_from_seatable_ce_server.md
+  #- Advanced Setup (SeaTable EE):
+  #  - Roles and Permissions: config/enterprise/roles_permissions.md
+  #  - S3: config/enterprise/S3.md
+  #  - OnlyOffice: config/enterprise/deploy_onlyoffice_docker.md
+  #  - Cluster:
+  #    - Cluster: docker/Cluster/SeaTable Cluster.md
+  #    - dtable-db Standalone: docker/Cluster/dtable-db Standalone.md
+  #    - dtable-events Background node: docker/Cluster/dtable-events Background node.md
+  #    - dtable-server Cluster: docker/Cluster/dtable-server Cluster.md
+
+
+## noch offen:
+# social cards https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
+# matomo integration: https://github.com/squidfunk/mkdocs-material/pull/4847#issuecomment-1378467860
+# feedback integration: ...
