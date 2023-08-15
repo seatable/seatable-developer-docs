@@ -107,15 +107,18 @@ markdown_extensions:
 nav:
   - Introduction: 
     - index.md
-    - Getting started: abc.md
-    - Basic concepts: abc.md
-    - Get Support: abc.md
+    #- Getting started: abc.md
+    #- Basic concepts: abc.md
+    #- Get Support: abc.md
   - Scripts in SeaTable:
-    - Developer Edition: README.md
+    - scripts/index.md
+    #- Developer Edition: README.md
   - Plugin Development:
-    - README.md
+    - plugins/index.md
+    #- README.md
   - Client APIs:
-    - README.md
+    - clients/index.md
+    #- README.md
   #  - Enterprise Edition: docker/Enterprise-Edition/Deploy SeaTable-EE with Docker.md
   #  - Python Runner:
   #    - Deploy: docker/Python-Runner/Deploy SeaTable Python Runner.md
