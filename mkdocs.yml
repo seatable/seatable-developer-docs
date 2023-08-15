@@ -39,8 +39,6 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -69,6 +67,8 @@ extra:
       link: https://hub.docker.com/r/seatable/seatable-enterprise
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/seatable/
+  status:
+    new: requires Enterprise Edition
 
 extra_css:
   - stylesheets/extra.css
@@ -88,19 +88,34 @@ markdown_extensions:
   - codehilite:
       guess_lang: true
   - pymdownx.details      # creates collapsible elements that hide their content
-  - pymdownx.superfences  # allows 1) nesting of fences 2) custom fences 3) disable indented code
+  - pymdownx.superfences:  # allows 1) nesting of fences 2) custom fences 3) disable indented code
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.keys         # make entering and styling keyboard key presses easier
   - pymdownx.tabbed:      # provides a syntax to easily add tabbed Markdown content
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
   #  custom_checkbox: true
   #- pymdownx.tilde       # allows del and sub tags
 
 # Page tree
 nav:
-  - Home: README.md
-  - Basic Setup:
-    - Developer Edition: abc.md
+  - Introduction: 
+    - index.md
+    - Getting started: abc.md
+    - Basic concepts: abc.md
+    - Get Support: abc.md
+  - Scripts in SeaTable:
+    - Developer Edition: README.md
+  - Plugin Development:
+    - README.md
+  - Client APIs:
+    - README.md
   #  - Enterprise Edition: docker/Enterprise-Edition/Deploy SeaTable-EE with Docker.md
   #  - Python Runner:
   #    - Deploy: docker/Python-Runner/Deploy SeaTable Python Runner.md
@@ -122,3 +137,18 @@ nav:
 # social cards https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
 # matomo integration: https://github.com/squidfunk/mkdocs-material/pull/4847#issuecomment-1378467860
 # feedback integration: ...
+
+
+
+
+#Getting started
+#  > scripts inside seatable (javascript and python)
+#  > plugins
+#  > standalone programm with client api
+
+#Basic concepts
+#Get Support
+
+#Javascript  
+
+#Python
