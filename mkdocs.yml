@@ -56,7 +56,7 @@ plugins:
   #    redirect_maps:
   #      'changelog/server-changelog.md': 'https://seatable.io/docs/changelog/'
   #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.io/docs/changelog/'
-  - git-revision-date-localized
+  #- git-revision-date-localized
 
 # Customization
 extra:
