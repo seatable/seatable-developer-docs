@@ -22,6 +22,8 @@ All instructions are valid for self-hosted Seatable installations (Enterprise an
 
 Let's get started. We start with some general basics and then the development of your own scripts, plugins or applications can begin.
 
+---
+
 ## More documentations
 
 Next to this developer guide there are more documentations available. To learn more about the SeaTable API, the installation of your own server or the usage or SeaTable, please refer to their respective manuals:
@@ -39,63 +41,3 @@ At any time you could have a look at the SeaTable [Community Forum](https://foru
     If you're using SeaTable in your organization and need
     assistance, e.g., to __digitalization of processes__, __develop custom solutions__ or __improve efficiency__,
     [__get in touch__](mailto:sales@seatable.io) to discuss our __enterprise support__ offerings. We're happy to help!
-
-## Support
-
-SeaTable GmbH offers enterprise support including phone and email access as an optional and paid add-on. 
-Please contact us at sales@seatable.io to get more information about it.
-
-## just to test ...
-
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
-
-``` mermaid
-gitGraph
-   commit
-   commit
-   branch develop
-   checkout develop
-   commit
-   commit
-   checkout main
-   merge develop
-   commit
-   commit
-```
-
-``` mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-    E-->C;
-    F-->E;
-    G-->F;
-```
-
-``` mermaid 
-pie title Pets adopted by volunteers
-    "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 15
-```
-
-``` mermaid
-gantt
-    title A Gantt Diagram
-    dateFormat YYYY-MM-DD
-    section Section
-        A task          :a1, 2014-01-01, 4d
-        Another task    :after a1, 10d
-    section Another
-        Task in Another :2014-01-12, 2d
-        another task    :4d
-```

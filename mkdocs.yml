@@ -106,7 +106,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Introduction: 
-    - introduction/index.md
+    - index.md
     - Getting started: introduction/getting_started.md
     - Basic concepts: introduction/basic_concepts.md
     - Get Support: introduction/get_support.md
