@@ -106,10 +106,10 @@ markdown_extensions:
 # Page tree
 nav:
   - Introduction: 
-    - index.md
-    #- Getting started: abc.md
-    #- Basic concepts: abc.md
-    #- Get Support: abc.md
+    - introduction/index.md
+    - Getting started: introduction/getting_started.md
+    - Basic concepts: introduction/basic_concepts.md
+    - Get Support: introduction/get_support.md
   - Scripts in SeaTable:
     - scripts/index.md
     #- Developer Edition: README.md
