@@ -107,12 +107,25 @@ markdown_extensions:
 nav:
   - Introduction: 
     - index.md
-    - Getting started: introduction/getting_started.md
+    - Requirements: introduction/requirements.md
     - Basic concepts: introduction/basic_concepts.md
     - Get Support: introduction/get_support.md
   - Scripts in SeaTable:
     - scripts/index.md
-    #- Developer Edition: README.md
+    - Javascript:
+      - Basic structure: scripts/javascript/basic_structure_js.md
+      - Predefined Objects: scripts/javascript/predefined_objects_js.md
+      - Examples: 
+        - scripts/javascript/examples/index.md
+        - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
+        - 2. get incremental: scripts/javascript/examples/get-incremental.md
+        - 3. statistics: scripts/javascript/examples/statistics-attendance.md
+      - Common problems: scripts/javascript/common_problems.md
+    - Python:
+      - Basic structure: scripts/python/basic_structure_python.md
+      - Predefined Objects: scripts/python/predefined_objects_python.md
+      - Examples:
+        - scripts/python/examples/index.md
   - Plugin Development:
     - plugins/index.md
     #- README.md

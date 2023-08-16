@@ -1,0 +1,3 @@
+# Common problems
+
+` anstelle von ' bei ausgabe von vairablen...

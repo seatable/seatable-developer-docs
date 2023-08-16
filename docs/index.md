@@ -14,30 +14,13 @@ This guide is for **developers**, who want to use custom scripts inside SeaTable
 
 All instructions are valid for self-hosted Seatable installations (Enterprise and Developer Edition) as well as for the SeaTable Cloud.
 
-!!! warning "Known limitations of SeaTable Cloud"
+!!! warning annotate "Known limitations of SeaTable Cloud"
 
-    Currently it is not possible to install custom plugins at SeaTable Cloud. Also the number of python-script runs is determined by your current SeaTable Cloud subscription.
-    Therefore we recomment that you install your own SeaTable Server if you want to developer custom plugins, applications or multiple python scripts. 
-    Please check the [Admin Manual](https://admin.seatable.io) how to install your own SeaTable Server.
+    1. It is not possible to install custom plugins at [SeaTable Cloud](https://cloud.seatable.io). 
+    2. The number of python-script runs is limited by your current SeaTable Cloud subscription.
+ 
+    Therefore we recomment that you install your own SeaTable Server if you want to developer custom plugins, applications or multiple python scripts. More info about your own server in the [Admin Manual](https://admin.seatable.io).
 
-Let's get started. We start with some general basics and then the development of your own scripts, plugins or applications can begin.
+Ok. Let's get started. 
 
----
-
-## More documentations
-
-Next to this developer guide there are more documentations available. To learn more about the SeaTable API, the installation of your own server or the usage or SeaTable, please refer to their respective manuals:
-
-- [SeaTable User Manual](https://docs.seatable.io/?lang=auto)
-- [SeaTable Admin Manual](https://admin.seatable.io)
-- [SeaTable API Reference](https://api.seatable.io)
-
-See the [official SeaTable channel](https://youtube.com/seatable) on YouTube for tutorials, guides and overviews. Visit [our blog](https://seatable.io/blog/?lang=auto) for latest news and to learn more about what is going on in and around SeaTable.
-
-At any time you could have a look at the SeaTable [Community Forum](https://forum.seatable.io) to share your experience with other users or report issues or bugs.
-
-!!! note "Enterprise support"
-
-    If you're using SeaTable in your organization and need
-    assistance, e.g., to __digitalization of processes__, __develop custom solutions__ or __improve efficiency__,
-    [__get in touch__](mailto:sales@seatable.io) to discuss our __enterprise support__ offerings. We're happy to help!
+If you are new to SeaTable, we recommend that you go on with the reading of the introduction part. In the next articles you will learn more about the [requirements](/introduction/requirements) or the [basic concepts](/introduction/basic_concepts) of the no-code platform SeaTable.
