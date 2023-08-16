@@ -1,25 +1,23 @@
-# basic structure
+# Basic structure
+
+
 
 keine feste struktur. keine authentifzierung erfordertilch.
 
 The Javascript script runs directly in the current browser and is suitable for simple data processing.
 
-## get data from a base
+## Interact with your base
 
-javascript provide pre-defined objects and corresponding methods of this objects. 
+javascript provide pre-defined objects, corresponding methods of this objects and utilities. On top of the normal javascript functions...
 
-the objects are:
-
-- base
-- utilities
-- output
-- context
-
-## Objects and functions
+- [base](/scripts/javascript/predefined_objects_js/#base-object)
+- [output](/scripts/javascript/predefined_objects_js/#output)
+- [context](/scripts/javascript/predefined_objects_js/#output)
+- [base utilities](/scripts/javascript/predefined_objects_js/#utility-functions)
 
 read the list of predefined objects ... "normal javascript functions like console.log or string replacement will work, too.
 
-## Your first script
+## Let's get concrete
 
 Let's make this concrete and let us look at some basic examples. 
 
