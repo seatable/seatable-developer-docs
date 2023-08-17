@@ -1,8 +1,8 @@
-# predefined objects
+# Predefined objects in SeaTable (Javascript)
 
 ## Base object
 
-Base object provide a way to manipulate data in a base. The following methods are available:
+Base object provide a way to read, manipulate and output data in/from your base. The following methods are available.
 
 ### Table
 
@@ -283,182 +283,310 @@ Base object provide a way to manipulate data in a base. The following methods ar
 
 ??? question "getRows"
 
-    .
+    Get all the rows of the view and return an array.
 
     ``` js
+    base.getRows(table: Object/String, view: Object/String);
     ```
 
-    __Example__
+    __Examples__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    const view = base.getViewByName(table, 'view1');
+    const rows = base.getRows(table, view);
     ```
+
+    ``` js
+    const rows = base.getRows('Table1', 'view1');
+    ```
+
+
+??? question "query"
+
+    Use sql to query a base. SQL-Query is the most powerful function to the data from a base. Most SQL-syntax is support. 
+
+    ``` js
+    await base.query(sql)
+    ```
+
+    __Example: Get everything with a wildcard__
+
+    ``` js
+    const data = await base.query('select * from Bill')
+    output.text(data) // (1)!
+    ```
+
+    1.  Returns for example the following:
+        ```
+        [
+            {"name":"Bob","price":"300","year":"2021"},
+            {"name":"Bob","price":"300","year":"2019"},
+            {"name":"Tom","price":"100","year":"2019"},
+            {"name":"Tom","price":"100","year":"2020"},
+            {"name":"Tom","price":"200","year":"2021"},
+            {"name":"Jane","price":"200","year":"2020"},
+            {"name":"Jane","price":"200","year":"2021"}
+        ]
+        ```
+
+    __Example: WHERE__
+
+    ``` js
+    const data = await base.query('select name, price from Bill where year = 2021')
+    output.text(data) // (1)!
+
+    const data = await base.query('select name, price from Bill where name = "Bob"')
+    output.text(data) // (2)!
+    ```
+
+    1.  Returns for example the following:
+        ```
+        [
+            {"name":"Bob","price":"300"},
+            {"name":"Tom","price":"200"},
+            {"name":"Jane","price":"200"}
+        ]
+        ```
+    2.  Returns for example the following:
+        ```
+        [
+            {"name":"Bob","price":"300","year":"2021"},
+            {"name":"Bob","price":"300","year":"2019"}
+        ]
+        ```
+
+
+    __Example: GROUP BY__
+
+    ``` js
+    const data = await base.query('select name, sum(price) from Bill group by name')
+    output.text(data) // (1)!
+    ```
+
+    1.  Returns for example the following:
+        ```
+        [
+            {'SUM(price)': 600, 'name': 'Bob'},
+            {'SUM(price)': 400, 'name': 'Tom'},
+            {'SUM(price)': 400, 'name': 'Jane'}
+        ]
+        ```
+
+    __Example: DISTINCT__
+    
+    ``` js
+    const data = await base.query('select distinct name from Bill')
+    output.text(data) // (1)!
+    ```
+
+    1.  Returns for example the following:
+        ```
+        [
+            {'SUM(price)': 600, 'name': 'Bob'},
+            {'SUM(price)': 400, 'name': 'Tom'},
+            {'SUM(price)': 400, 'name': 'Jane'}
+        ]
+        ```
 
 ??? question "getGroupedRows"
 
-    .
+    Get rows in the grouped view.
 
     ``` js
+    base.getGroupedRows(table: Object/String, view: Object/String);
     ```
 
     __Example__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    const view = base.getViewByName(table, 'GroupedView');
+    const groupViewRows = base.getGroupedRows(table, view);
+    ```
+
+    ``` js
+    const groupViewRows = base.getGroupedRows('Table1', 'GroupedView');
     ```
 
 ??? question "getRowById"
 
-    .
+    Get a `row` via its `id` and return a row object.
 
     ``` js
+    base.getRowById(table: Object/String, rowId: String);
     ```
 
-    __Example__
+    __Examples__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    const row = base.getRowById(table, "M_lSEOYYTeuKTaHCEOL7nw");
+    ```
+
+    ``` js
+    const row = base.getRowById('Table1', "M_lSEOYYTeuKTaHCEOL7nw");
     ```
 
 ??? question "deleteRowById"
 
-    .
+    Delete a `row` in a table by its `id`.
 
     ``` js
+    base.deleteRowById(table: Object/String, rowId: String);
     ```
 
-    __Example__
+    __Examples__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    base.deleteRowById(table, 'M_lSEOYYTeuKTaHCEOL7nw');
+    ```
+
+    ``` js
+    base.deleteRowById('Table1', 'M_lSEOYYTeuKTaHCEOL7nw');
     ```
 
 ??? question "addRow"
 
-    .
+    Add a row to a table.
 
     ``` js
+    base.addRow(table: Object/String, rowData: Object, viewName?: String)
     ```
 
-    __Example__
+    __Examples__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    base.addRow(table, {'Name': 'Alex', 'Age': '18'});
+    base.addRow(table, {'Name': 'Alex', 'Age': '18'}, 'Default View');
+    ```
+
+    ``` js
+    base.addRow('Table1', {'Name': 'Alex', 'Age': '18'});
+    base.addRow('Table1', {'Name': 'Alex', 'Age': '18'}, 'Default View');
     ```
 
 ??? question "modifyRow"
 
-    .
+    Modify a row in the table.
 
     ``` js
+    base.modifyRow(table: Object/String, row: Object, updateRowData: Object);
     ```
 
-    __Example__
+    __Examples__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    const row = base.getRowById(table, "M_lSEOYYTeuKTaHCEOL7nw");
+    base.modifyRow(table, row, {'Name': 'new name', 'number': 100});
+    ```
+
+    ``` js
+    const row = base.getRowById('Table1', "M_lSEOYYTeuKTaHCEOL7nw");
+    base.modifyRow('Table1', row, {'Name': 'new name', 'number': 100});
     ```
 
 ??? question "modifyRows"
 
-    .
+    Modify multiple rows in the table at once.
 
     ``` js
+    base.modifyRow(table: Object/String, rows: Array, updatedRows: Array);
     ```
 
     __Example__
+
     ``` js
+    const table = base.getTableByName('Table1');
+    const rows = base.getRows('Table1', 'Default view');
+    const selectedColumnName = 'Name';
+    const selectedRows = [], updatedRows = [];
+
+    rows.forEach((row) => {
+    if (row[columnName] === 'name') {
+        selectedRows.push(row);
+        updatedRows.push({columnName: 'name1'});
+    }
+    });
+    base.modifyRow(table, selectedRows, updatedRows);
     ```
 
 ??? question "filter"
 
-    .
+    Pass a conditional statement, filter out the rows that meet the conditions in the table, and return a querySet object.
 
     ``` js
+    base.filter(table: Object/String, ??, condition: ??)
     ```
 
     __Example__
+
     ``` js
+    // Filter out rows whose number column is equal to 5, and return a querySet object
+    const querySet = base.filter('Table1', 'Default', 'number = 5');
     ```
 
 ### Links
 
 ??? question "addLink"
 
-    .
+    Add link, link other table records. Get more information about linking columns from the [SeaTable API Reference](https://api.seatable.io/reference/create-row-link).
 
     ``` js
+    base.addLink(linkId, tableName, linkedTableName, rowId, linkedRowId)
     ```
 
     __Example__
+
     ``` js
+    base.addLink('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
     ```
 
 ??? question "removeLink"
 
-    .
+    Delete the link row.
 
     ``` js
+    base.removeLink(linkId, tableName, linkedTableName, rowId, linkedRowId)
     ```
 
     __Example__
+
     ``` js
+    base.removeLink('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
     ```
 
 ??? question "getColumnLinkId"
 
-    .
+    Get the link id by column name.
 
     ``` js
+    base.getColumnLinkId(tableName, columnName)
     ```
 
     __Example__
+
     ``` js
+    base.getColumnLinkId('Table1', 'Record')
     ```
 
 ??? question "updateLinks"
 
-    .
+    Remove all existing row links and add new links.
 
     ``` js
+    base.updateLinks(linkId, tableName, linkedTableName, rowId, updatedlinkedRowIds)
     ```
 
     __Example__
-    ``` js
-    ```
-
-### Query
-
-??? question "BASIC"
-
-    .
 
     ``` js
-    ```
-
-    __Example__
-    ``` js
-    ```
-
-??? question "WHERE"
-
-    .
-
-    ``` js
-    ```
-
-    __Example__
-    ``` js
-    ```
-
-??? question "GROUP BY"
-
-    .
-
-    ``` js
-    ```
-
-    __Example__
-    ``` js
-    ```
-
-??? question "DISTINCT"
-
-    .
-
-    ``` js
-    ```
-
-    __Example__
-    ``` js
+    const rows = base.getRows('contact', 'Default_view');
+    // Update row links to [rows[0]._id, rows[1]._id, rows[2]._id, rows[3]._id]
+    base.updateLinks('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', [rows[0]._id, rows[1]._id, rows[2]._id, rows[3]._id])
     ```
 
 
@@ -472,48 +600,80 @@ Utility functions help you to work with data in SeaTable.
 
 ??? success "formatDate"
 
-    .
+    Format date to 'YYYY-MM-DD' to be used in a date column.
 
     ``` js
+    base.utils.formatDate(date: date object)
     ```
 
     __Example__
     ``` js
+    let date = new Date();
+    let formatDate = base.utils.formatDate(date);
+    output.text(formatDate);
     ```
 
 ??? success "formatDateWithMinutes"
 
-    .
+    Format date to 'YYYY-MM-DD HH:mm' to be used in a date column..
 
     ``` js
+    base.utils.formatDateWithMinutes(date: date object)
     ```
 
     __Example__
     ``` js
+    let date = new Date();
+    let formatDate = base.utils.formatDateWithMinutes(date);
+    output.text(formatDate);
     ```
 
 ### Lookup and Query
 
 ??? success "lookupAndCopy"
 
-    .
+    Similar to the vlookup function in Excel. Find a matching row in the source table for each row of the target table, and then copy the data of the specified cell of the matching row to the specified cell of the target row.
+
+    | Name | Email |
+    | ---  | --- |
+    | Hulk | greenbigboy@stark-industries.movie |
+    | Tony | ironman|stark-industries.movie |
+
+    The target table only has the user names but we want to copy the email address from the source table to the target table, then this function can be used.
+
+    | Name | Email |
+    | ---  | --- |
+    | Hulk | |
+    | Tony | |
 
     ``` js
+    base.utils.lookupAndCopy(targetTable, targetColumn, targetColumnToCompare, sourceTableName, sourceColumnName, sourceColumnToCompare = null);
     ```
 
     __Example__
+
     ``` js
+    // Match the rows with the same content in the Name column of Table1 and Table2, copy the contents of the Email column of the row in Table1 to the Email column of the corresponding row in Table2
+    base.utils.lookupAndCopy('Table2', 'Email', 'Name', 'Table1', 'Name');
+
+    // Match the rows with the same content in the Name column in Table1 and the Name1 column in Table2, and copy the contents of the Email column of the row in Table1 to the Email1 column of the corresponding row in Table2
+    base.utils.lookupAndCopy('Table2', 'Email1', 'Name1', 'Table1', 'Email', 'Name');
+
     ```
 
 ??? success "query"
 
-    .
+    Filter and summary the table data by SQL like statements.
 
     ``` js
+    base.utils.query(tableName: String, viewName: String, query: String);
     ```
 
     __Example__
+
     ``` js
+    // Filter out the rows where the sum of the three columns 'number', 'number1', and 'number2' is greater than 5 then sum the number and number2 columns in these rows, return {number: 12, number2: 23}
+    base.utils.query('Table1', 'View_name', 'select sum(number), sum(number2) where number + number1 + number2 > 5');
     ```
 
 
@@ -525,24 +685,32 @@ Output object supports output strings in text or Markdown format.
 
 ??? quote "text"
 
-    .
+    Prints the content of the passed variable as normal text. Code Syntax is ignored and just printed.
 
     ``` js
+    output.text(anything: String/Object/Array)
     ```
 
     __Example__
+
     ``` js
+    const table = base.getActiveTable();
+    output.text(table.name);
     ```
 
 ??? quote "markdown"
 
-    .
+    Prints the content of the passed variable. Markdown formating is used to style the output.
 
     ``` js
+    output.markdown(anything: String/Object/Array)
     ```
 
     __Example__
+
     ``` js
+    const table = base.getActiveTable();
+    output.markdown(`# This is a headline and prints the name of the table: ${table.name}`);
     ```
 
 ---
@@ -551,26 +719,34 @@ Output object supports output strings in text or Markdown format.
 
 ## Context
 
-When the script runs, the context object provides the context. The usage is as follows:
+When the script runs, the context object provides the context. The usage is as follows.
 
 ??? info "currentTable"
 
-    .
+    Returns the name of the currently selected table.
 
     ``` js
+    base.context.currentTable
     ```
 
     __Example__
+
     ``` js
+    const name = base.context.currentTable
+    output.text(`The name of the current table is: ${name}`)
     ```
 
 ??? info "currentRow"
 
-    .
+    Returns the currently selected row and returns the complete row object including `_id`, `_mtime`, `_ctime`. If no row is selected, this function returns `undefined`.
 
     ``` js
+    base.context.currentRow
     ```
 
     __Example__
+
     ``` js
+    const row = base.context.currentRow
+    output.text(row)
     ```

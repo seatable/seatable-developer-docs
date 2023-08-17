@@ -1,3 +1,3 @@
-# Common problems
+# Common questions (JavaScript)
 
 ` anstelle von ' bei ausgabe von vairablen...

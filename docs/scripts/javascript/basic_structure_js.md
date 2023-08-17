@@ -1,10 +1,14 @@
 # Basic structure
 
-
-
 keine feste struktur. keine authentifzierung erfordertilch.
 
-The Javascript script runs directly in the current browser and is suitable for simple data processing.
+The Javascript script runs directly in the current browser and is suitable for simple data processing. Here are some help articles from the user manual explaining how to create, execute and monitor a script in SeaTable:
+
+__Links to the SeaTable User Manual:__
+
+- [Creating and deleting a script](https://seatable.io/docs/javascript-python/anlegen-und-loeschen-eines-skriptes/?lang=auto)
+- [Run script manually, by button or by automation](https://seatable.io/en/docs/javascript-python/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/?lang=auto)
+- [The execution log of scripts](https://seatable.io/en/docs/javascript-python/das-ausfuehrungslog-von-skripten/?lang=auto)
 
 ## Interact with your base
 
@@ -15,7 +19,7 @@ javascript provide pre-defined objects, corresponding methods of this objects an
 - [context](/scripts/javascript/predefined_objects_js/#output)
 - [base utilities](/scripts/javascript/predefined_objects_js/#utility-functions)
 
-read the list of predefined objects ... "normal javascript functions like console.log or string replacement will work, too.
+read the list of predefined objects ... "normal javascript functions like console.log or string replacement will work, too. 
 
 ## Let's get concrete
 

@@ -112,7 +112,7 @@ nav:
     - Get Support: introduction/get_support.md
   - Scripts in SeaTable:
     - scripts/index.md
-    - Javascript:
+    - JavaScript:
       - Basic structure: scripts/javascript/basic_structure_js.md
       - Predefined Objects: scripts/javascript/predefined_objects_js.md
       - Examples: 
@@ -120,12 +120,14 @@ nav:
         - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
         - 2. get incremental: scripts/javascript/examples/get-incremental.md
         - 3. statistics: scripts/javascript/examples/statistics-attendance.md
-      - Common problems: scripts/javascript/common_problems.md
+      - Common questions: scripts/javascript/common_questions.md
     - Python:
       - Basic structure: scripts/python/basic_structure_python.md
-      - Predefined Objects: scripts/python/predefined_objects_python.md
+      - Objects & Methods: scripts/python/predefined_objects_python.md
+      - Authorization: scripts/python/authorization_python.md
       - Examples:
         - scripts/python/examples/index.md
+      - Common questions: scripts/python/common_questions.md
   - Plugin Development:
     - plugins/index.md
     #- README.md
