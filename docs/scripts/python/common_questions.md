@@ -26,13 +26,14 @@
     The script need to install `seatable-api` when run in local.
 
     ```
-    pip3 install seatable-api // (1)!
+    pip3 install seatable-api
     ```
 
-    1.  Requirements are: 
-        - Python >= 3.5
-        - requests
-        - socketIO-client-nexus
+    Additional requirements are: 
+    
+    - Python >= 3.5
+    - requests
+    - socketIO-client-nexus
 
 ??? question "List of libraries supported in the cloud environment"
 
@@ -56,6 +57,7 @@
     - Barcode library, [python-barcode](https://pypi.org/project/python-barcode/)
     - Pandas library, [pandas](https://pypi.org/project/pandas/)
     - Numpy library, [numpy](https://pypi.org/project/numpy/)
+    - SMTP library, [secure-smtplib](https://pypi.org/project/secure-smtplib/)
 
 ??? question "Install and use custom python libraries"
 

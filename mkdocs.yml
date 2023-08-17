@@ -127,6 +127,8 @@ nav:
       - Authorization: scripts/python/authorization_python.md
       - Examples:
         - scripts/python/examples/index.md
+        - 1. Send E-mails: scripts/python/examples/send_email.md
+        - 2. Generate Barcode: scripts/python/examples/generate_barcode.md
       - Common questions: scripts/python/common_questions.md
   - Plugin Development:
     - plugins/index.md

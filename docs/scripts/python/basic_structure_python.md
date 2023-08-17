@@ -4,7 +4,7 @@ The Python script runs on the server side and can be set to automatically run pe
 
 Python scripts can be run on your local machine or uploaded to the SeaTable cloud to run. Local operation is convenient for development and debugging, and scripts can be easily integrated into larger projects.
 
-SeaTable uses currently Python 3.7 and a specific set of [supported libraries](...).
+SeaTable uses currently Python 3.7 and a specific set of [supported libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment).
 
 ## Authentication
 
