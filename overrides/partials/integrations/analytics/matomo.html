@@ -1,7 +1,8 @@
 <script>
     /* Add custom analytics integration here, e.g. */
-    var site_id = "{{ config.extra.analytics.site_id }}" 
-    var provider_url = "{{ config.extra.analytics.provider_url }}" 
+    var site_id = "{{ config.extra.analytics.site_id }}";
+    var provider_url = "{{ config.extra.analytics.provider_url }}";
+    console.log(provider_url);
   
     /* Wait for page to load and application to mount */
     document.addEventListener("DOMContentLoaded", function() {
@@ -10,7 +11,7 @@
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
-            /* var u="https://wp-stats.seatable.io/"; */
+            console.log("test");
             _paq.push(['setTrackerUrl', provider_url+'matomo.php']);
             _paq.push(['setSiteId', site_id]);
             console.log(provider_url);
