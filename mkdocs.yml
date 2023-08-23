@@ -26,6 +26,7 @@ theme:
     - toc.follow
     - content.code.copy
     - content.code.annotate # offer a comfortable and friendly way to attach arbitrary content to specific sections of code
+  custom_dir: overrides
   
   # icon & favicon
   logo: media/SeaTable256-256.png
@@ -69,6 +70,10 @@ extra:
       link: https://www.linkedin.com/company/seatable/
   status:
     new: requires Enterprise Edition
+  analytics:
+    provider: matomo
+    site_id: 2
+    provider_url: https://wp-stats.seatable.io/
 
 extra_css:
   - stylesheets/extra.css

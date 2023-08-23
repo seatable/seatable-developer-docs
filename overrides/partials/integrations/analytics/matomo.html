@@ -1,0 +1,22 @@
+<script>
+    /* Add custom analytics integration here, e.g. */
+    var site_id = "{{ config.extra.analytics.siteId }}" 
+    var provider_url = "{{ config.extra.analytics.providerURL }}" 
+  
+    /* Wait for page to load and application to mount */
+    document.addEventListener("DOMContentLoaded", function() {
+      location$.subscribe(function(url) {
+        /* Add custom page event tracking here */ 
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            /* var u="https://wp-stats.seatable.io/"; */
+            _paq.push(['setTrackerUrl', provider_url+'matomo.php']);
+            _paq.push(['setSiteId', site_id]);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      })
+    })
+  </script>
