@@ -1,10 +1,11 @@
 # Requirements
 
-your decision is made. you want to develop your own script, your own plugin or your custom application. This guile will get you covered. If you are a professional developer some descriptions might seem obvious to your. please excuse, this manual should alos help angehende entwicklern, die noch nicht so viel erfahrung haben.
+Your decision is made: you want to develop your own script, your own plugin or your custom application. That is a great decision and I promise you that this guile will get you covered. If you are a professional developer some descriptions might seem obvious to your. Please excuse, this manual should also help beginning developers who do not yet have that much experience.
 
 ## Development system
 
-seatable system (you could start with cloud) or your own system. Check out admin manual how to install one.
+First of all you will need a SeaTable System to make your first steps with the development with and for SeaTable. If you just want to write some short scripts, [SeaTable Cloud](https://seatable.io/preise/?lang=auto) might be the right choice for you. But as soon as your development gets deeper or you want to build your own plugins, I highly recommend to you that you create your own SeaTable Server.
+Check out [admin manual](https://admin.seatable.io) how to install one.
 
 ## Programming skills
 

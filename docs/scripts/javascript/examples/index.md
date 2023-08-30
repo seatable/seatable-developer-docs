@@ -1,9 +1,15 @@
-# Examples 
+# Examples
 
-eine Seite mit kurzer beschreibung
+Currenty this documentation contains three examples for easy to follow script with Javascript. You can just copy&paste them in any base in SeaTable any run them.
 
-- a
-- b
-- c
+## Add rows
 
-die einzelnen Beispiele, dann als einzelne markdown-dateien mit erläuterung des codes.
+short explanation will follow soon.
+
+## Get Incremental
+
+short explanation will follow soon.
+
+## Statistics
+
+short explanation will follow soon.

@@ -1,9 +1,11 @@
-# Examples 
+# Examples
 
-eine Seite mit kurzer beschreibung
+Currenty this documentation contains two examples of Python Scripts. You can just copy&paste them in any base in SeaTable any run them.
 
-- a
-- b
-- c
+## Send E-mails
 
-die einzelnen Beispiele, dann als einzelne markdown-dateien mit erläuterung des codes.
+short explanation will follow soon.
+
+## Generate Barcode
+
+short explanation will follow soon.

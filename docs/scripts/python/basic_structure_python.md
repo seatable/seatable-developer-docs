@@ -4,13 +4,13 @@ The Python script runs on the server side and can be set to automatically run pe
 
 Python scripts can be run on your local machine or uploaded to the SeaTable cloud to run. Local operation is convenient for development and debugging, and scripts can be easily integrated into larger projects.
 
-SeaTable uses currently Python 3.7 and a specific set of [supported libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment).
+SeaTable uses currently Python **3.7** and a specific set of [supported libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment).
 
 ## Authentication
 
-Every python script must authenticate and requires at least these three lines at the beginning of the script. Read here all details about [authentication in python scripts](...). 
+Every python script must authenticate and requires at least these three lines at the beginning of the script. Read here all details about [authentication in python scripts](...).
 
-``` python
+```python
 from seatable_api import Base, context
 base = Base(context.api_token, context.server_url)
 base.auth()
@@ -18,31 +18,30 @@ base.auth()
 
 !!! warning "Multiple tokens in SeaTable"
 
-    SeaTable provides multiple tokens to authenticate. But don't let you confuse. If you develop python scripts, just use the predefined variable `content.api_token` or provide a so called `API-Token` of a base. 
+    SeaTable provides multiple tokens to authenticate. But don't let you confuse. If you develop python scripts, just use the predefined variable `content.api_token` or provide a so called `API-Token` of a base.
 
     All details can be found in the [SeaTable API Reference](https://api.seatable.io/reference/authentication).
 
-It is even possible to develop a python in the way that it could be [executed in the cloud and local](...) without changing the code. 
-
-
+It is even possible to develop a python in the way that it could be [executed in the cloud and local](...) without changing the code.
 
 ## Available objects and methods
 
-...
-
-python braucht kein output object. print is the way to go. pretty json output erklären.
+There are a lot of predefined objects and methods in python. If you compare attentively javascript and python, you will notice that python has no output object. this is not necessary, because the output is either written directly into the base or printed.
 
 ## Let's get concrete
 
-Let's make this concrete and let us look at some basic examples. 
+Let's make this concrete and let us look at some basic examples.
 
 1. Jump to your seatable webinterface
 2. Create a new Script of the type `Python`
-3. copy the following code
-4. run the script
+3. Copy the following code
+4. Run the script
 
 You will learn from these examples, that it is quite easy to read, output and even manipulate the data of a base inside SeaTable with the predefined objects and the corresponding methods.
 
+!!! danger "Indents are important"
+
+    Please take care of indentations! Indentation is mandatory in python to define the blocks of statements. The number of spaces must be uniform in a block of code. It is preferred to use whitespaces instead of tabs to indent in python. If you screw the correct indentations, the scripts will not work as expected!
 
 === "Add, update and remove a row"
 
@@ -63,6 +62,6 @@ You will learn from these examples, that it is quite easy to read, output and ev
 
     1.   These three lines are always required to authorize against the base in SeaTable.
 
-=== "abc"
+=== "more"
 
-    ...
+    ...will follow soon.

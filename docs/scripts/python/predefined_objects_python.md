@@ -6,7 +6,7 @@ For a more detailed description of the used parameters, refer to the data model 
 
 !!! tip "Don't forget to authenticate"
 
-    Every python script requires an authorization. All the examples does not contain the required lines of code. 
+    Every python script requires an authorization. All the examples does not contain the required lines of code.
 
     ```
     from seatable_api import Base, context
@@ -606,11 +606,11 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
     upload_link = upload_link_dict['upload_link'] + '?ret-json=1'
 
     # Upload the file
-    upload_file_name = "file_uploaded.txt" 
-    replace = 1 
+    upload_file_name = "file_uploaded.txt"
+    replace = 1
     response = requests.post(upload_link, data={
         'parent_dir': parent_dir,
-        'replace': 1 if replace else 0 
+        'replace': 1 if replace else 0
     }, files={
         'file': (upload_file_name, open('/User/Desktop/file.txt', 'rb'))
     })
@@ -712,7 +712,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 ??? question "Get a user info"
 
     Returns the name of the user and his `id_in_org`.
-    
+
     ``` python
     base.get_user_info(username)
     ```
@@ -725,7 +725,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
 ## Account
 
-Account provides an interface to list all Workspaces, add/copy/delete Bases, and obtain access rights to a Base. 
+Account provides an interface to list all Workspaces, add/copy/delete Bases, and obtain access rights to a Base.
 
 !!! tip "Separate Authentication required"
 
@@ -800,8 +800,6 @@ Account provides an interface to list all Workspaces, add/copy/delete Bases, and
 
 We provide a set of functions for the date operations based on the datetime module of python. These functions have the same behavior as the functions provided by the formula column of SeaTable.
 
-
-
 !!! warning "function import required"
 
     To use these functions, the dateutils module must be imported.
@@ -812,7 +810,7 @@ We provide a set of functions for the date operations based on the datetime modu
 
 !!! tip "Timezone"
 
-    If the input time string has a timezone info, it will be automatically converted to local time.    
+    If the input time string has a timezone info, it will be automatically converted to local time.
 
 ??? success "date"
 
@@ -840,7 +838,7 @@ We provide a set of functions for the date operations based on the datetime modu
     __Example__
 
     ``` python
-    now = dateutils.now() 
+    now = dateutils.now()
     print(now) # 2022-02-07 09:44:00
     ```
 
@@ -1154,13 +1152,13 @@ We provide a set of functions for the date operations based on the datetime modu
     Return a generator which will generate the DateQuater objects between a start date and end date. You can get the last quarter in the generator if you set param `include_last=True` which is `False` by default.
 
     ``` python
-    dateutils.quarters_within(start, end, include_last) 
+    dateutils.quarters_within(start, end, include_last)
     ```
 
     __Example__
 
     ``` python
-    qs = dateutils.quarters_within("2021-03-28", "2022-07-17", include_last=True) 
+    qs = dateutils.quarters_within("2021-03-28", "2022-07-17", include_last=True)
     list(qs) # [<DateQuarter-2021,1Q>, <DateQuarter-2021,2Q>,...., <DateQuarter-2022,3Q>]
     ```
 
@@ -1180,7 +1178,7 @@ We provide a set of functions for the date operations based on the datetime modu
     q.days()  # generator, which will generate the date in such quarter
     list(q.days()) # [datetime.date(2022, 7, 1), datetime.date(2022, 7, 2),....., datetime.date(2022, 9, 30)]
 
-    q + 10 # <DateQuarter-2025,1Q> 
+    q + 10 # <DateQuarter-2025,1Q>
     q1 = dateutils.quater_from_yq(2021, 1) # <DateQuarter-2021,1Q>
     q - q1 # 6
     q < q1 # False
@@ -1304,31 +1302,109 @@ When the script is running in the cloud, the context object provides a context e
     print(context.current_id_in_org)
     ```
 
+## Constants
 
-??? question ""
+In the script there may be some constants we need to know
 
-    .
+??? question "ColumnTypes"
 
-    ``` python
-    
+    Column type, when insert/add columns, change column types, etc. need to be used
+
+    ```python
+    from seatable_api.constants import ColumnTypes
+
+    ColumnTypes.NUMBER              # number
+    ColumnTypes.TEXT                # text
+    ColumnTypes.LONG_TEXT           # long text
+    ColumnTypes.CHECKBOX            # checkbox
+    ColumnTypes.DATE                # date & time
+    ColumnTypes.SINGLE_SELECT       # single select
+    ColumnTypes.MULTIPLE_SELECT     # multiple select
+    ColumnTypes.IMAGE               # image
+    ColumnTypes.FILE                # file
+    ColumnTypes.COLLABORATOR        # collaborator
+    ColumnTypes.LINK                # link to other records
+    ColumnTypes.FORMULA             # formula
+    ColumnTypes.CREATOR             # creator
+    ColumnTypes.CTIME               # create time
+    ColumnTypes.LAST_MODIFIER       # last modifier
+    ColumnTypes.MTIME               # modify time
+    ColumnTypes.GEOLOCATION         # geolocation
+    ColumnTypes.AUTO_NUMBER         # auto munber
+    ColumnTypes.URL                 # URL
+    ```
+
+## Notifications
+
+??? question "send_toast_notification"
+
+    Send a nofication message which can be toasted on web page to a user.
+
+    ```python
+    base.send_toast_notification(username, msg, toast_type='success')
+    # toast_type: one of "success", "warning" or "danger"
     ```
 
     __Example__
 
-    ``` python
-
+    ```python
+    base.send_toast_notifation(
+    "aea9e807bcfd4f3481d60294df74f6ee@auth.local",
+    "error request",
+    "danger"
+    )
     ```
 
-??? question ""
+## Websockets
 
-    .
+??? question "socketIO"
 
-    ``` python
-    
+    By using websocket, you can get __realtime data update notifications__ of a base.
+
+    ```python
+    from seatable_api import Base
+
+    server_url = 'https://cloud.seatable.cn'
+    api_token = 'c3c75dca2c369849455a39f4436147639cf02b2d'
+
+    base = Base(api_token, server_url)
+    base.auth(with_socket_io=True)
+
+    base.socketIO.wait()
     ```
 
-    __Example__
+    When Base has data updated, the following will be output in the terminal.
 
-    ``` python
+    ```log
+    2022-07-19 11:48:37.803956 [ SeaTable SocketIO connection established ]
+    2022-07-19 11:48:39.953150 [ SeaTable SocketIO on UPDATE_DTABLE ]
+    {"op_type":"insert_row","table_id":"0000","row_id":"YFK9bD1XReSuQ7WP1YYjMA","row_insert_position":"insert_below","row_data":{"_id":"RngJuRa0SMGXyiA-SHDiAw","_participants":[],"_creator":"seatable@seatable.com","_ctime":"","_last_modifier":"seatable@seatable.com","_mtime":""},"links_data":{}}
+    ```
 
+    After getting data update notifications, performance self-defined actions by listen to the UPDATE_DTABLE event.
+
+    ```python
+    import json
+    from seatable_api import Base
+    from seatable_api.constants import UPDATE_DTABLE
+
+    server_url = 'https://cloud.seatable.cn'
+    api_token = 'c3c75dca2c369849455a39f4436147639cf02b2d'
+
+    def on_update(data, index, *args):
+        try:
+            operation = json.loads(data)
+            print(operation)
+            op_type = operation['op_type']
+            table_id = operation['table_id']
+            row_id = operation['row_id']
+            # ... do something
+        except Exception as e:
+            print(e)
+
+    base = Base(api_token, server_url)
+    base.auth(with_socket_io=True)
+
+    base.socketIO.on(UPDATE_DTABLE, on_update)
+    base.socketIO.wait()
     ```

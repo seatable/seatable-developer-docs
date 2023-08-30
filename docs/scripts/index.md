@@ -1,13 +1,25 @@
 # Scripts in SeaTable
 
-scripte werden in seatable ausgeführt. Screenshot oder verweis auf anleitung.
+## Scripts in general
 
-scripts in seatable
-ganz allgemein: scripte dienen, mit den daten in einer base zu interagieren. Scripte kann auf verschiedene arten ausgeführt werden (link ins benutzerhandbuch)
-Aktuell stehen python und javascript zur verfügung. Javascript wird im browser ausgeführt, python auf dem server. während javascript sich nicht authentifizieren muss, muss python das schon. 
+Scripts are executed directly in SeaTable. If you need more information how to run a script, please read the following help article [Run script manually, by button or by automation](https://seatable.io/docs/javascript-python/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/?lang=auto).
 
-schauen sie sich die vordefinieren objekte (link) an, werfen sie einen blick auf basic structure (link) oder steigen sie direkt mit unseren besipielen ein (link).
+![Screenshot of script icon in SeaTable](https://seatable.io/wp-content/uploads/2023/03/Anlegen-eines-Skriptes.jpg)
 
-*habe ich das schon?*
+Scripts are used to interact with the data in a base. Currently, python and javascript are available as script languages.
 
-In SeaTable, a base includes multiple tables, and a table contains multiple rows and columns. A row contains multiple fields.
+Javascript is executed directly in the user's browser, requires no authentication, and is used for simple data operations.
+
+Python, on the other hand, is executed on the SeaTable server. Unlike javascript, every Python script requires authentication and is suitable for more extensive automations and processes.
+
+## How to start?
+
+Each chapter provide you with explanations about the available objects and methods. Multiple examples should help you to start immediately and get a feeling about the possibilities.
+
+Here are some additional help articles from the [user manual](https://docs.seatable.io/?lang=auto) explaining how to create, execute and monitor a script in SeaTable:
+
+**Links to the SeaTable User Manual:**
+
+- [Creating and deleting a script](https://seatable.io/docs/javascript-python/anlegen-und-loeschen-eines-skriptes/?lang=auto)
+- [Run script manually, by button or by automation](https://seatable.io/en/docs/javascript-python/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/?lang=auto)
+- [The execution log of scripts](https://seatable.io/en/docs/javascript-python/das-ausfuehrungslog-von-skripten/?lang=auto)

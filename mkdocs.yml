@@ -18,8 +18,8 @@ theme:
     - navigation.footer
     - navigation.tracking
     - navigation.tabs
-    - navigation.sections   # top-level sections are rendered as groups in the sidebar for viewports above 1220px
-    - navigation.indexes    # documents can be directly attached to sections
+    - navigation.sections # top-level sections are rendered as groups in the sidebar for viewports above 1220px
+    - navigation.indexes # documents can be directly attached to sections
     - search.highlight
     - search.share
     - search.suggest
@@ -27,7 +27,7 @@ theme:
     - content.code.copy
     - content.code.annotate # offer a comfortable and friendly way to attach arbitrary content to specific sections of code
   custom_dir: overrides
-  
+
   # icon & favicon
   logo: media/SeaTable256-256.png
   favicon: media/seatable-favicon.ico
@@ -92,54 +92,63 @@ markdown_extensions:
       permalink: true
   - codehilite:
       guess_lang: true
-  - pymdownx.details      # creates collapsible elements that hide their content
-  - pymdownx.superfences:  # allows 1) nesting of fences 2) custom fences 3) disable indented code
+  - pymdownx.details # creates collapsible elements that hide their content
+  - pymdownx.superfences: # allows 1) nesting of fences 2) custom fences 3) disable indented code
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.keys         # make entering and styling keyboard key presses easier
-  - pymdownx.tabbed:      # provides a syntax to easily add tabbed Markdown content
+  - pymdownx.keys # make entering and styling keyboard key presses easier
+  - pymdownx.tabbed: # provides a syntax to easily add tabbed Markdown content
       alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
-  #  custom_checkbox: true
-  #- pymdownx.tilde       # allows del and sub tags
+        #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
+        #  custom_checkbox: true
+        #- pymdownx.tilde       # allows del and sub tags
 
-# Page tree
+        # Page tree
+
+
 nav:
-  - Introduction: 
-    - index.md
-    - Requirements: introduction/requirements.md
-    - Basic concepts: introduction/basic_concepts.md
-    - Get Support: introduction/get_support.md
+  - Introduction:
+      - index.md
+      - Requirements: introduction/requirements.md
+      - Basic concepts: introduction/basic_concepts.md
+      - Get Support: introduction/get_support.md
   - Scripts in SeaTable:
-    - scripts/index.md
-    - JavaScript:
-      - Basic structure: scripts/javascript/basic_structure_js.md
-      - Predefined Objects: scripts/javascript/predefined_objects_js.md
-      - Examples: 
-        - scripts/javascript/examples/index.md
-        - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
-        - 2. get incremental: scripts/javascript/examples/get-incremental.md
-        - 3. statistics: scripts/javascript/examples/statistics-attendance.md
-      - Common questions: scripts/javascript/common_questions.md
-    - Python:
-      - Basic structure: scripts/python/basic_structure_python.md
-      - Objects & Methods: scripts/python/predefined_objects_python.md
-      - Authorization: scripts/python/authorization_python.md
-      - Examples:
-        - scripts/python/examples/index.md
-        - 1. Send E-mails: scripts/python/examples/send_email.md
-        - 2. Generate Barcode: scripts/python/examples/generate_barcode.md
-      - Common questions: scripts/python/common_questions.md
+      - scripts/index.md
+      - JavaScript:
+          - Basic structure: scripts/javascript/basic_structure_js.md
+          - Predefined Objects: scripts/javascript/predefined_objects_js.md
+          - Examples:
+              - scripts/javascript/examples/index.md
+              - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
+              - 2. Get incremental: scripts/javascript/examples/get-incremental.md
+              - 3. Create statistics: scripts/javascript/examples/statistics-attendance.md
+          - Common questions: scripts/javascript/common_questions.md
+      - Python:
+          - Basic structure: scripts/python/basic_structure_python.md
+          - Objects & Methods: scripts/python/predefined_objects_python.md
+          - Authorization: scripts/python/authorization_python.md
+          - Examples:
+              - scripts/python/examples/index.md
+              - 1. Send E-mails: scripts/python/examples/send_email.md
+              - 2. Generate Barcode: scripts/python/examples/generate_barcode.md
+          - Common questions: scripts/python/common_questions.md
+      - Query with SQL:
+          - SQL Reference: scripts/sql/reference.md
+          - SQL Function Reference: scripts/sql/functions.md
   - Plugin Development:
-    - plugins/index.md
+      - plugins/index.md
+      - Environments: plugins/environments.md
+      - Available methods: plugins/methods.md
     #- README.md
   - Client APIs:
-    - clients/index.md
+      - clients/index.md
+      - Javascript API: clients/javascript_api.md
+      - PHP API: clients/php_api.md
     #- README.md
   #  - Enterprise Edition: docker/Enterprise-Edition/Deploy SeaTable-EE with Docker.md
   #  - Python Runner:
@@ -156,15 +165,10 @@ nav:
   #    - dtable-db Standalone: docker/Cluster/dtable-db Standalone.md
   #    - dtable-events Background node: docker/Cluster/dtable-events Background node.md
   #    - dtable-server Cluster: docker/Cluster/dtable-server Cluster.md
-
-
 ## noch offen:
 # social cards https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
 # matomo integration: https://github.com/squidfunk/mkdocs-material/pull/4847#issuecomment-1378467860
 # feedback integration: ...
-
-
-
 
 #Getting started
 #  > scripts inside seatable (javascript and python)
@@ -174,6 +178,6 @@ nav:
 #Basic concepts
 #Get Support
 
-#Javascript  
+#Javascript
 
 #Python
