@@ -73,7 +73,7 @@ SeaTable provides some Plugins to visualize your data. Examples for such a plugi
 
 There are multiple API classes available for various programming languages. This enables you to build any app or website you want.
 
-Our feature request tool [SeaTable Ideas](ideas.seatable.io) is an example for such a website. It uses SeaTable as database and the frontend is build completely with PHP and the [slim framework](https://www.slimframework.com/).
+Our feature request tool [SeaTable Ideas](https://ideas.seatable.io) is an example for such a website. It uses SeaTable as database and the frontend is build completely with PHP and the [slim framework](https://www.slimframework.com/).
 
 ![Screenshot of ideas.seatable.io](https://forum.seatable.io/uploads/default/optimized/2X/0/0dabbe5b885a38b9fc178b66f63686322429b997_2_690x366.png).
 
