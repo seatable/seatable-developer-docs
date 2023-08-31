@@ -53,11 +53,11 @@ plugins:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
       minify_html: true
+  - git-revision-date-localized
   #- redirects:
   #    redirect_maps:
   #      'changelog/server-changelog.md': 'https://seatable.io/docs/changelog/'
   #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.io/docs/changelog/'
-  #- git-revision-date-localized
 
 # Customization
 extra:
@@ -82,7 +82,6 @@ extra_css:
 # PyMdown Extension: https://facelessuser.github.io/pymdown-extensions/extensions/
 
 markdown_extensions:
-  #- abbr
   - admonition
   - attr_list
   - def_list
@@ -107,7 +106,6 @@ markdown_extensions:
         #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
         #  custom_checkbox: true
         #- pymdownx.tilde       # allows del and sub tags
-
         # Page tree
 
 
@@ -144,40 +142,11 @@ nav:
       - plugins/index.md
       - Environments: plugins/environments.md
       - Available methods: plugins/methods.md
-    #- README.md
   - Client APIs:
       - clients/index.md
       - Javascript API: clients/javascript_api.md
       - PHP API: clients/php_api.md
-    #- README.md
-  #  - Enterprise Edition: docker/Enterprise-Edition/Deploy SeaTable-EE with Docker.md
-  #  - Python Runner:
-  #    - Deploy: docker/Python-Runner/Deploy SeaTable Python Runner.md
-  #    - Upgrading: docker/Python-Runner/Update SeaTable Python Runner.md
-  #    - Customization: docker/Python-Runner/Customize SeaTable Python Runner.md
-  #  - Migrate SeaTable DE to EE: docker/Enterprise-Edition/migrate_from_seatable_ce_server.md
-  #- Advanced Setup (SeaTable EE):
-  #  - Roles and Permissions: config/enterprise/roles_permissions.md
-  #  - S3: config/enterprise/S3.md
-  #  - OnlyOffice: config/enterprise/deploy_onlyoffice_docker.md
-  #  - Cluster:
-  #    - Cluster: docker/Cluster/SeaTable Cluster.md
-  #    - dtable-db Standalone: docker/Cluster/dtable-db Standalone.md
-  #    - dtable-events Background node: docker/Cluster/dtable-events Background node.md
-  #    - dtable-server Cluster: docker/Cluster/dtable-server Cluster.md
-## noch offen:
+      - Python API: clients/python_api.md
+## open topics:
 # social cards https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
-# matomo integration: https://github.com/squidfunk/mkdocs-material/pull/4847#issuecomment-1378467860
 # feedback integration: ...
-
-#Getting started
-#  > scripts inside seatable (javascript and python)
-#  > plugins
-#  > standalone programm with client api
-
-#Basic concepts
-#Get Support
-
-#Javascript
-
-#Python
