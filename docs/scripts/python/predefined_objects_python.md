@@ -25,7 +25,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
     Get the complete metadata of a table. The metadata will not contain the concrete rows of the table.
 
     ``` js
-    base.get_metadata(); // (1)!
+    base.get_metadata() // (1)!
     ```
 
     1.  possible result:
@@ -243,6 +243,20 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
 ### Rows
 
+??? question "Get row"
+
+    Get a row of a table by its row ID..
+
+    ``` python
+    base.get_row(table_name, row_id)
+    ```
+
+    __Example__
+
+    ``` python
+    row = base.get_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
+    ```
+    
 ??? question "Get rows"
 
     Get rows of a table.
@@ -260,23 +274,10 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __Hint__: The query with SQL allows to retrieve more rows and offers more filter options.
 
-??? question "Get row"
-
-    Get a row of a table by its row ID..
-
-    ``` python
-    base.get_row(table_name, row_id)
-    ```
-
-    __Example__
-
-    ``` python
-    row = base.get_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
-    ```
 
 ??? question "Query"
 
-    Use SQL to query a base. Super powerful.
+    Query a base using SQL.
 
     ``` python
     base.query(sql-statement)
@@ -367,7 +368,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
     Insert a row to a table.
 
     ``` python
-    base.insert_row(table_name, row_data, anchor_row_id)
+    base.insert_row(table_name, row_data, row_id)
     ```
 
     __Example__
@@ -378,6 +379,24 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
     }
 
     base.insert_row('Table1', row_data, 'U_eTV7mDSmSd-K2P535Wzw')
+    ```
+
+??? question "Update row"
+
+    Update a row in a table.
+
+    ``` python
+    base.update_row(table_name, row_id, row_data)
+    ```
+
+    __Example__
+
+    ``` python
+    row_data = {
+        "Name": "Ron"
+    }
+
+    base.update_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw', row_data)
     ```
 
 ??? question "Batch append rows"
