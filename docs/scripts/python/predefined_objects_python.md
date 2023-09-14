@@ -452,6 +452,20 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
 ### Links
 
+??? question "Get link id"
+
+    Get the link id by column name
+
+    ``` python
+    base.get_column_link_id(table_name, column_name, view_name=None)
+    ```
+
+    __Example__
+
+    ``` python
+    base.get_column_link_id('Table1', 'Record')
+    ```
+
 ??? question "Add link"
 
     Add links, link other table records. A link column must already exist.
@@ -525,19 +539,6 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
     base.remove_link('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
     ```
 
-??? question "Get link id"
-
-    Get the link id by column name
-
-    ``` python
-    base.get_column_link_id(table_name, column_name, view_name=None)
-    ```
-
-    __Example__
-
-    ``` python
-    base.get_column_link_id('Table1', 'Record')
-    ```
 
 ### Files
 
@@ -859,6 +860,21 @@ We provide a set of functions for the date operations based on the datetime modu
     ``` python
     now = dateutils.now()
     print(now) # 2022-02-07 09:44:00
+    ```
+
+??? success "today"
+
+    Return the ISO formatted current date time in string
+
+    ``` python
+    dateutils.today()
+    ```
+
+    __Example__
+
+    ``` python
+    today = dateutils.today()
+    print(today) # 2022-02-07
     ```
 
 ??? success "dateadd"
