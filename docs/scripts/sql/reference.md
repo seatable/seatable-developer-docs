@@ -14,7 +14,12 @@ SELECT [DISTINCT] fields FROM table_name [WhereClause] [GroupByClause] [HavingCl
 
 Notes:
 
-- Selecting from multiple tables (`JOIN`) is not supported.
+- Basic JOIN query is supported since version 4.3. The syntax is `SELECT ... FROM table1, table2 WHERE table1.column1 = table2.column2 AND ...`.
+  - Only `INNER JOIN` is supported, self join is not supported.
+  - At least N-1 join conditions are required for N tables.
+  - Join conditions should be placed in the `WHERE` clause, and connected with `AND`s.
+  - Join conditions can only use equality operator on columns, e.g. `table1.column1 = table2.column2`.
+  - Columns in join conditions must be indexed, unless the table is not archived.
 - Most SQL syntax can be used in where clause, including arithmetic expressions, comparison operators, `[NOT] LIKE`, `IN`, `BETWEEN ... AND ...`, `AND`, `OR`, `NOT`, `IS [NOT] TRUE`, `IS [NOT] NULL`.
   - Arithmetic expressions only support numbers.
   - `LIKE` only supports strings. The key word `ILIKE` can be used instead of `LIKE` to make the match case-insensitive.
@@ -28,7 +33,7 @@ Notes:
   - Field alias can be referred in `group by`, `having` and `order by` clauses. E.g., `select t.registration as r, count(*) as c from t group by r having c > 100` is valid.
   - Field alias cannot be referred in `where` clause. E.g., `select t.registration as r, count(*) from t group by r where r > "2020-01-01"` will report syntax error.
 
-Each returned row is a JSON map. The keys of the maps are the column keys, NOT column names. To use column names as keys, the `convert_keys` parameter (available since version 2.4) in query request should be TRUE.
+Each returned row is a JSON map. The keys of the maps are the column keys, NOT column names. To use column names as keys, the `convert_keys` parameter (available since version 2.4) in query request should be TRUE. For JOIN query, the keys of row maps match the "id" fields (not "keys" or "names").
 
 The synatx of `insert`, `update`, and `delete` statements are:
 
