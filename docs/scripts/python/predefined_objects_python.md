@@ -457,13 +457,46 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
     Get the link id by column name
 
     ``` python
-    base.get_column_link_id(table_name, column_name, view_name=None)
+    base.get_column_link_id(table_name, column_name)
     ```
 
     __Example__
 
     ``` python
     base.get_column_link_id('Table1', 'Record')
+    ```
+
+??? question "Get linked records"
+
+    List the linked records of rows. You can get the linked records of multiple rows.
+
+    ``` python
+    base.get_linked_records(table_id, link_column_key, rows)
+    ```
+
+    __Example__
+
+    ``` python
+    # rows: a list, each item of the which contains a row info including row_id, offset (defualt by 0) and limit (default by 10) of link table.
+    base.get_linked_records('0000', '89o4', rows=[
+        {'row_id': 'FzNqJxVUT8KrRjewBkPp8Q', 'limit': 2, 'offset': 0},
+        {'row_id': 'Jmnrkn6TQdyRg1KmOM4zZg', 'limit': 20}
+    ])
+    # a key-value data structure returned as below
+    # key: row_id of link table
+    # value: a list which includes the row info of linked table
+    {
+        'FzNqJxVUT8KrRjewBkPp8Q': [
+            {'row_id': 'LocPgVvsRm6bmnzjFDP9bA', 'display_value': '1'},
+            {'row_id': 'OA6x7CYoRuyc2pT52Znfmw', 'display_value': '3'},
+            ...
+        ],
+        'Jmnrkn6TQdyRg1KmOM4zZg': [
+            {'row_id': 'LocPgVvsRm6bmnzjFDP9bA', 'display_value': '1'},
+            {'row_id': 'OA6x7CYoRuyc2pT52Znfmw', 'display_value': '3'},
+             ...
+        ]
+    }
     ```
 
 ??? question "Add link"
