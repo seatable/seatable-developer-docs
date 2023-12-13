@@ -1,15 +1,16 @@
 # Basic structure
 
-The Javascript script runs directly in the current browser and is suitable for simple data processing. Javascript does not require any authentication.
+The JavaScript script runs directly in the current browser and is suitable for simple data processing. JavaScript does not require any authentication.
+The source code of the used JavaScript API is available at [Github](https://github.com/seatable/seatable-api-js).
 
 ## Interact with your base
 
-Javascript provide pre-defined objects, corresponding methods of this objects and utilities. On top, normal javascript operations like `console.log` or calculations are working as usual.
+JavaScript provide pre-defined objects, corresponding methods of this objects and utilities. On top, normal JavaScript operations like `console.log` or calculations are working as usual.
 
-- [base](/scripts/javascript/predefined_objects_js/#base-object)
-- [output](/scripts/javascript/predefined_objects_js/#output)
-- [context](/scripts/javascript/predefined_objects_js/#output)
-- [base utilities](/scripts/javascript/predefined_objects_js/#utility-functions)
+- [base](/scripts/javascript/objects/base/)
+- [output](/scripts/javascript/objects/output/)
+- [context](/scripts/javascript/objects/context/)
+- [base utilities](/scripts/javascript/objects/utilities/)
 
 ## Let's beginn
 
@@ -33,9 +34,9 @@ You will learn from these examples, that it is quite easy to read, output and ev
         1. `getTables()` is the function to get all bases from the object `base`.
 
     2.  1. `output` is also a predefined-object provided by SeaTable.
-        1. `length` is just a normal operation in Javascript.
+        1. `length` is just a normal operation in JavaScript.
 
-    As you can see, the script will output the number of tables in your base. Read the comments behind the two lines to get more information about the difference between a predefined object, a method of this object and an ordinary javascript function.
+    As you can see, the script will output the number of tables in your base. Read the comments behind the two lines to get more information about the difference between a predefined object, a method of this object and an ordinary JavaScript function.
 
 === "Get column names"
 
