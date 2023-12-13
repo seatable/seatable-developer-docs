@@ -8,7 +8,7 @@ SeaTable uses currently Python **3.7** and a specific set of [supported librarie
 
 ## Authentication
 
-Every python script must authenticate and requires at least these three lines at the beginning of the script. Read here all details about [authentication in python scripts](...).
+Every python script must authenticate and requires at least these three lines at the beginning of the script. Read here all details about [authentication in python scripts](http://localhost:8000/scripts/python/authorization_python/).
 
 ```python
 from seatable_api import Base, context
@@ -22,7 +22,7 @@ base.auth()
 
     All details can be found in the [SeaTable API Reference](https://api.seatable.io/reference/authentication).
 
-It is even possible to develop a python in the way that it could be [executed in the cloud and local](...) without changing the code.
+It is even possible to develop a python in the way that it could be [executed in the cloud and local](http://localhost:8000/scripts/python/common_questions/#install-and-use-custom-python-libraries) without changing the code.
 
 ## Available objects and methods
 

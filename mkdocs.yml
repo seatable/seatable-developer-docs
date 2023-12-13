@@ -128,7 +128,22 @@ nav:
           - Common questions: scripts/javascript/common_questions.md
       - Python:
           - Basic structure: scripts/python/basic_structure_python.md
-          - Objects & Methods: scripts/python/predefined_objects_python.md
+          - Objects & Methods:
+              - scripts/python/objects/index.md
+              - Metadata: scripts/python/objects/metadata.md
+              - Tables: scripts/python/objects/tables.md
+              - Columns: scripts/python/objects/columns.md
+              - Rows: scripts/python/objects/rows.md
+              - Links: scripts/python/objects/links.md
+              - Files: scripts/python/objects/files.md
+              - Big data: scripts/python/objects/big_data.md
+              - Accounts: scripts/python/objects/accounts.md
+              - Users: scripts/python/objects/users.md
+              - Date Utilities: scripts/python/objects/date-utils.md
+              - Context: scripts/python/objects/context.md
+              - Constants: scripts/python/objects/constants.md
+              - Notifications: scripts/python/objects/notifications.md
+              - Websockets: scripts/python/objects/websockets.md
           - Authorization: scripts/python/authorization_python.md
           - Examples:
               - scripts/python/examples/index.md

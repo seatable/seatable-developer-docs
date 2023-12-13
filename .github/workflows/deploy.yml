@@ -1,7 +1,6 @@
 name: Deploy CI
 
-on:
-  [pull_request, push]
+on: [pull_request, push]
 
 jobs:
   deploy:
@@ -11,6 +10,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+          fetch-depth: 0
 
       - name: install
         run: pip install -r requirements.txt
