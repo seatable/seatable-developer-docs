@@ -1,16 +1,24 @@
-name: Deploy CI
+name: Deploy developer.setable.io (mkdocs material based with github pages)
 
-on: [pull_request, push]
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-          fetch-depth: 0
 
       - name: install
         run: pip install -r requirements.txt
