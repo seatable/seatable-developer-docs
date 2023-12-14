@@ -1,6 +1,28 @@
 # Generate Barcode
 
-``` python
+This Python script is designed to generate QR codes and associate them with corresponding records in a SeaTable base. It uses the `seatable_api` library and `qrcode` module to accomplish this task.
+
+## Functionality
+
+- Setup and Authentication: Utilizes SeaTable API credentials for authentication.
+- QR Code Generation: Processes rows in a specified SeaTable table, extracting text from a designated column (STRING_COLUMN) to generate QR codes.
+- Association with Records: Associates generated QR code images with the respective records by updating an image column (IMAGE_COLUMN) in the SeaTable table.
+- Handling Existing Images: Allows the option to skip rows if an image already exists or overwrite existing barcode images based on the OVERWRITE flag.
+- Error Handling: Provides error handling to manage exceptions during the QR code generation process.
+
+## Process Overview
+
+1. Iterates through rows in a specified SeaTable table.
+1. Generates QR codes based on the text content in the designated column.
+1. Saves the QR code images temporarily.
+1. Uploads the generated images to SeaTable and associates them with corresponding records.
+1. Removes temporary image files after successful upload.
+
+This script offers an automated way to generate QR codes from text data in a SeaTable table, enhancing data visualization and association within the SeaTable platform.
+
+## Code
+
+```python
 import os
 import time
 import barcode

@@ -1,15 +1,14 @@
 # Requirements
 
-Your decision is made: you want to develop your own script, your own plugin or your custom application. That is a great decision and I promise you that this guile will get you covered. If you are a professional developer some descriptions might seem obvious to your. Please excuse, this manual should also help beginning developers who do not yet have that much experience.
+You've decided to venture into developing your own script, plugin, or custom application—excellent choice! This guide is designed to cover all aspects of this journey. While some descriptions might seem obvious to seasoned professionals, this manual is crafted to assist novice developers who are just starting out.
 
 ## Development system
 
-First of all you will need a SeaTable System to make your first steps with the development with and for SeaTable. If you just want to write some short scripts, [SeaTable Cloud](https://seatable.io/preise/?lang=auto) might be the right choice for you. But as soon as your development gets deeper or you want to build your own plugins, I highly recommend to you that you create your own SeaTable Server.
-Check out [admin manual](https://admin.seatable.io) how to install one.
+To begin your development journey with SeaTable, you'll need a SeaTable system. If you're planning to create short scripts, [SeaTable Cloud](https://seatable.io/preise/?lang=auto) could be a suitable option. However, for more in-depth development or when creating plugins, it's highly recommended to set up your own SeaTable Server. Refer to the [Admin manual](https://admin.seatable.io) for installation instructions.
 
 ## Programming skills
 
-Depending of what you want to develop you will require different development skills. The following will show you which you will require.
+Your development requirements will vary based on your intended project. Below is an outline of the skills you might need:
 
 === "Scripts"
 
@@ -27,9 +26,17 @@ Depending of what you want to develop you will require different development ski
 
 ## Learn the fundamentals
 
-If you don't have enough experience the following general tutorials might help you to build the foundation to start developing for seatable.
+If you're relatively new to development, diving into general tutorials can lay a strong foundation for your SeaTable development journey.
 
-There are countless free online tutorials for various programming languages to be found on the Internet. However, in our experience, it is advisable to spend a few euros to buy a consistent online course or a book on the respective topic.
+While numerous free online tutorials cover various programming languages, investing in a comprehensive online course or a well-structured book can be invaluable. While free resources are available, a structured course or book often offers a more cohesive and thorough learning experience.
+
+These paid resources, though requiring a small investment, often provide:
+
+- **Structured Learning**: A step-by-step approach ensuring a coherent understanding.
+- **Comprehensive Content**: In-depth coverage of essential concepts and practical applications.
+- **Consistency**: Ensuring continuity and coherence in learning.
+
+Remember, while free tutorials are abundant, investing in a structured resource can significantly expedite your learning process and provide a solid understanding of programming fundamentals essential for SeaTable development.
 
 !!! success "This are personal recommendations"
 
