@@ -101,8 +101,8 @@ markdown_extensions:
   - pymdownx.tabbed: # provides a syntax to easily add tabbed Markdown content
       alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
         #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
         #  custom_checkbox: true
         #- pymdownx.tilde       # allows del and sub tags
@@ -119,7 +119,16 @@ nav:
       - scripts/index.md
       - JavaScript:
           - Basic structure: scripts/javascript/basic_structure_js.md
-          - Predefined Objects: scripts/javascript/predefined_objects_js.md
+          - Objects & Methods:
+              - scripts/javascript/objects/index.md
+              - Tables: scripts/javascript/objects/tables.md
+              - Views: scripts/javascript/objects/views.md
+              - Columns: scripts/javascript/objects/columns.md
+              - Rows: scripts/javascript/objects/rows.md
+              - Links: scripts/javascript/objects/links.md
+              - Context: scripts/javascript/objects/context.md
+              - Utilities: scripts/javascript/objects/utilities.md
+              - Output: scripts/javascript/objects/output.md
           - Examples:
               - scripts/javascript/examples/index.md
               - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
@@ -128,7 +137,22 @@ nav:
           - Common questions: scripts/javascript/common_questions.md
       - Python:
           - Basic structure: scripts/python/basic_structure_python.md
-          - Objects & Methods: scripts/python/predefined_objects_python.md
+          - Objects & Methods:
+              - scripts/python/objects/index.md
+              - Metadata: scripts/python/objects/metadata.md
+              - Tables: scripts/python/objects/tables.md
+              - Columns: scripts/python/objects/columns.md
+              - Rows: scripts/python/objects/rows.md
+              - Links: scripts/python/objects/links.md
+              - Files: scripts/python/objects/files.md
+              - Big data: scripts/python/objects/big_data.md
+              - Accounts: scripts/python/objects/accounts.md
+              - Users: scripts/python/objects/users.md
+              - Date Utilities: scripts/python/objects/date-utils.md
+              - Context: scripts/python/objects/context.md
+              - Constants: scripts/python/objects/constants.md
+              - Notifications: scripts/python/objects/notifications.md
+              - Websockets: scripts/python/objects/websockets.md
           - Authorization: scripts/python/authorization_python.md
           - Examples:
               - scripts/python/examples/index.md

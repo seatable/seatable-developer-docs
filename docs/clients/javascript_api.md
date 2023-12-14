@@ -2,7 +2,7 @@
 
 JavaScript API encapsulates SeaTable Server Restful API. You can call it in your front-end page or Node.js program.
 
-!!! Danger "JavaScript API cannot be used for scripts in SeaTable bases. For script programming, please refer to another document."
+!!! Danger "JavaScript API cannot be used for scripts in SeaTable bases. For script programming with Javascript, there is a [separate chapter](/scripts/) in this documentation."
 
 ## Installation
 
