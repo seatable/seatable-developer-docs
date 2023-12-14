@@ -1,29 +1,35 @@
 # Introduction
 
-Welcome to the SeaTable Developer Guide. This guide describes all possibilities to build extensions for SeaTable, the world leading self-hosted no-code platform.
+Welcome to the SeaTable Developer Guide, your comprehensive resource for leveraging the potential of SeaTable, the world's leading self-hosted no-code platform.
 
-This guide explains basically **three approaches** to develop with SeaTable:
+This guide illustrates **three fundamental approaches** to development within SeaTable:
 
-1. Write [Scripts](/scripts/) inside SeaTable to create custom logic or individual data processing. SeaTable supports Javascript and Python as scripting language.
-1. Or write a [SeaTable Plugin](/plugins/) that can interact, visualize and operate with the data of a SeaTable Base
-1. Or use any programm language you want and interact with the [SeaTable API](/clients/) to build your own web page or programm.
+1. [Scripting within SeaTable](/scripts/): Create custom logic or perform individual data processing using JavaScript or Python, both supported within SeaTable.
+1. [SeaTable Plugins](/plugins/): Develop plugins capable of interacting with, visualizing, and operating on data within a SeaTable Base.
+1. [Utilizing Any Programming Language with SeaTable API](/clients/): Seamlessly interact with the SeaTable API to construct your own web pages or programs.
+
+## Developer decision tree
+
+![Image title](/media/developer_decision_tree.png){ align=left }
+
+For guidance on choosing the right section within this manual, refer to the decision tree diagram above.
+
+If you aim to integrate a software product with SeaTable, note that SeaTable supports multiple workflow automation tools such as [n8n](https://n8n.io/integrations/seatable/), [Zapier](https://zapier.com/apps/seatable/integrations), and [Make](https://www.make.com/en/integrations/seatable). Please refer to the [SeaTable user manual](https://seatable.io/docs-category/skripte-api-integrationen/) for detailed information on these integrations, as they are not covered in this guide.
 
 ## Target audience
 
-This guide is **for developers**, who want to use custom scripts inside SeaTable, build their own plugins or their own programms.
+This guide caters to **developers** interested in utilizing custom scripts within SeaTable, creating their own plugins, or developing custom programs.
 
-All instructions are valid for self-hosted Seatable installations (Enterprise and Developer Edition) as well as for the SeaTable Cloud.
+All instructions provided are applicable to self-hosted SeaTable installations (Enterprise and Developer Editions), as well as SeaTable Cloud.
 
 !!! warning annotate "Known limitations of SeaTable Cloud"
 
-    1. It is not possible to install custom plugins at [SeaTable Cloud](https://cloud.seatable.io).
-    2. The number of python-script runs is limited by your current SeaTable Cloud subscription.
+    1. **Custom Plugin Installation**: [SeaTable Cloud](https://cloud.seatable.io) does not support the installation of custom plugins.
+    2. **Python Script Runs Limitation**: The number of Python script runs is constrained by your current SeaTable Cloud subscription.
 
-    Therefore we recomment that you install your own SeaTable Server if you want to developer custom plugins, applications or multiple python scripts. More info about your own server in the [Admin Manual](https://admin.seatable.io).
+    Therefore, it's recommended to set up your own SeaTable Server if you intend to develop custom plugins, applications, or run multiple Python scripts. For further information about deploying your server, please refer to the [Admin manual](https://admin.seatable.io).
 
-If you are new to SeaTable, we recommend that you go on with the reading of the introduction part like the [requirements](/introduction/requirements) or the [basic concepts](/introduction/basic_concepts) of the no-code platform SeaTable.
-
-Otherwise, let's get started.
+If you are new to SeaTable, we suggest starting with the introduction section covering the platform's [requirements](/introduction/requirements) and [basic concepts](/introduction/basic_concepts) of this no-code platform. Otherwise, let's dive right in!
 
 [Start Scripting](/scripts){ .md-button .md-button--primary }
 [Write your own plugin](/plugins){ .md-button .md-button--primary }

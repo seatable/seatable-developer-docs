@@ -81,6 +81,10 @@ extra_css:
 # Extensions: https://squidfunk.github.io/mkdocs-material/reference/
 # PyMdown Extension: https://facelessuser.github.io/pymdown-extensions/extensions/
 
+validation:
+  links:
+    absolute_links: ignore
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -92,6 +96,8 @@ markdown_extensions:
   - codehilite:
       guess_lang: true
   - pymdownx.details # creates collapsible elements that hide their content
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.superfences: # allows 1) nesting of fences 2) custom fences 3) disable indented code
       custom_fences:
         - name: mermaid
@@ -103,11 +109,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-        #- pymdownx.tasklist:   #  adds github flavored markdown style task lists
-        #  custom_checkbox: true
-        #- pymdownx.tilde       # allows del and sub tags
-        # Page tree
-
 
 nav:
   - Introduction:
@@ -115,7 +116,7 @@ nav:
       - Requirements: introduction/requirements.md
       - Basic concepts: introduction/basic_concepts.md
       - Get Support: introduction/get_support.md
-  - Scripts in SeaTable:
+  - Scripting in SeaTable:
       - scripts/index.md
       - JavaScript:
           - Basic structure: scripts/javascript/basic_structure_js.md
@@ -158,6 +159,8 @@ nav:
               - scripts/python/examples/index.md
               - 1. Send E-mails: scripts/python/examples/send_email.md
               - 2. Generate Barcode: scripts/python/examples/generate_barcode.md
+              - 3. Generate QR-Code: scripts/python/examples/generate_qrcode.md
+              - 4. Sync MySQL: scripts/python/examples/sync_mysql.md
           - Common questions: scripts/python/common_questions.md
       - Query with SQL:
           - SQL Reference: scripts/sql/reference.md
