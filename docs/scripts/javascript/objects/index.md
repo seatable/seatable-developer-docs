@@ -6,7 +6,7 @@ This manual list all available objects and methods that are availabe within Java
 
 !!! Hint "Need specific function?"
 
-    The JavaScript class does not yet cover all available functions of the SeaTable API. If you are missing a special function, please contact us at [support@seatable.io](support@seatable.io) and we will try to add the missing functions.
+    The JavaScript class does not yet cover all available functions of the SeaTable API. If you are missing a special function, please contact us at [support@seatable.io](mailto:support@seatable.io) and we will try to add the missing functions.
 
 For a more detailed description of the used parameters, refer to the data model at the [SeaTable API Reference](https://api.seatable.io/reference/models).
 
