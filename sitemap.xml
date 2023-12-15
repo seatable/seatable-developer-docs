@@ -181,6 +181,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://developer.seatable.io/scripts/python/examples/update_stock_price/</loc>
+         <lastmod>2023-12-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://developer.seatable.io/scripts/python/objects/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
