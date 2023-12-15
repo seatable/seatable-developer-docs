@@ -25,3 +25,9 @@ This Python script is designed to generate QR codes and associate them with corr
 This Python script facilitates the synchronization of data from a MySQL database to a SeaTable table.
 
 [read more :material-arrow-right-thin:](/scripts/python/examples/sync_mysql/)
+
+## Watch Stock Price
+
+Integrating data from the Twelve Data API with SeaTable facilitates the updating and maintenance of current stock prices within a designated table in the SeaTable environment.
+
+[read more :material-arrow-right-thin:](/scripts/python/examples/update_stock_price/)
