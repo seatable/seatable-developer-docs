@@ -2,267 +2,267 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://developer.seatable.io/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/tests/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/clients/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/clients/javascript_api/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/clients/php_api/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/clients/python_api/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/introduction/basic_concepts/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/introduction/get_support/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/introduction/requirements/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/plugins/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/plugins/environments/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/plugins/methods/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/basic_structure_js/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/common_questions/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/examples/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/examples/auto-add-rows/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/examples/get-incremental/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/examples/statistics-attendance/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/columns/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/context/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/links/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/output/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/rows/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/tables/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/utilities/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/javascript/objects/views/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/authorization_python/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/basic_structure_python/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/common_questions/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/examples/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/examples/generate_barcode/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/examples/generate_qrcode/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/examples/send_email/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/examples/sync_mysql/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/accounts/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/big_data/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/columns/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/constants/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/context/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/date-utils/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/files/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/links/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/metadata/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/notifications/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/rows/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/tables/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/users/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/python/objects/websockets/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/sql/functions/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://developer.seatable.io/scripts/sql/reference/</loc>
-         <lastmod>2023-12-14</lastmod>
+         <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
