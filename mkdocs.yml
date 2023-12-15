@@ -161,6 +161,7 @@ nav:
               - 2. Generate Barcode: scripts/python/examples/generate_barcode.md
               - 3. Generate QR-Code: scripts/python/examples/generate_qrcode.md
               - 4. Sync MySQL: scripts/python/examples/sync_mysql.md
+              - 5. Watch Stock Price: scripts/python/examples/update_stock_price.md
           - Common questions: scripts/python/common_questions.md
       - Query with SQL:
           - SQL Reference: scripts/sql/reference.md

@@ -19,6 +19,8 @@ This Python script demonstrates sending emails via SMTP using the smtplib librar
 
 This script offers an automated way to send emails with rich content and attachments using data stored within SeaTable, enabling streamlined communication and file sharing within the SeaTable environment.
 
+## Code
+
 ```python
 import smtplib
 from email.mime.multipart import MIMEMultipart

@@ -23,7 +23,7 @@ This Python script facilitates the synchronization of data from a MySQL database
 
 This script enables the automated synchronization of data between a MySQL database and a SeaTable table, ensuring consistency and updating records seamlessly.
 
-## Code:
+## Code
 
 ```python
 import pymysql
