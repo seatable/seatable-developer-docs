@@ -29,8 +29,8 @@
     pip3 install seatable-api
     ```
 
-    Additional requirements are: 
-    
+    Additional requirements are:
+
     - Python >= 3.5
     - requests
     - socketIO-client-nexus
@@ -43,7 +43,7 @@
 
     __Python 3 standard library__
 
-    The cloud environment now use Python 3.7, which supports importing modules in the Python standard library.
+    The cloud environment now use **Python 3.11**, which supports importing modules in the Python standard library.
 
     __Third party libraries__
 
@@ -55,6 +55,7 @@
     - OpenSSL library, [pyOpenSSL](https://pypi.org/project/pyOpenSSL/)
     - Pillow library, [Pillow](https://pypi.org/project/Pillow/)
     - Barcode library, [python-barcode](https://pypi.org/project/python-barcode/)
+    - QRcode library, [qrcode](https://pypi.org/project/qrcode/)
     - Pandas library, [pandas](https://pypi.org/project/pandas/)
     - Numpy library, [numpy](https://pypi.org/project/numpy/)
     - SMTP library, [secure-smtplib](https://pypi.org/project/secure-smtplib/)
@@ -63,5 +64,5 @@
 
     ## Install and use custom python libraries
 
-    - The python libraries in SeaTable Cloud can not be changed. 
+    - The python libraries in SeaTable Cloud can not be changed.
     - If you run your own SeaTable Server it is possible to install your own libaries.
