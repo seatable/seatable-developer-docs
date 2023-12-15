@@ -4,11 +4,11 @@ The Python script runs on the server side and can be set to automatically run pe
 
 Python scripts can be run on your local machine or uploaded to the SeaTable cloud to run. Local operation is convenient for development and debugging, and scripts can be easily integrated into larger projects.
 
-SeaTable uses currently Python **3.7** and a specific set of [supported libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment). The main library to interact with the SeaTable Base is [seatable_api](https://github.com/seatable/seatable-api-python).
+SeaTable uses currently Python **3.11** and a specific set of [supported libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment). The main library to interact with the SeaTable Base is [seatable_api](https://github.com/seatable/seatable-api-python).
 
 ## Authentication
 
-Every python script must authenticate and requires at least these three lines at the beginning of the script. Read here all details about [authentication in python scripts](http://localhost:8000/scripts/python/authorization_python/).
+Every python script must authenticate and requires at least these three lines at the beginning of the script. Read here all details about [authentication in python scripts](/scripts/python/authorization_python/).
 
 ```python
 from seatable_api import Base, context
@@ -22,7 +22,7 @@ base.auth()
 
     All details can be found in the [SeaTable API Reference](https://api.seatable.io/reference/authentication).
 
-It is even possible to develop a python in the way that it could be [executed in the cloud and local](http://localhost:8000/scripts/python/common_questions/#install-and-use-custom-python-libraries) without changing the code.
+It is even possible to develop a python in the way that it could be [executed in the cloud and local](/scripts/python/common_questions/#install-and-use-custom-python-libraries) without changing the code.
 
 ## Available objects and methods
 
