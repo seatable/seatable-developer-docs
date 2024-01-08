@@ -6,11 +6,11 @@ Every table in a base contains views. The following calls are available to inter
 
 !!! question "List views"
 
-    
+
     ``` python
     base.list_views(table_name)
     ```
-    
+
     __Example__
     
     ``` python
@@ -22,9 +22,9 @@ Every table in a base contains views. The following calls are available to inter
     ``` python
     base.get_view_by_name(table_name, view_name)
     ```
-    
+
     __Example__
-    
+
     ``` python
     base.get_view_by_name('Table1', 'MyView')
     ```
@@ -37,9 +37,9 @@ Every table in a base contains views. The following calls are available to inter
     ``` python
     base.add_view(table_name, view_name)
     ```
-    
+
     __Examples__
-    
+
     ``` python
     base.add_view('Table1', 'New view')
     ```
@@ -48,13 +48,13 @@ Every table in a base contains views. The following calls are available to inter
 
 !!! question "Rename view"
 
-    
+
     ``` python
     base.rename_view(table_name, view_name, new_view_name)
     ```
-    
+
     __Example__
-    
+
     ``` python
     base.rename_view('Table1', 'MyView', 'NewView')
     ```
@@ -63,14 +63,13 @@ Every table in a base contains views. The following calls are available to inter
 
 !!! question "Delete view"
 
-    
+
     ``` python
     base.delete_view(table_name, view_name)
     ```
-    
+
     __Example__
-    
+
     ``` python
     base.delete_view('Table1', 'MyView')
     ```
-
