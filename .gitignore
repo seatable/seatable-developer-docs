@@ -1,5 +1,4 @@
 # Mkdocs build directory
 /site/
 /.idea
-Dockerfile
 .vscode
