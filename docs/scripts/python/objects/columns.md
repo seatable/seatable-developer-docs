@@ -7,15 +7,42 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "List columns"
 
     List all rows of the table/view.
-
+    
     ``` python
     base.list_columns(table_name, view_name=None);
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.list_columns('Table1', default)
+    ```
+
+!!! question "Get column by name"
+
+    
+    ``` python
+    base.get_column_by_name(table_name, colume_name)
+    ```
+    
+    __Example__
+    
+    ``` python
+    base.get_column_by_name('Table1', 'Name')
+    ```
+
+!!! question "Get columns by type"
+
+    
+    ``` python
+    base.get_columns_by_type(table_name, column_type)
+    ```
+    
+    __Example__
+    
+    ``` python
+    from seatable_api.constants import ColumnTypes
+    base.get_columns_by_type('Table1', ColumnTypes.TEXT)
     ```
 
 ## Insert column
@@ -23,17 +50,17 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Insert column"
 
     Insert or append a column to a table.
-
+    
     ``` python
     base.insert_column(table_name, column_name, column_type, column_key=None, column_data=None)
     ```
-
+    
     __Examples__
-
+    
     ``` python
     base.insert_column('Table1', 'New long text column', 'long text')
     ```
-
+    
     ``` python
     from seatable_api.constants import ColumnTypes
     base.insert_column('Table1', 'Link', ColumnTypes.LINK, column_data={
@@ -47,13 +74,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Rename column"
 
     Rename a column.
-
+    
     ``` python
     base.rename_column(table_name, column_key, new_column_name)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.rename_column('Table1', 'kSiR', 'new column name')
     ```
@@ -63,13 +90,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Freeze column"
 
     Freeze a column.
-
+    
     ``` python
     base.freeze_column(table_name, column_key, frozen)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.freeze_column('Table1', '0000', True)
     ```
@@ -79,13 +106,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Move column"
 
     Move column. In this example, the column with the key `loPx` will be moved to the right of the column `0000`.
-
+    
     ``` python
     base.move_column(table_name, column_key, target_column_key)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.move_column('Table1', 'loPx', '0000')
     ```
@@ -95,13 +122,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Modify column type"
 
     Change the column type of an existing column
-
+    
     ``` python
     base.modify_column_type(table_name, column_key, new_column_type)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.modify_column_type('Table1', 'nePI', 'checkbox')
     ```
@@ -111,13 +138,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Add column options"
 
     Used by single-select or multiple-select type columns to add new options.
-
+    
     ``` python
     add_column_options(self, table_name, column, options)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.add_column_options('Table1', 'My choices', [
         {"name": "ddd", "color": "#aaa", "textColor": "#000000"},
@@ -131,13 +158,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Add column cascade settings"
 
     Used by single-select column, to add a limitation of child column options according to the option of parent column.
-
+    
     ``` python
     add_column_cascade_settings(table_name, child_column, parent_column, cascade_settings)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.add_column_cascade_settings("Table1", "single-op-col-c", "single-op-col", {
         "aaa": ["aaa-1", "aaa-2"], # If “aaa” is selected by parent column, the available options of child column are "aaa-1 and aaa-2"
@@ -151,13 +178,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Delete column"
 
     Deletes a column from the table.
-
+    
     ``` python
     base.delete_column(table_name, column_key)
     ```
-
+    
     __Example__
-
+    
     ``` python
     base.delete_column('Table1', 'bsKL')
     ```

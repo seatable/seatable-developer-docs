@@ -44,7 +44,7 @@ SeaTable API Errors
 
 
 
-## Base
+## Base API
 
 Base represents a table. You can use the api token of the form to obtain the authorization to read and write the base. This token can be generated directly on the web side.
 
