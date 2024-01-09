@@ -142,6 +142,7 @@ nav:
               - scripts/python/objects/index.md
               - Metadata: scripts/python/objects/metadata.md
               - Tables: scripts/python/objects/tables.md
+              - Views: scripts/python/objects/views.md
               - Columns: scripts/python/objects/columns.md
               - Rows: scripts/python/objects/rows.md
               - Links: scripts/python/objects/links.md

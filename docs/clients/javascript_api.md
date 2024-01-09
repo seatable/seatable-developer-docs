@@ -593,8 +593,6 @@ Transform a column type
 base.modifyColumnType(table_name, column_key, new_column_type)
 ```
 
-column_type please refer to [constants](constants.md)
-
 ##### Example
 
 ```javascript
