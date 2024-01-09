@@ -13,7 +13,7 @@ Interact with the rows of a SeaTable base.
     ```
 
     __Examples__
-    
+
     ``` js
     const table = base.getTableByName('Table1');
     const view = base.getViewByName(table, 'view1');
@@ -33,7 +33,7 @@ Interact with the rows of a SeaTable base.
     ```
 
     __Example: Get everything with a wildcard__
-    
+
     ``` js
     const data = await base.query('select * from Bill')
     output.text(data) // (1)!
@@ -96,7 +96,7 @@ Interact with the rows of a SeaTable base.
         ```
 
     __Example: DISTINCT__
-    
+
     ``` js
     const data = await base.query('select distinct name from Bill')
     output.text(data) // (1)!
@@ -273,7 +273,7 @@ Interact with the rows of a SeaTable base.
     * age: column name
     * \>: operator
     * 18: parameter
-    
+
     | Data structure | Column type                               | Format of greater-less query                                | Format of equal-unequal query                       | computation |
     | -------------- | ----------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------- | :---------- |
     | String         | Text, Long Text, URL,Email, Single Select | Unsupported                                                 | String                                              | Unsupported |
@@ -281,7 +281,7 @@ Interact with the rows of a SeaTable base.
     | Number         | Number                                    | int, float                                                  | int, float, and empty string ""                     | Supported   |
     | Date           | Date, Created time,  Last modified time   | Patterns: YYYY-MM-DD, YYYY-MM-DD hh:mm, YYYY-MM-DD hh\:mm:ss | Same patterns as greater-less query                 | Unsupported |
     | Boolean        | Checkbox                                  | Unsupported                                                 | true, false and empty string "", (case-insensitive) | Unsupported |
-    
+
     ---
 
     Here are more examples of the different filter expressions pending of the column type.
@@ -308,7 +308,7 @@ Interact with the rows of a SeaTable base.
     ```
 
     __Number-based Column__
-    
+
     1. Column types include **Number**
 
     ```javascript
@@ -320,11 +320,11 @@ Interact with the rows of a SeaTable base.
     base.filter('Table1', 'view_name',"column_name<>20")
     base.filter('Table1', 'view_name', "column_name=0")
     base.filter('Table1', 'view_name',"column_name=''")
-    
+
     ```
-    
+
     2. Computation
-    
+
     ```javascript
     base.filter('Table1', 'view_name', "column_name+3>18")
     base.filter('Table1', 'view_name', "column_name*2=18")
@@ -333,33 +333,33 @@ Interact with the rows of a SeaTable base.
     base.filter('Table1', 'view_name', "column_name^2=18")
     base.filter('Table1', 'view_name', "column_name%2=1")
     ```
-    
+
     __Date-based Column__
-    
+
     Column types include **Date, Created time, Last modified time**
-    
+
     ```javascript
     # 1. greater-less query
     base.filter('Table1', 'view_name', "column_name>'2020-1-30'")
     base.filter('Table1', 'view_name', "column_name>='2019-1-1 5:30' and column_name<='2019-5-1 6:00'")
-    
+
     # 2. equal-unequal query
     base.filter('Table1', 'view_name', "column_name='2020-1-1 10:59:59'")
     base.filter('Table1', 'view_name', "column_name!=''")
-    
+
     ```
-    
+
     !!! note "Note that please use the quotes "" when making the date-time query"
-    
+
     __Boolean-based Column__
-    
+
     Column types include **Checkbox**
-    
+
     ```javascript
     # equal-unequal query
     base.filter('Table1', 'view_name','column_name=False') # Same as base.filter('Table1', "column_name=''")
     base.filter('Table1', 'view_name', "column_name=True")
-    
+
     ```
 
 ### Filter Queries
