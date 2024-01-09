@@ -22,6 +22,31 @@
     const columns = base.getColumns('Table1');
     ```
 
+!!! question "listColumns"
+
+````
+Get the columns by name of table and view, if view_name is not set, all columns in table will be returned
+
+``` js
+base.listColumns(table_name: String, view_name: String);
+```
+
+__Examples__
+``` js
+const table_name  = 'Table1'
+const view_name = 'Default'
+const columns = base.listColumns(table_name, view_name);
+
+column.forEach((column) => {
+    output.text(column.name);
+})
+```
+
+``` js
+const columns = base.listColumns('Table1');
+```
+````
+
 !!! question "getShownColumns"
 
     Get all the displayed columns in a view, excluding the hidden columns in the view, and return an array.
