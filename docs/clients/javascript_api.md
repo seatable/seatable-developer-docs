@@ -69,296 +69,275 @@ await base.auth()
 
 ### Metadata
 
-#### Get metadata
+!!! question "getMetadata"
 
-Get base metadata information
-
-```javascript
-base.getMetadata();
-```
-
-##### Example
-
-```javascript
-const metadata = await base.getMetadata();
-```
-
-Return
-
-```javascript
-{
-	'tables': [{
-		'_id': '4krH',
-		'name': 'Contact',
-		'is_header_locked': False,
-		'columns': [{
-			'key': '0000',
-			'type': 'text',
-			'name': 'Name',
-			'editable': True,
-			'width': 200,
-			'resizable': True,
-			'draggable': True,
-			'data': None,
-			'permission_type': '',
-			'permitted_users': []
-		}, {
-			'key': 'M31F',
-			'type': 'text',
-			'name': 'Email',
-			'editable': True,
-			'width': 200,
-			'resizable': True,
-			'draggable': True,
-			'data': None,
-			'permission_type': '',
-			'permitted_users': []
-		}],
-		'views': [{
-			'_id': '0000',
-			'name': 'Default view',
-			'type': 'table',
-			'is_locked': False,
-			'filter_conjunction': 'And',
-			'filters': [],
-			'sorts': [],
-			'groupbys': [],
-			'group_rows': [],
-			'groups': [],
-			'colorbys': {},
-			'hidden_columns': [],
-			'rows': [],
-			'formula_rows': {},
-			'link_rows': {},
-			'summaries': {},
-			'colors': {}
-		}]
-	}]
-}
-```
+    Get the complete metadata of a table. The metadata will not contain the concrete rows of the table.
+    
+    ``` js
+    base.getMetadata();
+    ```
+    
+    Example result of this call.
+    
+    ```
+    {
+        'tables': [{
+            '_id': '4krH',
+            'name': 'Contact',
+            'is_header_locked': False,
+            'columns': [{
+                'key': '0000',
+                'type': 'text',
+                'name': 'Name',
+                'editable': True,
+                'width': 200,
+                'resizable': True,
+                'draggable': True,
+                'data': None,
+                'permission_type': '',
+                'permitted_users': []
+            }, {
+                'key': 'M31F',
+                'type': 'text',
+                'name': 'Email',
+                'editable': True,
+                'width': 200,
+                'resizable': True,
+                'draggable': True,
+                'data': None,
+                'permission_type': '',
+                'permitted_users': []
+            }],
+            'views': [{
+                '_id': '0000',
+                'name': 'Default view',
+                'type': 'table',
+                'is_locked': False,
+                'filter_conjunction': 'And',
+                'filters': [],
+                'sorts': [],
+                'groupbys': [],
+                'group_rows': [],
+                'groups': [],
+                'colorbys': {},
+                'hidden_columns': [],
+                'rows': [],
+                'formula_rows': {},
+                'link_rows': {},
+                'summaries': {},
+                'colors': {}
+            }]
+        }]
+    }
+    ```
 
 ### Table
 
-####  Get tables
+!!! question "getTables"    
 
-List table infos in a base
+    ``` js
+    base.getTables()
+    ```
+    
+    __Example__
+    ``` js
+    const tables = await base.getTables();
+    ```
 
-```javascript
-base.getTables()
-```
+!!! question "getTableByName"
 
-##### Example
-
-```javascript
-const tables = await base.getTables();
-```
-
-####  Get table by name
-
-```javascript
+````
+``` js
 base.getTableByName(table_name);
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const table = await base.getTableByName('Table1')
 ```
+````
 
-#### Add table
+!!! question "addTable"
 
-Add a table to a base
-
-```javascript
-base.addTable(table_name, lang='en')
+````
+``` js
+base.addTable(table_name, lang='en', columns=[])
 ```
 
-* lang：language，default by English ('en') , and Chinese is also supported ('zh-cn')
-
-##### Example
-
-```javascript
-await base.addTable('项目调查表', lang='zh-cn')
+__Example__
+``` js
+await base.addTable('Investigation', lang='en')
 ```
+````
 
-####  Rename table
+!!! question "renameTable
 
-```javascript
+````
+``` js
 base.renameTable(old_name, new_name)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.renameTable('Table_Add1', 'New_Table_Add1');
 ```
+````
 
-####  Delete table
+!!! question "deleteTable"
 
-```javascript
+````
+``` js
 base.deleteTable(table_name)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.deleteTable('Table1')
 ```
-
-
+````
 
 ### Views
 
-#### List views
+!!! question "listViews"
 
-```javascript
+````
+``` js
 base.listViews(table_name)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const views = await base.listViews('Table1')
 ```
+````
 
-#### Get a view by name
+!!! question "getViewByName"
 
-Example
-
-```javascript
+````
+``` js
 base.getViewByName(table_name, view_name);
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const view = await base.getViewByName('Table1', 'MyView');
 ```
+````
 
-#### Add view
+!!! question "addView"
 
-```javascript
+````
+``` js
 base.addView(table_name, new_view_name);
 ```
 
-
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.addView('Table1', 'new_view');
 ```
+````
 
-#### Raname view
+!!! question "renameView"
 
-```javascript
+````
+``` js
 base.renameView(table_name, view_name, new_view_name);
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.renameView('Table1', 'myView', 'myView-01');
 ```
+````
 
-#### Delete view
+!!! question "deleteView"
 
-```javascript
+````
+``` js
 base.deleteView(table_name, view_name);
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.deleteView('Table1', 'MyView');
 ```
+````
 
 
 
 ### Rows
 
-#### List rows
+!!! question "listRows"
 
-Get all rows of the table
-
-```javascript
+````
+``` js
 base.listRows(table_name, view_name=None, order_by='', desc='', start='', limit='')
 ```
 
-* order_by:  column name based on which ordering the data
-* start: start position of rows
-* limit:  number of rows returned
-
-##### Example
-
-```javascript
+__Example__
+``` js
 const rows1 = await base.listRows('Table1')
 const rows2 = await base.listRows('Table1', view_name='default', order_by='年龄', desc=true, start=5, limit=20)
 ```
+````
 
-#### Get row
+!!! question "getRow"
 
-Get a row of the table by row ID.
-
-```javascript
+````
+``` js
 base.getRow(table_name, row_id)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const row = await base.getRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
 ```
+````
 
-#### Append row
+!!! question "appendRow"
 
-Append a row
-
-```javascript
+````
+``` js
 base.appendRow(table_name, row_data)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 row_data = {
     "Name": "I am new Row"
 }
 
 await base.appendRow('Table1', row_data)
 ```
+````
 
-#### Insert row
+!!! question "insertRow"
 
-Insert a row
-
-```javascript
+````
+``` js
 base.insertRow(table_name, row_data, anchor_row_id)
 ```
 
-* anchor_row_id: the row under which the new row will be inserted
-
-##### Example
-
-```javascript
-row_data = {
+__Example__
+``` js
+const row_data = {
     "Name": "I am new Row"
 }
 
 await base.insertRow('Table1', row_data, 'U_eTV7mDSmSd-K2P535Wzw')
 ```
+````
 
-#### Batch append rows
+!!! question "batchAppendRows"
 
-Batch append rows
-
-```javascript
+````
+``` js
 base.batchAppendRows(table_name, rows_data)
 ```
 
-##### Example
-
-```javascript
-rows_data = [{
+__Example__
+``` js
+const rows_data = [{
                 'Name': 'test batch',
                 'content': 'Yes'
             }, {
@@ -369,37 +348,36 @@ rows_data = [{
                 'content': 'Yes'
             }]
 await base.batchAppendRows('Table6', rows_data)
+
 ```
+````
 
-#### Update row
+!!! question "updateRow"
 
-Update a row
-
-```javascript
+````
+``` js
 base.updateRow(table_name, row_id, row_data)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 row_data = {
-    "dcXS": "123"
+    "Number": "123"
 }
 await base.updateRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw', row_data)
 ```
+````
 
-#### Batch update rows
+!!! question "batchUpdateRows"
 
-Batch update rows
-
-```javascript
+````
+``` js
 base.batchUpdateRows(table_name, rows_data)
 ```
 
-##### Example
-
-```javascript
-updates_data = [
+__Example__
+``` js
+const updates_data = [
         {
             "row_id": "fMmCFyoxT4GN5Y2Powbl0Q",
             "row": {
@@ -424,94 +402,89 @@ updates_data = [
     ]
 await base.batchUpdateRows('Table1', rows_data=updates_data)
 ```
+````
 
-#### Delete row
+!!! question "deleteRow"
 
-Delete a row
-
-```javascript
+````
+``` js
 base.deleteRow(table_name, row_id)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.deleteRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
 ```
+````
 
-#### Batch delete rows
+!!! question "batchDeleteRows"
 
-Batch delete rows
-
-```javascript
+````
+``` js
 base.batchDeleteRows(table_name, row_ids)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const del_rows = rows.slice(0, 3);
 const row_ids = del_rows.map(row => row._id);
 await base.batchDeleteRows('Table1', row_ids)
 ```
+````
 
 
 
 ### Column
 
-#### List columns
+!!! question "listColumns"
 
-List all rows of the table/view
-
-```javascript
+````
+``` js
 base.listColumns(table_name, view_name='')
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const columns1 = await base.listColumns('Table1')
 const columns2 = await base.listColumns('Table1', view_name='default')
 ```
+````
 
-#### Get columns by name
+!!! question "getColumnByName"
 
-```javascript
+````
+``` js
 base.getColumnByName(table_name, column_name);
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const col = await base.getColumnsByName('Table1', 'Name');
 ```
+````
 
-#### Get columns by type
+!!! question "getColumnsByType"
 
-```javascript
+````
+``` js
 base.getColumnsByType(table_name, col_type);
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const cols = await base.getColumnsByType('Table1', 'number')
 ```
+````
 
-#### Insert column
+!!! question "insertColumn"
 
-Insert/Append column
-
-```javascript
+````
+``` js
 base.insertColumn(table_name, column_name, column_type, column_key='', column_data='')
 ```
 
-* column_key: the key of column after which the new column will be inserted, it will be appended to the last column by default
-* column_data: config info of column, required for link-type column, optional for other type columns
-
-##### Example
-
-```javascript
+__Example__
+``` js
 import { ColumnTypes } from 'seatable-api';
 await base.insertColumn('Table1', 'seatable-api', ColumnTypes.TEXT)
 await base.insertColumn('Table1', 'seatable-api', ColumnTypes.TEXT, '0000')
@@ -520,159 +493,136 @@ await base.insertColumn('Table1', 'Link1', ColumnTypes.LINK, column_data={
         'other_table':'Test_User'
     })
 ```
+````
 
-#### Rename column
+!!! question "renameColumn"
 
-Rename a column
-
-```javascript
+````
+``` js
 base.renameColumn(table_name, column_key, new_column_name)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.renameColumn('Table1', 'kSiR', 'new-seatable-api')
 ```
+````
 
-#### Resize column
+!!! question "resizeColumn"
 
-Set a column width
-
-```javascript
+````
+``` js
 base.resizeColumn(table_name, column_key, new_column_width)
 ```
 
-##### Example
-
-The default width of a column is 200, if you need to adjust the column width, such as 500
-
-```javascript
+__Example__
+``` js
 await base.resizeColumn('Table1', 'asFV', 500)
 ```
+````
 
-#### Freeze column
+!!! question "freezeColumn"
 
-Freeze a column
-
-```javascript
+````
+``` js
 base.freezeColumn(table_name, column_key, frozen)
 ```
 
-frozen: true/false
-
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.freezeColumn('Table1', '0000', true)
 ```
+````
 
-#### Move column
+!!! question "moveColumn"
 
-```javascript
+````
+``` js
 base.moveColumn(table_name, column_key, target_column_key)
 ```
 
-* column_key:  the key of the column you want to move
-
-* target_column_key:  is the key of the anchor column, the moved column will be moved to the right of the column
-
-##### Example
-
-```javascript
+__Example__
+In this example, the 'loPx' column will be moved to the right of the '0000' column
+``` js
 await base.moveColumn('Table1', 'loPx', '0000')
 ```
+````
 
-In this example, the 'loPx' column will be moved to the right of the '0000' column
+!!! question "modifyColumnType"
 
-#### Modify column type
-
-Transform a column type
-
-```javascript
+````
+``` js
 base.modifyColumnType(table_name, column_key, new_column_type)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 import { ColumnTypes } from 'seatable-api';
-
 await base.modifyColumnType('Table1', 'nePI', ColumnTypes.NUMBER)
 ```
+````
 
-#### Add column options
+!!! question "addColumnOptions"
 
+````
 Used by single-select or multiple-select type columns
-
-```javascript
+``` js
 base.addColumnOptions(table_name, column, options)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.addColumnOptions('Table1', 'My choices', [
         {"name": "ddd", "color": "#aaa", "textColor": "#000000"},
         {"name": "eee", "color": "#aaa", "textColor": "#000000"},
         {"name": "fff", "color": "#aaa", "textColor": "#000000"},
 ])
 ```
+````
 
-#### Add column cascade settings
+!!! question "addColumnCascadeSettings"
 
+````
 Used by single-select column, to add a limitation of child column options according to the option of parent column
-
-```javascript
+``` js
 base.addColumnCascadeSettings(table_name, child_column, parent_column, cascade_settings)
 ```
 
-* child_column: name of child column
-* parent_column: name of parent column
-
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.addColumnCascadeSettings("Table1", "single-op-col-c", "single-op-col", {
   "aaa": ["aaa-1", "aaa-2"], # If “aaa” is selected by parent column, the available options of child column are "aaa-1 and aaa-2"
   "bbb": ["bbb-1", "bbb-2"],
   "ccc": ["ccc-1", "ccc-2"]
 })
 ```
+````
 
-#### Delete column
+!!! question "deleteColumn"
 
-Delete a column
-
-```javascript
+````
+``` js
 base.deleteColumn(table_name, column_key)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.deleteColumn('Table1', 'bsKL')
 ```
-
-
+````
 
 ### Links
 
-#### Get linked records
+!!! question "getLinkedRecords"
 
+````
 List the linked records of rows. You can get the linked records of multiple rows.
-
-```javascript
+``` js
 base.getLinkedRecords(table_id, link_column_key, rows)
 ```
 
-* table_id: the id of link table
-* link_column_key: the column key of the link column of link table ( not link_id )
-* rows: a list, each item of the which contains a row info including row_id, offset (defualt by 0) and limit (default by 10) of link table
-
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.getLinkedRecords('0000', '89o4', [
   {'row_id': 'FzNqJxVUT8KrRjewBkPp8Q', 'limit': 2, 'offset': 0},
   {'row_id': 'Jmnrkn6TQdyRg1KmOM4zZg', 'limit': 20}
@@ -694,45 +644,32 @@ await base.getLinkedRecords('0000', '89o4', [
   ]
 }
 ```
+````
 
-#### Add link
+!!! question "addLink"
 
+````
 Add links, link other table records
-
-```javascript
+``` js
 base.addLink(link_id, table_name, other_table_name, row_id, other_row_id)
 ```
 
-* link_id:  link_id in the data attribute of the link column
-* table_name: the name of the link table
-* other_table_name: the name of the linked table
-* row_id: id of link row
-* other_row_id: id of the linked row 
-
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.addLink('5WeC', 'real-img-files', 'contact', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
 ```
+````
 
-#### Update link
+!!! question "updateLink"
 
+````
 Modify the info of link-type column
-
-```
+``` js
 base.updateLink(link_id, table_id, other_table_id, row_id, other_rows_ids)
 ```
 
-* link_id:  link_id in the data attribute of the link column
-* table_id: the id of the link table
-* other_table_id:  the id of the linked table
-* row_id:   id of link row
-* other_rows_ids: ids of the linked row 
-
-
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.updateLink(
         link_id='r4IJ',
         table_id='0000',
@@ -744,18 +681,18 @@ await base.updateLink(
         ]
     )
 ```
+````
 
-#### Batch update links
+!!! question "batchUpdateLinks"
 
+````
 Batch update infos of link-type columns
-
-```javascript
+``` js
 base.batchUpdateLinks(link_id, table_id, other_table_id, row_id_list, other_rows_ids_map)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 link_id = "WaW5"
 table_id ="0000"
 other_table_id = "jtsf"
@@ -768,71 +705,50 @@ other_rows_ids_map = {
 
 await base.batchUpdateLinks(link_id, table_id, other_table_id, row_id_list, other_rows_ids_map)
 ```
+````
 
-#### Remove link
+!!! question "removeLink"
 
-Delete the link row
-
-```javascript
+````
+``` js
 base.removeLink(link_id, table_name, other_table_name, row_id, other_row_id)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 await base.removeLink('5WeC', 'real-img-files', 'contact', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
 ```
+````
 
-#### Get link id
+!!! question "removeLink"
 
-Get the link id by column name
-
-```javascript
+````
+``` js
 base.getColumnLinkId(columns, column_name)
 ```
 
-##### Example
-
-```javascript
+__Example__
+``` js
 const columns = await base.listColumns('Table1'); // return table's columns
 const linkId = await base.getColumnLinkId(columns, 'Record') // return the link id such as 'aHL2'
 ```
-
-
+````
 
 ### Query with SQL
 
-#### Query
+!!! question "query"
 
+````
 Use sql to query a base
-
-```javascript
+``` js
 base.query(sql)
 ```
 
-* sql: sql statement
-
-**Note: Only 100 results will be returned by default. To get more results, add `limit` in SQL statement.**
-
-Possible exceptions
-
-* ValueError: sql can not be empty
-* ConnectionError: network error
-* Exception: no such table
-* Exception: no such column
-* Exception: columns in group by should match columns in select
-
-#### Example
-
-##### Basic
-
-```javascript
+__Example: BASIC__
+``` js
 await base.query('select name, price, year from Bill')
 ```
-
-Result
-
-```javascript
+Returns for example the following:
 [
     {'_id': 'PzBiZklNTGiGJS-4c0_VLw', 'name': 'Bob', 'price': 300, 'year': 2019},
     {'_id': 'Ep7odyv1QC2vDQR2raMvSA', 'name': 'Bob', 'price': 300, 'year': 2021},
@@ -842,34 +758,25 @@ Result
     {'_id': 'EvwCWtX3RmKYKHQO9w2kLg', 'name': 'Jane', 'price': 200, 'year': 2020},
     {'_id': 'BTiIGSTgR06UhPLhejFctA', 'name': 'Jane', 'price': 200, 'year': 2021}
 ]
-```
 
-##### WHERE
+__Example: WHERE__
 
-```javascript
+``` js
 await base.query('select name, price from Bill where year = 2021 ')
 ```
-
-Result
-
-```javascript
+Returns for example the following:
 [
     {'_id': 'Ep7odyv1QC2vDQR2raMvSA', 'name': 'Bob', 'price': 300},
     {'_id': 'W0BrjGQpSES9nfSytvXgMA', 'name': 'Tom', 'price': 200},
     {'_id': 'BTiIGSTgR06UhPLhejFctA', 'name': 'Jane', 'price': 200}
 ]
-```
 
+__Example: ORDER BY__
 
-##### ORDER BY
-
-```javascript
+``` js
 await base.query('select name, price, year from Bill order by year')
 ```
-
-结果
-
-```javascript
+Returns for example the following:
 [
     {'_id': 'PzBiZklNTGiGJS-4c0_VLw', 'name': 'Bob', 'price': 300, 'year': 2019},
     {'_id': 'f1x3X_8uTtSDUe9D60VlYQ', 'name': 'Tom', 'price': 100, 'year': 2019},
@@ -879,52 +786,42 @@ await base.query('select name, price, year from Bill order by year')
     {'_id': 'W0BrjGQpSES9nfSytvXgMA', 'name': 'Tom', 'price': 200, 'year': 2021},
     {'_id': 'BTiIGSTgR06UhPLhejFctA', 'name': 'Jane', 'price': 200, 'year': 2021}
 ]
-```
 
-##### GROUP BY
 
-```javascript
+__Example: GROUP BY__
+
+``` js
 await base.query('select name, sum(price) from Bill group by name')
 ```
-
-Result
-
-```javascript
+Returns for example the following:
 [
     {'SUM(price)': 600, 'name': 'Bob'},
     {'SUM(price)': 400, 'name': 'Tom'},
     {'SUM(price)': 400, 'name': 'Jane'}
 ]
-```
 
+__Example: DISTINCT__
 
-##### DISTINCT
-
-```javascript
+``` js
 await base.query('select distinct name from Bill')
 ```
-
-Result
-
-```javascript
+Returns for example the following:
 [
     {'_id': 'PzBiZklNTGiGJS-4c0_VLw', 'name': 'Bob'},
     {'_id': 'f1x3X_8uTtSDUe9D60VlYQ', 'name': 'Tom'},
     {'_id': 'EvwCWtX3RmKYKHQO9w2kLg', 'name': 'Jane'}
 ]
-```
-
-
+````
 
 ### Constants
 
 In the script there may be some constants we need to know
 
-#### ColumnTypes
+!!! question "ColumnTypes"
 
+````
 Column type, when insert/add columns, change column types, etc. need to be used
-
-```javascript
+``` js
 import { ColumnTypes } from 'seatable-api';
 
 ColumnTypes.NUMBER              // number
@@ -947,4 +844,5 @@ ColumnTypes.GEOLOCATION         // geolocation
 ColumnTypes.AUTO_NUMBER         // auto munber
 ColumnTypes.URL                 // URL
 ```
+````
 
