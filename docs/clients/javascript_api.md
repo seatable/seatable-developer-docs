@@ -665,15 +665,15 @@ await base.addLink('5WeC', 'real-img-files', 'contact', 'CGtoJB1oQM60RiKT-c5J-g'
 ````
 Modify the info of link-type column
 ``` js
-base.updateLink(link_id, table_id, other_table_id, row_id, other_rows_ids)
+base.updateLink(link_id, table_name, other_table_name, row_id, other_rows_ids)
 ```
 
 __Example__
 ``` js
 await base.updateLink(
         link_id='r4IJ',
-        table_id='0000',
-        other_table_id='kFoO',
+        table_name='Table1',
+        other_table_name='Table2',
         row_id='BXhEm9ucTNu3FjupIk7Xug',
         other_rows_ids=[
           'exkb56fAT66j8R0w6wD9Qg',
@@ -688,14 +688,14 @@ await base.updateLink(
 ````
 Batch update infos of link-type columns
 ``` js
-base.batchUpdateLinks(link_id, table_id, other_table_id, row_id_list, other_rows_ids_map)
+base.batchUpdateLinks(link_id, table_name, other_table_name, row_id_list, other_rows_ids_map)
 ```
 
 __Example__
 ``` js
 link_id = "WaW5"
-table_id ="0000"
-other_table_id = "jtsf"
+table_name ="Table1"
+other_table_name = "Table2"
 row_id_list = ["fRLglslWQYSGmkU7o6KyHw","eSQe9OpPQxih8A9zPXdMVA","FseN8ygVTzq1CHDqI4NjjQ"]
 other_rows_ids_map = {
     	"FseN8ygVTzq1CHDqI4NjjQ":["OcCE8aX8T7a4dvJr-qNh3g","JckTyhN0TeS8yvH8D3EN7g"],
@@ -724,13 +724,12 @@ await base.removeLink('5WeC', 'real-img-files', 'contact', 'CGtoJB1oQM60RiKT-c5J
 
 ````
 ``` js
-base.getColumnLinkId(columns, column_name)
+base.getColumnLinkId(table_name, column_name)
 ```
 
 __Example__
 ``` js
-const columns = await base.listColumns('Table1'); // return table's columns
-const linkId = await base.getColumnLinkId(columns, 'Record') // return the link id such as 'aHL2'
+const linkId = await base.getColumnLinkId('LinkTable', 'Record') // return the link id such as 'aHL2'
 ```
 ````
 
