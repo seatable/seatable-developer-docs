@@ -56,7 +56,7 @@ Every table in a base contains columns. The following calls are available to int
     ```
 
     __Examples__
-    
+
     ``` python
     base.insert_column('Table1', 'New long text column', 'long text')
     ```
@@ -74,13 +74,13 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Rename column"
 
     Rename a column.
-    
+
     ``` python
     base.rename_column(table_name, column_key, new_column_name)
     ```
-    
+
     __Example__
-    
+
     ``` python
     base.rename_column('Table1', 'kSiR', 'new column name')
     ```
@@ -128,7 +128,7 @@ Every table in a base contains columns. The following calls are available to int
     ```
 
     __Example__
-    
+
     ``` python
     base.modify_column_type('Table1', 'nePI', 'checkbox')
     ```
@@ -138,7 +138,7 @@ Every table in a base contains columns. The following calls are available to int
 !!! question "Add column options"
 
     Used by single-select or multiple-select type columns to add new options.
-    
+
     ``` python
     add_column_options(self, table_name, column, options)
     ```
