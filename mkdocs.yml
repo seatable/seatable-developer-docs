@@ -173,7 +173,7 @@ nav:
       - Available methods: plugins/methods.md
   - Client APIs:
       - clients/index.md
-      - Javascript API:
+      - Javascript:
           - Introduction: clients/javascript/javascript_api.md
           - Objects & Methods:
               - Metadata: clients/javascript/metadata.md
@@ -184,8 +184,9 @@ nav:
               - Links: clients/javascript/links.md
               - SQL: clients/javascript/sql_query.md
               - Constants: clients/javascript/constants.md
-      - PHP API: clients/php_api.md
-      - Python API: clients/python_api.md
+      - Python: clients/python_api.md
+      - PHP: clients/php_api.md
+      - Ruby: clients/ruby_api.md
 ## open topics:
 # social cards https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
 # feedback integration: ...
