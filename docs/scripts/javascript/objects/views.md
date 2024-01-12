@@ -19,18 +19,18 @@ Functions to interact with the views of a table.
     output.text(view);
     ```
 
-!!! question "getViews"
+!!! question "listViews / getViews (deprecated)"
 
     Get all the views of the current table, and return all the views in an array
 
     ``` js
-    base.getViews(table: Object/String);
+    base.listViews(table: Object/String);
     ```
 
     __Example__
     ``` js
     const table  = base.getTableByName('Table1');
-    const views = base.getViews(table);
+    const views = base.listViews(table);
     output.text(views.length);
     ```
 

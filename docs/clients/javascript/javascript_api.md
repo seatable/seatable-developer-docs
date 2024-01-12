@@ -4,6 +4,8 @@ JavaScript API encapsulates SeaTable Server Restful API. You can call it in your
 
 !!! Danger "JavaScript API cannot be used for scripts in SeaTable bases. For script programming with Javascript, there is a [separate chapter](/scripts/) in this documentation."
 
+Note, JavaScript API calls SeaTable Server Restful API, while scripts in SeaTable bases interact with the base loaded in the browser, so the APIs of the two are somewhat different. 
+
 ## Installation
 
 ```shell
@@ -41,3 +43,28 @@ SeaTable API Errors
 - 403 Permission denied
 - 413 exceed limit
 - 500 Internal Server Error
+
+## Authorization
+
+Base represents a table. You can use the api token of the form to obtain the authorization to read and write the base. This token can be generated directly on the web side.
+
+Use the API Token of the base to get access authorization.
+
+##### Example
+
+```javascript
+import { Base } from 'seatable-api';
+
+const config = {
+  server: 'https://cloud.seatable.cn',
+  APIToken: 'c3c75dca2c369849455a39f4436147639cf02b2d'
+};
+
+const base = new Base(config);
+await base.auth()
+```
+
+
+
+
+

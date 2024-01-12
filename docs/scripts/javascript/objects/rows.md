@@ -131,62 +131,62 @@ Interact with the rows of a SeaTable base.
     const groupViewRows = base.getGroupedRows('Table1', 'GroupedView');
     ```
 
-!!! question "getRowById"
+!!! question "getRow / getRowById (deprecated)"
 
     Get a `row` via its `id` and return a row object.
 
     ``` js
-    base.getRowById(table: Object/String, rowId: String);
+    base.getRow(table: Object/String, rowId: String);
     ```
 
     __Examples__
 
     ``` js
     const table = base.getTableByName('Table1');
-    const row = base.getRowById(table, "M_lSEOYYTeuKTaHCEOL7nw");
+    const row = base.getRow(table, "M_lSEOYYTeuKTaHCEOL7nw");
     ```
 
     ``` js
-    const row = base.getRowById('Table1', "M_lSEOYYTeuKTaHCEOL7nw");
+    const row = base.getRow('Table1', "M_lSEOYYTeuKTaHCEOL7nw");
     ```
 
 ## Delete row
 
-!!! question "deleteRowById"
+!!! question "deleteRow / deleteRowById (deprecated)"
 
     Delete a `row` in a table by its `id`.
 
     ``` js
-    base.deleteRowById(table: Object/String, rowId: String);
+    base.deleteRow(table: Object/String, rowId: String);
     ```
 
     __Examples__
 
     ``` js
     const table = base.getTableByName('Table1');
-    base.deleteRowById(table, 'M_lSEOYYTeuKTaHCEOL7nw');
+    base.deleteRow(table, 'M_lSEOYYTeuKTaHCEOL7nw');
     ```
 
     ``` js
-    base.deleteRowById('Table1', 'M_lSEOYYTeuKTaHCEOL7nw');
+    base.deleteRow('Table1', 'M_lSEOYYTeuKTaHCEOL7nw');
     ```
 
 ## Add row
 
-!!! question "addRow"
+!!! question "appendRow / addRow(deprecated)"
 
     Add a row to a table.
 
     ``` js
-    base.addRow(table: Object/String, rowData: Object, viewName?: String)
+    base.appendRow(table: Object/String, rowData: Object, viewName?: String)
     ```
 
     __Examples__
 
     ``` js
     const table = base.getTableByName('Table1');
-    base.addRow(table, {'Name': 'Alex', 'Age': '18'});
-    base.addRow(table, {'Name': 'Alex', 'Age': '18'}, 'Default View');
+    base.appendRow(table, {'Name': 'Alex', 'Age': '18'});
+    base.appendRow(table, {'Name': 'Alex', 'Age': '18'}, 'Default View');
     ```
 
     ``` js
@@ -196,12 +196,12 @@ Interact with the rows of a SeaTable base.
 
 ## Update row(s)
 
-!!! question "modifyRow"
+!!! question "updateRow / modifyRow(deprecated)"
 
     Modify a row in the table.
 
     ``` js
-    base.modifyRow(table: Object/String, row: Object, updateRowData: Object);
+    base.updateRow(table: Object/String, row: Object/string, updateRowData: Object);
     ```
 
     __Examples__
@@ -209,12 +209,11 @@ Interact with the rows of a SeaTable base.
     ``` js
     const table = base.getTableByName('Table1');
     const row = base.getRowById(table, "M_lSEOYYTeuKTaHCEOL7nw");
-    base.modifyRow(table, row, {'Name': 'new name', 'number': 100});
+    base.updateRow(table, row, {'Name': 'new name', 'number': 100});
     ```
 
     ``` js
-    const row = base.getRowById('Table1', "M_lSEOYYTeuKTaHCEOL7nw");
-    base.modifyRow('Table1', row, {'Name': 'new name', 'number': 100});
+    base.updateRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw', {'Name': 'new name', 'number': 100})
     ```
 
 !!! question "modifyRows"

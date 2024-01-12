@@ -18,6 +18,33 @@ Every table in a base contains columns. The following calls are available to int
     base.list_columns('Table1', default)
     ```
 
+!!! question "Get column by name"
+
+
+    ``` python
+    base.get_column_by_name(table_name, colume_name)
+    ```
+
+    __Example__
+
+    ``` python
+    base.get_column_by_name('Table1', 'Name')
+    ```
+
+!!! question "Get columns by type"
+
+    
+    ``` python
+    base.get_columns_by_type(table_name, column_type)
+    ```
+    
+    __Example__
+    
+    ``` python
+    from seatable_api.constants import ColumnTypes
+    base.get_columns_by_type('Table1', ColumnTypes.TEXT)
+    ```
+
 ## Insert column
 
 !!! question "Insert column"
