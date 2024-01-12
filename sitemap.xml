@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://developer.seatable.io/clients/ruby_api/</loc>
+         <lastmod>2024-01-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://developer.seatable.io/clients/javascript/columns/</loc>
          <lastmod>2024-01-12</lastmod>
          <changefreq>daily</changefreq>
