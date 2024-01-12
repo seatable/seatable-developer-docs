@@ -175,14 +175,15 @@ nav:
       - clients/index.md
       - Javascript API:
           - Introduction: clients/javascript/javascript_api.md
-          - Metadata: clients/javascript/metadata.md
-          - Tables: clients/javascript/tables.md
-          - Views: clients/javascript/views.md
-          - Columns: clients/javascript/columns.md
-          - Rows: clients/javascript/rows.md
-          - Links: clients/javascript/links.md
-          - SQL: clients/javascript/sql_query.md
-          - Constants: clients/javascript/constants.md
+          - Objects & Methods:
+              - Metadata: clients/javascript/metadata.md
+              - Tables: clients/javascript/tables.md
+              - Views: clients/javascript/views.md
+              - Columns: clients/javascript/columns.md
+              - Rows: clients/javascript/rows.md
+              - Links: clients/javascript/links.md
+              - SQL: clients/javascript/sql_query.md
+              - Constants: clients/javascript/constants.md
       - PHP API: clients/php_api.md
       - Python API: clients/python_api.md
 ## open topics:

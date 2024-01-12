@@ -35,7 +35,7 @@ git checkout -b <new_branch>
 We developed a tiny bash script to generate the local copy of the manual.
 
 ```bash
-./preview.sh
+sudo ./preview.sh
 ```
 
 Initiate your browser and access http://127.0.0.1:8000 to view a local copy of the manual. Any modifications made locally will be instantly reflected in this version. You don't even have to restart docker or reload the page.

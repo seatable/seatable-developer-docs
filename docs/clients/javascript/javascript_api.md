@@ -2,15 +2,17 @@
 
 JavaScript API encapsulates SeaTable Server Restful API. You can call it in your front-end page or Node.js program.
 
-!!! Danger "JavaScript API cannot be used for scripts in SeaTable bases. For script programming with Javascript, there is a [separate chapter](/scripts/) in this documentation."
+!!! danger "JavaScript API cannot be used for scripts in SeaTable bases. For script programming with Javascript, there is a [separate chapter](/scripts/) in this documentation."
 
-Note, JavaScript API calls SeaTable Server Restful API, while scripts in SeaTable bases interact with the base loaded in the browser, so the APIs of the two are somewhat different. 
+Note, JavaScript API calls SeaTable Server Restful API, while scripts in SeaTable bases interact with the base loaded in the browser, so the APIs of the two are somewhat different.
 
 ## Installation
 
 ```shell
 npm install seatable-api
 ```
+
+The source code of the JavaScript Client API is available at [GitHub](https://github.com/seatable/seatable-api-js).
 
 ## Reference
 
@@ -53,18 +55,13 @@ Use the API Token of the base to get access authorization.
 ##### Example
 
 ```javascript
-import { Base } from 'seatable-api';
+import { Base } from "seatable-api";
 
 const config = {
-  server: 'https://cloud.seatable.cn',
-  APIToken: 'c3c75dca2c369849455a39f4436147639cf02b2d'
+  server: "https://cloud.seatable.cn",
+  APIToken: "c3c75dca2c369849455a39f4436147639cf02b2d",
 };
 
 const base = new Base(config);
-await base.auth()
+await base.auth();
 ```
-
-
-
-
-
