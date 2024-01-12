@@ -1,7 +1,11 @@
 # Basic structure
 
 The JavaScript script runs directly in the current browser and is suitable for simple data processing. JavaScript does not require any authentication.
-The source code of the used JavaScript API is available at [Github](https://github.com/seatable/seatable-api-js).
+
+!!! warning "Two JavaScript APIs in SeaTable"
+
+    SeaTable offers two different ways to use JavaScript with SeaTable. You can executing a JS-Script directly in SeaTable and there is a JavaScript Client API. The functions are similar but not identical.
+    If you want to use a JavaScript in SeaTable, stay at this section, otherwise switch to the [Client APIs](clients/javascript/javascript_api/).
 
 ## Interact with your base
 

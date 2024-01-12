@@ -5,13 +5,13 @@ Metadata delivers the complete structure of a base with tables, views and column
 !!! question "getMetadata"
 
     Get the complete metadata of a table. The metadata will not contain the concrete rows of the table.
-    
+
     ``` js
     base.getMetadata();
     ```
-    
-    Example result of this call.
-    
+
+    __Example__
+
     ```
     {
         'tables': [{
@@ -64,4 +64,4 @@ Metadata delivers the complete structure of a base with tables, views and column
     }
     ```
 
-### 
+###
