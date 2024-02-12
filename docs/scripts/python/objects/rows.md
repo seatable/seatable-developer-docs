@@ -4,7 +4,7 @@
 
 !!! question "Get row"
 
-    Get a row of a table by its row ID..
+    Gets one row of a table by its row ID.
 
     ``` python
     base.get_row(table_name, row_id)
@@ -18,7 +18,7 @@
 
 !!! question "Get rows"
 
-    Get rows of a table.
+    Gets multiple rows of a table.
 
     ``` python
     base.list_rows(table_name, view_name=None, order_by=None, desc=False, start=None, limit=None)
@@ -35,7 +35,7 @@
 
 !!! question "Query"
 
-    Query a base using SQL.
+    Queries a base using a SQL statement.
 
     ``` python
     base.query(sql-statement)
@@ -108,7 +108,7 @@
 
 !!! question "Append row"
 
-    Append a row to a table.
+    Appends one row to a table.
 
     ``` python
     base.append_row(table_name, row_data)
@@ -123,27 +123,9 @@
     base.append_row('Table1', row_data)
     ```
 
-!!! question "Insert row"
-
-    Insert a row to a table.
-
-    ``` python
-    base.insert_row(table_name, row_data, row_id)
-    ```
-
-    __Example__
-
-    ``` python
-    row_data = {
-        "Name": "Ron"
-    }
-
-    base.insert_row('Table1', row_data, 'U_eTV7mDSmSd-K2P535Wzw')
-    ```
-
 !!! question "Batch append rows"
 
-    Append multiple rows to a table.
+    Appends multiple rows to a table.
 
     ``` python
     base.batch_append_rows(table_name, rows_data)
@@ -162,11 +144,30 @@
     base.batch_append_rows('Table6', rows_data)
     ```
 
+!!! question "Insert row"
+
+    Inserts one row to a table under a anchor row.
+
+    ``` python
+    base.insert_row(table_name, row_data, anchor_row_id)
+    ```
+
+    __Example__
+
+    ``` python
+    row_data = {
+        "Name": "Ron"
+    }
+
+    base.insert_row('Table1', row_data, 'U_eTV7mDSmSd-K2P535Wzw')
+    ```
+
+
 ## Update row
 
 !!! question "Update row"
 
-    Update a row in a table.
+    Updates one row in a table.
 
     ``` python
     base.update_row(table_name, row_id, row_data)
@@ -182,11 +183,46 @@
     base.update_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw', row_data)
     ```
 
+!!! question "Batch update rows"
+
+    Updates multiple rows in a table.
+
+    ``` python
+    base.batch_update_rows(table_name, rows_data)
+    ```
+
+    __Example__
+
+    ``` python
+    rows_data = [{
+        "row_id" : "fMmCFyoxT4GN5Y2Powbl0Q",
+        "row" : {
+            "Name" : "Ron",
+            "Height" : "183"
+            }
+    }, {
+        "row_id" : "cF5JTE99Tae-VVx0BGT-3A",
+        "row" : {
+            "Name" : "Richard",
+            "Height" : "184"
+            }
+    }, {
+        "row_id" : "WP-8rb5PSUaM-tZRmTOCPA",
+        "row" : {
+            "Name" : "Regina",
+            "Heigt" : "173"
+            }
+    }]
+
+    base.batch_update_rows('Table1', rows_data)
+    ```
+    
+
 ## Delete rows
 
 !!! question "Delete row"
 
-    Delete a row in a table.
+    Deletes one row from a table.
 
     ``` python
     base.delete_row(table_name, row_id)
@@ -200,7 +236,7 @@
 
 !!! question "Batch delete rows"
 
-    Delete multiple rows in a table.
+    Deletes multiple rows from a table.
 
     ``` python
     base.batch_delete_rows(table_name, row_ids)
