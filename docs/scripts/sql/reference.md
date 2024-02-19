@@ -37,7 +37,7 @@ Notes:
 - `GROUP BY` uses strict syntax. The selected fields must appear in group by list, except for aggregation functions (`COUNT`, `SUM`, `MAX`, `MIN`, `AVG`) and formulas (see extended syntax section below).
 - `HAVING` filters rows resulting from the group by clause. Only fields referred in the "GROUP BY" clause or aggregation functions (such as "SUM") can be used in having clause. Other syntax is the same as specified for the where clause.
 - Fields in "order by" list must be a column or an expression in the selected fields. For example, `select a from table order by b` is invalid; while `select a from table order by b` and `select abs(a), b from table order by abs(a)` are valid.
-- Limit options are in MySQL format. The general syntax is `OFFSET ... LIMIT ...`. You may obmit `OFFSET` or `LIMIT`.
+- Limit options are in MySQL format. The general syntax is `LIMIT ... OFFSET ...`. You may obmit `LIMIT` or `OFFSET`.
 - Field alias with `AS` syntax is supported. For example, `select table.a as a from table` returns rows whose first column is keyed by "a". There are two notes:
   - Field alias can be referred in `group by`, `having` and `order by` clauses. E.g., `select t.registration as r, count(*) as c from t group by r having c > 100` is valid.
   - Field alias cannot be referred in `where` clause. E.g., `select t.registration as r, count(*) from t group by r where r > "2020-01-01"` will report syntax error.
