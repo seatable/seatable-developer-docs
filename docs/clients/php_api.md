@@ -53,6 +53,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SeaTable\Client\Configuration::getDefaultConfiguration();
 $config->setAccessToken('YOUR_ACCOUNT_TOKEN');
 $config->setHost('https://seatable.example.com');
+
 $apiInstance = new SeaTable\Client\User\BasesApi(new GuzzleHttp\Client(), $config);
 
 try {
@@ -73,6 +74,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Base Token
 $config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_API_TOKEN');
+
 $apiInstance = new SeaTable\Client\Auth\BaseTokenApi(new GuzzleHttp\Client(), $config);
 
 try {
@@ -102,6 +104,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Base Token
 $config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_API_TOKEN');
+
 $apiInstance = new SeaTable\Client\Auth\BaseTokenApi(new GuzzleHttp\Client(), $config);
 
 try {
@@ -113,6 +116,7 @@ try {
 
 // Base query
 $config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken($result['access_token']);
+
 $apiInstance = new SeaTable\Client\Base\RowsApi(new GuzzleHttp\Client(), $config);
 
 $base_uuid = $result['dtable_uuid'];
