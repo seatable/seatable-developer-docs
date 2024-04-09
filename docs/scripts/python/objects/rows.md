@@ -43,7 +43,7 @@
     base.query(sql-statement)
     ```
 
-    Unless the SQL statement specified a limit, the method returns 100 rows; the maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
+    Unless the SQL statement specifies a higher limit, the method returns a maximum of 100 rows. The maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
 
     __Example with a wildcard__
 
