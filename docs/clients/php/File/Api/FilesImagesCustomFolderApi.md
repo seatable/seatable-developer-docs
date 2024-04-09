@@ -53,7 +53,8 @@ try {
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 
 
@@ -102,7 +103,8 @@ try {
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 
 
@@ -149,7 +151,8 @@ try {
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 
 
@@ -196,6 +199,7 @@ try {
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 

@@ -57,7 +57,8 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 
 
@@ -111,7 +112,8 @@ void (empty response body)
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 
 
@@ -160,7 +162,8 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 
 
@@ -215,6 +218,7 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 

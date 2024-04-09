@@ -10,4 +10,3 @@ Name | Type | Description | Notes
 **row_id_list** | **string[]** | List of the source rows IDs whose links you&#39;d like to update. |
 **other_rows_ids_map** | **string[]** | Map of IDs of the target rows which you&#39;d like to link your source rows to. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

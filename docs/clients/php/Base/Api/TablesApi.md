@@ -57,7 +57,8 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 
 
@@ -108,7 +109,8 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 
 
@@ -159,7 +161,8 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 
 
@@ -210,6 +213,7 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 

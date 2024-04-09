@@ -8,4 +8,3 @@ Name | Type | Description | Notes
 **account_type** | **string** |  | [optional]
 **detail** | [**\SeaTable\Client\User\Detail**](Detail.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

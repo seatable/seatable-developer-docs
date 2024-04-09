@@ -13,4 +13,3 @@ Name | Type | Description | Notes
 **filter_conjunction** | **string** |  | [optional]
 **notify_hour** | **int** |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

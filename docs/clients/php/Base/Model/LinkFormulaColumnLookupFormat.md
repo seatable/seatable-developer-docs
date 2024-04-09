@@ -8,4 +8,3 @@ Name | Type | Description | Notes
 **link_column** | **string** | Name of the link column. |
 **level1_linked_column** | **string** | Name of the column in the linked table to look up. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

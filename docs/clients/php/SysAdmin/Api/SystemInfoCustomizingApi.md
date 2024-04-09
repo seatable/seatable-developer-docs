@@ -53,7 +53,8 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -104,7 +105,8 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -153,7 +155,8 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -202,7 +205,8 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -251,6 +255,7 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 

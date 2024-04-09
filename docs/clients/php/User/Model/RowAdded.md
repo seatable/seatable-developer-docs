@@ -8,4 +8,3 @@ Name | Type | Description | Notes
 **trigger** | [**\SeaTable\Client\User\TriggerRowAdded**](TriggerRowAdded.md) |  | [optional]
 **actions** | [**\SeaTable\Client\User\ActionRecordsMeetSpecificConditionsAfterModificationInner[]**](ActionRecordsMeetSpecificConditionsAfterModificationInner.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

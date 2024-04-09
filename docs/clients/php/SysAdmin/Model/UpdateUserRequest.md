@@ -18,4 +18,3 @@ Name | Type | Description | Notes
 **quota_total** | **string** | Update their total quota in MB. | [optional]
 **asset_quota_mb** | **string** | The asset quota in MB. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

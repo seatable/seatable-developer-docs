@@ -9,4 +9,3 @@ Name | Type | Description | Notes
 **summary_column** | **string** | The column in the linked table to be summarized. |
 **summary_method** | **string** |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

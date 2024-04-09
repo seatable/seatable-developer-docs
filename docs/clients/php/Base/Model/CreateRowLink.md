@@ -10,4 +10,3 @@ Name | Type | Description | Notes
 **table_row_id** | **string** | The id of the row. The id of a row is unique inside a base and is often used to identify one specific row. |
 **other_table_row_id** | **string** | The id of the row. The id of a row is unique inside a base and is often used to identify one specific row. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -53,6 +53,7 @@ void (empty response body)
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 

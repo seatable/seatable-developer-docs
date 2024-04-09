@@ -30,4 +30,3 @@ Name | Type | Description | Notes
 **equal_column_conditions** | [**\SeaTable\Client\User\ActionLookupAndCopyEqualColumnConditionsInner[]**](ActionLookupAndCopyEqualColumnConditionsInner.md) |  | [optional]
 **fill_column_conditions** | [**\SeaTable\Client\User\ActionLookupAndCopyEqualColumnConditionsInner[]**](ActionLookupAndCopyEqualColumnConditionsInner.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

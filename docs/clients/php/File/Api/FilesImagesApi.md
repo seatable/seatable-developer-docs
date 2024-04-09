@@ -54,7 +54,8 @@ try {
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 
 
@@ -100,7 +101,8 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 
 
@@ -157,6 +159,7 @@ try {
 
 ### Authorization
 
-[ApiTokenAuth](../../README.md#ApiTokenAuth)
+ApiTokenAuth
+
 
 

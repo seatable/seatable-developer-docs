@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **groupbys** | [**\SeaTable\Client\Base\SortsInner[]**](SortsInner.md) | grouping of your view | [optional]
 **hidden_columns** | **string[]** | IDs of the rows that should be hidden | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

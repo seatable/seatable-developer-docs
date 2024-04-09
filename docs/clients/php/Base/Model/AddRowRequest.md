@@ -9,4 +9,3 @@ Name | Type | Description | Notes
 **anchor_row_id** | **string** | Id of the row the new row should be added next to | [optional]
 **row_insert_position** | **string** | Defines if the new row is added below or above anchor row. If this parameter is left blank, &#x60;insert_below&#x60; is taken as default value. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

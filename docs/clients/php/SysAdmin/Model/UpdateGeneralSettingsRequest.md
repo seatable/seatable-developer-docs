@@ -20,4 +20,3 @@ Name | Type | Description | Notes
 **enable_two_factor_auth** | **int** | If two factor authentication should be activated for the system. Optional, &#x60;0&#x60; by default. | [optional]
 **enable_signup** | **int** | If registration on the web interface is allowed. Optional, &#x60;0&#x60; by default. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

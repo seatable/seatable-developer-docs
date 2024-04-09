@@ -66,7 +66,8 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -118,7 +119,8 @@ void (empty response body)
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -216,7 +218,8 @@ void (empty response body)
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -268,7 +271,8 @@ void (empty response body)
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -324,7 +328,8 @@ void (empty response body)
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -377,7 +382,8 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -430,7 +436,8 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 
 
@@ -485,6 +492,7 @@ try {
 
 ### Authorization
 
-[AccountTokenAuth](../../README.md#AccountTokenAuth)
+AccountTokenAuth
+
 
 

@@ -10,4 +10,3 @@ Name | Type | Description | Notes
 **max_user_number** | **string** | The maximum user number. | [optional]
 **asset_quota_mb** | **string** | The asset quota in MB. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -8,4 +8,3 @@ Name | Type | Description | Notes
 **filter_predicate** | [**\SeaTable\Client\Base\ImageFilterPredicate**](ImageFilterPredicate.md) |  | [optional]
 **filter_term** | **string** |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

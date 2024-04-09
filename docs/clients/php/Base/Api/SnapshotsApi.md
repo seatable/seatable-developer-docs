@@ -54,6 +54,7 @@ try {
 
 ### Authorization
 
-[BaseTokenAuth](../../README.md#BaseTokenAuth)
+BaseTokenAuth
+
 
 

@@ -15,4 +15,3 @@ Name | Type | Description | Notes
 **copy_to** | **string** | is the CC receiver&#39;s email address. For multiple addresses see above. | [optional]
 **is_locked** | **string** |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

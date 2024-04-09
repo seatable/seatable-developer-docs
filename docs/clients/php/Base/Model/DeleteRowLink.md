@@ -10,4 +10,3 @@ Name | Type | Description | Notes
 **table_row_id** | **string** | The id of the table. The id of a table is unique inside a base and is often used to identify a table. **Important: the table_id is not the table_name**. |
 **other_table_row_id** | **string** | The id of the table. The id of a table is unique inside a base and is often used to identify a table. **Important: the table_id is not the table_name**. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

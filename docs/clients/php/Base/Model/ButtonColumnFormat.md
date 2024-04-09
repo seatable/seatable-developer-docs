@@ -11,4 +11,3 @@ Name | Type | Description | Notes
 **script_id** | **string** |  | [optional]
 **selected_columns** | [**\SeaTable\Client\Base\ButtonColumnFormatSelectedColumnsInner[]**](ButtonColumnFormatSelectedColumnsInner.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
