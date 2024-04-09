@@ -24,14 +24,16 @@
     base.list_rows(table_name, view_name=None, order_by=None, desc=False, start=None, limit=None)
     ```
 
+    The default limit is 1000 which is also the maximum number of rows this method returns.
+
+    The query method (see below) offers more filter options and can return more rows.
+
     __Examples__
 
     ``` python
     rows = base.list_rows('Table1')
     rows = base.list_rows('Table1', view_name='default', order_by='Age', desc=True, start=5, limit=20)
     ```
-
-    __Hint__: The query with SQL allows to retrieve more rows and offers more filter options.
 
 !!! question "Query"
 
@@ -41,7 +43,9 @@
     base.query(sql-statement)
     ```
 
-    __Example: Get everything with a wildcard__
+    Unless the SQL statement specified a limit, the method returns 100 rows; the maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
+
+    __Example with a wildcard__
 
     ``` js
     json_data = base.query('select * from Users') // (1)!
@@ -76,28 +80,28 @@
         ]
         ```
 
-    __Example: WHERE__
+    __Example with WHERE__
 
     ``` python
     json_data = base.query('select name, price from Bill where year = 2021')
     print(json.dumps(json_data, indent=2))
     ```
 
-    __Example: ORDER BY__
+    __Example with ORDER BY__
 
     ``` python
     json_data = base.query('select name, price, year from Bill order by year')
     print(json.dumps(json_data, indent=2))
     ```
 
-    __Example: GROUP BY__
+    __Example with GROUP BY__
 
     ``` python
     json_data = base.query('select name, sum(price) from Bill group by name')
     print(json.dumps(json_data, indent=2))
     ```
 
-    __Example: DISTINCT__
+    __Example with DISTINCT__
 
     ``` python
     json_data = base.query('select distinct name from Bill')
@@ -158,7 +162,6 @@
     row_data = {
         "Name": "Ron"
     }
-
     base.insert_row('Table1', row_data, 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
@@ -179,7 +182,6 @@
     row_data = {
         "Name": "Ron"
     }
-
     base.update_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw', row_data)
     ```
 
@@ -213,7 +215,6 @@
             "Heigt" : "173"
             }
     }]
-
     base.batch_update_rows('Table1', rows_data)
     ```
     
