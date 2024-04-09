@@ -2,22 +2,21 @@
 
 All URIs are relative to https://cloud.seatable.io, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**addTeam()**](TeamsApi.md#addTeam) | **POST** /api/v2.1/admin/organizations/ | Add Team |
-| [**addTeamUser()**](TeamsApi.md#addTeamUser) | **POST** /api/v2.1/admin/organizations/{org_id}/users/ | Add Team User |
-| [**deleteTeam()**](TeamsApi.md#deleteTeam) | **DELETE** /api/v2.1/admin/organizations/{org_id}/ | Delete Team |
-| [**deleteTeamGroup()**](TeamsApi.md#deleteTeamGroup) | **DELETE** /api/v2.1/admin/organizations/{org_id}/groups/{group_id}/ | Delete Group |
-| [**deleteTeamUser()**](TeamsApi.md#deleteTeamUser) | **DELETE** /api/v2.1/admin/organizations/{org_id}/users/{user_id}/ | Delete Team User |
-| [**getOrganizationNames()**](TeamsApi.md#getOrganizationNames) | **GET** /api/v2.1/admin/organizations-basic-info/ | Get Organization Names |
-| [**listTeamBases()**](TeamsApi.md#listTeamBases) | **GET** /api/v2.1/admin/organizations/{org_id}/dtables/ | List Team Bases |
-| [**listTeamGroups()**](TeamsApi.md#listTeamGroups) | **GET** /api/v2.1/admin/organizations/{org_id}/groups/ | List Team Groups |
-| [**listTeamUsers()**](TeamsApi.md#listTeamUsers) | **GET** /api/v2.1/admin/organizations/{org_id}/users/ | List Team Users |
-| [**listTeams()**](TeamsApi.md#listTeams) | **GET** /api/v2.1/admin/organizations/ | List Teams |
-| [**searchTeam()**](TeamsApi.md#searchTeam) | **GET** /api/v2.1/admin/organizations/{org_id}/ | Search Team |
-| [**updateTeam()**](TeamsApi.md#updateTeam) | **PUT** /api/v2.1/admin/organizations/{org_id}/ | Update Team |
-| [**updateTeamUser()**](TeamsApi.md#updateTeamUser) | **PUT** /api/v2.1/admin/organizations/{org_id}/users/{user_id}/ | Update Team User |
-
+| Method                                                         | HTTP request                                                         | Description            |
+| -------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------- |
+| [**addTeam()**](TeamsApi.md#addTeam)                           | **POST** /api/v2.1/admin/organizations/                              | Add Team               |
+| [**addTeamUser()**](TeamsApi.md#addTeamUser)                   | **POST** /api/v2.1/admin/organizations/{org_id}/users/               | Add Team User          |
+| [**deleteTeam()**](TeamsApi.md#deleteTeam)                     | **DELETE** /api/v2.1/admin/organizations/{org_id}/                   | Delete Team            |
+| [**deleteTeamGroup()**](TeamsApi.md#deleteTeamGroup)           | **DELETE** /api/v2.1/admin/organizations/{org_id}/groups/{group_id}/ | Delete Group           |
+| [**deleteTeamUser()**](TeamsApi.md#deleteTeamUser)             | **DELETE** /api/v2.1/admin/organizations/{org_id}/users/{user_id}/   | Delete Team User       |
+| [**getOrganizationNames()**](TeamsApi.md#getOrganizationNames) | **GET** /api/v2.1/admin/organizations-basic-info/                    | Get Organization Names |
+| [**listTeamBases()**](TeamsApi.md#listTeamBases)               | **GET** /api/v2.1/admin/organizations/{org_id}/dtables/              | List Team Bases        |
+| [**listTeamGroups()**](TeamsApi.md#listTeamGroups)             | **GET** /api/v2.1/admin/organizations/{org_id}/groups/               | List Team Groups       |
+| [**listTeamUsers()**](TeamsApi.md#listTeamUsers)               | **GET** /api/v2.1/admin/organizations/{org_id}/users/                | List Team Users        |
+| [**listTeams()**](TeamsApi.md#listTeams)                       | **GET** /api/v2.1/admin/organizations/                               | List Teams             |
+| [**searchTeam()**](TeamsApi.md#searchTeam)                     | **GET** /api/v2.1/admin/organizations/{org_id}/                      | Search Team            |
+| [**updateTeam()**](TeamsApi.md#updateTeam)                     | **PUT** /api/v2.1/admin/organizations/{org_id}/                      | Update Team            |
+| [**updateTeamUser()**](TeamsApi.md#updateTeamUser)             | **PUT** /api/v2.1/admin/organizations/{org_id}/users/{user_id}/      | Update Team User       |
 
 ## `addTeam()`
 
@@ -27,7 +26,7 @@ addTeam($add_team_request): object
 
 Add Team
 
-Add a team (organization) with its name and admin credentials.  In the request body, define the new team admin's `admin_email`, `admin_name` and `password`.   SeaTable does not automatically create a workspace for a newly added user: the `with_workspace` parameter is `false` by default. If you would like your new user to have a workspace when they are added (so that they can start operating workspaces and bases right away with API requests), make sure you set `true` for this parameter.  Otherwise, their workspace will only be created when they login to the SeaTable web interface for the first time.
+Add a team (organization) with its name and admin credentials. In the request body, define the new team admin's `admin_email`, `admin_name` and `password`. SeaTable does not automatically create a workspace for a newly added user: the `with_workspace` parameter is `false` by default. If you would like your new user to have a workspace when they are added (so that they can start operating workspaces and bases right away with API requests), make sure you set `true` for this parameter. Otherwise, their workspace will only be created when they login to the SeaTable web interface for the first time.
 
 ### Example
 
@@ -54,9 +53,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **add_team_request** | [**\SeaTable\Client\SysAdmin/Model\AddTeamRequest**](../Model/AddTeamRequest.md)|  | [optional] |
+| Name                 | Type                                                                             | Description | Notes      |
+| -------------------- | -------------------------------------------------------------------------------- | ----------- | ---------- |
+| **add_team_request** | [**\SeaTable\Client\SysAdmin/Model\AddTeamRequest**](../Model/AddTeamRequest.md) |             | [optional] |
 
 ### Return type
 
@@ -66,9 +65,6 @@ try {
 
 AccountTokenAuth
 
-
-
-
 ## `addTeamUser()`
 
 ```php
@@ -77,7 +73,7 @@ addTeamUser($org_id, $add_team_user_request): object
 
 Add Team User
 
-Add a new team user with desired details.  In the request body:  \\*   `email` is the contact email address of your new user; \\*   `password` could be an initial login password you asign to them; \\*   `name` is the display name of your new user; \\*   `with_workspace` should be set to `true` if you want your new user to acquire a `workspace_id` immediately after adding them. The default value is `false`, which means they won't have a `workspace_id` until they login for the first time.
+Add a new team user with desired details. In the request body: \\_ `email` is the contact email address of your new user; \\_ `password` could be an initial login password you asign to them; \\_ `name` is the display name of your new user; \\_ `with_workspace` should be set to `true` if you want your new user to acquire a `workspace_id` immediately after adding them. The default value is `false`, which means they won't have a `workspace_id` until they login for the first time.
 
 ### Example
 
@@ -105,10 +101,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
-| **add_team_user_request** | [**\SeaTable\Client\SysAdmin/Model\AddTeamUserRequest**](../Model/AddTeamUserRequest.md)|  | [optional] |
+| Name                      | Type                                                                                     | Description                                                                                                                            | Notes      |
+| ------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **org_id**                | **int**                                                                                  | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |            |
+| **add_team_user_request** | [**\SeaTable\Client\SysAdmin/Model\AddTeamUserRequest**](../Model/AddTeamUserRequest.md) |                                                                                                                                        | [optional] |
 
 ### Return type
 
@@ -118,9 +114,6 @@ try {
 
 AccountTokenAuth
 
-
-
-
 ## `deleteTeam()`
 
 ```php
@@ -129,7 +122,7 @@ deleteTeam($org_id): object
 
 Delete Team
 
-Delete a team (organization) with its ID. This will eliminate the team!   However, this won't delete the team users - but all its members will become team-less users in the system.
+Delete a team (organization) with its ID. This will eliminate the team! However, this won't delete the team users - but all its members will become team-less users in the system.
 
 ### Example
 
@@ -156,9 +149,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
+| Name       | Type    | Description                                                                                                                            | Notes |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **org_id** | **int** | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |       |
 
 ### Return type
 
@@ -167,9 +160,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `deleteTeamGroup()`
 
@@ -207,10 +197,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
-| **group_id** | **int**|  | |
+| Name         | Type    | Description                                                                                                                            | Notes |
+| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **org_id**   | **int** | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |       |
+| **group_id** | **int** |                                                                                                                                        |       |
 
 ### Return type
 
@@ -219,9 +209,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `deleteTeamUser()`
 
@@ -259,10 +246,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
-| **user_id** | **string**| The unique user id in the form ...@auth.local. This is not the email address of the user. | |
+| Name        | Type       | Description                                                                                                                            | Notes |
+| ----------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **org_id**  | **int**    | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |       |
+| **user_id** | **string** | The unique user id in the form ...@auth.local. This is not the email address of the user.                                              |       |
 
 ### Return type
 
@@ -271,9 +258,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `getOrganizationNames()`
 
@@ -307,9 +291,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_ids** | [**string[]**](../Model/string.md)|  | [optional] |
+| Name        | Type         | Description | Notes      |
+| ----------- | ------------ | ----------- | ---------- |
+| **org_ids** | **string[]** |             | [optional] |
 
 ### Return type
 
@@ -318,9 +302,6 @@ void (empty response body)
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `listTeamBases()`
 
@@ -359,11 +340,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
-| **page** | **int**| The page number you want to start showing the entries. If no value is provided, 1 will be used. | [optional] |
-| **per_page** | **int**| The number of results that should be returned. If no value is provided, 25 results will be returned. | [optional] |
+| Name         | Type    | Description                                                                                                                            | Notes      |
+| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **org_id**   | **int** | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |            |
+| **page**     | **int** | The page number you want to start showing the entries. If no value is provided, 1 will be used.                                        | [optional] |
+| **per_page** | **int** | The number of results that should be returned. If no value is provided, 25 results will be returned.                                   | [optional] |
 
 ### Return type
 
@@ -372,9 +353,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `listTeamGroups()`
 
@@ -411,9 +389,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
+| Name       | Type    | Description                                                                                                                            | Notes |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **org_id** | **int** | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |       |
 
 ### Return type
 
@@ -422,9 +400,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `listTeamUsers()`
 
@@ -461,9 +436,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
+| Name       | Type    | Description                                                                                                                            | Notes |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **org_id** | **int** | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |       |
 
 ### Return type
 
@@ -473,9 +448,6 @@ try {
 
 AccountTokenAuth
 
-
-
-
 ## `listTeams()`
 
 ```php
@@ -484,7 +456,7 @@ listTeams($page, $per_page, $role): object
 
 List Teams
 
-List all the current teams (organizations) in the system.  Use the `role` filter to only return a type of teams. The exact roles depend on your configuration.
+List all the current teams (organizations) in the system. Use the `role` filter to only return a type of teams. The exact roles depend on your configuration.
 
 ### Example
 
@@ -513,11 +485,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **page** | **int**| The page number you want to start showing the entries. If no value is provided, 1 will be used. | [optional] |
-| **per_page** | **int**| The number of results that should be returned. If no value is provided, 25 results will be returned. | [optional] |
-| **role** | **string**| Optional. When left blank, all role types are returned. | [optional] |
+| Name         | Type       | Description                                                                                          | Notes      |
+| ------------ | ---------- | ---------------------------------------------------------------------------------------------------- | ---------- |
+| **page**     | **int**    | The page number you want to start showing the entries. If no value is provided, 1 will be used.      | [optional] |
+| **per_page** | **int**    | The number of results that should be returned. If no value is provided, 25 results will be returned. | [optional] |
+| **role**     | **string** | Optional. When left blank, all role types are returned.                                              | [optional] |
 
 ### Return type
 
@@ -526,9 +498,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `searchTeam()`
 
@@ -565,9 +534,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
+| Name       | Type    | Description                                                                                                                            | Notes |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **org_id** | **int** | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |       |
 
 ### Return type
 
@@ -576,9 +545,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `updateTeam()`
 
@@ -616,10 +582,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
-| **update_team_request** | [**\SeaTable\Client\SysAdmin/Model\UpdateTeamRequest**](../Model/UpdateTeamRequest.md)|  | [optional] |
+| Name                    | Type                                                                                   | Description                                                                                                                            | Notes      |
+| ----------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **org_id**              | **int**                                                                                | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |            |
+| **update_team_request** | [**\SeaTable\Client\SysAdmin/Model\UpdateTeamRequest**](../Model/UpdateTeamRequest.md) |                                                                                                                                        | [optional] |
 
 ### Return type
 
@@ -628,9 +594,6 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
 
 ## `updateTeamUser()`
 
@@ -669,11 +632,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **org_id** | **int**| The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. | |
-| **user_id** | **string**| The unique user id in the form ...@auth.local. This is not the email address of the user. | |
-| **update_team_user_request** | [**\SeaTable\Client\SysAdmin/Model\UpdateTeamUserRequest**](../Model/UpdateTeamUserRequest.md)|  | [optional] |
+| Name                         | Type                                                                                           | Description                                                                                                                            | Notes      |
+| ---------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **org_id**                   | **int**                                                                                        | The id of your team/organization. Get it from [Get Team](/reference/get-team-info). Contact your team admin, if you are not the admin. |            |
+| **user_id**                  | **string**                                                                                     | The unique user id in the form ...@auth.local. This is not the email address of the user.                                              |            |
+| **update_team_user_request** | [**\SeaTable\Client\SysAdmin/Model\UpdateTeamUserRequest**](../Model/UpdateTeamUserRequest.md) |                                                                                                                                        | [optional] |
 
 ### Return type
 
@@ -682,6 +645,3 @@ try {
 ### Authorization
 
 AccountTokenAuth
-
-
-
