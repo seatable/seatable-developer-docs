@@ -115,7 +115,7 @@
     Appends one row to a table.
 
     ``` python
-    base.append_row(table_name, row_data)
+    base.append_row(table_name, row_data, apply_default=None)
     ```
 
     __Example__
@@ -132,7 +132,7 @@
     Appends multiple rows to a table.
 
     ``` python
-    base.batch_append_rows(table_name, rows_data)
+    base.batch_append_rows(table_name, rows_data, apply_default=None)
     ```
 
     __Example__
@@ -145,7 +145,8 @@
         'Name': 'Richard',
         'Birthday': '1978-10-08'
     }]
-    base.batch_append_rows('Table6', rows_data)
+    # The default value of a column will be automatically appended it set apply_default.
+    base.batch_append_rows('Table6', rows_data, apply_default=True)
     ```
 
 !!! question "Insert row"
@@ -153,7 +154,7 @@
     Inserts one row to a table under a anchor row.
 
     ``` python
-    base.insert_row(table_name, row_data, anchor_row_id)
+    base.insert_row(table_name, row_data, anchor_row_id, apply_default=None)
     ```
 
     __Example__
