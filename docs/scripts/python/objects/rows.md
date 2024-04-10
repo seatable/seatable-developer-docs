@@ -145,7 +145,7 @@
         'Name': 'Richard',
         'Birthday': '1978-10-08'
     }]
-    # The default value of a column will be automatically appended it set apply_default.
+    # The default value of a column will be automatically appended if set apply_default to True.
     base.batch_append_rows('Table6', rows_data, apply_default=True)
     ```
 
