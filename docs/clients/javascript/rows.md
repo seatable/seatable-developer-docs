@@ -30,7 +30,7 @@
 !!! question "appendRow"
 
     ``` js
-    base.appendRow(table_name, row_data)
+    base.appendRow(table_name, row_data, apply_default = false)
     ```
 
     __Example__
@@ -45,7 +45,7 @@
 !!! question "insertRow"
 
     ``` js
-    base.insertRow(table_name, row_data, anchor_row_id)
+    base.insertRow(table_name, row_data, anchor_row_id, apply_default = false)
     ```
 
     __Example__
@@ -60,22 +60,27 @@
 !!! question "batchAppendRows"
 
     ``` js
-    base.batchAppendRows(table_name, rows_data)
+    base.batchAppendRows(table_name, rows_data, apply_default = false)
     ```
 
-    __Example__
+    **Example**
+
     ``` js
     const rows_data = [{
-                    'Name': 'test batch',
-                    'content': 'Yes'
-                }, {
-                    'Name': 'test batch',
-                    'content': 'Yes'
-                }, {
-                    'Name': 'test batch',
-                    'content': 'Yes'
-                }]
-    await base.batchAppendRows('Table6', rows_data)
+        'Name': 'test batch',
+        'content': 'Yes'
+    }, {
+        'Name': 'test batch',
+        'content': 'Yes'
+    }, {
+        'Name': 'test batch',
+        'content': 'Yes'
+    }]
+
+    // Whether to use the default value set in the table column.
+    // If set to true, the default value will be used if the column is not specified in row_data.
+    // apply_default is set to false by default.
+    await base.batchAppendRows('Table6', rows_data, apply_default = true)
     ```
 
 ## Update Row
