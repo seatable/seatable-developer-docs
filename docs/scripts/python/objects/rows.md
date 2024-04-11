@@ -110,6 +110,8 @@
 
 ## Add rows
 
+By default, the default values specified for the table columns in the webinterface do **not** apply when adding/appending rows via API. In order to apply the default values, add `apply_default=True`as a function parameter. If set to True, the default values can be overwritten by specifying alternative values in `row_data`. 
+
 !!! question "Append row"
 
     Appends one row to a table.
@@ -124,9 +126,7 @@
     row_data = {
         "Name": "Ron"
     }
-    # Whether to use the default value set in the table column. 
-    # If set to True, the default value will be used if the column is not specified in row_data. 
-    # apply_default is set to False by default.
+
     base.append_row('Table1', row_data, apply_default=True)
     ```
 
