@@ -16,9 +16,9 @@
     row = base.get_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
-!!! question "Get rows"
+!!! question "List rows"
 
-    Gets multiple rows of a table.
+    Lists multiple rows of a table.
 
     ``` python
     base.list_rows(table_name, view_name=None, order_by=None, desc=False, start=None, limit=None)
