@@ -126,7 +126,7 @@
     }
     # Whether to use the default value set in the table column. 
     # If set to True, the default value will be used if the column is not specified in row_data. 
-    # And The default is False.
+    # apply_default is set to False by default.
     base.append_row('Table1', row_data, apply_default=True)
     ```
 
