@@ -76,8 +76,7 @@ def main():
       # temporarily saved as an image
       info_dict = base.upload_local_file(f"/tmp/{save_name}.png", name=None, file_type='image', replace=True)
       img_url = info_dict.get('url')
-      row[IMAGE_COLUMN] = [img_url]
-      base.update_row(TABLE_NAME, row_id, row)
+      base.update_row(TABLE_NAME, row_id, {IMAGE_COLUMN: [img_url]})
 
       # remove the image file which is saved temporarily
       os.remove(f"/tmp/{save_name}.png")
