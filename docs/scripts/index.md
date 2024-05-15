@@ -1,24 +1,25 @@
-# Scripts in SeaTable
+# Scripting in SeaTable
 
-## Scripts in general
+## Supported scripting languages and requirements
 
-Scripts are executed directly in SeaTable. If you need more information how to run a script, please read the following help article [Run script manually, by button or by automation](https://seatable.io/docs/javascript-python/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/?lang=auto).
+Scripts are used to interact with the data in a base. SeaTable supports scripts written in Python and JavaScript (JS).
 
+JS code is executed directly in the user's browser, requires no authentication, and is used for simple data operations.
+
+Python scripts, by contrast, are executed on a server or locally. As a consequence, Python scripts must authenticate against SeaTable Server. They are also suitable for more extensive automations and data operations.
+
+JS and Python scripts can be composed and executed directly in a SeaTable base. 
 ![Screenshot of script icon in SeaTable](https://seatable.io/wp-content/uploads/2023/03/Anlegen-eines-Skriptes.jpg)
 
-Scripts are used to interact with the data in a base. Currently, python and javascript are available as script languages.
+The execution of JS scripts in SeaTable has no requirements. 
 
-Javascript is executed directly in the user's browser, requires no authentication, and is used for simple data operations.
-
-Python, on the other hand, is executed on the SeaTable server. Unlike javascript, every Python script requires authentication and is suitable for more extensive automations and processes.
+To run Python scripts in SeaTable, the so-called [Python Pipeline](https://admin.seatable.io/installation/components/python-pipeline/) must be installed. You can also choose to run scripts [locally](https://developer.seatable.io/scripts/python/common_questions/#how-to-make-the-script-support-both-local-and-cloud-run).
 
 ## How to start?
 
-Each chapter provide you with explanations about the available objects and methods. Multiple examples should help you to start immediately and get a feeling about the possibilities.
+Each chapter provides you with explanations about the available objects and methods. Multiple examples should help you to start immediately and get a feeling about the possibilities.
 
 Here are some additional help articles from the [user manual](https://docs.seatable.io/?lang=auto) explaining how to create, execute and monitor a script in SeaTable:
-
-**Links to the SeaTable User Manual:**
 
 - [Creating and deleting a script](https://seatable.io/docs/javascript-python/anlegen-und-loeschen-eines-skriptes/?lang=auto)
 - [Run script manually, by button or by automation](https://seatable.io/en/docs/javascript-python/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/?lang=auto)
