@@ -19,7 +19,7 @@ When running Python scripts locally, you can take advantages of the uncountable 
 
 As a general rule, Python script must authenticate. 
 
-Within SeaTable's integrated Python editor, authentication can be done using these two lines of code at the beginning of the script that to the [context object](https://developer.seatable.io/scripts/python/objects/context/):
+Within SeaTable's integrated Python editor, authentication can be done using these two lines of code at the beginning of the script thanks to the [context object](https://developer.seatable.io/scripts/python/objects/context/):
 
 ```python
 base = Base(context.api_token, context.server_url)
@@ -45,7 +45,7 @@ There are a lot of predefined objects and methods in Python. If you compare Java
 Let's make this concrete and let us look at some basic examples.
 
 1. Jump to your SeaTable web interface
-2. Create a new script of the type `Python`
+2. Create a new script of the type Python
 3. Copy the following code
 4. Run the script
 
@@ -53,7 +53,7 @@ You will learn from these examples, that it is quite easy to read, output and ev
 
 !!! danger "Indents are important"
 
-    Please take care of indentations! Indentation is mandatory in python to define the blocks of statements. The number of spaces must be uniform in a block of code. It is preferred to use whitespaces instead of tabs to indent in Python. If you screw the correct indentations, the scripts will not work as expected!
+    Please take care of indentations! Indentation is mandatory in Python to define the blocks of statements. The number of spaces must be uniform in a block of code. It is preferred to use whitespaces instead of tabs to indent in Python. If the indentations are wrong, the scripts will throw errors or not work as expected!
 
 === "Add a table to a base"
 
@@ -76,15 +76,22 @@ You will learn from these examples, that it is quite easy to read, output and ev
     ]
 
     base.add_table("ScriptTest", lang='en', columns=columns)
-    
-    row_data = {'name': 'Tom', 'age': 18} 
-    base.append_row('ScriptTest', row_data)
-    base.update_row('ScriptTest', 'U_eTV7mDSmSd-K2P535Wzw', row_data)
-    base.delete_row('ScriptTest', 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
     1.   These three lines are always required to authorize against the base in SeaTable.
 
-=== "more"
+=== "Add a row to a table"
+    This examples shows how to add a a record to a table. The example script assumes that a table "ScriptTest" table with two columns "name" and "age" exists in the base.
 
-    ...will follow soon.
+    ``` python
+    from seatable_api import Base, context
+    base = Base(context.api_token, context.server_url)
+    base.auth()
+
+    row_data = {
+      'name': 'Tom',
+      'age': 18
+      } 
+    
+    base.append_row('ScriptTest', row_data)
+    ```
