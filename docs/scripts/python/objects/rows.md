@@ -21,7 +21,7 @@
     Lists multiple rows of a table.
 
     ``` python
-    base.list_rows(table_name, view_name=None, order_by=None, desc=False, start=None, limit=None)
+    base.list_rows(table_name, view_name=None, start=None, limit=None)
     ```
 
     The default limit is 1000 which is also the maximum number of rows this method returns.
@@ -32,7 +32,7 @@
 
     ``` python
     rows = base.list_rows('Table1')
-    rows = base.list_rows('Table1', view_name='default', order_by='Age', desc=True, start=5, limit=20)
+    rows = base.list_rows('Table1', view_name='default', start=5, limit=20)
     ```
 
 !!! question "Query"
