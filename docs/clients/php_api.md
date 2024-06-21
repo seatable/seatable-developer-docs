@@ -131,6 +131,49 @@ try {
 }
 ```
 
+### Add a row to your base
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Prerequisite: API Token for your base
+$config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_API_TOKEN');
+
+$apiInstance = new SeaTable\Client\Auth\BaseTokenApi(new GuzzleHttp\Client(), $config);
+
+try {
+    $result = $apiInstance->getBaseTokenWithApiToken();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BaseTokenApi->getBaseTokenWithApiToken: ', $e->getMessage(), PHP_EOL;
+}
+
+// Base query
+$config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken($result['access_token']);
+
+$apiInstance = new SeaTable\Client\Base\RowsApi(new GuzzleHttp\Client(), $config);
+
+$base_uuid = $result['dtable_uuid'];
+$request = new SeaTable\Client\Base\AppendRows([
+    'table_name' => 'Table1',
+    'rows' => [
+        [
+            'Name' => 'Inserted via API',
+        ],
+    ],
+    // Whether to apply default values
+    'apply_default' => false,
+]);
+
+try {
+    $result = $apiInstance->appendRows($base_uuid, $request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RowsApi->appendRows: ', $e->getMessage(), PHP_EOL;
+}
+```
+
 ## API Endpoints - Auth
 
 You can find detailed documentation for all authentication endpoints and auto-generated examples on [GitHub](https://github.com/seatable/seatable-api-php/blob/main/README_Auth.md).
