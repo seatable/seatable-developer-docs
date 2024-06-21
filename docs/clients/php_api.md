@@ -177,9 +177,10 @@ try {
 ## API Endpoints
 
 You can find detailed documentation for all endpoints including auto-generated examples on [GitHub](https://github.com/seatable/seatable-api-php):
- - Auth: https://github.com/seatable/seatable-api-php/blob/main/README_Auth.md
- - Base: https://github.com/seatable/seatable-api-php/blob/main/README_Base.md
- - File: https://github.com/seatable/seatable-api-php/blob/main/README_File.md
- - SysAdmin: https://github.com/seatable/seatable-api-php/blob/main/README_SysAdmin.md
- - TeamAdmin: https://github.com/seatable/seatable-api-php/blob/main/README_TeamAmin.md
- - User: https://github.com/seatable/seatable-api-php/blob/main/README_User.md
+
+ - [Auth](https://github.com/seatable/seatable-api-php/blob/main/README_Auth.md)
+ - [Base](https://github.com/seatable/seatable-api-php/blob/main/README_Base.md)
+ - [File](https://github.com/seatable/seatable-api-php/blob/main/README_File.md)
+ - [SysAdmin](https://github.com/seatable/seatable-api-php/blob/main/README_SysAdmin.md)
+ - [TeamAdmin](https://github.com/seatable/seatable-api-php/blob/main/README_TeamAmin.md)
+ - [User](https://github.com/seatable/seatable-api-php/blob/main/README_User.md)
