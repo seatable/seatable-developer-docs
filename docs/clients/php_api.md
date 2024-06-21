@@ -120,7 +120,7 @@ $config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessTok
 $apiInstance = new SeaTable\Client\Base\RowsApi(new GuzzleHttp\Client(), $config);
 
 $base_uuid = $result['dtable_uuid'];
-$sql_query = new \SeaTable\Client\Model\SqlQuery(["sql" => "Select * from Table1", "convert_keys" => false]);
+$sql_query = new SeaTable\Client\Base\SqlQuery(["sql" => "Select * from Table1", "convert_keys" => false]);
 
 try {
     $result = $apiInstance->querySQL($base_uuid, $sql_query);
