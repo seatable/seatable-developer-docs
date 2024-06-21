@@ -184,7 +184,7 @@ You can find detailed documentation for all base operation endpoints and auto-ge
 
 ## API Endpoints - File
 
-You can find detailed documentation for all base operation endpoints and auto-generated examples on [GitHub](https://github.com/seatable/seatable-api-php/blob/main/README_File.md).
+You can find detailed documentation for all file operation endpoints and auto-generated examples on [GitHub](https://github.com/seatable/seatable-api-php/blob/main/README_File.md).
 
 ## API Endpoints - SysAdmin
 
