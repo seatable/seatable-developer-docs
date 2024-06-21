@@ -23,6 +23,7 @@ After installation you can easily connect to your SeaTable system and execute AP
 ### Get information about your account
 
 The following code connects to SeaTable Cloud. You have to provide your `Account Token`.
+Please refer to [api.seatable.io](https://api.seatable.io/reference/getaccounttokenfromusername) for guidance on how to obtain an `Account Token`.
 
 ```php
 <?php
@@ -72,7 +73,7 @@ First we have to get the `Base-Token` and the `base_uuid` and then we can execut
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Base Token
+// Prerequisite: API Token for your base
 $config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_API_TOKEN');
 
 $apiInstance = new SeaTable\Client\Auth\BaseTokenApi(new GuzzleHttp\Client(), $config);
@@ -102,7 +103,7 @@ try {
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Base Token
+// Prerequisite: API Token for your base
 $config = SeaTable\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_API_TOKEN');
 
 $apiInstance = new SeaTable\Client\Auth\BaseTokenApi(new GuzzleHttp\Client(), $config);
