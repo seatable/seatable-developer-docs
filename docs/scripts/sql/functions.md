@@ -161,7 +161,7 @@ _Geo functions are available since version 2.7.0_
 | province(geolocation) | Returns the province of a Geolocation column. | province(column_name) | 北京市 |
 | city(geolocation)     | Returns the city of a Geolocation column.     | city(column_name)     | 北京市 |
 | district(geolocation) | Returns the district of a Geolocation column. | district(column_name) | 朝阳区 |
-| country(geolocation)  | Returns the country or region of a Geolocation column. | country(column_name) | 中国 |
+| country(geolocation)  | Returns the country or region of a Geolocation column. (Since version 5.1.0) | country(column_name) | 中国 |
 
 ### Logical functions
 
