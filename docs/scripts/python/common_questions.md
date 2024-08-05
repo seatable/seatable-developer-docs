@@ -59,6 +59,7 @@
     - Pandas library, [pandas](https://pypi.org/project/pandas/)
     - Numpy library, [numpy](https://pypi.org/project/numpy/)
     - SMTP library, [secure-smtplib](https://pypi.org/project/secure-smtplib/)
+    - OpenAI API library, [openai](https://pypi.org/project/openai/)
 
 ??? question "Install and use custom python libraries"
 
