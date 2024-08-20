@@ -107,7 +107,8 @@ When referring a column with list type in `where` conditions, the following rule
 | Element Type  | Operator                                        | Rule                                                                                                                                                   |
 | :------------ | :---------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | string        | IN, extended list operators (e.g. `has any of`) | Follow the rules of the operator.                                                                                                                      |
-| string        | LIKE, ILIKE                                     | If there is only 1 element, use that element; If there are more than 1 elements, only return `true` for `!=` operator; If there is no element, use "". |
+| string        | LIKE, ILIKE                                     | Always take the first element for comparison; if there is no element, use ". 
+                                                  |
 | string        | IS NULL                                         | Return `true` when the list is empty or no data in the cell.                                                                                           |
 | string        | =, !=                                           | If there is only 1 element, use that element; otherwise only return `true` for `!=` operator.                                                          |
 | float         | IN, extended list operators (e.g. `has any of`) | Follow the rules of the operator.                                                                                                                      |
@@ -117,7 +118,8 @@ When referring a column with list type in `where` conditions, the following rule
 | Datetime      | IN, extended list operators (e.g. `has any of`) | Follow the rules of the operator.                                                                                                                      |
 | Datetime      | =, !=, \<, \<=, >, >=, between                  | If there is only 1 element, use that element; otherwise only return `true` for `!=` operator.                                                          |
 | Datetime      | IS NULL                                         | Return `true` when the list is empty or no data in the cell.                                                                                           |
-| bool          | IS TRUE                                         | If there is only 1 element, use that element; otherwise return `false`.                                                                                |
+| bool          | IS TRUE                                         | Always take the first element for comparison; return false if there are no elements.
+                                                  |
 | linked record |                                                 | Follow the rules for the type of the display column.                                                                                                   |
 
 When a list column is returned in a selected field, only the first 10 elements are returned.
