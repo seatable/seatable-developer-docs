@@ -107,10 +107,10 @@ When referring a column with list type in `where` conditions, the following rule
 | Element Type  | Operator                                        | Rule                                                                                                                                                   |
 | :------------ | :---------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | string        | IN, extended list operators (e.g. `has any of`) | Follow the rules of the operator.                                                                                                                      |
-| string        | LIKE, ILIKE                                     | Always take the first element for comparison; if there is no element, use ". 
+| string        | LIKE, ILIKE                                     | Always take the first element for comparison; if there is no element, use "". 
                                                   |
 | string        | IS NULL                                         | Return `true` when the list is empty or no data in the cell.                                                                                           |
-| string        | =, !=                                           | If there is only 1 element, use that element; otherwise only return `true` for `!=` operator.                                                          |
+| string        | =, !=                                           | Always take the first element for comparison; if there is no element, use "".                                                           |
 | float         | IN, extended list operators (e.g. `has any of`) | Follow the rules of the operator.                                                                                                                      |
 | float         | =, !=, \<, \<=, >, >=, between                  | If there is only 1 element, use that element; otherwise only return `true` for `!=` operator.                                                          |
 | float         | IS NULL                                         | Return `true` when the list is empty or no data in the cell.                                                                                           |
