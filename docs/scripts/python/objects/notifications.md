@@ -1,10 +1,10 @@
 # Notifications
 
-## send_toast_notification
+## Sent toast notification
 
-!!! question "send_toast_notification"
+!!! question "Send toast notification"
 
-    Send a nofication message which can be toasted on web page to a user.
+    Show a toast notification in SeaTable's web interface to a user.
 
     ```python
     base.send_toast_notification(username, msg, toast_type='success')
@@ -14,7 +14,7 @@
     __Example__
 
     ```python
-    base.send_toast_notifation(
+    base.send_toast_notification(
     "aea9e807bcfd4f3481d60294df74f6ee@auth.local",
     "error request",
     "danger"
