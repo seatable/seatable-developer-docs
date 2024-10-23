@@ -39,27 +39,45 @@
 
     ## List of libraries supported in the cloud environment
 
-    In the cloud environment, Python scripts actually run in a Docker container environment. The container environment has some Python libraries installed by default, which can be imported in scripts. If you need to use other libraries, you need to contact us, or your script can only be run locally.
+    In the cloud environment, Python scripts run within a Docker container. This container comes pre-configured with a set of Python libraries that can be imported and used in your scripts. If you require libraries not included in this set, please contact our support team. Otherwise, scripts using unsupported libraries can only be executed locally.
 
-    __Python 3 standard library__
+    __Python Standard Library__
 
-    The cloud environment now use **Python 3.11**, which supports importing modules in the Python standard library.
+    The cloud environment currently utilizes **Python 3.11**. This version supports all modules in the Python 3.11 standard library. Common built-in libraries such as `os`, `sys`, `datetime`, and others are readily available for use in your scripts.
 
-    __Third party libraries__
+    __Third-Party Libraries__
 
-    The following modules are available
+    In addition to the standard library, we've included several popular third-party packages to enhance your scripting capabilities:
 
-    - SeaTable API, [seatable-api](https://pypi.org/project/seatable-api/)
-    - Date/time calculation tool library, [dateutils](https://pypi.org/project/dateutils/)
-    - http request, [requests](https://pypi.org/project/requests/)
-    - OpenSSL library, [pyOpenSSL](https://pypi.org/project/pyOpenSSL/)
-    - Pillow library, [Pillow](https://pypi.org/project/Pillow/)
-    - Barcode library, [python-barcode](https://pypi.org/project/python-barcode/)
-    - QRcode library, [qrcode](https://pypi.org/project/qrcode/)
-    - Pandas library, [pandas](https://pypi.org/project/pandas/)
-    - Numpy library, [numpy](https://pypi.org/project/numpy/)
-    - SMTP library, [secure-smtplib](https://pypi.org/project/secure-smtplib/)
-    - OpenAI API library, [openai](https://pypi.org/project/openai/)
+    - [seatable-api](https://pypi.org/project/seatable-api/): Official SeaTable Python API
+    - [dateutils](https://pypi.org/project/dateutils/): Extensions to Python's datetime module
+    - [requests](https://pypi.org/project/requests/): HTTP library for Python
+    - [pyOpenSSL](https://pypi.org/project/pyOpenSSL/): Python wrapper for OpenSSL
+    - [Pillow](https://pypi.org/project/Pillow/): Python Imaging Library (Fork)
+    - Includes support for [HEIF images](https://pypi.org/project/pillow-heif/)
+    - [python-barcode](https://pypi.org/project/python-barcode/): Barcode generator
+    - [qrcode](https://pypi.org/project/qrcode/): QR Code generator
+    - [pandas](https://pypi.org/project/pandas/): Data manipulation and analysis library
+    - [numpy](https://pypi.org/project/numpy/): Fundamental package for scientific computing
+    - [openai](https://pypi.org/project/openai/): OpenAI API client library
+    - [ldap3](https://pypi.org/project/ldap3/): LDAP v3 client library
+    - [pydantic](https://pypi.org/project/pydantic/): Data validation and settings management using Python type annotations
+    - [httpx](https://pypi.org/project/httpx/): A next-generation HTTP client for Python
+    - [PyJWT](https://pypi.org/project/PyJWT/): JSON Web Token implementation in Python
+    - [python-socketio](https://pypi.org/project/python-socketio/): Python implementation of the Socket.IO realtime server
+    - [scipy](https://pypi.org/project/scipy/): Fundamental algorithms for scientific computing in Python
+    - [PyPDF](https://pypi.org/project/pypdf/): PDF toolkit for Python
+    - [pdfmerge](https://pypi.org/project/pdfmerge/): Merge PDF files
+
+    This list is not exhaustive. For a complete, up-to-date list of available third-party packages, you can run the following Python script in your SeaTable environment:
+
+    ```python
+    import pkg_resources
+    installed_packages = pkg_resources.working_set
+    packages_list = sorted([f"{i.key}=={i.version}" for i in installed_packages])
+    for package in packages_list:
+        print(package)
+    ```
 
 ??? question "Install and use custom python libraries"
 
