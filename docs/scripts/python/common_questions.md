@@ -53,8 +53,7 @@
     - [dateutils](https://pypi.org/project/dateutils/): Extensions to Python's datetime module
     - [requests](https://pypi.org/project/requests/): HTTP library for Python
     - [pyOpenSSL](https://pypi.org/project/pyOpenSSL/): Python wrapper for OpenSSL
-    - [Pillow](https://pypi.org/project/Pillow/): Python Imaging Library (Fork)
-    - Includes support for [HEIF images](https://pypi.org/project/pillow-heif/)
+    - [Pillow](https://pypi.org/project/Pillow/): Python Imaging Library (Fork) with support for [HEIF images](https://pypi.org/project/pillow-heif/)
     - [python-barcode](https://pypi.org/project/python-barcode/): Barcode generator
     - [qrcode](https://pypi.org/project/qrcode/): QR Code generator
     - [pandas](https://pypi.org/project/pandas/): Data manipulation and analysis library
