@@ -31,3 +31,9 @@ This Python script facilitates the synchronization of data from a MySQL database
 Integrating data from the Twelve Data API with SeaTable facilitates the updating and maintenance of current stock prices within a designated table in the SeaTable environment.
 
 [read more :material-arrow-right-thin:](/scripts/python/examples/update_stock_price/)
+
+## Merge PDF
+
+Merge two PDF files and save the merged file into a new row in a SeaTable base.
+
+[read more: :material-arrow-right-thin:](/scripts/python/examples/merge_pdf/)

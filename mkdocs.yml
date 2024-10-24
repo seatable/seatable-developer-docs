@@ -163,6 +163,7 @@ nav:
               - 3. Generate QR-Code: scripts/python/examples/generate_qrcode.md
               - 4. Sync MySQL: scripts/python/examples/sync_mysql.md
               - 5. Watch Stock Price: scripts/python/examples/update_stock_price.md
+              - 6. Merge PDF: scripts/python/examples/merge_pdf.md
           - Common questions: scripts/python/common_questions.md
       - Query with SQL:
           - SQL Reference: scripts/sql/reference.md
