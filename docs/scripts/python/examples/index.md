@@ -37,3 +37,9 @@ Integrating data from the Twelve Data API with SeaTable facilitates the updating
 Merge two PDF files and save the merged file into a new row in a SeaTable base.
 
 [read more: :material-arrow-right-thin:](/scripts/python/examples/merge_pdf/)
+
+## Convert HEIC to PNG
+
+Convert HEIC image files to PNG format and save the converted file into a new row in a SeaTable base.
+
+[read more: :material-arrow-right-thin:](/scripts/python/examples/heic_to_png/)
