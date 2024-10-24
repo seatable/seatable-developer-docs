@@ -44,13 +44,28 @@ You will learn from these examples, that it is quite easy to read, output and ev
 
 === "Get column names"
 
-    ``` js
+    ```js
+    const table = base.getTableByName('Table1');
+    const columns = base.getColumns(table);
+
+    for (var i=0; i<columns.length; i++) {
+        output.text(columns[i].name + " (" + columns[i].type + ")")
+    }
+    ```
+
+    This will return all column names and the column types.
+
+=== "Get row content"
+
+    ```js
     const table = base.getTableByName('Table1'); // (1)!
     const view = base.getViewByName(table, 'Default View'); // (2)!
     const rows = base.getRows(table, view); // (3)!
 
     for (var i=0; i<rows.length; i++) { // (4)!
     const row = rows[i];
+    output.text('>>> new row <<<')
+    output.text(row);
     output.text(row['Name']);
     }
     ```
@@ -65,11 +80,39 @@ You will learn from these examples, that it is quite easy to read, output and ev
 === "Write new row"
 
     ``` js
-    comming soon.
+    const table = base.getTableByName('Table1'); // (1)!
+
+    const newRow = { // (2)!
+    'Name': 'Hugo',
+    'Age': 3,
+    };
+
+    try {
+        const row = base.addRow(table, newRow);
+        output.markdown(`New row added with _id: ${row._id}`);
+    } catch (error) {
+        output.markdown(`Error adding row: ${error}`);
+    }
     ```
+
+    1.  Replace `Table1` with your actual table name
+    2.  Update column names `Name` and `Age` and the values you would like to add.
 
 === "Update one specific cell"
 
     ``` js
-    comming soon.
+    // Get the table
+    const table = base.getTableByName('Table1');
+
+    // Specify the row_id you want to update
+    const rowId = 'KDW9PZMkTOuwtx71pmAMxA';
+
+    // Define the updates you want to make
+    // Replace 'Name' with the actual column name you want to update
+    // and 'NewValue' with the new value you want to set
+    const updates = {
+        'Name': 'NewValue'
+    };
+
+    base.updateRow(table, rowId, updates);
     ```
