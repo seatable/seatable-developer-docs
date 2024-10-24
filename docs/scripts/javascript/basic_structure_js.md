@@ -89,9 +89,9 @@ You will learn from these examples, that it is quite easy to read, output and ev
 
     try {
         const row = base.addRow(table, newRow);
-        output.markdown(`New row added with _id: ${row._id}`);
+        output.text(`New row added with _id: ${row._id}`);
     } catch (error) {
-        output.markdown(`Error adding row: ${error}`);
+        output.text(`Error adding row: ${error}`);
     }
     ```
 
