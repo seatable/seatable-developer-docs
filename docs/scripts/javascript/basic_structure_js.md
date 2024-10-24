@@ -63,10 +63,10 @@ You will learn from these examples, that it is quite easy to read, output and ev
     const rows = base.getRows(table, view); // (3)!
 
     for (var i=0; i<rows.length; i++) { // (4)!
-    const row = rows[i];
-    output.text('>>> new row <<<')
-    output.text(row);
-    output.text(row['Name']);
+        const row = rows[i];
+        output.text('>>> new row <<<')
+        output.text(row);
+        output.text(row['Name']);
     }
     ```
 
@@ -83,8 +83,8 @@ You will learn from these examples, that it is quite easy to read, output and ev
     const table = base.getTableByName('Table1'); // (1)!
 
     const newRow = { // (2)!
-    'Name': 'Hugo',
-    'Age': 3,
+        'Name': 'Hugo',
+        'Age': 3,
     };
 
     try {
