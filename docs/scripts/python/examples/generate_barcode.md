@@ -77,7 +77,7 @@ for row in base.list_rows(TABLE_NAME):
         info_dict = base.upload_local_file(file_name, name=None, file_type='image', replace=True)
         img_url = info_dict.get('url')
         row[BARCODE_IMAGE_COL] = [img_url]
-        base.update_row('Table1', row_id, row)
+        base.update_row(TABLE_NAME, row_id, row)
 
         # remove the image file which is saved temporarily
         os.remove(file_name)
