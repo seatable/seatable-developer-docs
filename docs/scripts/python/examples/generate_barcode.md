@@ -57,6 +57,7 @@ base.auth()
 def get_time_stamp():
     return str(int(time.time()*100000))
 
+updated_rows = 0
 for row in base.list_rows(TABLE_NAME):
     # continue if the image is already shown up here
     if row.get(BARCODE_IMAGE_COL):
@@ -76,12 +77,15 @@ for row in base.list_rows(TABLE_NAME):
         # upload the barcode image to the base
         info_dict = base.upload_local_file(file_name, name=None, file_type='image', replace=True)
         img_url = info_dict.get('url')
-        row[BARCODE_IMAGE_COL] = [img_url]
-        base.update_row(TABLE_NAME, row_id, row)
+        base.update_row(TABLE_NAME, row_id, {BARCODE_IMAGE_COL: [img_url]})
 
         # remove the image file which is saved temporarily
         os.remove(file_name)
+        updated_rows += 1
     except Exception as error:
         print("error occured during barcode generate", error)
         continue
+
+# Summary
+print("I created %s barcodes" % updated_rows)
 ```
