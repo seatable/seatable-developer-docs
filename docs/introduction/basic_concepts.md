@@ -101,7 +101,7 @@ SeaTable offers a visual interface, which can be operated with the browser.
 
 ![Screenshot of a SeaTable base](/media/elements_seatable_base.png)
 
-Look at the [SeaTable API Reference](https://api.seatable.io/reference/models) for more details about the different objects in SeaTable like:
+Look at the [SeaTable API Reference](https://api.seatable.com/reference/models) for more details about the different objects in SeaTable like:
 
 - Table
 - View

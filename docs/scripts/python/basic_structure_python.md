@@ -32,7 +32,7 @@ Read here all details about [authentication in Python scripts](/scripts/python/a
 
     SeaTable provides multiple tokens to authenticate. But let's keep things simple! If you develop Python scripts in SeaTable, just use the context object `context.api_token` or provide a so called `API-Token` of a base.
 
-    All details can be found in the [SeaTable API Reference](https://api.seatable.io/reference/authentication).
+    All details can be found in the [SeaTable API Reference](https://api.seatable.com/reference/authentication).
 
 It is even possible to develop a Python in the way that it could be [executed in the cloud and local](/scripts/python/common_questions/#install-and-use-custom-python-libraries) without changing the code.
 

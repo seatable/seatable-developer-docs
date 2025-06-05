@@ -59,7 +59,7 @@
 
 !!! question "addLink"
 
-    Add link, link other table records. Get more information about linking columns from the [SeaTable API Reference](https://api.seatable.io/reference/create-row-link).
+    Add link, link other table records. Get more information about linking columns from the [SeaTable API Reference](https://api.seatable.com/reference/create-row-link).
 
     ```js
     base.addLink(linkId, tableName, linkedTableName, rowId, linkedRowId)

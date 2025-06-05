@@ -23,7 +23,7 @@ After installation you can easily connect to your SeaTable system and execute AP
 ### Get information about your account
 
 The following code connects to SeaTable Cloud. You have to provide your `Account Token`.
-Please refer to [api.seatable.io](https://api.seatable.io/reference/getaccounttokenfromusername) for guidance on how to obtain an `Account Token`.
+Please refer to [api.seatable.com](https://api.seatable.com/reference/getaccounttokenfromusername) for guidance on how to obtain an `Account Token`.
 
 ```php
 <?php
