@@ -27,7 +27,7 @@ All instructions provided are applicable to self-hosted SeaTable installations (
     1. **Custom Plugin Installation**: [SeaTable Cloud](https://cloud.seatable.io) does not support the installation of custom plugins.
     2. **Python Script Runs Limitation**: The number of Python script runs is constrained by your current SeaTable Cloud subscription.
 
-    Therefore, it's recommended to set up your own SeaTable Server if you intend to develop custom plugins, applications, or run multiple Python scripts. For further information about deploying your server, please refer to the [Admin manual](https://admin.seatable.io).
+    Therefore, it's recommended to set up your own SeaTable Server if you intend to develop custom plugins, applications, or run multiple Python scripts. For further information about deploying your server, please refer to the [Admin manual](https://admin.seatable.com).
 
 If you are new to SeaTable, we suggest starting with the introduction section covering the platform's [requirements](/introduction/requirements) and [basic concepts](/introduction/basic_concepts) of this no-code platform. Otherwise, let's dive right in!
 

@@ -19,7 +19,7 @@ When running Python scripts locally, you can take advantages of the uncountable 
 
 As a general rule, Python script must authenticate. 
 
-Within SeaTable's integrated Python editor, authentication can be done using these two lines of code at the beginning of the script thanks to the [context object](https://developer.seatable.io/scripts/python/objects/context/):
+Within SeaTable's integrated Python editor, authentication can be done using these two lines of code at the beginning of the script thanks to the [context object](https://developer.seatable.com/scripts/python/objects/context/):
 
 ```python
 base = Base(context.api_token, context.server_url)

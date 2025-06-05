@@ -4,7 +4,7 @@ You've decided to venture into developing your own script, plugin, or custom app
 
 ## Development system
 
-To begin your development journey with SeaTable, you'll need a SeaTable system. If you're planning to create short scripts, [SeaTable Cloud](https://seatable.io/preise/?lang=auto) could be a suitable option. However, for more in-depth development or when creating plugins, it's highly recommended to set up your own SeaTable Server. Refer to the [Admin manual](https://admin.seatable.io) for installation instructions.
+To begin your development journey with SeaTable, you'll need a SeaTable system. If you're planning to create short scripts, [SeaTable Cloud](https://seatable.com/prices/) could be a suitable option. However, for more in-depth development or when creating plugins, it's highly recommended to set up your own SeaTable Server. Refer to the [Admin manual](https://admin.seatable.com) for installation instructions.
 
 ## Programming skills
 
