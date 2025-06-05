@@ -2,7 +2,7 @@
 
 Welcome to the SeaTable Developer's Repository! 🌊🔍✨
 
-This repository serves as the foundational source for the SeaTable Developer's Manual available at https://developer.seatable.io. The developer manual is generated with the help of MkDocs Material and is a comprehensive guide and resource hub for developers aiming to build extensions, scripts, plugins, or custom applications within SeaTable.
+This repository serves as the foundational source for the SeaTable Developer's Manual available at https://developer.seatable.com. The developer manual is generated with the help of MkDocs Material and is a comprehensive guide and resource hub for developers aiming to build extensions, scripts, plugins, or custom applications within SeaTable.
 
 ## Content
 

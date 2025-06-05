@@ -1,5 +1,5 @@
 site_name: SeaTable Developer Manual
-site_url: https://developer.seatable.io/
+site_url: https://developer.seatable.com/
 site_author: SeaTable GmbH
 site_description: >-
   Official SeaTable Developer Manual.
@@ -56,8 +56,8 @@ plugins:
   - git-revision-date-localized
   #- redirects:
   #    redirect_maps:
-  #      'changelog/server-changelog.md': 'https://seatable.io/docs/changelog/'
-  #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.io/docs/changelog/'
+  #      'changelog/server-changelog.md': 'https://seatable.com/changelog/'
+  #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.com/changelog/'
 
 # Customization
 extra:
