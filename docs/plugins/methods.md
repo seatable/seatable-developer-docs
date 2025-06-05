@@ -2,7 +2,7 @@
 
 This is a list of all available objects and methods in SeaTable you can use in the plugin development.
 
-For a more detailed description of the used parameters, refer to the data model at the [SeaTable API Reference](https://api.seatable.io/reference/models).
+For a more detailed description of the used parameters, refer to the data model at the [SeaTable API Reference](https://api.seatable.com/reference/models).
 
 ## Common
 
