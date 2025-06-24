@@ -71,13 +71,14 @@
     This list is not exhaustive. For a complete, up-to-date list of available third-party packages, you can run the following Python script in your SeaTable environment:
 
     ```python
-    import pkg_resources
+    import importlib.metadata
 
-    installed_packages = pkg_resources.working_set
-    packages_list = sorted([f"{i.key}=={i.version}" for i in installed_packages])
+    # List all installed packages
+    installed_packages = importlib.metadata.distributions()
 
-    for package in packages_list:
-        print(package)
+    # Print package names
+    for package in installed_packages:
+      print(package.metadata['Name'])
     ```
 
 ??? question "Install and use custom python libraries"
