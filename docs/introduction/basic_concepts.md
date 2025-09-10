@@ -65,7 +65,7 @@ You can take the following python code and copy&paste it to SeaTable. It will re
 
 ### Gallery-Plugin
 
-SeaTable provides some Plugins to visualize your data. Examples for such a plugin are the [Gallery](https://seatable.io/docs/plugins/anleitung-zum-galerie-plugin/?lang=auto), [Timeline](https://seatable.io/docs/plugins/anleitung-zum-timeline-plugin/?lang=auto), [Kanban](https://seatable.io/docs/plugins/anleitung-zum-kanban-plugin/?lang=auto) and so on. But SeaTable has everything that you build your own plugin. There are no limits to the imagination, it just requires some time and React skills.
+SeaTable provides some Plugins to visualize your data. Examples for such a plugin are the [Gallery](https://seatable.com/help/anleitung-zum-galerie-plugin/), [Timeline](https://seatable.com/help/anleitung-zum-timeline-plugin/), [Kanban](https://seatable.com/help/anleitung-zum-kanban-plugin/) and so on. But SeaTable has everything that you build your own plugin. There are no limits to the imagination, it just requires some time and React skills.
 
 ![Screenshot of the Galery Plugin](/media/gallery.png)
 

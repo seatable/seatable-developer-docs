@@ -21,6 +21,6 @@ Each chapter provides you with explanations about the available objects and meth
 
 Here are some additional help articles from the [user manual](https://help.seatable.com) explaining how to create, execute and monitor a script in SeaTable:
 
-- [Creating and deleting a script](https://seatable.io/docs/javascript-python/anlegen-und-loeschen-eines-skriptes/?lang=auto)
-- [Run script manually, by button or by automation](https://seatable.io/en/docs/javascript-python/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/?lang=auto)
-- [The execution log of scripts](https://seatable.io/en/docs/javascript-python/das-ausfuehrungslog-von-skripten/?lang=auto)
+- [Creating and deleting a script](https://seatable.com/help/anlegen-und-loeschen-eines-skriptes/)
+- [Run script manually, by button or by automation](https://seatable.com/help/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/)
+- [The execution log of scripts](https://seatable.com/help/das-ausfuehrungslog-von-skripten/)
