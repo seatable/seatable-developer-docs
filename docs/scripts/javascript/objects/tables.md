@@ -83,7 +83,7 @@ All available functions to interact with the tables of a SeaTable base.
 
 !!! question "deleteTable"
 
-    Delete a table from the base. By the way, the table can be [restored from the logs](https://seatable.io/docs/arbeiten-in-tabellen/eine-geloeschte-tabelle-wiederherstellen/?lang=auto).
+    Delete a table from the base. By the way, the table can be [restored from the logs](https://seatable.com/help/eine-geloeschte-tabelle-wiederherstellen/).
 
     ``` js
     base.deleteTable(tableName: String);

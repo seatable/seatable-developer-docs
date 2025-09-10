@@ -5,8 +5,8 @@ Welcome to the SeaTable Developer Manual, your comprehensive resource for levera
 This guide illustrates **three fundamental approaches** to development within SeaTable:
 
 1. [Scripting within SeaTable](/scripts/): Create custom logic or perform individual data processing using JavaScript or Python, both supported within SeaTable.
-1. [SeaTable Plugins](/plugins/): Develop plugins capable of interacting with, visualizing, and operating on data within a SeaTable Base.
-1. [Utilizing Any Programming Language with SeaTable's API](/clients/): Seamlessly interact with the SeaTable API to construct your own web pages or programs.
+1. [SeaTable plugins](/plugins/): Develop plugins capable of interacting with, visualizing, and operating on data within a SeaTable Base.
+1. [Utilizing any programming language with SeaTable's API](/clients/): Seamlessly interact with the SeaTable API to construct your own web pages or programs.
 
 ## Developer decision tree
 
@@ -14,7 +14,7 @@ This guide illustrates **three fundamental approaches** to development within Se
 
 For guidance on choosing the right section within this manual, refer to the decision tree diagram above.
 
-If you aim to integrate a software product with SeaTable, note that SeaTable supports multiple workflow automation tools such as [n8n](https://n8n.io/integrations/seatable/), [Zapier](https://zapier.com/apps/seatable/integrations), and [Make](https://www.make.com/en/integrations/seatable). Please refer to the [SeaTable User Manual](https://seatable.io/docs-category/skripte-api-integrationen/) for detailed information on these integrations, as they are not covered here.
+If you aim to integrate a software product with SeaTable, note that SeaTable supports multiple workflow automation tools such as [n8n](https://n8n.io/integrations/seatable/), [Zapier](https://zapier.com/apps/seatable/integrations), and [Make](https://www.make.com/en/integrations/seatable). Please refer to the [SeaTable User Manual](https://seatable.com/help/integrations/) for detailed information on these integrations, as they are not covered here.
 
 ## Target audience
 
