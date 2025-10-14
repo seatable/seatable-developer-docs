@@ -1,10 +1,11 @@
-# JavaScript Client
+# JavaScript client
 
-The SeaTable JavaScript Client encapsulates SeaTable Server Restful API. You can call it in your front-end page or Node.js program.
+The SeaTable JavaScript client encapsulates SeaTable Server Restful API. You can call it in your front-end page or Node.js program.
 
-!!! danger "JavaScript API cannot be used for scripts in SeaTable bases. For script programming with Javascript, there is a [separate chapter](/scripts/) in this documentation."
+!!! warning "Two different clients"
+    JavaScript API cannot be used for scripts in SeaTable bases. For script programming with JavaScript, there is a [separate chapter](../../scripts/javascript/basic_structure_js.md) in this documentation.
 
-Note, JavaScript API calls SeaTable Server Restful API, while scripts in SeaTable bases interact with the base loaded in the browser, so the APIs of the two are somewhat different.
+Note that JavaScript API calls SeaTable Server Restful API, whereas scripts in SeaTable bases interact with the base loaded in the browser, so the APIs of the two are somewhat different.
 
 ## Installation
 
@@ -16,45 +17,43 @@ The source code of the JavaScript Client API is available at [GitHub](https://gi
 
 ## Reference
 
-To use SeaTable APIs, you should first initialize a base object and call `base.auth()`. `base.auth()` is an async function, which needs to be executed in async functions. Other APIs all return a promise object. There are two ways to use them
+To use SeaTable APIs, you should first initialize a base object and call `base.auth()`. `base.auth()` is an async function, which needs to be executed in async functions. Other APIs all return a promise object. There are two ways to use them:
 
-The first way:
+=== "First way using then"
 
-```
-base.listViews(tableName).then(views => {
-  // Use views to complete the requirements
-}).catch(error => {
-  // Exception handling
-})
-```
+    ```js
+    base.listViews(tableName).then(views => {
+      // Use views to complete the requirements
+    }).catch(error => {
+      // Exception handling
+    })
+    ```
 
-The second way:
+=== "Second way using await"
 
-```
-try {
-  const views = await base.listViews(tableName);
-  // Use views to complete the requirements
-} catch (error) {
-  // Exception handling
-}
-```
+    ```js
+    try {
+      const views = await base.listViews(tableName);
+      // Use views to complete the requirements
+    } catch (error) {
+      // Exception handling
+    }
+    ```
 
-SeaTable API Errors
+Here are the main SeaTable API errors you might encounter:
 
 - 400 Params invalid
 - 403 Permission denied
-- 413 exceed limit
+- 413 Exceed limit (see the [API Reference](https://api.seatable.com/reference/limits) about limits)
 - 500 Internal Server Error
 
 ## Authorization
 
-Base represents a table. You can use the api token of the form to obtain the authorization to read and write the base. This token can be generated directly on the web side.
+The `Base` object represents a table. You need to specify an `APIToken` to get access authorization and to be able to read and write the base. API tokens can be directly [generated in the web interface](https://seatable.com/help/erzeugen-eines-api-tokens/).
 
-Use the API Token of the base to get access authorization.
+__Example__
 
-##### Example
-
-```javascript
+```js
 import { Base } from "seatable-api";
 
 const config = {

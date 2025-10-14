@@ -1,14 +1,16 @@
 # Output
 
-Output object supports output strings in text or Markdown format.
+Two functions are available to display results in the text editor window, allowing you to output strings in text or Markdown format.
 
-!!! quote "text"
+!!! abstract "text"
 
-    Prints the content of the passed variable as normal text. Code Syntax is ignored and just printed.
+    Prints the content of `anything` as normal text. Code Syntax is ignored and just printed.
 
     ``` js
     output.text(anything: String/Object/Array)
     ```
+
+    __Output__ String
 
     __Example__
 
@@ -17,13 +19,15 @@ Output object supports output strings in text or Markdown format.
     output.text(table.name);
     ```
 
-!!! quote "markdown"
+!!! abstract "markdown"
 
-    Prints the content of the passed variable. Markdown formating is used to style the output.
+    Prints the content of `anything`, while using Markdown formatting to style the output.
 
     ``` js
     output.markdown(anything: String/Object/Array)
     ```
+
+    __Output__ String
 
     __Example__
 

@@ -121,7 +121,7 @@ Every table in a base contains columns. The following calls are available to int
 
 !!! question "addColumnOptions"
 
-    Used by single-select or multiple-select type columns
+    Used by "single select" or "multiple select"-type columns
     ``` js
     base.addColumnOptions(table_name, column, options)
     ```
@@ -137,7 +137,7 @@ Every table in a base contains columns. The following calls are available to int
 
 !!! question "addColumnCascadeSettings"
 
-    Used by single-select column, to add a limitation of child column options according to the option of parent column
+    Used by "single select"-type column, to add a limitation of child column options according to the option of parent column
     ``` js
     base.addColumnCascadeSettings(table_name, child_column, parent_column, cascade_settings)
     ```

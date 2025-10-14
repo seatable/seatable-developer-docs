@@ -1,16 +1,24 @@
 # Views
 
-Functions to interact with the views of a table.
+You'll find below all the available methods to interact with the views of a SeaTable table.
 
-## Get Views
+{%
+    include-markdown "includes.md"
+    start="<!--viewstructure-start-->"
+    end="<!--viewstructure-end-->"
+%}
 
-!!! question "getActiveView"
+## Get View(s)
 
-    Get the current view, the method return a view object.
+!!! abstract "getActiveView"
+
+    Get the current view of the active table.
 
     ``` js
     base.getActiveView();
     ```
+
+    __Output__ Single view object
 
     __Example__
     ``` js
@@ -19,13 +27,41 @@ Functions to interact with the views of a table.
     output.text(view);
     ```
 
-!!! question "listViews / getViews (deprecated)"
+!!! abstract "getViewByName"
 
-    Get all the views of the current table, and return all the views in an array
+    Get a view of a particular `table`, specified by its name `viewName`.
 
     ``` js
-    base.listViews(table: Object/String);
+    base.getViewByName(table: Object/String/* (1)! */, viewName: String);
     ```
+
+    1. `table`: either a table object or the table name
+    
+    __Output__ Single view object (`undefined` if no view called `viewName` exists, throws an error if `table` doesn't exist)
+
+    __Example__
+    ``` js
+    const table  = base.getTableByName('Table1');
+    const view = base.getViewByName(table, 'Default View');
+    output.text(view.name);
+    ```
+
+    ``` js
+    const view = base.getViewByName('Table1', 'Default View');
+    output.text(view.name);
+    ```
+
+!!! abstract "listViews / <del>getViews</del> (deprecated)"
+
+    Get all the views of the `table`.
+
+    ``` js
+    base.listViews(table: Object/String/* (1)! */);
+    ```
+
+    1. `table`: either a table object or the table name
+
+    __Output__ Array of view objects (throws an error if `table` doesn't exist)
 
     __Example__
     ``` js
@@ -34,37 +70,21 @@ Functions to interact with the views of a table.
     output.text(views.length);
     ```
 
-!!! question "getViewByName"
-
-    Get a view object via its name, and return a view object.
-
-    ``` js
-    base.getViewByName(table: Object/String, viewName: String);
-    ```
-
-    __Examples__
-    ``` js
-    const table  = base.getTableByName('Table1');
-    const view = base.getViewByName(table, 'view 1');
-    output.text(view.name);
-    ```
-
-    ``` js
-    const view = base.getViewByName('Table1', 'view 1');
-    output.text(view.name);
-    ```
-
 ## Add View
 
-!!! question "addView"
+!!! abstract "addView"
 
-    Add a view to a table.
+    Add a view named `viewName` to a `table`.
 
     ``` js
-    base.addView(table: Object/String, viewName: String);
+    base.addView(table: Object/String/* (1)! */, viewName: String);
     ```
 
-    __Examples__
+    1. `table`: either a table object or the table name
+
+    __Output__ Nothing (throws an error if `table` doesn't exist)
+
+    __Example__
     ``` js
     const table  = base.getTableByName('Table1');
     base.addView(table, 'view 2');
@@ -76,35 +96,43 @@ Functions to interact with the views of a table.
 
 ## Rename View
 
-!!! question "renameView"
+!!! abstract "renameView"
 
-    Rename a view in the table.
+    Rename a view in the `table` specified by its current name `currentViewName` and its new name `nextViewName`. Please ensure that you choose a `nextViewName` that doesn't already exists in your `table`.
 
     ``` js
-    base.renameView(table: Object/String, currentViewName: String, nextViewName: String);
+    base.renameView(table: Object/String/* (1)! */, currentViewName: String, nextViewName: String);
     ```
 
-    __Examples__
+    1. `table`: either a table object or the table name
+
+    __Output__ Nothing (throws an error if `table` or `currentViewName` doesn't exist)
+
+    __Example__
     ``` js
     const table  = base.getTableByName('Table1');
-    base.renameView(table, 'view1', 'view2');
+    base.renameView(table, 'Default View', 'view2');
     ```
 
     ``` js
-    base.renameView('Table1', 'view1', 'view2');
+    base.renameView('Table1', 'Default View', 'view2');
     ```
 
 ## Delete View
 
-!!! question "deleteView"
+!!! abstract "deleteView"
 
-    Delete a view.
+    Delete a view in a particular `table`, specified by its name `viewName`. Deleting the last view is not possible.
 
     ``` js
-    base.deleteView(table: Object/String, viewName: String);
+    base.deleteView(table: Object/String/* (1)! */, viewName: String);
     ```
 
-    __Examples__
+    1. `table`: either a table object or the table name
+
+    __Output__ Nothing (throws an error if `table`  doesn't exist or no view called `viewName` exists)
+
+    __Example__
     ``` js
     const table  = base.getTableByName('Table1');
     base.deleteView(table, 'view2');

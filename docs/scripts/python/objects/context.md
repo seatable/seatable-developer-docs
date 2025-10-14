@@ -1,6 +1,14 @@
 # Context
 
-When the script is running in the cloud, the context object provides a context environment. Here's how to use it
+When the script is running in the cloud, the context object provides a context environment. Here's how to use it.
+
+!!! warning "Function import required"
+
+    To use these functions, the context module must be imported.
+
+    ```
+    from seatable_api import context
+    ```
 
 ## server_url
 
@@ -40,7 +48,7 @@ When the script is running in the cloud, the context object provides a context e
 
 !!! info "current_table"
 
-    The name of the table that the current user is viewing when the user runs a script manually.
+    The name of the table that the current user is viewing when the script is run.
 
     ``` python
     context.current_table
@@ -57,7 +65,11 @@ When the script is running in the cloud, the context object provides a context e
 
 !!! info "current_row"
 
-    When the user manually runs a script, the line where the cursor is currently located.
+    The line which triggered the script run:
+    
+    - the line where the cursor is currently located (if the script is run manually)
+    - the line from which the button to launch the script was clicked (if the script is run from a button-type column click)
+    - each line triggering the automation (if the script is run by an automation rule)
 
     ``` python
     context.current_row
@@ -74,7 +86,7 @@ When the script is running in the cloud, the context object provides a context e
 
 !!! info "current_username"
 
-    The System ID of the user who runs the script manually (in old verison, it is called current_user_id).
+    The system ID of the user who runs the script manually (it was previously called `current_user_id`). It is a unique identifier ending by `@auth.local`.
 
     ``` python
     context.current_username
@@ -91,7 +103,7 @@ When the script is running in the cloud, the context object provides a context e
 
 !!! info "current_id_in_org"
 
-    The id of the user in the team, it can be set by the team admin via Web UI.
+    The id of the user in the team, it can be set by the team admin via the web interface.
 
     ``` python
     context.current_id_in_org

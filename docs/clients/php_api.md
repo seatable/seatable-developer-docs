@@ -1,8 +1,8 @@
-# PHP Client
+# PHP client
 
 SeaTable's API exposes the entire SeaTable features via a standardized programmatic interface. The _SeaTable PHP Client_ encapsulates SeaTable Server Restful API. If you are familiar this client enables you to call every available API endpoint of SeaTable. You can interact with the user accounts, bases or files.
 
-!!! success "Auto generated from openapi specification"
+!!! info "Auto generated from openapi specification"
 
     Since April 2024, we auto generate this SeaTable php client from our public available openapi specification. The advantage is that, the php client automatically contains all available API endpoints and we save a lot of programming capacity. Also we could generate more api clients for other programming languages in no time with the same feature set. The disadvantage is, that with this new client we removed some convenitent functions for authentication and the new version is not compatible at all with the version v0.2 and earlier.
 
@@ -16,7 +16,7 @@ composer require seatable/seatable-api-php
 
 The source code of the PHP Client API is available at [GitHub](https://github.com/seatable/seatable-api-php).
 
-## Getting Started
+## Getting started
 
 After installation you can easily connect to your SeaTable system and execute API calls.
 

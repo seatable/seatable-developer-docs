@@ -1,6 +1,6 @@
 # Authorization
 
-Python (in comparision to Javascript) scripts need an authentication.
+Python (in comparison to JavaScript) scripts need an authentication.
 
 You can use two methods to obtain authorization to read and write a base.
 
@@ -8,7 +8,7 @@ You can use two methods to obtain authorization to read and write a base.
 
 1. Another method is to use your username and password to initialize an `account` object, and then call the `account` interface to get a `base` object. The first method is much easier.
 
-!!! Danger "Protect your credentials"
+!!! warning "Protect your credentials"
 
     Please be aware that a python script is readable for all users, who have access to this base. Therefore be careful if you store your username and password to a python script.
 
