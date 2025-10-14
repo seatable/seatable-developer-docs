@@ -4,7 +4,7 @@ Python scripts can be and executed directly in a base using a SeaTable component
 
 ## Libraries
 
-The current Python Pipeline ships with Python 3.11 and a bundle of [third party libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment). One of the bundled library and the main library to interact with SeaTable bases is [seatable-api](https://github.com/seatable/seatable-api-python).
+The current Python Pipeline ships with Python 3.12 and a bundle of [third party libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment). One of the bundled library and the main library to interact with SeaTable bases is [seatable-api](https://github.com/seatable/seatable-api-python).
 
 At a minimum, the Base and context function from the seatable-api library must be imported. Additionally, you can import functions from the bundled libraries.
 
