@@ -70,9 +70,10 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Unless the SQL statement specifies a higher limit, the method returns a maximum of 100 rows. The maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
 
-    !!! info "Backticks for tables' and columns' names containing spaces"
+    !!! info "Backticks for table or column names containing or special characters or using reserved words"
+    For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` SELECT * FROM `My Table` ``. 
 
-        For SQL queries with Python scripts, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` select * from `My Table` ``. 
+    Similarly, if some of your of table or column names are the same as [SQL function](./functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 
     Similarly, if some of your of table or column names are the same as SQL function names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 

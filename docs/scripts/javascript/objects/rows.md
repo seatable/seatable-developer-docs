@@ -73,9 +73,10 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     1. `await` is used for asynchronous functions. This is **required** to ensure that the following operations (or the variable where you store the results) wait for the query's response to arrive before continuing to execute the script
 
-    !!! warning "Use only text for your table's and columns' names"
+    !!! info "Backticks for table or column names containing or special characters or using reserved words"
+    For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` SELECT * FROM `My Table` ``. 
 
-        For SQL queries within JavaScript scripts, you **cannot** use numbers, special characters or spaces in the names of your tables and columns. Feel free to use camel case to make your names easier to understand, for example `InvoiceAmount`.
+    Similarly, if some of your of table or column names are the same as [SQL function](./functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 
     __Output__ Array of row objects (single empty object if no row match the request's conditions)
 
