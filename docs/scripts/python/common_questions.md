@@ -113,7 +113,7 @@
 
     As presented in the [API Reference](https://api.seatable.com/reference/limits), batch operations such as `base.batch_append_rows`, `base.batch_update_rows`, `base.batch_delete_rows` or `base.batch_update_links` have a maximum number of 1000 rows. To deal with a higher number of rows, you could:
 
-    - Use an `INSERT`, `UPDATE` or `DELETE` [SQL query](../sql/reference.md#supported-sql-syntax) that can operate on an unlimited number of rows
+    - Use an `INSERT`, `UPDATE` or `DELETE` [SQL query](/scripts/sql/introduction.md#supported-sql-syntax) that can operate on an unlimited number of rows
 
     - Use a `while` loop to split you operation into 1000-rows chunks for example (however this won't exactly be a single operation anymore):
 

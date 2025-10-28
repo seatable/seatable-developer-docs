@@ -277,7 +277,7 @@ You may use a formula syntax that's almost the same as SeaTable's formulas in SQ
 - You cannot use column alias in formulas. E.g. `SELECT abs(t.column) FROM table AS t;` is invalid.
 - Formulas can be used in `GROUP BY` and `ORDER BY` clauses.
 
-For an exhaustive list of available functions, please refer to the complete [function reference](./function.md).
+For an exhaustive list of available functions, please refer to the complete [function reference](./functions.md).
 
 ### Extended list operators
 

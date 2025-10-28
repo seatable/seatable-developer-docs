@@ -1,6 +1,6 @@
 # Predefined objects and methods (Python)
 
-This manual list all available objects and methods (also called functions) that are available within Python scripts in SeaTable. When running directly in SeaTable, Python scripts have the ability to access the [base context](./context). [Date utilities](./date-utils/) are also available.
+This manual list all available objects and methods (also called functions) that are available within Python scripts in SeaTable. When running directly in SeaTable, Python scripts have the ability to access the [base context](context.md). [Date utilities](date-utils.md) are also available.
 
 If you compare JavaScript and Python, you will notice that Python has no specific output methods. This is not necessary, because the output is either written into the base or directly returned by the methods. Besides, you'll see that **Python methods never accepts objects** for table, view or row selection arguments, but only their names/`_ids` as strings.  Unless otherwise stated, **all method arguments are required**.
 

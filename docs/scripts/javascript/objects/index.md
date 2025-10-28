@@ -2,12 +2,12 @@
 
 The JavaScript scripts run directly in the current browser and are suitable for simple data processing. JavaScript does not require any authentication.
 
-This manual list all available objects and methods (also called functions) that are available within JavaScript scripts in SeaTable. On top, normal JavaScript operations like `console.log` or calculations are working as usual. By running directly in SeaTable, JavaScript scripts have the ability to access the [base context](./context/). [Base utilities](./utilities/) and specific [output methods](./output/) are also available. Unless otherwise stated, **all method arguments are required**.
+This manual list all available objects and methods (also called functions) that are available within JavaScript scripts in SeaTable. On top, normal JavaScript operations like `console.log` or calculations are working as usual. By running directly in SeaTable, JavaScript scripts have the ability to access the [base context](./context.md). [Base utilities](./utilities.md) and specific [output methods](./output.md) are also available. Unless otherwise stated, **all method arguments are required**.
 
 !!! warning "Two JavaScript APIs in SeaTable"
 
     SeaTable offers two different ways to use JavaScript with SeaTable. You can executing a JavaScript script directly in SeaTable and there is a JavaScript Client API. The functions are similar but not identical.
-    If you want to use a JavaScript script in SeaTable, stay at this section, otherwise switch to the [Client APIs](clients/javascript/javascript_api/).
+    If you want to use a JavaScript script in SeaTable, stay at this section, otherwise switch to the [Client APIs](/clients/javascript/javascript_api).
 
 ## Data model
 
