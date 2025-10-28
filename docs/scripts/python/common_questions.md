@@ -43,7 +43,7 @@
 
     __Python Standard Library__
 
-    The cloud environment currently utilizes **Python 3.11**. This version supports all modules in the Python 3.11 standard library. Common built-in libraries such as `os`, `sys`, `datetime`, and others are readily available for use in your scripts.
+    The cloud environment currently utilizes **Python 3.12**. This version supports all modules in the Python 3.12 standard library. Common built-in libraries such as `os`, `sys`, `datetime`, and others are readily available for use in your scripts.
 
     __Third-Party Libraries__
 

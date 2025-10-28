@@ -503,7 +503,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
         "row_id" : "WP-8rb5PSUaM-tZRmTOCPA",
         "row" : {
             "Name" : "Regina",
-            "Heigt" : "173"
+            "Height" : "173"
             }
     }]
     row_update = base.batch_update_rows('Table1', rows_data)

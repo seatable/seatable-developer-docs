@@ -186,6 +186,8 @@ nav:
               - Links: clients/javascript/links.md
               - SQL: clients/javascript/sql_query.md
               - Constants: clients/javascript/constants.md
+          - Examples:
+              - File Upload: clients/javascript/examples/file-upload.md
       - Python: clients/python_api.md
       - PHP: clients/php_api.md
       - Ruby: clients/ruby_api.md
