@@ -1,16 +1,25 @@
 # Tables
 
-All available functions to interact with the tables of a SeaTable base.
+You'll find below all the available methods to interact with the tables of a SeaTable base.
+
+{%
+    include-markdown "includes.md"
+    start="<!--tablestructure-start-->"
+    end="<!--tablestructure-end-->"
+%}
+
+You can have a look at the specific [view](./views.md#global-structure), [column](./columns.md#global-structure) or [row](./rows.md#global-structure) structure on the corresponding pages.
 
 ## Get Table(s)
 
-!!! question "getActiveTable"
+!!! abstract "getActiveTable"
 
-    Get the currently selected table and return a table object.
+    Get the currently selected table.
 
     ``` js
     base.getActiveTable();
     ```
+    __Output__ Single table object
 
     __Example__
     ``` js
@@ -18,13 +27,14 @@ All available functions to interact with the tables of a SeaTable base.
     output.text(`The name of the active table is: ${table.name}`);
     ```
 
-!!! question "getTables"
+!!! abstract "getTables" 
 
-    Get all tables of this base as `json` object with all rows and metadata.
+    Get all tables of the current base.
 
     ```
     base.getTables();
     ```
+    __Output__ Array of table objects
 
     __Example__
     ``` js
@@ -32,28 +42,36 @@ All available functions to interact with the tables of a SeaTable base.
     output.text(tables);
     ```
 
-!!! question "getTableByName"
+!!! abstract "getTableByName"
 
-    Get a table object by its name. The object contains all rows and metadata.
+    Get a table object by its name.
+
     ``` js
     base.getTableByName(tableName: String);
     ```
 
+    __Output__ Single table object (`undefined` if table doesn't exist)
+
     __Example__
-    ``` js
+
+    ```js
     const table = base.getTableByName('Table1');
+    // Display only table _id
     output.text(`The id of the table is: ${table._id}`);
+    // Display whole table structure
+    output.text(table);
     ```
 
 ## Add Table
 
-!!! question "addTable"
+!!! abstract "addTable"
 
-    Add a new table to this base. The table should not exist already in your base.
+    Add a new table to this base, given the new table name `tableName`. Please ensure that you choose a `tableName` that doesn't already exists in your base.
 
     ``` js
     base.addTable(tableName: String);
     ```
+    __Output__ Nothing
 
     __Example__
     ``` js
@@ -63,13 +81,15 @@ All available functions to interact with the tables of a SeaTable base.
 
 ## Rename Table
 
-!!! question "renameTable"
+!!! abstract "renameTable"
 
-    Rename an existing table.
+    Rename an existing table named `oldName` to `newName`. Please ensure that you choose a `newName` that doesn't already exists in your base.
 
     ``` js
     base.renameTable(oldName: String, newName: String);
     ```
+
+    __Output__ Nothing (throws an error if no table named `oldName` exists)
 
     __Example__
     ``` js
@@ -81,13 +101,14 @@ All available functions to interact with the tables of a SeaTable base.
 
 ## Delete Table
 
-!!! question "deleteTable"
+!!! abstract "deleteTable"
 
-    Delete a table from the base. By the way, the table can be [restored from the logs](https://seatable.com/help/eine-geloeschte-tabelle-wiederherstellen/).
+    Delete a table named `tableName` from the base. By the way, the table can be [restored from the logs](https://seatable.com/help/eine-geloeschte-tabelle-wiederherstellen/). Deleting the last table is not possible.
 
     ``` js
     base.deleteTable(tableName: String);
     ```
+    __Output__ Nothing (throws an error if no table named `tableName` exists)
 
     __Example__
     ``` js

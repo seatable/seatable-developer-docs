@@ -86,4 +86,52 @@
     ## Install and use custom python libraries
 
     - The python libraries in SeaTable Cloud can not be changed.
-    - If you run your own SeaTable Server it is possible to install your own libaries.
+    - If you run your own SeaTable Server it is possible to install your own libraries.
+
+??? question "Printing complex elements (dicts, tables, arrays of rows) is sometimes difficult to read"
+
+    ## Printing complex elements is sometimes difficult to read
+
+    Do not hesitate to run your code in a Python IDE which could have specific features for data visualization (don't forget you won't be able to rely on context to provide `api_token` and `server_url`, see first question for dual run syntax). You could also use the `json` library to make the output of complex objects easier to read:
+
+    ```python
+    import json # (1)!
+    from seatable_api import Base,context
+    base = Base(context.api_token,context.server_url)
+    base.auth()
+
+    print(json.dumps(base.get_metadata(), indent=' ')) # (2)!
+    ```
+
+    1. Import the json library
+
+    2. Print `json.dumps(object, indent='  ')` instead of just printing object. You have to explicitly specify the indent character (which is not a classic space character) as the output window of SeaTable's script editor actually trims indent spaces.
+
+??? question "How to deal with more than 1000 rows at once with batch operations?"
+
+    ## Dealing with more than 1000 rows at once with batch operations
+
+    As presented in the [API Reference](https://api.seatable.com/reference/limits), batch operations such as `base.batch_append_rows`, `base.batch_update_rows`, `base.batch_delete_rows` or `base.batch_update_links` have a maximum number of 1000 rows. To deal with a higher number of rows, you could:
+
+    - Use an `INSERT`, `UPDATE` or `DELETE` [SQL query](/scripts/sql/introduction.md#supported-sql-syntax) that can operate on an unlimited number of rows
+
+    - Use a `while` loop to split you operation into 1000-rows chunks for example (however this won't exactly be a single operation anymore):
+
+    ```python
+    from seatable_api import Base, context
+
+    base = Base(context.api_token, context.server_url)
+    base.auth()
+
+    # You want to batch append new_rows which is more than 1000-rows long
+    while len(new_rows)>0 :
+        end = min(1000,len(new_rows))
+        rows_chunk = new_rows[:end]
+        print(f"{rows_chunk[0]['Name']} > {rows_chunk[-1]['Name']}")
+        base.batch_append_rows("Table1", rows_chunk)
+        new_rows = new_rows[end:len(new_rows)]
+    ```
+
+    To [batch update links](./objects/links.md#update-links), the loop will be slightly more complex as you'll have to deal with `other_rows_ids_map` as well
+
+

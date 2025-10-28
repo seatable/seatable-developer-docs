@@ -1,8 +1,9 @@
-# Python Client
+# Python client
 
-The SeaTable Python Client encapsulates SeaTable Server Restful API. You can call it in your python programm.
+The SeaTable Python Client encapsulates SeaTable Server Restful API. You can call it in your python program.
 
-!!! success "External python programms and python scripts, executed in SeaTable, use the same python library and therefore share the same functions. For an overview of the available functions, read the chapter of [script programming with Python](/scripts/python/basic_structure_python/) in this documentation."
+!!! info "Unique Python library"
+    Unlike JavaScript, external python programs and python scripts, executed in SeaTable, use the same python library and therefore share the same functions. For an overview of the available functions, read the chapter of [script programming with Python](../scripts/python/introduction.md) in this documentation."
 
 ## Installation
 

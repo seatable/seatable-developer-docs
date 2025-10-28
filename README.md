@@ -2,18 +2,18 @@
 
 Welcome to the SeaTable Developer's Repository! 🌊🔍✨
 
-This repository serves as the foundational source for the SeaTable Developer's Manual available at https://developer.seatable.com. The developer manual is generated with the help of MkDocs Material and is a comprehensive guide and resource hub for developers aiming to build extensions, scripts, plugins, or custom applications within SeaTable.
+This repository serves as the foundational source for the SeaTable Developer's Manual available at https://developer.seatable.com. The Developer Manual is generated with the help of MkDocs Material and is a comprehensive guide and resource hub for developers aiming to build extensions, scripts, plugins, or custom applications within SeaTable.
 
 ## Content
 
 - **Introducion**: Explanation of fundamental approaches and SeaTable basic concepts.
 - **Scripting in SeaTable**: Detailed instructions on scripting with a complete function overview and ready-to-use scripts.
 - **Plugin Development**: Step-by-step guide to developing your own SeaTable plugin.
-- **Client API's**: List of ready-to-use API clients for various programming languages like JavaScript, Python, and PHP.
+- **Client APIs**: List of ready-to-use API clients for various programming languages like JavaScript, Python, and PHP.
 
 ## How to participate
 
-Please fell free to particiate in the developer manual by creating pull requests. Before you do this, please test your changes in a local copy of this manual. Here is how you can do this.
+Please fell free to participate in the Developer Manual by creating pull requests. Before you do this, please test your changes in a local copy of this manual. Here is how you can do this.
 
 > :warning: Docker is required
 >
@@ -30,7 +30,7 @@ git checkout -b <new_branch>
 # please replace <new_branch> with something short like "add_python_example"
 ```
 
-### Step 2: Generate your local version of the developer manual
+### Step 2: Generate your local version of the Developer Manual
 
 We developed a tiny bash script to generate the local copy of the manual.
 
@@ -52,7 +52,7 @@ git commit -m "<commit_message>"
 git push
 ```
 
-### Step 4: Stop the docker container with your local admin manual copy
+### Step 4: Stop the docker container with your local Developer Manual copy
 
 ```bash
 ./preview.sh -stop

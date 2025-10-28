@@ -9,7 +9,7 @@ repo_name: seatable/seatable-developer-docs
 repo_url: https://github.com/seatable/seatable-developer-docs/
 
 # Copyright
-copyright: Copyright &copy; 2022 - 2023 SeaTable GmbH
+copyright: Copyright &copy; 2022 - 2025 SeaTable GmbH
 
 # Configuration
 theme:
@@ -54,6 +54,8 @@ plugins:
   - minify:
       minify_html: true
   - git-revision-date-localized
+  - include-markdown:
+      rewrite_relative_urls: false
   #- redirects:
   #    redirect_maps:
   #      'changelog/server-changelog.md': 'https://seatable.com/changelog/'
@@ -113,13 +115,11 @@ markdown_extensions:
 nav:
   - Introduction:
       - index.md
-      - Requirements: introduction/requirements.md
-      - Basic concepts: introduction/basic_concepts.md
-      - Get Support: introduction/get_support.md
+      - Coding for beginners: introduction/coding_for_beginners.md
+      - Get support: introduction/get_support.md
   - Scripting in SeaTable:
       - scripts/index.md
       - JavaScript:
-          - Basic structure: scripts/javascript/basic_structure_js.md
           - Objects & Methods:
               - scripts/javascript/objects/index.md
               - Tables: scripts/javascript/objects/tables.md
@@ -133,14 +133,15 @@ nav:
           - Examples:
               - scripts/javascript/examples/index.md
               - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
-              - 2. Get incremental: scripts/javascript/examples/get-incremental.md
-              - 3. Create statistics: scripts/javascript/examples/statistics-attendance.md
+              - 2. Calculate accumulated value: scripts/javascript/examples/calculate-accumulated-value.md
+              - 3. Compute attendance statistics: scripts/javascript/examples/compute-attendance-statistics.md
           - Common questions: scripts/javascript/common_questions.md
       - Python:
-          - Basic structure: scripts/python/basic_structure_python.md
+          - Introduction: scripts/python/introduction.md
           - Objects & Methods:
               - scripts/python/objects/index.md
               - Metadata: scripts/python/objects/metadata.md
+              - Context: scripts/python/objects/context.md
               - Tables: scripts/python/objects/tables.md
               - Views: scripts/python/objects/views.md
               - Columns: scripts/python/objects/columns.md
@@ -150,32 +151,31 @@ nav:
               - Big data: scripts/python/objects/big_data.md
               - Accounts: scripts/python/objects/accounts.md
               - Users: scripts/python/objects/users.md
-              - Date Utilities: scripts/python/objects/date-utils.md
-              - Context: scripts/python/objects/context.md
-              - Constants: scripts/python/objects/constants.md
-              - Notifications: scripts/python/objects/notifications.md
-              - Websockets: scripts/python/objects/websockets.md
-          - Authorization: scripts/python/authorization_python.md
+              - Date utilities: scripts/python/objects/date-utils.md
+              - Communication utilities: scripts/python/objects/communication-utils.md
           - Examples:
               - scripts/python/examples/index.md
-              - 1. Send E-mails: scripts/python/examples/send_email.md
-              - 2. Generate Barcode: scripts/python/examples/generate_barcode.md
-              - 3. Generate QR-Code: scripts/python/examples/generate_qrcode.md
-              - 4. Sync MySQL: scripts/python/examples/sync_mysql.md
-              - 5. Watch Stock Price: scripts/python/examples/update_stock_price.md
-              - 6. Merge PDF: scripts/python/examples/merge_pdf.md
-              - 7. Convert HEIC to PNG: scripts/python/examples/heic_to_png.md
+              - 1. Add rows: scripts/python/examples/auto-add-rows.md
+              - 2. Calculate accumulated value: scripts/python/examples/calculate-accumulated-value.md
+              - 3. Compute attendance statistics: scripts/python/examples/compute-attendance-statistics.md
+              - 4. Send emails: scripts/python/examples/send_email.md
+              - 5. Generate barcode: scripts/python/examples/generate_barcode.md
+              - 6. Generate QR code: scripts/python/examples/generate_qrcode.md
+              - 7. Sync MySQL: scripts/python/examples/sync_mysql.md
+              - 8. Watch stock price: scripts/python/examples/update_stock_price.md
+              - 9. Merge PDF: scripts/python/examples/merge_pdf.md
+              - 10. Convert HEIC to PNG: scripts/python/examples/heic_to_png.md
           - Common questions: scripts/python/common_questions.md
       - Query with SQL:
-          - SQL Reference: scripts/sql/reference.md
-          - SQL Function Reference: scripts/sql/functions.md
+          - Introduction: scripts/sql/introduction.md
+          - SQL function reference: scripts/sql/functions.md
   - Plugin Development:
       - plugins/index.md
       - Environments: plugins/environments.md
       - Available methods: plugins/methods.md
   - Client APIs:
       - clients/index.md
-      - Javascript:
+      - JavaScript:
           - Introduction: clients/javascript/javascript_api.md
           - Objects & Methods:
               - Metadata: clients/javascript/metadata.md

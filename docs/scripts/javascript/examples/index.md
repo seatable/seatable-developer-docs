@@ -1,15 +1,21 @@
 # Examples
 
-Currenty this documentation contains three examples for easy to follow script with Javascript. You can just copy&paste them in any base in SeaTable any run them.
+This documentation currently contains three easy-to-follow examples of JavaScript scripts. For each example, you'll need a special base structure so that you can just copy&paste the scripts into SeaTable and run them.
 
 ## Add rows
 
-short explanation will follow soon.
+This script demonstrates how to add rows to record monthly repetitive expenses in a ledger.
 
-## Get Incremental
+[read more :material-arrow-right-thin:](/scripts/javascript/examples/auto-add-rows/)
 
-short explanation will follow soon.
+## Calculate accumulated value
+
+This script computes an accumulated value (adds the value of the current row and the previous rows), similar to the *Calculate accumulated value* operation from the data processing menu.
+
+[read more :material-arrow-right-thin:](/scripts/javascript/examples/calculate-accumulated-value/)
 
 ## Statistics
 
-short explanation will follow soon.
+This script computes, from a list of clocking times, daily clock in (earliest clocking) and clock out (latest clocking) times for each day and staff member.
+
+[read more :material-arrow-right-thin:](/scripts/javascript/examples/compute-attendance-statistics/)

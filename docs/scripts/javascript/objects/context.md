@@ -1,33 +1,37 @@
 # Context
 
-When the script runs, the context object provides the context. The usage is as follows.
+When the script runs, the `context` object context-related elements. The usage is as follows.
 
-!!! info "currentTable"
+!!! abstract "currentTable"
 
-    Returns the name of the currently selected table.
+    Currently selected table.
 
     ``` js
-    base.context.currentTable
+    base.context.currentTable;
     ```
+
+    __Output__ The name of the currently selected table
 
     __Example__
 
     ``` js
-    const name = base.context.currentTable
-    output.text(`The name of the current table is: ${name}`)
+    const name = base.context.currentTable;
+    output.text(`The name of the current table is: ${name}`);
     ```
 
-!!! info "currentRow"
+!!! abstract "currentRow"
 
-    Returns the currently selected row and returns the complete row object including `_id`, `_mtime`, `_ctime`. If no row is selected, this function returns `undefined`.
-
+    Currently selected row. If the script is launched from a button click, this is the row on which the button was clicked.
+    
     ``` js
-    base.context.currentRow
+    base.context.currentRow;
     ```
+
+    __Output__ Complete row object, including `_id`, `_mtime`, `_ctime`. If no row is selected, this function returns `undefined`.
 
     __Example__
 
     ``` js
-    const row = base.context.currentRow
-    output.text(row)
+    const row = base.context.currentRow;
+    output.text(row);
     ```

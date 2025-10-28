@@ -3,5 +3,6 @@ mkdocs-material-extensions
 mkdocs-redirects
 mkdocs-git-revision-date-localized-plugin
 mkdocs-minify-plugin
+mkdocs-include-markdown-plugin
 # Fix for broken file watching (https://github.com/mkdocs/mkdocs/issues/4032)
 click==8.2.1
