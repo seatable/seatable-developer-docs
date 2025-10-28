@@ -93,7 +93,7 @@ Here is the global structure of a table object:
 }
 ```
 
-1.  Array of existing [columns](./columns.md#global-structure)
+1.  Array of existing columns
     ```js
     {
       "key": "g4s1",
@@ -109,7 +109,7 @@ Here is the global structure of a table object:
     }
     ```
 
-2.  Array of existing [rows](./rows.md#global-structure)
+2.  Array of existing rows
     ```js
     {
     "_id": "Qtf7xPmoRaiFyQPO1aENTjb",
@@ -126,7 +126,7 @@ Here is the global structure of a table object:
     }
     ```
 
-3.  Array of existing [views](views.md#global-structure)
+3.  Array of existing views
     ```js
     {
       "_id": "0000",
@@ -146,8 +146,6 @@ Here is the global structure of a table object:
     }
     ```
 Please refer to the [SeaTable API Reference](https://api.seatable.com/reference/models#table) for a more detailed presentation.
-
-You can have a look at the specific [view](./views.md#global-structure), [column](./columns.md#global-structure) or [row](./rows.md#global-structure) structure on the corresponding pages.
 
 <!--tablestructure-end-->
 

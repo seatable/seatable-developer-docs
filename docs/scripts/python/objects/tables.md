@@ -8,6 +8,8 @@ You'll find below all the available methods to interact with the tables of a Sea
     end="<!--tablestructure-end-->"
 %}
 
+You can have a look at the specific [view](./views.md#global-structure), [column](./columns.md#global-structure) or [row](./rows.md#global-structure) structure on the corresponding pages.
+
 ## Retrieve table(s)
 
 !!! info "Get current table"
