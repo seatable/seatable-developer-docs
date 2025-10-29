@@ -4,7 +4,11 @@ This section contains some examples of Python Scripts. The **first three scripts
 
 Even if Python scripts are capable of checking if the base structure (tables and columns) needed exist and of creating it if necessary, we didn't implement this feature in the scripts so you can focus on the actual goal of each script. 
 
-For each example, you'll then need a special base structure so that you can just copy&paste the scripts into SeaTable and run them.
+{%
+    include-markdown "includes.md"
+    start="<!--examplesmaterial-start-->"
+    end="<!--examplesmaterial-end-->"
+%}
 
 # Add rows
 

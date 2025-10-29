@@ -448,6 +448,19 @@ Please note the specific format for link-type columns (structure of the array ob
 
 <!--rowstructure-end-->
 
+<!--examplesmaterial-start-->
+
+For each example, you'll need a special base structure so that you can just copy&paste the scripts into SeaTable and run them.
+
+If you don't want to recreate the tables, here are two bases containing the tables required for each example, depending on whether you want to recreate the scripts yourself or you prefer them to already be present:
+
+- [Examples material (without scripts)](/media/SeaTable examples material (without scripts).dtable)
+- [Examples material (scripts included)](/media/SeaTable examples material (scripts included).dtable)
+
+Once downloaded, you can easily [create a base from the DTABLE file](https://seatable.com/help/erstellen-einer-base-aus-einer-dtable-datei/).
+
+<!--examplesmaterial-end-->
+
 <!--add-row-example-start-->
 # Add rows
 

@@ -1,6 +1,12 @@
 # Examples
 
-This documentation currently contains three easy-to-follow examples of JavaScript scripts. For each example, you'll need a special base structure so that you can just copy&paste the scripts into SeaTable and run them.
+This documentation currently contains three easy-to-follow examples of JavaScript scripts. 
+
+{%
+    include-markdown "includes.md"
+    start="<!--examplesmaterial-start-->"
+    end="<!--examplesmaterial-end-->"
+%}
 
 ## Add rows
 
