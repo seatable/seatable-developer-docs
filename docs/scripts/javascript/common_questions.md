@@ -36,7 +36,7 @@
         if (json instanceof Array) {
             output.text(indenterChar.repeat(indent) + "[");
             indent += 1;
-            json.forEach((elem)=>jsonPrettyFormat(elem,indent));
+            json.forEach((elem)=>jsonPrettyFormat(elem, indent));
             indent -= 1;
             output.text(indenterChar.repeat(indent) + "]");
         }
@@ -52,7 +52,7 @@
                     } else {
                         output.text(indenterChar.repeat(indent) + key + ": ");
                         indent += 1;
-                        jsonPrettyFormat(value,indent);
+                        jsonPrettyFormat(value, indent);
                     }
                 }
                 indent -= 1;

@@ -649,7 +649,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     | Data structure | Column type                               | Format for Greater-Less comparisons                 | Format for Equal-Not equal comparisons             | Arithmetic operators |
     | -------------- | ----------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------- | :---------- |
-    | String         | Text, Long Text, URL,Email, Single Select | Unsupported                                                 | String                                              | Unsupported |
+    | String         | Text, Long Text, URL, Email, Single Select | Unsupported                                                 | String                                              | Unsupported |
     | List           | Multiple Select                           | Unsupported                                                 | String                                              | Unsupported |
     | Number         | Number                                    | Number                                                  | Number and empty String `""`""                     | Supported   |
     | Date           | Date, Created time,  Last modified time   | Patterns: YYYY-MM-DD, YYYY-MM-DD hh:mm, YYYY-MM-DD hh\:mm:ss | Same patterns as greater-less query                 | Unsupported |

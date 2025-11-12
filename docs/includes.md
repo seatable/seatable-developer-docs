@@ -476,7 +476,7 @@ Here is the structure of the table named `Daily expenses` you need so that this 
 <!--accumulated-value-example-start-->
 # Calculate accumulated value
 
-This script accumulates the values of the current row and the previous rows, and records the result to the current row. It does the same than the *Calculate accumulated value* operation from the data processing menu. If there's a grouping rule active on the view, accumulated values will be calculated for each group.Otherwise, values are accumulated for all rows. Please not that this script only supports **grouping by a single column**.
+This script accumulates the values of the current row and the previous rows, and records the result to the current row. It does the same than the *Calculate accumulated value* operation from the data processing menu. If there's a grouping rule active on the view, accumulated values will be calculated for each group. Otherwise, values are accumulated for all rows. Please not that this script only supports **grouping by a single column**.
 
  Here is the structure of the table named `Accumulated value` you need so that this script could run:
 

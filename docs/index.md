@@ -55,9 +55,9 @@ The actual authentication depends on the development approach one chooses.
 
 === "Scripts"
 
-    JavaScript Scripts does not require any authentication at all because these scripts are executed in the browser of the user and the user has to be authenticated already.
+    JavaScript scripts does not require any authentication at all because these scripts are executed in the browser of the user and the user has to be authenticated already.
 
-    Plugin Scripts require an authentication to get data from the base, but the `context` objects contains everything for an easy authentication.
+    Python scripts require an authentication to get data from the base, but the `context` objects contains everything for an easy authentication.
 
 === "Plugins"
 

@@ -172,7 +172,7 @@
 
     base = Base(context.api_token, context.server_url)
     base.auth()
-    lin_id = base.get_column_link_id(TABLE1_NAME,TABLE1_LINK_COLUMN_NAME); # (1)!
+    lin_id = base.get_column_link_id(TABLE1_NAME, TABLE1_LINK_COLUMN_NAME); # (1)!
     current_row_id = context.current_row['_id'];
     base.add_link(lin_id, TABLE1_NAME, TABLE2_NAME, current_row_id, 'J5St2clyTMu_OFf9WD8PbA')
     ```
@@ -212,7 +212,7 @@
 
 !!! abstract "batch_update_links"
 
-    Same than above,except that it allows you to batch update infos of link-type columns for several rows at once. Learn more about `other_rows_ids_map` in the [SeaTable API Reference](https://api.seatable.com/reference/createrowlink). This function can't operate more than 1000 rows at once. If you need to deal with more than 1000 rows at once, please refer to the [common questions](../common_questions.md#dealing-with-more-than-1000-rows-at-once-with-batch-operations).
+    Same than above, except that it allows you to batch update infos of link-type columns for several rows at once. Learn more about `other_rows_ids_map` in the [SeaTable API Reference](https://api.seatable.com/reference/createrowlink). This function can't operate more than 1000 rows at once. If you need to deal with more than 1000 rows at once, please refer to the [common questions](../common_questions.md#dealing-with-more-than-1000-rows-at-once-with-batch-operations).
 
     ``` python
     base.batch_update_links(link_id, table_name, other_table_name, row_id_list, other_rows_ids_map) # (1)!

@@ -79,5 +79,5 @@ for date_key in grouped_rows :
         date_stat_items.append(staff_date_stat_item[staff])
 
 # Write the attendance data of all employees on the current date into the table
-base.batch_append_rows(target_table_name,date_stat_items)
+base.batch_append_rows(target_table_name, date_stat_items)
 ```

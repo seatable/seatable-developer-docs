@@ -139,7 +139,7 @@
 
     ```js
         const table = base.getTableByName('Table1');
-        const linkColumn = base.getColumnByName(table,'Table2 link');
+        const linkColumn = base.getColumnByName(table, 'Table2 link');
         const currentRowLinks = await base.getLinkedRecords(table._id, linkColumn.key, [{'row_id': base.context.currentRow._id, 'limit':100  /* (1)! */}]);
         currentRowLinks[base.context.currentRow._id].forEach((link) => {output.text(link)});
     ```
@@ -175,7 +175,7 @@
     const table1LinkColumnName = "Table2 link";
     const table2Name = "Table2";
 
-    const linId = base.getColumnLinkId(table1Name,table1LinkColumnName); /* (1)! */
+    const linId = base.getColumnLinkId(table1Name, table1LinkColumnName); /* (1)! */
     const currentRowId = base.context.currentRow._id;
     base.addLink(linId, table1Name, table2Name, currentRowId, 'J5St2clyTMu_OFf9WD8PbA');
     ```

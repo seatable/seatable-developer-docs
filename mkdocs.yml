@@ -117,7 +117,7 @@ nav:
       - index.md
       - Coding for beginners: introduction/coding_for_beginners.md
       - Get support: introduction/get_support.md
-  - Scripting in SeaTable:
+  - Scripting:
       - scripts/index.md
       - JavaScript:
           - Objects & Methods:

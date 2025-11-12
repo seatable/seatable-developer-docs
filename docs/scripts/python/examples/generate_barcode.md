@@ -43,7 +43,7 @@ CUSTOM_OPTIONS = {
     "module_width": 0.2,       # width of single stripe of barcode, mm
     "module_height": 30.0,     # height of barcode, mm
     "quiet_zone": 6.5,         # padding size of first and last stripe to the image, mm
-    "font_size": 10,           # font size of the text below the barcode,pt
+    "font_size": 10,           # font size of the text below the barcode, pt
     "text_distance": 5.0,      # distance between the text and the barcode, mm
 }
 
