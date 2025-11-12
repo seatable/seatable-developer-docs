@@ -309,7 +309,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
 !!! abstract "now"
 
-    Return the ISO formatted current date and time,accurate to seconds.
+    Return the ISO formatted current date and time, accurate to seconds.
 
     ``` python
     dateutils.now()
@@ -376,7 +376,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     ``` python
     from seatable_api.date_utils import dateutils
 
-    dateutils.weekday("2025-6-2") # 0 (June 2,2025 was a Monday)
+    dateutils.weekday("2025-6-2") # 0 (June 2, 2025 was a Monday)
     ```
 
 ### isoweekday

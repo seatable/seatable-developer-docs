@@ -67,6 +67,8 @@
     - [scipy](https://pypi.org/project/scipy/): Fundamental algorithms for scientific computing in Python
     - [PyPDF](https://pypi.org/project/pypdf/): PDF toolkit for Python
     - [pdfmerge](https://pypi.org/project/pdfmerge/): Merge PDF files
+    - [Markdown](https://pypi.org/project/Markdown/): Convert Markdown to HTML
+    - [RapidFuzz](https://pypi.org/project/RapidFuzz/): A fast string matching library using string similarity calculations
 
     This list is not exhaustive. For a complete, up-to-date list of available third-party packages, you can run the following Python script in your SeaTable environment:
 
@@ -96,8 +98,8 @@
 
     ```python
     import json # (1)!
-    from seatable_api import Base,context
-    base = Base(context.api_token,context.server_url)
+    from seatable_api import Base, context
+    base = Base(context.api_token, context.server_url)
     base.auth()
 
     print(json.dumps(base.get_metadata(), indent=' ')) # (2)!
@@ -125,7 +127,7 @@
 
     # You want to batch append new_rows which is more than 1000-rows long
     while len(new_rows)>0 :
-        end = min(1000,len(new_rows))
+        end = min(1000, len(new_rows))
         rows_chunk = new_rows[:end]
         print(f"{rows_chunk[0]['Name']} > {rows_chunk[-1]['Name']}")
         base.batch_append_rows("Table1", rows_chunk)

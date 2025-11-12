@@ -1,6 +1,6 @@
 # Send emails
 
-This Python script demonstrates sending emails via SMTP using the [smtplib module](https://docs.python.org/3/library/smtplib.html) and constructing MIME objects to compose rich content emails within SeaTable. It also retrieves configuration parameters from the database. This example uses two tables:
+This Python script demonstrates sending emails via SMTP using the [smtplib module](https://docs.python.org/3/library/smtplib.html), constructing MIME objects to compose rich content emails within SeaTable and creating HTML content from a "long text"-type column using the markdown module. It also retrieves configuration parameters from the database. This example uses two tables:
 
 - The `Contacts` table storing the contacts you want to send email to:
 
@@ -14,10 +14,10 @@ This Python script demonstrates sending emails via SMTP using the [smtplib modul
 | ----------- |: ----- :|: ------------- :|: ----------- :|: ---------- :|: --------- :|: -- :|
 | **Column type**  | text  | single select | single select | single select | checkbox | file |
 
-- Recipient email can be `hard-coded` (recipients are defined l.39 of the script as a list of email addresses) or `database` (recipients are retrieved from the `Email` column of the `Contacts` table).
-- `Subject source` can be `hard-coded` (define manually the subject of the mail l.48 of the script) or `database` (the subject is retrieved from the `Subject` column of the `Send email config` table).
-- Email format can be `text` (plain text defined l.61) or `html` (HTML-formatted message, defined l.67). Of course, you can imagine a third `database` option allowing you to retrieve the email body from your `Send email config` table.
-- If `Attach file` is checked, the first file from the `File` column will be enclosed (don't forget to adapt the `_subtype` l.98 of the script if your file is not a pdf).
+- Recipient email can be `hard-coded` (recipients are defined l.48 of the script as a list of email addresses) or `database` (recipients are retrieved from the `Email` column of the `Contacts` table).
+- `Subject source` can be `hard-coded` (define manually the subject of the mail l.57 of the script) or `database` (the subject is retrieved from the `Subject` column of the `Send email config` table).
+- Email format can be `text` (plain text defined l.71), `html` (HTML-formatted message, defined l.77) or `database` (the email body retrieved from the `Email body` column of the `Send email config` table).
+- If `Attach file` is checked, the first file from the `File` column will be enclosed (don't forget to adapt the `_subtype` l.115 of the script if your file is not a pdf).
 - You can eventually add a `Send email` column, configured to launch the script. The script itself is written to use either the `context.current_row` data, or the first row of the table if no `context` is defined (script launched from outside SeaTable).
 
 ## Process overview
@@ -25,6 +25,7 @@ This Python script demonstrates sending emails via SMTP using the [smtplib modul
 1. **Retrieves email configuration** from the `Send email config` table.
 2. Eventually **retrieves recipient email addresses** from a designated SeaTable table column (`Email` column in `Contact` table).
 3. Eventually **retrieves email subject**.
+3. Eventually **retrieves email body**.
 4. **Composes an email** using plain text or HTML content to create a rich-text message body.
 5. **Attaches a file** from SeaTable to the email by fetching its download link using the SeaTable API and attaching it to the email.
 6. **Sends the email** after authenticating using SMTP parameters.
@@ -32,6 +33,7 @@ This Python script demonstrates sending emails via SMTP using the [smtplib modul
 ## Code
 
 ```python linenums="1"
+import markdown
 import smtplib, ssl
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
@@ -54,23 +56,23 @@ CONFIG_TABLE = 'Send email config'
 CONTACTS_TABLE = 'Contacts'
 
 # SMTP server configurations for sending emails
-smtp_server = 'my.smtpserver.com'
-smtp_port = 465
-username = 'my.em@il.com'
-password = 'topsecret'
-sender = 'My name'
+SMTP_SERVER = 'my.smtpserver.com'
+SMTP_PORT = 465
+USERNAME = 'my.em@il.com'
+PASSWORD = 'topsecret'
+SENDER = 'My name'
 
 # 1. Get email configuration from the 'Send email config' table
 current_row = context.current_row or base.list_rows(CONFIG_TABLE)[0]
-# Choose RECIPIENT_EMAIL between "hard-coded" (subject l.39 of this script)
+# Choose RECIPIENT_EMAIL between "hard-coded" (addresses l.48 of this script)
 # or "database" (get emails from 'Email' column in the 'Contacts' table)
 RECIPIENT_EMAIL = current_row.get('Recipient email')
-# Choose SUBJECT between "hard-coded" (address l.48 of this script)
+# Choose SUBJECT between "hard-coded" (subject l.57 of this script)
 # or "database" (get subject from 'Subject' column in the 'Send email config' table)
 SUBJECT_SOURCE = current_row.get('Subject source')
-# Choose EMAIL_FORMAT between "text" (hard-coded plain text, defined l.61)
-# or "html" (hard-coded HTML, defined l.67)
-# and "database" (content of the 'Message' column in the 'Send email config' table)
+# Choose EMAIL_FORMAT between "text" (hard-coded plain text, defined l.71),
+# "html" (hard-coded HTML, defined l.77)
+# and "database" (content of the 'Email body' column in the 'Send email config' table)
 EMAIL_FORMAT = current_row.get('Email format')
 # If Attach file, the script retrieves the first file from the 'File' column of the 'Sending email config'
 ATTACH_FILE = current_row.get('Attach file')
@@ -96,12 +98,12 @@ elif SUBJECT_SOURCE == "database" :
 # 4. Construct the email message
 msg = MIMEMultipart()
 msg['Subject'] = subject
-msg['From'] = sender + '<' + username + '>'
+msg['From'] = SENDER + '<' + USERNAME + '>'
 msg['To'] = ", ".join(receivers)
 
 if EMAIL_FORMAT == "text" :
   # Option a) plain text message
-  text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.seatable.com.com"
+  text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.seatable.com"
   text_plain = MIMEText(text,'plain', 'utf-8')
   msg.attach(text_plain)
 
@@ -117,7 +119,13 @@ elif EMAIL_FORMAT == "html" :
     </body>
   </html>
   """
-  text_html = MIMEText(html,'html', 'utf-8')
+  text_html = MIMEText(html, 'html', 'utf-8')
+  msg.attach(text_html)
+
+elif EMAIL_FORMAT == "database" :
+  # Option c) HTML content for the email body from the Email body column
+  current_row = context.current_row or base.list_rows(CONFIG_TABLE)[0]
+  text_html = MIMEText(markdown.markdown(current_row['Email body']),'html', 'utf-8')
   msg.attach(text_html)
 
 # 5. Attach a file from SeaTable to the email
@@ -128,7 +136,7 @@ if ATTACH_FILE :
   file_url = current_row['File'][0]['url']
   path = file_url[file_url.find('/files/'):]
   download_link = base.get_file_download_link(parse.unquote(path))
-  
+
   try:
       response = requests.get(download_link)
       if response.status_code != 200:
@@ -148,8 +156,8 @@ if ATTACH_FILE :
 # option a) Sending the email using SMTP
 try:
     with smtplib.SMTP() as email_server:
-        email_server.connect(smtp_server)
-        email_server.login(username, password)
+        email_server.connect(SMTP_SERVER)
+        email_server.login(USERNAME, PASSWORD)
         email_server.send_message(msg)
         email_server.quit()
 except smtplib.SMTPAuthenticationError:
@@ -161,9 +169,9 @@ except Exception as e:
 # option b) Sending the email using SMTP / SSL
 ssl_context = ssl.create_default_context()
 try:
-    with smtplib.SMTP_SSL(smtp_server, smtp_port, 
+    with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, 
                           context=ssl_context) as email_server:
-        email_server.login(username, password)
+        email_server.login(USERNAME, PASSWORD)
         email_server.send_message(msg)
         email_server.quit()
 except smtplib.SMTPAuthenticationError:
@@ -173,9 +181,9 @@ except Exception as e:
 
 # option c) Sending the email using SMTP with STARTTLS
 try:
-    with smtplib.SMTP(smtp_server, smtp_port) as email_server:
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as email_server:
         email_server.starttls()
-        email_server.login(username, password)
+        email_server.login(USERNAME, PASSWORD)
         email_server.send_message(msg)
         email_server.quit()
 except smtplib.SMTPAuthenticationError:

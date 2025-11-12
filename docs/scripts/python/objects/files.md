@@ -169,7 +169,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     local_file = '/Users/Markus/Downloads/seatable-logo.png'
     with open (local_file, 'rb') as f:
       content = f.read()
-    info_dict = base.upload_bytes_file = ('seatable-logo.png', content, file_type='image')
+    info_dict = base.upload_bytes_file('seatable-logo.png', content, file_type='image')
     ```
 
     __Example: Upload a file from a website__
@@ -179,7 +179,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     file_url = 'https://seatable.io/wp-content/uploads/2021/09/seatable-logo.png'
     response = requests.get(file_url)
     if response.status_code in range(200,300) :
-        info_dict = base.upload_bytes_file = ('seatable-logo.png', response.content)
+        info_dict = base.upload_bytes_file('seatable-logo.png', response.content)
     ```
 
 !!! abstract "Upload (detailed two-steps method)"

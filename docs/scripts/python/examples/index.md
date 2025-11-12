@@ -30,7 +30,7 @@ This script computes, from a list of clocking times, daily clock in (earliest cl
 
 ## Email sender
 
-This Python script demonstrates sending emails via SMTP using the smtplib module and constructing MIME objects to compose rich content emails within SeaTable.
+This Python script demonstrates sending emails via SMTP using the smtplib module, constructing MIME objects to compose rich content emails within SeaTable and creating HTML content from a "long text"-type column using the markdown module.
 
 [read more :material-arrow-right-thin:](/scripts/python/examples/send_email/)
 

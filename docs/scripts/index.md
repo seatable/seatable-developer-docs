@@ -1,4 +1,4 @@
-# Scripting in SeaTable
+# Scripting
 
 ## Supported scripting languages and requirements
 

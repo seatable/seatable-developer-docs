@@ -40,7 +40,7 @@ if 'groupbys' in view and len(view['groupbys']) > 0 :
     for value in group_values :
         group_rows = [r for r in rows if r[grouping_column_name] == value]
         incremental_total = 0
-        for row_index,row in enumerate(group_rows) :
+        for row_index, row in enumerate(group_rows) :
             current_number = row[value_column_name];
             if current_number :
                 # Calculate increment
@@ -52,7 +52,7 @@ if 'groupbys' in view and len(view['groupbys']) > 0 :
                 base.update_row(table_name, row['_id'], {incremental_column_name: increase_count})
 else :
     incremental_total = 0
-    for row_index,row in enumerate(rows) :
+    for row_index, row in enumerate(rows) :
         current_number = row[value_column_name];
         if current_number :
             # Calculate increment
