@@ -73,9 +73,14 @@ extra:
   status:
     new: requires Enterprise Edition
   analytics:
-    provider: matomo
-    site_id: 2
-    provider_url: https://wp-stats.seatable.io/
+    #provider: matomo
+    #site_id: 2
+    #provider_url: https://wp-stats.seatable.io/
+    
+    provider: posthog
+    posthog_api_key: phc_wRHcvnLs4nsJLtycPXwtckL4NahZSAlw2uV3d4dm4hT
+    posthog_api_host: https://ph.seatable.com
+    posthog_ui_host: https://ph.seatable.com
 
 extra_css:
   - stylesheets/extra.css
