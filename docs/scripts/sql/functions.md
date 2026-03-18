@@ -2,7 +2,10 @@
 
 With functions you can transform, calculate, combine or merge the values of other columns from the current table. On top of that, functions can refer to each other. In this article, we will show you a complete overview of all functions with examples. If you are looking for a specific function, you can use Ctrl+F or ⌘+F to quickly find an entry on this page.
 
-The functions supported in SQL are roughly the same as the set of functions supported by formulas in SeaTable. The function parameters can be numbers, strings, constants, column names or other functions. Column name cannot be an alias. The function can be classified into the following categories: 
+The functions supported in SQL are roughly the same as the set of functions supported by formulas in SeaTable. The function parameters can be numbers, strings, constants, column names or other functions. Column name cannot be an alias. The function can be classified into the following categories:
+
+!!! info "Where can functions be used?"
+    Functions can be used in `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and `ORDER BY` clauses. They are **not supported** in the `SET` clause of `UPDATE` statements or in the `VALUES` list of `INSERT` statements. Only constant values can be used there.
 
 - [Operators](#operators)
 - [Mathematical functions](#mathematical-functions)

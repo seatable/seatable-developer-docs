@@ -106,6 +106,9 @@ Please note that the SQL syntax is case insensitive: we use only upper-cased ins
       UPDATE table_name SET column_name = value [, ...] [WhereClause]
       ```
 
+    !!! warning "Only constant values in SET clause"
+        The `value` in the SET clause must be a **constant** (string, number, or boolean). Functions (e.g. `upper()`, `round()`, `now()`, `if()`), arithmetic expressions (e.g. `Amount + 10`), and column references are **not supported** in the SET clause. Functions and expressions can only be used in `SELECT` and `WHERE` clauses.
+
     - Columns with multiple values, such as "multiple select"-type column , requires values to be surrounded by parentheses, for example: `("foo", "bar")`.
     - Values of "single select" and "multiple select"-type columns must be option names, not option keys.
       - Few column types are **not allowed** to update:
