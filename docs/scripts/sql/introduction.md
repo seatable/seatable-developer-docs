@@ -1,11 +1,11 @@
 # SQL in SeaTable
 
-SQL queries are the most powerful way access data stored in a base. If your not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). If some tables in a base are archived, archived rows are also queried, as well as rows that are not archived yet.
+SQL queries are the most powerful way to access data stored in a base. If you're not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). If some tables in a base are archived, archived rows are also queried, as well as rows that are not archived yet.
 
-!!! info "Backticks for table or column names containing or special characters or using reserved words"
+!!! info "Backticks for table or column names containing special characters or using reserved words"
     For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` SELECT * FROM `My Table` ``. 
 
-    Similarly, if some of your of table or column names are the same as [SQL function](./functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
+    Similarly, if some of your table or column names are the same as [SQL function](./functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 
 ## Supported SQL Syntax
 
@@ -102,33 +102,33 @@ Please note that the SQL syntax is case insensitive: we use only upper-cased ins
 !!! abstract "UPDATE"
     `UPDATE` allows you to update one or multiple existing rows of a table. Unlike the `INSERT` statement, `UPDATE` allows you to update rows in both normal and big-data storage. `WhereClause` is optional. However, keep in mind that if omitted, **all rows** will be updated!
 
-      ```
-      UPDATE table_name SET column_name = value [, ...] [WhereClause]
-      ```
+    ```
+    UPDATE table_name SET column_name = value [, ...] [WhereClause]
+    ```
 
     !!! warning "Only constant values in SET clause"
         The `value` in the SET clause must be a **constant** (string, number, or boolean). Functions (e.g. `upper()`, `round()`, `now()`, `if()`), arithmetic expressions (e.g. `Amount + 10`), and column references are **not supported** in the SET clause. Functions and expressions can only be used in `SELECT` and `WHERE` clauses.
 
-    - Columns with multiple values, such as "multiple select"-type column , requires values to be surrounded by parentheses, for example: `("foo", "bar")`.
+    - Columns with multiple values, such as "multiple select"-type column, requires values to be surrounded by parentheses, for example: `("foo", "bar")`.
     - Values of "single select" and "multiple select"-type columns must be option names, not option keys.
-      - Few column types are **not allowed** to update:
+    - Few column types are **not allowed** to update:
 
         - built-in columns, such as `_id`, `_ctime`.
         - image, file, formula, link, link-formula, geolocation, auto-number, button
 
-      __Example__
+    __Example__
 
-      ```
-      UPDATE INTO Contacts SET Adult=true WHERE Age>=18
-      ```
+    ```
+    UPDATE Contacts SET Adult=true WHERE Age>=18
+    ```
 
-      __Example__
+    __Example__
 
-      ```
-      UPDATE INTO Contacts SET Adult=true, `Age group`="18+" WHERE Age>=18
-      ```
+    ```
+    UPDATE Contacts SET Adult=true, `Age group`="18+" WHERE Age>=18
+    ```
 
-      If `Age group` is a "single select"-type column, the option you want to select (here "18+") has to exist already.
+    If `Age group` is a "single select"-type column, the option you want to select (here "18+") has to exist already.
 
 !!! abstract "DELETE"
     `DELETE` allows you to delete one or multiple existing rows of a table. Unlike the `INSERT` statement, `DELETE` allows you to delete rows in both normal and big-data storage. `WhereClause` is optional. However, keep in mind that if omitted, **all rows** will be deleted!
@@ -178,8 +178,8 @@ Please note that the SQL syntax is case insensitive: we use only upper-cased ins
     __Example__ 
     ```
     SELECT * from Contacts WHERE Age BETWEEN 18 AND 25
-    ``` 
-    returns every records with a last name starting with M (considering that the `Full Name` fields is actually composed like `First Name` `Last Name`)
+    ```
+    returns every record with an age between 18 and 25 (both included)
 
 
 ## Data types
@@ -243,7 +243,7 @@ When used in `GROUP BY` or `ORDER BY` clauses, the elements for each list will f
 
 - Compare the elements one by one, list with smaller element is sorted before list with larger element.
 - If all elements compared in step 1 are equal, shorter list is sorted before longer list.
-- Otherwise the tow lists are equal.
+- Otherwise the two lists are equal.
 
 If a list column is passed as parameter to a formula, and the parameter expects a scalar value, the first element will be used. And if the element is a linked record, the value of its display column will be used.
 
