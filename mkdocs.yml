@@ -123,24 +123,21 @@ nav:
       - Get support: introduction/get_support.md
   - Python:
       - Getting Started: python/getting-started/index.md
-      - Objects & Methods:
-          - python/objects/index.md
-          - Metadata: python/objects/metadata.md
-          - Context: python/objects/context.md
-          - Tables: python/objects/tables.md
-          - Views: python/objects/views.md
-          - Columns: python/objects/columns.md
-          - Rows: python/objects/rows.md
-          - Links: python/objects/links.md
-          - Files: python/objects/files.md
-          - Big data: python/objects/big_data.md
-          - Accounts: python/objects/accounts.md
-          - Users: python/objects/users.md
-          - Date utilities: python/objects/date-utils.md
-          - Communication utilities: python/objects/communication-utils.md
-      - Query with SQL:
-          - Introduction: python/sql/introduction.md
-          - SQL function reference: python/sql/functions.md
+      - Metadata: python/objects/metadata.md
+      - Context: python/objects/context.md
+      - Tables: python/objects/tables.md
+      - Views: python/objects/views.md
+      - Columns: python/objects/columns.md
+      - Rows: python/objects/rows.md
+      - Links: python/objects/links.md
+      - Files: python/objects/files.md
+      - Big data: python/objects/big_data.md
+      - Accounts: python/objects/accounts.md
+      - Users: python/objects/users.md
+      - Date utilities: python/objects/date-utils.md
+      - Communication utilities: python/objects/communication-utils.md
+      - SQL Queries: python/sql/introduction.md
+      - SQL Functions: python/sql/functions.md
   - JavaScript:
       - Getting Started: javascript/index.md
       - Tables: javascript/tables.md
@@ -154,7 +151,6 @@ nav:
       - Constants: javascript/constants.md
       - Scripting Features: javascript/scripting-features.md
   - PHP:
-      - php/index.md
       - Getting Started: php/getting-started.md
       - Examples: php/examples.md
       - API Reference: php/api-reference.md
