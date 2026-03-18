@@ -131,9 +131,7 @@ nav:
       - Rows: python/objects/rows.md
       - Links: python/objects/links.md
       - Files: python/objects/files.md
-      - Big data: python/objects/big_data.md
       - Accounts: python/objects/accounts.md
-      - Users: python/objects/users.md
       - Date utilities: python/objects/date-utils.md
       - Communication utilities: python/objects/communication-utils.md
       - SQL Queries: python/sql/introduction.md

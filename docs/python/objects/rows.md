@@ -73,9 +73,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     !!! info "Backticks for table or column names containing or special characters or using reserved words"
         For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` SELECT * FROM `My Table` ``.
 
-        Similarly, if some of your of table or column names are the same as [SQL function](/python/sql/functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
-
-    Similarly, if some of your of table or column names are the same as SQL function names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
+        Similarly, if some of your table or column names are the same as [SQL function](/python/sql/functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 
     __Output__ List of row dicts (eventually empty if no row match the request's conditions)
 
@@ -350,7 +348,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "batch_append_rows"
 
-    Append multiple rows to the table `table_name` at once. This function can't operate more than 1000 rows at once. If you need to deal with more than 1000 rows at once, please refer to the [common questions](../common_questions.md#dealing-with-more-than-1000-rows-at-once-with-batch-operations).
+    Append multiple rows to the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/introduction.md) which supports up to 10,000 rows.
 
     ``` python
     base.batch_append_rows(table_name, rows_data, apply_default=False) # (1)!
@@ -467,7 +465,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "batch_update_rows"
 
-    Updates multiple rows in the table `table_name` at once. This function can't operate more than 1000 rows at once. If you need to deal with more than 1000 rows at once, please refer to the [common questions](../common_questions.md#dealing-with-more-than-1000-rows-at-once-with-batch-operations).
+    Updates multiple rows in the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/introduction.md) which supports up to 10,000 rows.
 
     ``` python
     base.batch_update_rows(table_name, rows_data) # (1)!
@@ -535,7 +533,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "batch_delete_rows"
 
-    Delete multiple rows from the table `table_name` at once. This function can't operate more than 1000 rows at once. If you need to deal with more than 1000 rows at once, please refer to the [common questions](../common_questions.md#dealing-with-more-than-1000-rows-at-once-with-batch-operations).
+    Delete multiple rows from the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/introduction.md) which supports up to 10,000 rows.
 
     ``` python
     base.batch_delete_rows(table_name, row_ids) # (1)!
@@ -560,4 +558,26 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     row_ids = [row['_id'] for row in del_rows]
     deletion_result = base.batch_delete_rows('Table1', row_ids)
     print(deletion_result)
+    ```
+
+## Big Data Storage
+
+!!! abstract "big_data_insert_rows"
+
+    Batch insert rows into big data storage.
+
+    ``` python
+    base.big_data_insert_rows(table_name, rows_data)
+    ```
+
+    __Output__ Dict containing a single `inserted_row_count` key with the number of rows actually inserted.
+
+    __Example__
+
+    ``` python
+    rows = [
+            {'Name': "A"},
+            {'Name': "B"}
+        ]
+    base.big_data_insert_rows('Table1', rows_data=rows)
     ```

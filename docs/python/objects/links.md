@@ -1,8 +1,8 @@
 # Links
 
-!!! warning "llink id and column key"
+!!! warning "link id and column key"
 
-    `link_id` should not be mistaken with the column `key`! The `key` value is unique (like an id) whereas the llink id will be shared between the two linked columns. Please note that `link_id` is used as argument to add/update/remove links, whereas you'll have to provide `link_column_key` (the link column `key`) to get linked records. Both information are available in the column object:
+    `link_id` should not be mistaken with the column `key`! The `key` value is unique (like an id) whereas the link id will be shared between the two linked columns. Please note that `link_id` is used as argument to add/update/remove links, whereas you'll have to provide `link_column_key` (the link column `key`) to get linked records. Both information are available in the column object:
     
     ```json
     {
@@ -39,17 +39,17 @@
 
     1. The column `key` (referred as `link_column_key` in `base.get_linked_records` arguments)
 
-    2. The llink id of the column (referred as `link_id` in the add/update/remove links operations)
+    2. The link id of the column (referred as `link_id` in the add/update/remove links operations)
 
     3. The table whose id is `table_id` is referred later in this section as the *source* table (the table containing this column)
 
     4. The table whose id is `other_table_id` is referred later in this section as the *target* table
 
-## Get llink id
+## Get link id
 
 !!! abstract "get_column_link_id"
 
-    Get the llink id of the column `column_name` from the table `table_name`.
+    Get the link id of the column `column_name` from the table `table_name`.
 
     ``` python
     base.get_column_link_id(table_name, column_name)
@@ -76,7 +76,7 @@
 
     - Rows are from the *source* table (the table whose id is `table_id`)
 
-    - Records are the rows from the *target* table (the table linked to the *source* table in the column whose `key` is `link_column_key` or whose llink id is `link_id`)
+    - Records are the rows from the *target* table (the table linked to the *source* table in the column whose `key` is `link_column_key` or whose link id is `link_id`)
 
 !!! abstract "get_linked_records"
 
@@ -88,7 +88,7 @@
 
     1. `table_id`: the id of *source* table
 
-        `link_column_key`: the column **key** of the link-type column of *source* table (**not** the llink id from `base.get_column_link_id`)
+        `link_column_key`: the column **key** of the link-type column of *source* table (**not** the link id from `base.get_column_link_id`)
 
         `rows`: a list of dicts, each of them containing:
         
@@ -146,7 +146,7 @@
 
 !!! abstract "add_link"
 
-    Add link in a link-type column. You'll need the *source* table's name `table_name`, the *target* table's name `other_table_name`, the llink id from the link-type column and both the ids of the rows you want to link: `row_id` for the row from the *source* table and `other_row_id` for the record from the *target* table.
+    Add link in a link-type column. You'll need the *source* table's name `table_name`, the *target* table's name `other_table_name`, the link id from the link-type column and both the ids of the rows you want to link: `row_id` for the row from the *source* table and `other_row_id` for the record from the *target* table.
 
     ``` python
     base.add_link(link_id, table_name, other_table_name, row_id, other_row_id)
@@ -177,13 +177,13 @@
     base.add_link(lin_id, TABLE1_NAME, TABLE2_NAME, current_row_id, 'J5St2clyTMu_OFf9WD8PbA')
     ```
 
-    1. Remember you can use `base.get_column_link_id` to get the llink id of a specific link-type column.
+    1. Remember you can use `base.get_column_link_id` to get the link id of a specific link-type column.
 
 ## Update link(s)
 
 !!! abstract "update_link"
 
-    Update the content of the link-type column whose llink id is `link_id` for the row with id `row_id` in the table `table_name`. It will remove all existing row links and add new links to records of table `other_table_name` with ids in the `other_rows_ids` list.
+    Update the content of the link-type column whose link id is `link_id` for the row with id `row_id` in the table `table_name`. It will remove all existing row links and add new links to records of table `other_table_name` with ids in the `other_rows_ids` list.
 
     ``` python
     base.update_link(link_id, table_name, other_table_name, row_id, other_rows_ids)
@@ -212,7 +212,7 @@
 
 !!! abstract "batch_update_links"
 
-    Same than above, except that it allows you to batch update infos of link-type columns for several rows at once. Learn more about `other_rows_ids_map` in the [SeaTable API Reference](https://api.seatable.com/reference/createrowlink). This function can't operate more than 1000 rows at once. If you need to deal with more than 1000 rows at once, please refer to the [common questions](../common_questions.md#dealing-with-more-than-1000-rows-at-once-with-batch-operations).
+    Same than above, except that it allows you to batch update infos of link-type columns for several rows at once. Learn more about `other_rows_ids_map` in the [SeaTable API Reference](https://api.seatable.com/reference/createrowlink). This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset.
 
     ``` python
     base.batch_update_links(link_id, table_name, other_table_name, row_id_list, other_rows_ids_map) # (1)!

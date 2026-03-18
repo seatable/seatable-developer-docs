@@ -79,4 +79,4 @@ Metadata delivers the complete structure of a base with tables, views and column
 
 !!! info "Displaying long and complex objects"
 
-    If you have hard time reading the output of a function returning a long or complex object, please see [how to make a pretty print](../common_questions.md#printing-complex-elements-is-sometimes-difficult-to-read).
+    If you have a hard time reading the output of a complex object, use `json.dumps(result, indent=2)` for pretty printing.
