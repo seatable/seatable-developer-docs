@@ -7,7 +7,7 @@ This manual list all available objects and methods (also called functions) that 
 !!! warning "Two JavaScript APIs in SeaTable"
 
     SeaTable offers two different ways to use JavaScript with SeaTable. You can execute a JavaScript script directly in SeaTable and there is a JavaScript Client API. The functions are similar but not identical.
-    If you want to use a JavaScript script in SeaTable, stay at this section, otherwise switch to the [Client APIs](/clients/javascript/javascript_api).
+    If you want to use a JavaScript script in SeaTable, stay at this section, otherwise switch to the [Client API](../client/javascript_api.md).
 
 ## Data model
 
