@@ -1,4 +1,4 @@
-# PHP -- Getting Started
+# PHP
 
 The SeaTable PHP Client encapsulates the SeaTable REST API. It enables you to call every available API endpoint from your PHP application -- interact with user accounts, bases, rows, or files.
 

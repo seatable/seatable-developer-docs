@@ -122,7 +122,7 @@ nav:
       - index.md
       - Get support: introduction/get_support.md
   - Python:
-      - Getting Started: python/getting-started/index.md
+      - python/index.md
       - Metadata: python/objects/metadata.md
       - Context: python/objects/context.md
       - Tables: python/objects/tables.md
@@ -139,7 +139,7 @@ nav:
       - SQL Queries: python/sql/introduction.md
       - SQL Functions: python/sql/functions.md
   - JavaScript:
-      - Getting Started: javascript/index.md
+      - javascript/index.md
       - Tables: javascript/tables.md
       - Views: javascript/views.md
       - Columns: javascript/columns.md
@@ -151,7 +151,7 @@ nav:
       - Constants: javascript/constants.md
       - Scripting Features: javascript/scripting-features.md
   - PHP:
-      - Getting Started: php/getting-started.md
+      - php/index.md
       - Examples: php/examples.md
       - API Reference: php/api-reference.md
   - Ruby: ruby/index.md

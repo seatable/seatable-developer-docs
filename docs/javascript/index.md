@@ -1,4 +1,4 @@
-# JavaScript -- Getting Started
+# JavaScript
 
 SeaTable provides a JavaScript API that works in two contexts:
 
