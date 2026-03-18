@@ -1,34 +1,65 @@
-# JavaScript
+# JavaScript -- Getting Started
 
-SeaTable offers two different JavaScript APIs depending on where your code runs:
+SeaTable provides a JavaScript API that works in two contexts:
 
-## Scripting API (inside SeaTable)
+- **Inside SeaTable** (scripting): Scripts run in the browser, no installation or authentication needed. You get access to the active table, current row, and output functions.
+- **External** (Node.js / frontend): Install the `seatable-api` npm package, authenticate with an API token, and interact with SeaTable from any JavaScript environment.
 
-Scripts written directly in a SeaTable base use the **Scripting API**. These scripts run in the browser, require no authentication, and interact directly with the loaded base data.
+The core methods (tables, views, columns, rows, links, SQL) are **the same in both contexts**. A few features are only available in one context -- these are clearly marked on the respective pages.
 
-Methods like `base.getActiveTable()`, `base.getRows()`, and `output.text()` are only available in this context.
-
-[Scripting API Reference](scripting/)
-
-## Client API (external, seatable-api-js)
-
-External applications (Node.js or frontend) use the **Client API** via the `seatable-api` npm package. This API communicates with the SeaTable server via REST and requires an API token for authentication.
+## External setup
 
 ```shell
 npm install seatable-api
 ```
 
-[Client API Reference](client/javascript_api/)
+```js
+import { Base } from "seatable-api";
 
-## Which one should I use?
+const base = new Base({
+  server: "https://cloud.seatable.io",
+  APIToken: "your-api-token",
+});
+await base.auth();
+```
 
-| | Scripting API | Client API |
-|---|---|---|
-| Where it runs | In the browser (SeaTable script editor) | Node.js or frontend app |
-| Authentication | Not needed (user is already logged in) | API token required |
-| Installation | None | `npm install seatable-api` |
-| Use case | Automate tasks inside SeaTable | Build external apps and integrations |
-| Source code | Built into SeaTable | [GitHub](https://github.com/seatable/seatable-api-js) |
+API tokens can be [generated in the SeaTable web interface](https://seatable.com/help/erzeugen-eines-api-tokens/).
+
+## Scripting setup
+
+No installation required. Create a new script in SeaTable and start using the `base` object directly:
+
+```js
+const tables = base.getTables();
+output.text(tables.length);
+```
+
+## Async operations
+
+External calls are asynchronous and return promises. Use `await` or `.then()`:
+
+=== "await"
+
+    ```js
+    const views = await base.listViews('Table1');
+    ```
+
+=== ".then()"
+
+    ```js
+    base.listViews('Table1').then(views => {
+      // use views
+    });
+    ```
+
+In scripting context, `query()` and `getLinkedRecords()` also require `await`. All other scripting methods are synchronous.
+
+## Common errors
+
+- 400 Params invalid
+- 403 Permission denied
+- 413 Exceed limit (see the [API Reference](https://api.seatable.com/reference/limits) about limits)
+- 500 Internal Server Error
 
 !!! tip "Looking for examples?"
 

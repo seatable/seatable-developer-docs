@@ -142,31 +142,23 @@ nav:
           - Introduction: python/sql/introduction.md
           - SQL function reference: python/sql/functions.md
   - JavaScript:
-      - javascript/index.md
-      - Scripting API:
-          - javascript/scripting/index.md
-          - Tables: javascript/scripting/tables.md
-          - Views: javascript/scripting/views.md
-          - Columns: javascript/scripting/columns.md
-          - Rows: javascript/scripting/rows.md
-          - Links: javascript/scripting/links.md
-          - Context: javascript/scripting/context.md
-          - Utilities: javascript/scripting/utilities.md
-          - Output: javascript/scripting/output.md
-      - Client API:
-          - Introduction: javascript/client/javascript_api.md
-          - Objects & Methods:
-              - Metadata: javascript/client/metadata.md
-              - Tables: javascript/client/tables.md
-              - Views: javascript/client/views.md
-              - Columns: javascript/client/columns.md
-              - Rows: javascript/client/rows.md
-              - Links: javascript/client/links.md
-              - SQL: javascript/client/sql_query.md
-              - Constants: javascript/client/constants.md
-          - Examples:
-              - File Upload: javascript/client/examples/file-upload.md
-  - PHP: php/index.md
+      - Getting Started: javascript/index.md
+      - Tables: javascript/tables.md
+      - Views: javascript/views.md
+      - Columns: javascript/columns.md
+      - Rows: javascript/rows.md
+      - Links: javascript/links.md
+      - SQL Queries: javascript/sql.md
+      - Metadata: javascript/metadata.md
+      - Constants: javascript/constants.md
+      - Scripting Features: javascript/scripting-features.md
+      - Examples:
+          - File Upload: javascript/examples/file-upload.md
+  - PHP:
+      - php/index.md
+      - Getting Started: php/getting-started.md
+      - Examples: php/examples.md
+      - API Reference: php/api-reference.md
   - Ruby: ruby/index.md
   - Plugin Development:
       - plugins/index.md
