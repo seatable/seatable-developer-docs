@@ -132,10 +132,9 @@ nav:
       - Links: python/objects/links.md
       - Files: python/objects/files.md
       - Accounts: python/objects/accounts.md
+      - Users: python/objects/users.md
       - Date utilities: python/objects/date-utils.md
       - Communication utilities: python/objects/communication-utils.md
-      - SQL Queries: python/sql/introduction.md
-      - SQL Functions: python/sql/functions.md
   - JavaScript:
       - javascript/index.md
       - Tables: javascript/tables.md
@@ -153,6 +152,9 @@ nav:
       - Examples: php/examples.md
       - API Reference: php/api-reference.md
   - Ruby: ruby/index.md
+  - SQL:
+      - SQL Queries: sql/introduction.md
+      - SQL Functions: sql/functions.md
   - Plugin Development:
       - plugins/index.md
       - Environments: plugins/environments.md
