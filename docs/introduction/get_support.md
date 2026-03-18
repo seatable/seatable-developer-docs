@@ -1,19 +1,13 @@
-# Get support
+# Get Support
 
-Next to this developer guide there are more documentations available. To learn more about the usage of SeaTable, the installation of your own server or the SeaTable API, please refer to their respective manuals:
+Beyond this developer manual, SeaTable provides several other resources:
 
-- [SeaTable User Manual](https://help.seatable.com) detailing how to use SeaTable (with a special section about [scripts](https://seatable.com/help/scripts/))
-- [SeaTable Admin Manual](https://admin.seatable.com) covering all relevant admin topics, from installation, configuration, upgrade, and maintenance
-- [SeaTable API Reference](https://api.seatable.com) containing everything you need to know to use SeaTable's API
+- [SeaTable User Manual](https://seatable.com/help/) covers how to use SeaTable, including a section about [scripts](https://seatable.com/help/scripts/)
+- [SeaTable Admin Manual](https://admin.seatable.com) covers installation, configuration, upgrades, and maintenance
+- [SeaTable API Reference](https://api.seatable.com) documents all available API endpoints with interactive examples
 
-See the [official SeaTable channel](https://youtube.com/seatable) on YouTube for tutorials, guides and overviews. Visit [our blog](https://seatable.com/blog/) for latest news and to learn more about what is going on in and around SeaTable.
+The [Community Forum](https://forum.seatable.com) is a good place to ask questions, share experiences, or report bugs. You can also find tutorials and guides on the [SeaTable YouTube channel](https://youtube.com/seatable) and the [SeaTable blog](https://seatable.com/blog/).
 
-At any time you could have a look at the SeaTable [Community Forum](https://forum.seatable.com) to share your experience with other users or report issues or bugs.
+!!! info "Enterprise Support"
 
-!!! info "Enterprise support"
-
-    If you're using SeaTable in your organization and need
-    assistance, e.g., to __digitalization of processes__, __develop custom solutions__ or __improve efficiency__,
-    [__get in touch__](mailto:sales@seatable.io) to discuss our __enterprise support__ offerings.
-    
-    We're happy to help!
+    If your organization needs help with digitalizing processes, developing custom solutions, or improving efficiency, [get in touch](mailto:sales@seatable.com) to discuss our enterprise support offerings.
