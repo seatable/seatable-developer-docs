@@ -1,4 +1,4 @@
-# PHP -- Examples
+# Examples
 
 ## Get account information
 
