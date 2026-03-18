@@ -25,7 +25,7 @@ For the following methods, you'll have to provide the URL of the file you want t
 
 !!! abstract "Download (simple one-step method)"
 
-    Download a file to a local path. The save path as naturally to ends with the same extension as the original file.
+    Download a file to a local path. The save path naturally has to end with the same extension as the original file.
 
     ``` python
     base.download_file(file_url, save_path)
@@ -137,7 +137,7 @@ For the following methods, you'll have to provide the URL of the file you want t
 
 Please note that uploading a file *to a cell* will require two or three steps, depending on the method you use: you'll first need to upload the file to the base, and then you'll be able to update the row with the newly uploaded file details in the cell. You can learn more about this process in the [API Reference](https://api.seatable.com/reference/uploadfile). As for download, there are one simple (one-step) and one detailed (two-steps) process to upload a file: 
 
-!!! abstract "Upload (simple ones-step method)"
+!!! abstract "Upload (simple one-step method)"
 
     Upload a file from your local drive, memory or a website.
 
@@ -152,7 +152,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
         - `file_type`:  can be either `file` or `image` (default is `file`)
         - `replace`: if set to `True`, uploading a new file with the same name as an existing one will overwrite it (default is `False`)
 
-    2. When using `base.upload_bytes_file`, `name` is mandatory as their is no named attached to the `content`
+    2. When using `base.upload_bytes_file`, `name` is mandatory as there is no name attached to the `content`
 
     __Output__ File dict containing the same keys as every element in a file-type column: `type` (`file` or `image`), `size`, `name` and `url`
 

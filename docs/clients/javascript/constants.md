@@ -25,6 +25,6 @@ In the script there may be some constants we need to know.
     ColumnTypes.LAST_MODIFIER       // last modifier
     ColumnTypes.MTIME               // modify time
     ColumnTypes.GEOLOCATION         // geolocation
-    ColumnTypes.AUTO_NUMBER         // auto munber
+    ColumnTypes.AUTO_NUMBER         // auto number
     ColumnTypes.URL                 // URL
     ```

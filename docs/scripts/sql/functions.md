@@ -81,7 +81,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
     mod(num1,num2)
     ```
 
-    __Example__ `divide(15,7)` returns `1`
+    __Example__ `mod(15,7)` returns `1`
 
 !!! abstract "power"
     Calculates the power (`num2`) of a number (`num1`).
@@ -337,7 +337,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
     
     __Example__ `find('Sea', 'seaTable', 1)` returns `0`
 
-    The search will start from the given `startPosition`. This startPosition` has no influence on the result: it always returns the absolute start position. If the '`startPosition`' of the string to be searched for (`findString`) is given after the actual start position of the string (`sourceString`), 0 is returned, since nothing was found from this position.
+    The search will start from the given `startPosition`. This `startPosition` has no influence on the result: it always returns the absolute start position. If the '`startPosition`' of the string to be searched for (`findString`) is given after the actual start position of the string (`sourceString`), 0 is returned, since nothing was found from this position.
     
     
     __Example__ `find('table', 'big table', 4)` returns `5`
@@ -367,7 +367,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
     lower(string)
     ```
     
-    __Example__ `lower('German)` returns `german`
+    __Example__ `lower('German')` returns `german`
 
 !!! abstract "mid"
     Returns the specified number (`count`) of characters from the specified start position (`startPosition`) of a `string`.
@@ -404,7 +404,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
     rept(string, number)
     ```
     
-    __Example__ `rept('Sea ', 3)` returns `SeaSeaSea`
+    __Example__ `rept('Sea', 3)` returns `SeaSeaSea`
 
 !!! abstract "right"
     Returns the specified number (`count`) of characters at the end of a `string`.
@@ -482,7 +482,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
     upper(string)
     ```
     
-    __Example__ `upper('German)` returns `GERMAN`
+    __Example__ `upper('German')` returns `GERMAN`
 
 !!! abstract "value"
     Converts a text (`string`) representing a number into a number.
@@ -595,7 +595,7 @@ When passing a parameter with time or date type, you can specify a constant in "
     If no minutes are included in the time (`date`), 0 is returned.
     
     
-    __Example__ `minute('2025-02-14)` returns `0`
+    __Example__ `minute('2025-02-14')` returns `0`
 
 !!! abstract "month"
     Returns the month of a `date` as a number. The returned number is between 1 (January) and 12 (December).
@@ -705,7 +705,7 @@ When passing a parameter with time or date type, you can specify a constant in "
     startofweek(date, weekStart)
     ```
     
-    __Example__ `startofweek('2025-04-28')` returns `2021-4-27T00:00:00+02:00`
+    __Example__ `startofweek('2025-04-28')` returns `2025-4-27T00:00:00+02:00`
 
 !!! abstract "quarter"
     Returns the quarter of the `date`, the return value is 1, 2, 3, 4.
@@ -726,7 +726,7 @@ When passing a parameter with time or date type, you can specify a constant in "
     __Example__ `isodate('2025-01-01 11:00:00')` returns `2025-01-01`
 
 !!! abstract "isomonth"
-    Returns the ISO string representation (of the )year and month) of the month of a specified `date`.
+    Returns the ISO string representation (of the year and month) of the month of a specified `date`.
     
     ```
     isomonth(date)
@@ -813,7 +813,7 @@ When passing a parameter with time or date type, you can specify a constant in "
     __Example__ `switch(int(68/10), 6, 'OK', 6, 'KO')` returns `OK`
 
 !!! abstract "xor"
-    Returns the logical inequality of all arguments. In other words, returns `true` fi the number of true arguments is odd.
+    Returns the logical inequality of all arguments. In other words, returns `true` if the number of true arguments is odd.
     
     ```
     xor(logical1, logical2, ...)

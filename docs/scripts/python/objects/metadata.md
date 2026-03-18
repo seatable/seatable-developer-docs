@@ -8,7 +8,7 @@ Metadata delivers the complete structure of a base with tables, views and column
 
     === "Function call"
 
-        ``` js
+        ```python
         base.get_metadata()
         ```
 

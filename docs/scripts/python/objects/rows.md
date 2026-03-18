@@ -62,7 +62,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "query"
 
-    Use SQL to query a base. SQL queries are the most powerful way access data stored in a base. If your not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). Most SQL syntax is supported, you can check the [SQL Reference](/scripts/sql/introduction.md) section of this manual for more information.
+    Use SQL to query a base. SQL queries are the most powerful way access data stored in a base. If you're not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). Most SQL syntax is supported, you can check the [SQL Reference](/scripts/sql/introduction.md) section of this manual for more information.
 
     ``` python
     base.query(sql_statement)
@@ -71,9 +71,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     Unless the SQL statement specifies a higher limit, the method returns a maximum of 100 rows. The maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
 
     !!! info "Backticks for table or column names containing or special characters or using reserved words"
-    For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` SELECT * FROM `My Table` ``. 
+        For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` SELECT * FROM `My Table` ``.
 
-    Similarly, if some of your of table or column names are the same as [SQL function](/scripts/sql/functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
+        Similarly, if some of your of table or column names are the same as [SQL function](/scripts/sql/functions.md) names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 
     Similarly, if some of your of table or column names are the same as SQL function names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
 
@@ -308,7 +308,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "append_row"
 
-    Add a row to the table `table_name`. This row contains the data specified in the dict `row_data`. No row will be added if `row_data` is an empty dict (`{}`).empty or if it contains only keys that don't exist in the table.
+    Add a row to the table `table_name`. This row contains the data specified in the dict `row_data`. No row will be added if `row_data` is an empty dict (`{}`) or if it contains only keys that don't exist in the table.
 
 
     ``` python
@@ -326,7 +326,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
         }
         ```
 
-        `apply_default` (optional): wether to use default values or not (default is `False`)
+        `apply_default` (optional): whether to use default values or not (default is `False`)
 
     !!! info "Creating an empty row"
         To create an empty row, specify a `row_data` dict containing at least one existing column of the table with an empty string as value, for example: `{'Name': ''}`
@@ -358,7 +358,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     1. `rows_data`: list of `row_data` dict (see `base.append_row` above)
 
-        `apply_default` (optional): wether to use default values or not (default is `False`)
+        `apply_default` (optional): whether to use default values or not (default is `False`)
 
     __Output__ Single dict object containing the number of new rows, the list of the ids of the created rows and the first row (see example output below); throws an error if no table named `table_name` exists
     
@@ -416,7 +416,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "insert_row"
 
-    Insert one row to the table `table_name` under an *anchor* row whose id is `anchor_row_id`. If no row with id `anchor_row_id` exists, the row is added to the end of the table (similar to `base.append_row` in ths case).
+    Insert one row to the table `table_name` under an *anchor* row whose id is `anchor_row_id`. If no row with id `anchor_row_id` exists, the row is added to the end of the table (similar to `base.append_row` in this case).
 
     ``` python
     base.insert_row(table_name, row_data, anchor_row_id, apply_default=False)

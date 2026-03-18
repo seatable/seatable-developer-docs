@@ -1,6 +1,6 @@
 # Introduction
 
-Python scripts connects to SeaTable databases with the python library [seatable-api](https://pypi.org/project/seatable-api/). You can find the source code on [GitHub](https://github.com/seatable/seatable-api-python). Python scripts can be and executed directly in a base using a SeaTable component called Python Pipeline. You can also choose to run scripts locally. Where you run your Python script has consequences on the available libraries and authentication.
+Python scripts connect to SeaTable databases with the python library [seatable-api](https://pypi.org/project/seatable-api/). You can find the source code on [GitHub](https://github.com/seatable/seatable-api-python). Python scripts can be created and executed directly in a base using a SeaTable component called Python Pipeline. You can also choose to run scripts locally. Where you run your Python script has consequences on the available libraries and authentication.
 
 !!! warning "Indents are important"
 
@@ -8,7 +8,7 @@ Python scripts connects to SeaTable databases with the python library [seatable-
 
 ## Libraries
 
-The current Python Pipeline ships with Python 3.12 and a bundle of [third party libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment). One of the bundled library and the main library to interact with SeaTable bases is [seatable-api](https://github.com/seatable/seatable-api-python).
+The current Python Pipeline ships with Python 3.12 and a bundle of [third party libraries](/scripts/python/common_questions/#list-of-libraries-supported-in-the-cloud-environment). One of the bundled libraries and the main library to interact with SeaTable bases is [seatable-api](https://github.com/seatable/seatable-api-python).
 
 At a minimum, the Base and context function from the seatable-api library must be imported. Additionally, you can import functions from the bundled libraries.
 
@@ -25,7 +25,7 @@ Python (in comparison to JavaScript) scripts need an authentication. SeaTable pr
 
 !!! warning "Protect your credentials"
 
-    Please be aware that a python script is readable for all users, who have access to this base. Therefore try to avoid exposing your credentials directly in the code! Use environment variables or `.venv` files instead.
+    Please be aware that a python script is readable for all users, who have access to this base. Therefore try to avoid exposing your credentials directly in the code! Use environment variables or `.env` files instead.
 
 ### Authorization with API token
 
@@ -55,7 +55,7 @@ Using this method, you will use the API token of the base. Within SeaTable's int
 
     1. No need to import `context` here as it won't actually be available.
     
-    2. This is for demonstration purpose only: try to avoid exposing your credentials directly in the code! Use environment variables or `.venv` files instead.
+    2. This is for demonstration purpose only: try to avoid exposing your credentials directly in the code! Use environment variables or `.env` files instead.
 
 It is even possible to develop a Python script in the way that it could be [executed both in the cloud and locally](/scripts/python/common_questions/#how-to-make-the-script-support-both-local-and-cloud-run) without changing the code.
 
@@ -83,7 +83,7 @@ base = account.get_base(workspace_id, base_name)
 
 !!! info "This feature works with SeaTable version 3.1+"
 
-In some cases, the program needs to run for a (very) long time, the code of base operations usually being located in a `while` or `for` loop. . In this case, authorization may expire during execution and cause the program to break. We provide an exception called `AuthExpiredError` that can be caught for reauthorization.
+In some cases, the program needs to run for a (very) long time, the code of base operations usually being located in a `while` or `for` loop. In this case, authorization may expire during execution and cause the program to break. We provide an exception called `AuthExpiredError` that can be caught for reauthorization.
 
 ```python
 from seatable_api import Base, context
@@ -107,15 +107,15 @@ while True: # (1)!
 
 ## Base operations limits
 
-As Python scripts are tailored for huge base manipulations and because they actually rely on the [SeaTable API](https://api.seatable.com), you might encounter [Rate](https://api.seatable.com/reference/limits#general-rate-limits) or [Size](https://api.seatable.com/reference/limits#size-limits) limits if you are not vigilant. Here are few tips to avoid reaching the limits:
+As Python scripts are tailored for huge base manipulations and because they actually rely on the [SeaTable API](https://api.seatable.com), you might encounter [Rate](https://api.seatable.com/reference/limits#general-rate-limits) or [Size](https://api.seatable.com/reference/limits#size-limits) limits if you are not vigilant. Here are a few tips to avoid reaching the limits:
 
 - Be always careful with operations in `for` or `while` loops (ensure the ending conditions will be reached)
 
-- Use *batch* operations as often as possible. Replace for example several `base.append_row` calls with a single `base.batch_append_rows` call. Here are the main batch function:
+- Use *batch* operations as often as possible. Replace for example several `base.append_row` calls with a single `base.batch_append_rows` call. Here are the main batch functions:
 
     - `base.batch_append_rows`
     - `base.batch_update_rows`
     - `base.batch_delete_rows`
     - `base.batch_update_links`
 
-- Learn more about [lower your calls](https://seatable.com/api-optimization/)
+- Learn more about [lowering your calls](https://seatable.com/api-optimization/)

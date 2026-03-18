@@ -6,7 +6,7 @@ Scripts are used to interact with the data in a base. SeaTable supports scripts 
 
 |                       | JavaScript  | Python     |
 |-----------------------|-------------|------------|
-| Requirements          | None        | Eventually `seatable-api` library or [Python Pipeline](https://admin.seatable.com/installation/components/python-pipeline/) (see Execution environment) |
+| Requirements          | None        | Optionally `seatable-api` library or [Python Pipeline](https://admin.seatable.com/installation/components/python-pipeline/) (see Execution environment) |
 | Data operations       | Simple (mainly tailored for single-line operations)      | More complex (more available operations, possibility of using external libraries) |
 | Execution environment | In SeaTable | - In SeaTable (self-hosted with the [Python Pipeline](https://admin.seatable.com/installation/components/python-pipeline/) installed, or Cloud)<br>- [Locally](https://developer.seatable.com/scripts/python/common_questions/#how-to-make-the-script-support-both-local-and-cloud-run) or on a server (need to install `seatable-api` library) |
 | Authentication        | Not needed  | Needed |
@@ -24,6 +24,6 @@ Here are some additional help articles from the [User Manual's scripts section](
 - [Run script manually, by button or by automation](https://seatable.com/help/skript-manuell-per-schaltflaeche-oder-automation-ausfuehren/)
 - [The execution log of scripts](https://seatable.com/help/das-ausfuehrungslog-von-skripten/)
 
-You'll find in this manual a JavaScript and a Python section. For both of them, each chapter provides you with explanations about the available objects and methods (description with the eventual arguments and one or more simple use cases). 
+You'll find in this manual a JavaScript and a Python section. For both of them, each chapter provides you with explanations about the available objects and methods (description with the optional arguments and one or more simple use cases). 
 
 Multiple [JavaScript](../scripts/javascript/examples/index.md) and [Python](../scripts/python/examples/index.md) examples should help you to start immediately and get a feeling about the possibilities.

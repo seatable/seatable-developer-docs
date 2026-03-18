@@ -25,7 +25,7 @@ Every table in a base contains columns. The following calls are available to int
 
     __Example__
     ``` js
-    const col = await base.getColumnsByName('Table1', 'Name');
+    const col = await base.getColumnByName('Table1', 'Name');
     ```
 
 !!! question "getColumnsByType"

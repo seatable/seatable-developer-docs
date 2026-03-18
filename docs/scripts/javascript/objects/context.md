@@ -1,6 +1,6 @@
 # Context
 
-When the script runs, the `context` object context-related elements. The usage is as follows.
+When the script runs, the `context` object provides context-related elements. The usage is as follows.
 
 !!! abstract "currentTable"
 

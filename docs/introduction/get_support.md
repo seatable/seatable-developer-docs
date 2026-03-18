@@ -1,6 +1,6 @@
 # Get support
 
-Next to this developer guide there are more documentations available. To learn more about the usage or SeaTable, the installation of your own server or the SeaTable API, please refer to their respective manuals:
+Next to this developer guide there are more documentations available. To learn more about the usage of SeaTable, the installation of your own server or the SeaTable API, please refer to their respective manuals:
 
 - [SeaTable User Manual](https://help.seatable.com) detailing how to use SeaTable (with a special section about [scripts](https://seatable.com/help/scripts/))
 - [SeaTable Admin Manual](https://admin.seatable.com) covering all relevant admin topics, from installation, configuration, upgrade, and maintenance

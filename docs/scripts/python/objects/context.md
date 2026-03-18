@@ -31,7 +31,7 @@ When the script is running in the cloud, the context object provides a context e
 
 !!! info "api_token"
 
-    API token for access a base.
+    API token to access a base.
 
     ``` python
     context.api_token

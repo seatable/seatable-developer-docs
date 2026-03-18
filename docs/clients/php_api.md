@@ -4,7 +4,7 @@ SeaTable's API exposes the entire SeaTable features via a standardized programma
 
 !!! info "Auto generated from openapi specification"
 
-    Since April 2024, we auto generate this SeaTable php client from our public available openapi specification. The advantage is that, the php client automatically contains all available API endpoints and we save a lot of programming capacity. Also we could generate more api clients for other programming languages in no time with the same feature set. The disadvantage is, that with this new client we removed some convenitent functions for authentication and the new version is not compatible at all with the version v0.2 and earlier.
+    Since April 2024, we auto generate this SeaTable php client from our public available openapi specification. The advantage is that the PHP client automatically contains all available API endpoints and we save a lot of programming capacity. Also we could generate more api clients for other programming languages in no time with the same feature set. The disadvantage is, that with this new client we removed some convenient functions for authentication and the new version is not compatible at all with the version v0.2 and earlier.
 
 ## Installation
 
@@ -182,5 +182,5 @@ You can find detailed documentation for all endpoints including auto-generated e
  - [Base](https://github.com/seatable/seatable-api-php/blob/main/README_Base.md)
  - [File](https://github.com/seatable/seatable-api-php/blob/main/README_File.md)
  - [SysAdmin](https://github.com/seatable/seatable-api-php/blob/main/README_SysAdmin.md)
- - [TeamAdmin](https://github.com/seatable/seatable-api-php/blob/main/README_TeamAmin.md)
+ - [TeamAdmin](https://github.com/seatable/seatable-api-php/blob/main/README_TeamAdmin.md)
  - [User](https://github.com/seatable/seatable-api-php/blob/main/README_User.md)

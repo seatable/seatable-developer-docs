@@ -32,9 +32,9 @@ These paid resources, though requiring a small investment, often provide:
 
 Remember, while free tutorials are abundant, investing in a structured resource can significantly expedite your learning process and provide a solid understanding of programming fundamentals essential for SeaTable development.
 
-!!! info "This are personal recommendations"
+!!! info "These are personal recommendations"
 
-    The following sources does not contain any affiliate links and we do not earn any money from these recommendations. These are just good sources that we have used ourselves in the past.
+    The following sources do not contain any affiliate links and we do not earn any money from these recommendations. These are just good sources that we have used ourselves in the past.
 
 === "JavaScript"
 
@@ -97,13 +97,13 @@ You can take the following python code and copy&paste it to SeaTable. It will re
     for table in metadata['tables']:
         print('.')
         print("Table: "+table['name']+" (ID: "+table['_id']+")")
-    for column in table['columns']:
-        link_target = ""
-        if column['type'] == "link":
-            link_target = " --> "+column['data']['other_table_id']
-            if column['data']['other_table_id'] == table['_id']:
-                link_target = " --> "+column['data']['table_id']
-        print("  --> "+column['name']+" ("+column['type']+link_target+")")
+        for column in table['columns']:
+            link_target = ""
+            if column['type'] == "link":
+                link_target = " --> "+column['data']['other_table_id']
+                if column['data']['other_table_id'] == table['_id']:
+                    link_target = " --> "+column['data']['table_id']
+            print("  --> "+column['name']+" ("+column['type']+link_target+")")
     ```
 
 === "Output example"

@@ -24,7 +24,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
     ``` python
     base.list_tables()
     ```
-    __ Output__ List of table dicts
+    __Output__ List of table dicts
 
     __Example__
     ``` python

@@ -130,7 +130,7 @@
         2. link object: 
         
             - `row_id` is the id of the linked record (row from the *target* table)
-            - `display_value` is the displayed in the column whose `key` is `linkColumnKey`
+            - `display_value` is the value displayed in the column whose `key` is `linkColumnKey`
             (from a column of the *target* table)
 
     __Output__ Object containing the linked records for each row (see Output structure example above)
@@ -151,7 +151,7 @@
 
 !!! abstract "addLink"
 
-    Add link in a link-type column. You'll need the *source* target's name `tableName`, the *target* table's name `linkedTableName`, the `linkId` from the link-type column and both the ids of the rows you want to link: `rowId` for the row from the *source* table and `linkedRowId` for the record from the *target* table.
+    Add link in a link-type column. You'll need the *source* table's name `tableName`, the *target* table's name `linkedTableName`, the `linkId` from the link-type column and both the ids of the rows you want to link: `rowId` for the row from the *source* table and `linkedRowId` for the record from the *target* table.
 
     ```js
     base.addLink(linkId: String, tableName: String, linkedTableName: String, rowId: String, 
@@ -175,9 +175,9 @@
     const table1LinkColumnName = "Table2 link";
     const table2Name = "Table2";
 
-    const linId = base.getColumnLinkId(table1Name, table1LinkColumnName); /* (1)! */
+    const linkId = base.getColumnLinkId(table1Name, table1LinkColumnName); /* (1)! */
     const currentRowId = base.context.currentRow._id;
-    base.addLink(linId, table1Name, table2Name, currentRowId, 'J5St2clyTMu_OFf9WD8PbA');
+    base.addLink(linkId, table1Name, table2Name, currentRowId, 'J5St2clyTMu_OFf9WD8PbA');
     ```
 
     1. Remember you can use `base.getColumnLinkId` to get the link id of a specific link-type column.

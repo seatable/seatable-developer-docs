@@ -10,7 +10,7 @@ The Developer Manual caters to **developers** interested in utilizing custom scr
 
     You don't feel familiar enough with coding or with SeaTable? Depending on your actual skills, knowledge and aims, here are some suggested starting points: 
 
-    - You would like to get started but currently have no programming knowledge? We invite you to consult the [Coding for beginners page](/introduction/coding_for_beginnners)
+    - You would like to get started but currently have no programming knowledge? We invite you to consult the [Coding for beginners page](/introduction/coding_for_beginners)
 
     - You are new to SeaTable? Do not hesitate to consult [SeaTable's user manual](https://seatable.com/help/) to get more familiar with it.
 
@@ -55,9 +55,9 @@ The actual authentication depends on the development approach one chooses.
 
 === "Scripts"
 
-    JavaScript scripts does not require any authentication at all because these scripts are executed in the browser of the user and the user has to be authenticated already.
+    JavaScript scripts do not require any authentication at all because these scripts are executed in the browser of the user and the user has to be authenticated already.
 
-    Python scripts require an authentication to get data from the base, but the `context` objects contains everything for an easy authentication.
+    Python scripts require an authentication to get data from the base, but the `context` object contains everything for an easy authentication.
 
 === "Plugins"
 

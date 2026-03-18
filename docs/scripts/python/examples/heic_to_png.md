@@ -9,7 +9,7 @@ This Python script demonstrates how to convert HEIC image files to PNG format an
 Here is the structure of the table named `Convert images` you need so that this script could run (variables are present at the beginning of the script to easily adapt the names):
 
 | Column name | HEIC | PNG | 
-| ----------- |: ------ :|: ------ :|
+| ----------- |:------:|:------:|
 | **Column type**  |  image   |   image  |
 
 ## Script Overview

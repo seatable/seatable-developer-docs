@@ -34,7 +34,7 @@ You'll find below all the available methods to interact with the columns of a Se
     ColumnTypes.LAST_MODIFIER       # last modifier
     ColumnTypes.MTIME               # modify time
     ColumnTypes.GEOLOCATION         # geolocation
-    ColumnTypes.AUTO_NUMBER         # auto munber
+    ColumnTypes.AUTO_NUMBER         # auto number
     ColumnTypes.URL                 # URL
     ```
 
@@ -151,7 +151,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
 !!! abstract "rename_column"
 
-    Rename the column in the table `table_name` whose key is `column_key`  with the new name `new_column_name`. Please ensure that you choose a `new_column_name` that doesn't already exists in your table `table_name`.
+    Rename the column in the table `table_name` whose key is `column_key`  with the new name `new_column_name`. Please ensure that you choose a `new_column_name` that doesn't already exist in your table `table_name`.
 
     ``` python
     base.rename_column(table_name, column_key, new_column_name)

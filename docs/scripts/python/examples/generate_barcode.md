@@ -5,7 +5,7 @@ This Python script demonstrates the process of converting text slices into barco
 Here is the structure of the table named `Generate 1 or 2D barcodes` you need so that this script could run (variables are present at the beginning of the script to easily adapt the names):
 
 | Column name | Message | Barcode image | 
-| ----------- |: ------ :|: ------ :|
+| ----------- |:------:|:------:|
 | **Column type**  |  text   |   image  |
 
 This table can be shared with the [Generate QR code example](./generate_qrcode.md) by adding it an extra *QRcode image* image-type column.
@@ -82,7 +82,7 @@ for row in base.list_rows(TABLE_NAME):
         os.remove(file_name)
         updated_rows += 1
     except Exception as error:
-        print("error occured during barcode generate", error)
+        print("error occurred during barcode generate", error)
         continue
 
 # Summary

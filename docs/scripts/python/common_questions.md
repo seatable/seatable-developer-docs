@@ -117,7 +117,7 @@
 
     - Use an `INSERT`, `UPDATE` or `DELETE` [SQL query](/scripts/sql/introduction.md#supported-sql-syntax) that can operate on an unlimited number of rows
 
-    - Use a `while` loop to split you operation into 1000-rows chunks for example (however this won't exactly be a single operation anymore):
+    - Use a `while` loop to split your operation into 1000-rows chunks for example (however this won't exactly be a single operation anymore):
 
     ```python
     from seatable_api import Base, context

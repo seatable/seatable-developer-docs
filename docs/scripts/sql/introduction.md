@@ -25,7 +25,7 @@ Please note that the SQL syntax is case insensitive: we use only upper-cased ins
 
     `[Column List]` is the list of columns you want to retrieve, separated by commas. If you want to retrieve all the columns, you can use a wildcard (`*`).
     You can consult specific sections for [Where, Group By, Having or Order By clauses](#where-group-by-having-and-order-by-clauses)
-    `Limit Option` uses MySQL format. The general syntax is `LIMIT ... OFFSET ...`. This parameters are optional. Unless you specify a higher limit, the method returns **a maximum of 100 rows**. The maximum number of rows returned is **10000** no matter the limit specified in the SQL statement. The `OFFSET` will help you retrieving the following rows in other queries
+    `Limit Option` uses MySQL format. The general syntax is `LIMIT ... OFFSET ...`. This parameters are optional. Unless you specify a higher limit, the method returns **a maximum of 100 rows**. The maximum number of rows returned is **10000** no matter the limit specified in the SQL statement. The `OFFSET` will help you retrieve the following rows in other queries
 
     __Example__ `SELECT * FROM Table1 LIMIT 10000` returns the first 10000 rows, `SELECT * FROM Table1 LIMIT 10000 OFFSET 10000` returns the next 10000 rows
 
@@ -170,7 +170,7 @@ Please note that the SQL syntax is case insensitive: we use only upper-cased ins
     ```
     SELECT `Full Name` from Contacts WHERE `Full Name` LIKE "% M%"
     ```
-    returns every records with a last name starting with M (considering that the `Full Name` fields is actually composed like "`First Name` `Last Name`")
+    returns every record with a last name starting with M (considering that the `Full Name` fields is actually composed like "`First Name` `Last Name`")
 
 !!! abstract "BETWEEN operator"
     `BETWEEN lowerLimit AND upperLimit` only supports numbers and time. `lowerLimit` and `upperLimit` are included in the search. They have to be in the right order (if `upperLimit`<`lowerLimit`, no records will be found).

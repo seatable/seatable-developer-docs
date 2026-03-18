@@ -1,6 +1,6 @@
 # Communication utility functions
 
-Several outgoing communications features are available within SeaTable. Wether you want to communicate with a user in the web interface or or be alerted of database changes from another process, here are the methods you can use while scripting.
+Several outgoing communications features are available within SeaTable. Whether you want to communicate with a user in the web interface or be alerted of database changes from another process, here are the methods you can use while scripting.
 
 
 !!! info "Going further"

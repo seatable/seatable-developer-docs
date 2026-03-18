@@ -10,7 +10,7 @@ This Python script demonstrates how to retrieve data from an external source by 
 Here is the structure of the table named `Watch stock` you need so that this script could run (variables are present at the beginning of the script to easily adapt the names):
 
 | Column name | Symbol | Current stock price | 
-| ----------- |: ------ :|: ------ :|
+| ----------- |:------:|:------:|
 | **Column type**  |  text   |   number (dollar)  |
 
 You can create several lines to watch current stock price, for example by specifying *AAPL* or *AMZN* for the `Symbol` column.
@@ -55,7 +55,7 @@ def get_stock_price(SYMBOL):
         output = response.json()
         return output['price']
     else:
-        return false
+        return False
 
 # Get symbols from SeaTable base and update the current stock prices
 def update_stock_price():

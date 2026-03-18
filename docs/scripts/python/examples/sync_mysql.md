@@ -1,6 +1,6 @@
 # SeaTable MySQL Synchronization
 
-This Python script facilitates the synchronization of data from a MySQL database to a SeaTable table, ensuring consistency and updating records seamlessly. Variables are present at the beginning of the script to easily adapt the names of both Seatable and MySQL tables and columns. The `Sync MySQL` table requires a single `Name` text-type column for the script to be able to run.
+This Python script facilitates the synchronization of data from a MySQL database to a SeaTable table, ensuring consistency and updating records seamlessly. Variables are present at the beginning of the script to easily adapt the names of both SeaTable and MySQL tables and columns. The `Sync MySQL` table requires a single `Name` text-type column for the script to be able to run.
 
 ## Process Overview
 
@@ -65,9 +65,10 @@ def sync_mysql():
             row_data = {
                 ST_NAME_COLUMN: item.get(MYSQL_NAME_COLUMN),
             }
+            rows_data.append(row_data)
     # 5. Eventually add missing records
     if rows_data :
-        base.batch_append_rows(TABLE_NAME, rows_data)
+        base.batch_append_rows(ST_TABLE_NAME, rows_data)
 
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@ This Python script demonstrates how to merge several PDF files and save the merg
 Here is the structure of the table named `Merge PDF` you need so that this script could run (variables are present at the beginning of the script to easily adapt the names):
 
 | Column name | PDF files | Merged file | 
-| ----------- |: ------ :|: ------ :|
+| ----------- |:------:|:------:|
 | **Column type**  |  file   |   file  |
 
 ## Script Overview

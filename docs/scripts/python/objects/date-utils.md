@@ -134,7 +134,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     dt.datediff(start=start_date, end=end_date, unit='H') # 8736 (hours)
     dt.datediff(start=start_date, end=end_date, unit='M') # 12 (months) (from 2025-5 to 2026-5)
     dt.datediff(start=start_date, end=end_date, unit='YM') # 0 (months) (from May to May)
-    dt.datediff(start=start_date, end=end_date, unit='MD') # -1 (days) (from 16 of 15)
+    dt.datediff(start=start_date, end=end_date, unit='MD') # -1 (days) (from 16 to 15)
     dt.datediff("2025-1-28","2026-2-1", unit='YD') # 4 (days) (from January 28 to February 1)
     ```
 
@@ -162,7 +162,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
 !!! abstract "days"
 
-    Return the days difference between two given date. The result can be negative if `end` is before `start`.
+    Return the days difference between two given dates. The result can be negative if `end` is before `start`.
 
     ``` python
     dateutils.days(start, end)
@@ -248,7 +248,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     ``` python
     from seatable_api.date_utils import dateutils
 
-    dateutils.minute("2025-5-3 13:14:15") # 13
+    dateutils.minute("2025-5-3 13:14:15") # 14
     ```
 
 ### month
@@ -291,7 +291,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
 !!! abstract "months"
 
-    Return the months difference between two given date. The result can be negative if `end` is before `start`. 
+    Return the months difference between two given dates. The result can be negative if `end` is before `start`. 
 
     ``` python
     dateutils.months(start, end)
@@ -346,7 +346,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
 !!! abstract "today"
 
-    Return the ISO formatted current date time in string
+    Return the ISO formatted current date as a string
 
     ``` python
     dateutils.today()
@@ -453,7 +453,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
 ## Dealing with quarters
 
-A specific DateQuarter object exists to deal with quarters. The operations/properties/methods available this object are presented below.
+A specific DateQuarter object exists to deal with quarters. The operations/properties/methods available for this object are presented below.
 
 ### quarter_from_yq
 

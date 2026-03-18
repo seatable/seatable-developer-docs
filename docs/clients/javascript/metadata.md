@@ -17,27 +17,27 @@ Metadata delivers the complete structure of a base with tables, views and column
         'tables': [{
             '_id': '4krH',
             'name': 'Contact',
-            'is_header_locked': False,
+            'is_header_locked': false,
             'columns': [{
                 'key': '0000',
                 'type': 'text',
                 'name': 'Name',
-                'editable': True,
+                'editable': true,
                 'width': 200,
-                'resizable': True,
-                'draggable': True,
-                'data': None,
+                'resizable': true,
+                'draggable': true,
+                'data': null,
                 'permission_type': '',
                 'permitted_users': []
             }, {
                 'key': 'M31F',
                 'type': 'text',
                 'name': 'Email',
-                'editable': True,
+                'editable': true,
                 'width': 200,
-                'resizable': True,
-                'draggable': True,
-                'data': None,
+                'resizable': true,
+                'draggable': true,
+                'data': null,
                 'permission_type': '',
                 'permitted_users': []
             }],
@@ -45,7 +45,7 @@ Metadata delivers the complete structure of a base with tables, views and column
                 '_id': '0000',
                 'name': 'Default view',
                 'type': 'table',
-                'is_locked': False,
+                'is_locked': false,
                 'filter_conjunction': 'And',
                 'filters': [],
                 'sorts': [],
@@ -63,5 +63,3 @@ Metadata delivers the complete structure of a base with tables, views and column
         }]
     }
     ```
-
-###

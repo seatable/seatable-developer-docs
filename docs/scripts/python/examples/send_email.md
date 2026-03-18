@@ -5,13 +5,13 @@ This Python script demonstrates sending emails via SMTP using the [smtplib modul
 - The `Contacts` table storing the contacts you want to send email to:
 
 | Column name | Name | Email | 
-| ----------- |: ------ :|: ------ :|
+| ----------- |:------:|:------:|
 | **Column type**  |  text   |   email  |
 
 - The `Send email config` table storing the email sending parameters:
 
 | Column name | Subject | Recipient email | Subject source| Email format | Attach file | File |
-| ----------- |: ----- :|: ------------- :|: ----------- :|: ---------- :|: --------- :|: -- :|
+| ----------- |:-----:|:-------------:|:-----------:|:----------:|:---------:|:--:|
 | **Column type**  | text  | single select | single select | single select | checkbox | file |
 
 - Recipient email can be `hard-coded` (recipients are defined l.48 of the script as a list of email addresses) or `database` (recipients are retrieved from the `Email` column of the `Contacts` table).

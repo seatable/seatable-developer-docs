@@ -17,13 +17,13 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     1. Don't forget to import `Account` from `seatable_api`
 
-    2. Always be vigilant when exposing your credentials in a script! Prefer as often as possible more secure solutions such as environment variables or \.venv\ files
+    2. Always be vigilant when exposing your credentials in a script! Prefer as often as possible more secure solutions such as environment variables or \.env\ files
 
 ## Manage workspaces
 
 !!! abstract "list_workspaces"
 
-    Get all your workspaces and its Bases.
+    Get all your workspaces and their bases.
 
     ``` python
     account.list_workspaces()

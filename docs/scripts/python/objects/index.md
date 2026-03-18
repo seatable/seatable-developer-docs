@@ -2,7 +2,7 @@
 
 This manual list all available objects and methods (also called functions) that are available within Python scripts in SeaTable. When running directly in SeaTable, Python scripts have the ability to access the [base context](context.md). [Date utilities](date-utils.md) are also available.
 
-If you compare JavaScript and Python, you will notice that Python has no specific output methods. This is not necessary, because the output is either written into the base or directly returned by the methods. Besides, you'll see that **Python methods never accepts objects** for table, view or row selection arguments, but only their names/`_ids` as strings.  Unless otherwise stated, **all method arguments are required**.
+If you compare JavaScript and Python, you will notice that Python has no specific output methods. This is not necessary, because the output is either written into the base or directly returned by the methods. Besides, you'll see that **Python methods never accept objects** for table, view or row selection arguments, but only their names/`_ids` as strings.  Unless otherwise stated, **all method arguments are required**.
 
 ## Data model
 
@@ -31,7 +31,7 @@ You will learn from these examples, that it is quite easy to read, output and ev
 
 === "1. Add a table to a base"
 
-    This examples shows how to add a table to an existing bases.
+    This examples shows how to add a table to an existing base.
 
     ``` python
     from seatable_api import Base, context
@@ -55,7 +55,7 @@ You will learn from these examples, that it is quite easy to read, output and ev
     1.   These three lines are always required to authorize against the base in SeaTable.
 
 === "2. Add a row to this new table"
-    This examples shows how to add a a record to a table. The example script assumes that a table "ScriptTest" table with two columns "name" and "age" exists in the base.
+    This examples shows how to add a record to a table. The example script assumes that a table "ScriptTest" table with two columns "name" and "age" exists in the base.
 
     ``` python
     from seatable_api import Base, context

@@ -1,6 +1,6 @@
 # Examples
 
-This section contains some examples of Python Scripts. The **first three scripts** are the same than in the JavaScript section. 
+This section contains some examples of Python Scripts. The **first three scripts** are the same as in the JavaScript section. 
 
 Even if Python scripts are capable of checking if the base structure (tables and columns) needed exist and of creating it if necessary, we didn't implement this feature in the scripts so you can focus on the actual goal of each script. 
 
@@ -14,19 +14,19 @@ Even if Python scripts are capable of checking if the base structure (tables and
 
 This script demonstrates how to add rows to record monthly repetitive expenses in a ledger.
 
-[read more :material-arrow-right-thin:](/scripts/javascript/examples/auto-add-rows/)
+[read more :material-arrow-right-thin:](/scripts/python/examples/auto-add-rows/)
 
 ## Calculate accumulated value
 
 This script computes an accumulated value (adds the value of the current row and the previous rows), similar to the *Calculate accumulated value* operation from the data processing menu.
 
-[read more :material-arrow-right-thin:](/scripts/javascript/examples/calculate-accumulated-value/)
+[read more :material-arrow-right-thin:](/scripts/python/examples/calculate-accumulated-value/)
 
 ## Statistics
 
 This script computes, from a list of clocking times, daily clock in (earliest clocking) and clock out (latest clocking) times for each day and staff member.
 
-[read more :material-arrow-right-thin:](/scripts/javascript/examples/compute-attendance-statistics/)
+[read more :material-arrow-right-thin:](/scripts/python/examples/compute-attendance-statistics/)
 
 ## Email sender
 

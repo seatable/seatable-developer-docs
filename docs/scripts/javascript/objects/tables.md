@@ -66,7 +66,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
 !!! abstract "addTable"
 
-    Add a new table to this base, given the new table name `tableName`. Please ensure that you choose a `tableName` that doesn't already exists in your base.
+    Add a new table to this base, given the new table name `tableName`. Please ensure that you choose a `tableName` that doesn't already exist in your base.
 
     ``` js
     base.addTable(tableName: String);
@@ -83,7 +83,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
 !!! abstract "renameTable"
 
-    Rename an existing table named `oldName` to `newName`. Please ensure that you choose a `newName` that doesn't already exists in your base.
+    Rename an existing table named `oldName` to `newName`. Please ensure that you choose a `newName` that doesn't already exist in your base.
 
     ``` js
     base.renameTable(oldName: String, newName: String);

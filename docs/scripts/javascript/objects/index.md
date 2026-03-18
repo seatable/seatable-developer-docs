@@ -6,7 +6,7 @@ This manual list all available objects and methods (also called functions) that 
 
 !!! warning "Two JavaScript APIs in SeaTable"
 
-    SeaTable offers two different ways to use JavaScript with SeaTable. You can executing a JavaScript script directly in SeaTable and there is a JavaScript Client API. The functions are similar but not identical.
+    SeaTable offers two different ways to use JavaScript with SeaTable. You can execute a JavaScript script directly in SeaTable and there is a JavaScript Client API. The functions are similar but not identical.
     If you want to use a JavaScript script in SeaTable, stay at this section, otherwise switch to the [Client APIs](/clients/javascript/javascript_api).
 
 ## Data model
@@ -38,7 +38,7 @@ Let's have a look at some basic examples. You will learn that it is quite easy t
     ```
 
     1.  1. `base` is the predefined-object provided by SeaTable containing all tables of a base.
-        1. `getTables()` is the function to get all bases from the object `base`.
+        1. `getTables()` is the function to get all tables from the object `base`.
 
     2.  1. `output` is also a predefined-object provided by SeaTable.
         1. `length` is just a pure JavaScript property.

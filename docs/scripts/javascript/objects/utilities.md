@@ -72,7 +72,7 @@ Utility functions help you to work with data in SeaTable.
     | Name | SourceEmail |
     | ---  | --- |
     | Hulk | greenbigboy@stark-industries.movie |
-    | Tony | ironman|stark-industries.movie |
+    | Tony | ironman@stark-industries.movie |
 
     **Target table**
 

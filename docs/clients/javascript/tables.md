@@ -42,7 +42,7 @@
 !!! question "renameTable"
 
     ``` js
-    base.renameTable(oldNname: String, newName: String)
+    base.renameTable(oldName: String, newName: String)
     ```
 
     __Example__
