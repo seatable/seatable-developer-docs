@@ -150,10 +150,9 @@ nav:
       - Links: javascript/links.md
       - SQL Queries: javascript/sql.md
       - Metadata: javascript/metadata.md
+      - Files: javascript/files.md
       - Constants: javascript/constants.md
       - Scripting Features: javascript/scripting-features.md
-      - Examples:
-          - File Upload: javascript/examples/file-upload.md
   - PHP:
       - php/index.md
       - Getting Started: php/getting-started.md
