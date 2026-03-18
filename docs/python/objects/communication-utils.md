@@ -6,6 +6,29 @@ Several outgoing communications features are available within SeaTable. Whether 
 !!! info "Going further"
     Keep in mind that communication methods will probably require other coding skills as they mostly make sense outside of SeaTable. The [API Reference](https://api.seatable.com/reference/getbaseactivitylog-1) also details other methods such as getting base or row activities logs, which might also help you stay informed about what's happening in the base (but without the automatic firing on the SeaTable side of the methods presented here).
 
+## Send email
+
+!!! abstract "send_email"
+
+    Send an email using a pre-configured email account in SeaTable. The email account must be set up in the system administration.
+
+    ``` python
+    base.send_email(account_name, msg, **kwargs)
+    ```
+
+    - `account_name`: name of the configured email account
+    - `msg`: email message content
+
+    __Example__
+
+    ``` python
+    from seatable_api import Base, context
+
+    base = Base(context.api_token, context.server_url)
+    base.auth()
+    base.send_email('my-email-account', 'Hello from SeaTable!')
+    ```
+
 ## Toast notifications
 
 !!! abstract "send_toast_notification"

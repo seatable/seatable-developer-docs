@@ -279,3 +279,25 @@ The account object provides an interface to list workspaces, add/copy/delete bas
     user_info = base.get_user_info("aea9e807bcfd4f3481d60294df74f6ee@auth.local")
     print(user_info)
     ```
+
+!!! abstract "get_related_users"
+
+    Get a list of users related to the current base (collaborators who have access).
+
+    ``` python
+    base.get_related_users()
+    ```
+
+    __Output__ List of user dicts
+
+    __Example__
+
+    ``` python
+    from seatable_api import Base, context
+
+    base = Base(context.api_token, context.server_url)
+    base.auth()
+    users = base.get_related_users()
+    for user in users:
+        print(user)
+    ```

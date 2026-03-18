@@ -581,3 +581,62 @@ You'll find below all the available methods to interact with the rows of a SeaTa
         ]
     base.big_data_insert_rows('Table1', rows_data=rows)
     ```
+
+## Filter rows
+
+!!! abstract "filter"
+
+    Filter rows using a condition string. Returns a QuerySet object with chainable methods: `.all()`, `.count()`, `.first()`, `.last()`, `.filter()`, `.get()`, `.delete()`, `.update()`.
+
+    ``` python
+    base.filter(table_name, conditions='', view_name=None)
+    ```
+
+    __Output__ QuerySet object
+
+    __Example__
+
+    ``` python
+    # Get all rows where Status is "Done"
+    queryset = base.filter('Table1', "Status = 'Done'")
+    rows = queryset.all()
+    count = queryset.count()
+    first = queryset.first()
+
+    # Chain filters
+    queryset = base.filter('Table1', "Year = 2024").filter("Price > 100")
+
+    # Update all matching rows
+    base.filter('Table1', "Status = 'Open'").update({'Status': 'Archived'})
+    ```
+
+!!! abstract "filter_rows"
+
+    Filter rows using structured filter objects. Supports combining multiple filters with `And` or `Or` conjunction.
+
+    ``` python
+    base.filter_rows(table_name, filters, view_name=None, filter_conjunction='And')
+    ```
+
+    - `filters`: list of filter dicts, each containing `column_name`, `filter_predicate`, and `filter_term`
+    - `filter_conjunction`: `'And'` or `'Or'`
+
+    __Output__ List of row dicts
+
+    __Example__
+
+    ``` python
+    filters = [
+        {
+            "column_name": "Status",
+            "filter_predicate": "is",
+            "filter_term": "Done"
+        },
+        {
+            "column_name": "Price",
+            "filter_predicate": "greater",
+            "filter_term": 100
+        }
+    ]
+    rows = base.filter_rows('Table1', filters, filter_conjunction='And')
+    ```

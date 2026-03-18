@@ -179,6 +179,30 @@
 
     1. Remember you can use `base.get_column_link_id` to get the link id of a specific link-type column.
 
+!!! abstract "batch_add_links"
+
+    Add links for multiple rows at once. The `other_rows_ids_map` maps source row IDs to lists of target row IDs.
+
+    ``` python
+    base.batch_add_links(link_id, table_name, other_table_name, other_rows_ids_map)
+    ```
+
+    __Output__ Dict containing the result of the operation
+
+    __Example__
+
+    ``` python
+    base.batch_add_links(
+        'r4IJ',
+        'Table1',
+        'Table2',
+        {
+            'fRLglslWQYSGmkU7o6KyHw': ['OcCE8aX8T7a4dvJr-qNh3g', 'JckTyhN0TeS8yvH8D3EN7g'],
+            'eSQe9OpPQxih8A9zPXdMVA': ['cWHbzQiTR8uHHzH_gVSKIg']
+        }
+    )
+    ```
+
 ## Update link(s)
 
 !!! abstract "update_link"
@@ -271,4 +295,28 @@
     base = Base(context.api_token, context.server_url)
     base.auth()
     base.remove_link('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
+    ```
+
+!!! abstract "batch_remove_links"
+
+    Remove links for multiple rows at once. The `other_rows_ids_map` maps source row IDs to lists of target row IDs to unlink.
+
+    ``` python
+    base.batch_remove_links(link_id, table_name, other_table_name, other_rows_ids_map)
+    ```
+
+    __Output__ Dict containing the result of the operation
+
+    __Example__
+
+    ``` python
+    base.batch_remove_links(
+        'r4IJ',
+        'Table1',
+        'Table2',
+        {
+            'fRLglslWQYSGmkU7o6KyHw': ['OcCE8aX8T7a4dvJr-qNh3g'],
+            'eSQe9OpPQxih8A9zPXdMVA': ['cWHbzQiTR8uHHzH_gVSKIg', 'X56gE7BrRF-i61YlE4oTcw']
+        }
+    )
     ```

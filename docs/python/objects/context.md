@@ -115,3 +115,21 @@ When the script is running in the cloud, the context object provides a context e
     from seatable_api import context
     print(context.current_id_in_org)
     ```
+
+!!! abstract "get_setting_by_key"
+
+    Get a context setting by its key. This provides access to additional context data beyond the predefined properties above.
+
+    ``` python
+    context.get_setting_by_key(key)
+    ```
+
+    __Output__ The value of the setting, or `None` if not found
+
+    __Example__
+
+    ``` python
+    from seatable_api import context
+    value = context.get_setting_by_key('server_url')
+    print(value)
+    ```
