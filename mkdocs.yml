@@ -153,8 +153,13 @@ nav:
       - API Reference: php/api-reference.md
   - Ruby: ruby/index.md
   - SQL:
-      - SQL Queries: sql/introduction.md
-      - SQL Functions: sql/functions.md
+      - sql/introduction.md
+      - SELECT: sql/select.md
+      - INSERT, UPDATE, DELETE: sql/insert-update-delete.md
+      - Clauses: sql/clauses.md
+      - Data Types: sql/data-types.md
+      - Extended Syntax: sql/extended-syntax.md
+      - Functions: sql/functions.md
   - Plugin Development:
       - plugins/index.md
       - Environments: plugins/environments.md
