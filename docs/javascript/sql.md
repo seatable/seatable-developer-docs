@@ -1,6 +1,6 @@
 # SQL Queries
 
-Use SQL to query a base. This is the most powerful way to access data. For the full SQL syntax reference, see the [SQL Reference](/sql/introduction.md).
+Use SQL to query a base. This is the most powerful way to access data. For the full SQL syntax reference, see the [SQL Reference](/sql/index.md).
 
 !!! abstract "query"
 

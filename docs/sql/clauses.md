@@ -1,5 +1,8 @@
 # Clauses
 
+!!! info "Backticks for special names"
+    Escape table or column names that contain spaces, special characters, or match [SQL function](./functions.md) names with backticks: `` SELECT * FROM `My Table` ``.
+
 ## WHERE
 
 Most SQL syntax can be used in the `WHERE` clause: arithmetic expressions, comparison operators, `[NOT] LIKE`, `IN`, `BETWEEN ... AND ...`, `AND`, `OR`, `NOT`, `IS [NOT] TRUE`, `IS [NOT] NULL`.

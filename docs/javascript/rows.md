@@ -76,7 +76,7 @@
 
 !!! abstract "query"
 
-    Use SQL to query a base. Most SQL syntax is supported -- see the [SQL Reference](/sql/introduction.md) for details.
+    Use SQL to query a base. Most SQL syntax is supported -- see the [SQL Reference](/sql/index.md) for details.
 
     ``` js
     await base.query(sql);

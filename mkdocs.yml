@@ -153,7 +153,7 @@ nav:
       - API Reference: php/api-reference.md
   - Ruby: ruby/index.md
   - SQL:
-      - sql/introduction.md
+      - sql/index.md
       - SELECT: sql/select.md
       - INSERT, UPDATE, DELETE: sql/insert-update-delete.md
       - Clauses: sql/clauses.md

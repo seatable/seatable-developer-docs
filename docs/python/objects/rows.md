@@ -62,7 +62,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "query"
 
-    Use SQL to query a base. SQL queries are the most powerful way access data stored in a base. If you're not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). Most SQL syntax is supported, you can check the [SQL Reference](/sql/introduction.md) section of this manual for more information.
+    Use SQL to query a base. SQL queries are the most powerful way access data stored in a base. If you're not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). Most SQL syntax is supported, you can check the [SQL Reference](/sql/index.md) section of this manual for more information.
 
     ``` python
     base.query(sql_statement)
@@ -348,7 +348,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "batch_append_rows"
 
-    Append multiple rows to the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/introduction.md) which supports up to 10,000 rows.
+    Append multiple rows to the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/index.md) which supports up to 10,000 rows.
 
     ``` python
     base.batch_append_rows(table_name, rows_data, apply_default=False) # (1)!
@@ -465,7 +465,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "batch_update_rows"
 
-    Updates multiple rows in the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/introduction.md) which supports up to 10,000 rows.
+    Updates multiple rows in the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/index.md) which supports up to 10,000 rows.
 
     ``` python
     base.batch_update_rows(table_name, rows_data) # (1)!
@@ -533,7 +533,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 !!! abstract "batch_delete_rows"
 
-    Delete multiple rows from the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/introduction.md) which supports up to 10,000 rows.
+    Delete multiple rows from the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](../sql/index.md) which supports up to 10,000 rows.
 
     ``` python
     base.batch_delete_rows(table_name, row_ids) # (1)!
