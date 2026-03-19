@@ -56,10 +56,72 @@ plugins:
   - git-revision-date-localized
   - include-markdown:
       rewrite_relative_urls: false
-  #- redirects:
-  #    redirect_maps:
-  #      'changelog/server-changelog.md': 'https://seatable.com/changelog/'
-  #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.com/changelog/'
+  - redirects:
+      redirect_maps:
+        # Old "Scripting" section → new language sections
+        'scripts/index.md': 'index.md'
+        'scripts/python/introduction.md': 'python/index.md'
+        'scripts/python/objects/index.md': 'python/objects/metadata.md'
+        'scripts/python/objects/metadata.md': 'python/objects/metadata.md'
+        'scripts/python/objects/context.md': 'python/objects/context.md'
+        'scripts/python/objects/tables.md': 'python/objects/tables.md'
+        'scripts/python/objects/views.md': 'python/objects/views.md'
+        'scripts/python/objects/columns.md': 'python/objects/columns.md'
+        'scripts/python/objects/rows.md': 'python/objects/rows.md'
+        'scripts/python/objects/links.md': 'python/objects/links.md'
+        'scripts/python/objects/files.md': 'python/objects/files.md'
+        'scripts/python/objects/big_data.md': 'python/objects/rows.md'
+        'scripts/python/objects/accounts.md': 'python/objects/accounts.md'
+        'scripts/python/objects/users.md': 'python/objects/users.md'
+        'scripts/python/objects/date-utils.md': 'python/objects/date-utils.md'
+        'scripts/python/objects/communication-utils.md': 'python/objects/communication-utils.md'
+        'scripts/python/common_questions.md': 'python/index.md'
+        'scripts/python/examples/index.md': 'python/index.md'
+        'scripts/python/examples/auto-add-rows.md': 'python/index.md'
+        'scripts/python/examples/calculate-accumulated-value.md': 'python/index.md'
+        'scripts/python/examples/compute-attendance-statistics.md': 'python/index.md'
+        'scripts/python/examples/send_email.md': 'python/index.md'
+        'scripts/python/examples/generate_barcode.md': 'python/index.md'
+        'scripts/python/examples/generate_qrcode.md': 'python/index.md'
+        'scripts/python/examples/sync_mysql.md': 'python/index.md'
+        'scripts/python/examples/update_stock_price.md': 'python/index.md'
+        'scripts/python/examples/merge_pdf.md': 'python/index.md'
+        'scripts/python/examples/heic_to_png.md': 'python/index.md'
+        'scripts/javascript/objects/index.md': 'javascript/index.md'
+        'scripts/javascript/objects/tables.md': 'javascript/tables.md'
+        'scripts/javascript/objects/views.md': 'javascript/views.md'
+        'scripts/javascript/objects/columns.md': 'javascript/columns.md'
+        'scripts/javascript/objects/rows.md': 'javascript/rows.md'
+        'scripts/javascript/objects/links.md': 'javascript/links.md'
+        'scripts/javascript/objects/context.md': 'javascript/scripting-features.md'
+        'scripts/javascript/objects/utilities.md': 'javascript/scripting-features.md'
+        'scripts/javascript/objects/output.md': 'javascript/scripting-features.md'
+        'scripts/javascript/common_questions.md': 'javascript/index.md'
+        'scripts/javascript/examples/index.md': 'javascript/index.md'
+        'scripts/javascript/examples/auto-add-rows.md': 'javascript/index.md'
+        'scripts/javascript/examples/calculate-accumulated-value.md': 'javascript/index.md'
+        'scripts/javascript/examples/compute-attendance-statistics.md': 'javascript/index.md'
+        'scripts/sql/introduction.md': 'sql/index.md'
+        'scripts/sql/functions.md': 'sql/functions.md'
+
+        # Old "Client APIs" section → new language sections
+        'clients/index.md': 'index.md'
+        'clients/python_api.md': 'python/index.md'
+        'clients/javascript/javascript_api.md': 'javascript/index.md'
+        'clients/javascript/metadata.md': 'javascript/metadata.md'
+        'clients/javascript/tables.md': 'javascript/tables.md'
+        'clients/javascript/views.md': 'javascript/views.md'
+        'clients/javascript/columns.md': 'javascript/columns.md'
+        'clients/javascript/rows.md': 'javascript/rows.md'
+        'clients/javascript/links.md': 'javascript/links.md'
+        'clients/javascript/sql_query.md': 'javascript/sql.md'
+        'clients/javascript/constants.md': 'javascript/constants.md'
+        'clients/javascript/examples/file-upload.md': 'javascript/files.md'
+        'clients/php_api.md': 'php/index.md'
+        'clients/ruby_api.md': 'ruby/index.md'
+
+        # Old introduction pages
+        'introduction/coding_for_beginners.md': 'index.md'
 
 # Customization
 extra:
@@ -120,82 +182,47 @@ markdown_extensions:
 nav:
   - Introduction:
       - index.md
-      - Coding for beginners: introduction/coding_for_beginners.md
       - Get support: introduction/get_support.md
-  - Scripting:
-      - scripts/index.md
-      - JavaScript:
-          - Objects & Methods:
-              - scripts/javascript/objects/index.md
-              - Tables: scripts/javascript/objects/tables.md
-              - Views: scripts/javascript/objects/views.md
-              - Columns: scripts/javascript/objects/columns.md
-              - Rows: scripts/javascript/objects/rows.md
-              - Links: scripts/javascript/objects/links.md
-              - Context: scripts/javascript/objects/context.md
-              - Utilities: scripts/javascript/objects/utilities.md
-              - Output: scripts/javascript/objects/output.md
-          - Examples:
-              - scripts/javascript/examples/index.md
-              - 1. Add rows: scripts/javascript/examples/auto-add-rows.md
-              - 2. Calculate accumulated value: scripts/javascript/examples/calculate-accumulated-value.md
-              - 3. Compute attendance statistics: scripts/javascript/examples/compute-attendance-statistics.md
-          - Common questions: scripts/javascript/common_questions.md
-      - Python:
-          - Introduction: scripts/python/introduction.md
-          - Objects & Methods:
-              - scripts/python/objects/index.md
-              - Metadata: scripts/python/objects/metadata.md
-              - Context: scripts/python/objects/context.md
-              - Tables: scripts/python/objects/tables.md
-              - Views: scripts/python/objects/views.md
-              - Columns: scripts/python/objects/columns.md
-              - Rows: scripts/python/objects/rows.md
-              - Links: scripts/python/objects/links.md
-              - Files: scripts/python/objects/files.md
-              - Big data: scripts/python/objects/big_data.md
-              - Accounts: scripts/python/objects/accounts.md
-              - Users: scripts/python/objects/users.md
-              - Date utilities: scripts/python/objects/date-utils.md
-              - Communication utilities: scripts/python/objects/communication-utils.md
-          - Examples:
-              - scripts/python/examples/index.md
-              - 1. Add rows: scripts/python/examples/auto-add-rows.md
-              - 2. Calculate accumulated value: scripts/python/examples/calculate-accumulated-value.md
-              - 3. Compute attendance statistics: scripts/python/examples/compute-attendance-statistics.md
-              - 4. Send emails: scripts/python/examples/send_email.md
-              - 5. Generate barcode: scripts/python/examples/generate_barcode.md
-              - 6. Generate QR code: scripts/python/examples/generate_qrcode.md
-              - 7. Sync MySQL: scripts/python/examples/sync_mysql.md
-              - 8. Watch stock price: scripts/python/examples/update_stock_price.md
-              - 9. Merge PDF: scripts/python/examples/merge_pdf.md
-              - 10. Convert HEIC to PNG: scripts/python/examples/heic_to_png.md
-          - Common questions: scripts/python/common_questions.md
-      - Query with SQL:
-          - Introduction: scripts/sql/introduction.md
-          - SQL function reference: scripts/sql/functions.md
+  - Python:
+      - python/index.md
+      - Metadata: python/objects/metadata.md
+      - Context: python/objects/context.md
+      - Tables: python/objects/tables.md
+      - Views: python/objects/views.md
+      - Columns: python/objects/columns.md
+      - Rows: python/objects/rows.md
+      - Links: python/objects/links.md
+      - Files: python/objects/files.md
+      - Accounts: python/objects/accounts.md
+      - Users: python/objects/users.md
+      - Date utilities: python/objects/date-utils.md
+      - Communication utilities: python/objects/communication-utils.md
+  - JavaScript:
+      - javascript/index.md
+      - Tables: javascript/tables.md
+      - Views: javascript/views.md
+      - Columns: javascript/columns.md
+      - Rows: javascript/rows.md
+      - Links: javascript/links.md
+      - SQL Queries: javascript/sql.md
+      - Metadata: javascript/metadata.md
+      - Files: javascript/files.md
+      - Constants: javascript/constants.md
+      - Scripting Features: javascript/scripting-features.md
+  - PHP:
+      - php/index.md
+      - Examples: php/examples.md
+      - API Reference: php/api-reference.md
+  - Ruby: ruby/index.md
+  - SQL:
+      - sql/index.md
+      - SELECT: sql/select.md
+      - INSERT, UPDATE, DELETE: sql/insert-update-delete.md
+      - Clauses: sql/clauses.md
+      - Data Types: sql/data-types.md
+      - Extended Syntax: sql/extended-syntax.md
+      - Functions: sql/functions.md
   - Plugin Development:
       - plugins/index.md
       - Environments: plugins/environments.md
       - Available methods: plugins/methods.md
-  - Client APIs:
-      - clients/index.md
-      - JavaScript:
-          - Introduction: clients/javascript/javascript_api.md
-          - Objects & Methods:
-              - Metadata: clients/javascript/metadata.md
-              - Tables: clients/javascript/tables.md
-              - Views: clients/javascript/views.md
-              - Columns: clients/javascript/columns.md
-              - Rows: clients/javascript/rows.md
-              - Links: clients/javascript/links.md
-              - SQL: clients/javascript/sql_query.md
-              - Constants: clients/javascript/constants.md
-          - Examples:
-              - File Upload: clients/javascript/examples/file-upload.md
-      - Python: clients/python_api.md
-      - PHP: clients/php_api.md
-      - Ruby: clients/ruby_api.md
-## open topics:
-# social cards https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
-# feedback integration: ...
