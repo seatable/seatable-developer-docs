@@ -56,10 +56,72 @@ plugins:
   - git-revision-date-localized
   - include-markdown:
       rewrite_relative_urls: false
-  #- redirects:
-  #    redirect_maps:
-  #      'changelog/server-changelog.md': 'https://seatable.com/changelog/'
-  #      'changelog/changelog-for-seatable-professional-server.md': 'https://seatable.com/changelog/'
+  - redirects:
+      redirect_maps:
+        # Old "Scripting" section → new language sections
+        'scripts/index.md': 'index.md'
+        'scripts/python/introduction.md': 'python/index.md'
+        'scripts/python/objects/index.md': 'python/objects/metadata.md'
+        'scripts/python/objects/metadata.md': 'python/objects/metadata.md'
+        'scripts/python/objects/context.md': 'python/objects/context.md'
+        'scripts/python/objects/tables.md': 'python/objects/tables.md'
+        'scripts/python/objects/views.md': 'python/objects/views.md'
+        'scripts/python/objects/columns.md': 'python/objects/columns.md'
+        'scripts/python/objects/rows.md': 'python/objects/rows.md'
+        'scripts/python/objects/links.md': 'python/objects/links.md'
+        'scripts/python/objects/files.md': 'python/objects/files.md'
+        'scripts/python/objects/big_data.md': 'python/objects/rows.md'
+        'scripts/python/objects/accounts.md': 'python/objects/accounts.md'
+        'scripts/python/objects/users.md': 'python/objects/users.md'
+        'scripts/python/objects/date-utils.md': 'python/objects/date-utils.md'
+        'scripts/python/objects/communication-utils.md': 'python/objects/communication-utils.md'
+        'scripts/python/common_questions.md': 'python/index.md'
+        'scripts/python/examples/index.md': 'python/index.md'
+        'scripts/python/examples/auto-add-rows.md': 'python/index.md'
+        'scripts/python/examples/calculate-accumulated-value.md': 'python/index.md'
+        'scripts/python/examples/compute-attendance-statistics.md': 'python/index.md'
+        'scripts/python/examples/send_email.md': 'python/index.md'
+        'scripts/python/examples/generate_barcode.md': 'python/index.md'
+        'scripts/python/examples/generate_qrcode.md': 'python/index.md'
+        'scripts/python/examples/sync_mysql.md': 'python/index.md'
+        'scripts/python/examples/update_stock_price.md': 'python/index.md'
+        'scripts/python/examples/merge_pdf.md': 'python/index.md'
+        'scripts/python/examples/heic_to_png.md': 'python/index.md'
+        'scripts/javascript/objects/index.md': 'javascript/index.md'
+        'scripts/javascript/objects/tables.md': 'javascript/tables.md'
+        'scripts/javascript/objects/views.md': 'javascript/views.md'
+        'scripts/javascript/objects/columns.md': 'javascript/columns.md'
+        'scripts/javascript/objects/rows.md': 'javascript/rows.md'
+        'scripts/javascript/objects/links.md': 'javascript/links.md'
+        'scripts/javascript/objects/context.md': 'javascript/scripting-features.md'
+        'scripts/javascript/objects/utilities.md': 'javascript/scripting-features.md'
+        'scripts/javascript/objects/output.md': 'javascript/scripting-features.md'
+        'scripts/javascript/common_questions.md': 'javascript/index.md'
+        'scripts/javascript/examples/index.md': 'javascript/index.md'
+        'scripts/javascript/examples/auto-add-rows.md': 'javascript/index.md'
+        'scripts/javascript/examples/calculate-accumulated-value.md': 'javascript/index.md'
+        'scripts/javascript/examples/compute-attendance-statistics.md': 'javascript/index.md'
+        'scripts/sql/introduction.md': 'sql/index.md'
+        'scripts/sql/functions.md': 'sql/functions.md'
+
+        # Old "Client APIs" section → new language sections
+        'clients/index.md': 'index.md'
+        'clients/python_api.md': 'python/index.md'
+        'clients/javascript/javascript_api.md': 'javascript/index.md'
+        'clients/javascript/metadata.md': 'javascript/metadata.md'
+        'clients/javascript/tables.md': 'javascript/tables.md'
+        'clients/javascript/views.md': 'javascript/views.md'
+        'clients/javascript/columns.md': 'javascript/columns.md'
+        'clients/javascript/rows.md': 'javascript/rows.md'
+        'clients/javascript/links.md': 'javascript/links.md'
+        'clients/javascript/sql_query.md': 'javascript/sql.md'
+        'clients/javascript/constants.md': 'javascript/constants.md'
+        'clients/javascript/examples/file-upload.md': 'javascript/files.md'
+        'clients/php_api.md': 'php/index.md'
+        'clients/ruby_api.md': 'ruby/index.md'
+
+        # Old introduction pages
+        'introduction/coding_for_beginners.md': 'index.md'
 
 # Customization
 extra:
