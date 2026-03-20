@@ -2,28 +2,33 @@
 
 ## SeaTable to SQL mapping
 
-| SeaTable column type | SQL data type | Query result format | WHERE | GROUP BY / ORDER BY |
-|:---|:---|:---|:---|:---|
-| text | String | | Supported | Supported |
-| long-text | String | Raw Markdown | Supported | Supported |
-| number | Float | | Supported | Supported |
-| single-select | String | Option name | By option name | By definition order |
-| multiple-select | List of strings | Option names | By option name | See list types |
-| checkbox | Boolean | | Supported | Supported |
-| date | Datetime | RFC 3339 format | ISO or RFC 3339 strings | Supported |
-| image | List of URLs | JSON array | See list types | See list types |
-| file | JSON string | | Not supported | Not supported |
-| collaborator | List of user IDs | `xxx@auth.local` | See list types | See list types |
-| link to other records | List of linked rows | | See list types | See list types |
-| formula | Depends on return value | | Depends on type | Depends on type |
-| \_creator | String (user ID) | `xxx@auth.local` | Supported | Supported |
-| \_ctime | Datetime | RFC 3339 format | ISO or RFC 3339 strings | Supported |
-| \_last\_modifier | String (user ID) | `xxx@auth.local` | Supported | Supported |
-| \_mtime | Datetime | RFC 3339 format | ISO or RFC 3339 strings | Supported |
-| auto number | String | | Supported | Supported |
-| url | String | | Supported | Supported |
-| email | String | | Supported | Supported |
-| duration | Float | In seconds | Supported | Supported |
+| SeaTable column type | SQL data type | Query result format | WHERE | GROUP BY / ORDER BY | Writable via SQL |
+|:---|:---|:---|:---|:---|:---|
+| text | String | | Supported | Supported | Yes |
+| long-text | String | Raw Markdown | Supported | Supported | Yes |
+| number | Number | Integer or float | Supported | Supported | Yes |
+| single-select | String | Option name | By option name | By definition order | Yes |
+| multiple-select | List of strings | Option names | By option name | See list types | Yes |
+| checkbox | Boolean | | Supported | Supported | Yes |
+| date | Datetime | RFC 3339 format | ISO or RFC 3339 strings | Supported | Yes |
+| duration | Number | In seconds | Supported | Supported | Yes |
+| rate | Integer | 1 to max | Supported | Supported | Yes |
+| url | String | | Supported | Supported | Yes |
+| email | String | | Supported | Supported | Yes |
+| image | List of URLs | JSON array | See list types | See list types | **No** |
+| file | JSON string | | Not supported | Not supported | **No** |
+| collaborator | List of user IDs | `xxx@auth.local` | See list types | See list types | Yes |
+| link | List of linked rows | | See list types | See list types | **No** |
+| link-formula | Depends on return value | | Depends on type | Depends on type | **No** |
+| formula | Depends on return value | | Depends on type | Depends on type | **No** |
+| geolocation | JSON object | `{"country_region": "..."}` or `{"lat": ..., "lng": ...}` | Not supported | Not supported | **No** |
+| auto-number | String | | Supported | Supported | **No** |
+| digital-sign | String | Username | Not supported | Not supported | **No** |
+| button | — | Not queryable | — | — | **No** |
+| \_creator | String (user ID) | `xxx@auth.local` | Supported | Supported | **No** |
+| \_ctime | Datetime | RFC 3339 format | ISO or RFC 3339 strings | Supported | **No** |
+| \_last\_modifier | String (user ID) | `xxx@auth.local` | Supported | Supported | **No** |
+| \_mtime | Datetime | RFC 3339 format | ISO or RFC 3339 strings | Supported | **No** |
 
 ## List types
 
