@@ -26,7 +26,8 @@ SQL syntax is case insensitive. We use upper-cased keywords for readability.
 
 | Feature | Notes |
 |:---|:---|
-| `SELECT`, `INSERT`, `UPDATE`, `DELETE` | [INSERT requires Big Data storage](insert-update-delete.md) |
+| `SELECT`, `UPDATE`, `DELETE` | |
+| `INSERT` | [Requires Big Data storage](insert.md) |
 | `WHERE` with `=`, `!=`, `<>`, `>`, `<`, `>=`, `<=` | |
 | `LIKE`, `ILIKE`, `IN`, `NOT IN`, `BETWEEN`, `IS [NOT] NULL` | |
 | `AND`, `OR`, `NOT` | |
@@ -60,12 +61,3 @@ You can use SeaTable formula syntax directly in SQL queries. A few differences f
 - Column aliases cannot be used in formulas: `abs(t.column)` is invalid
 
 For the complete list of available functions, see the [function reference](./functions.md).
-
-## Big Data storage indexes
-
-SeaTable automatically creates indexes for rows in big data storage to improve query performance. Indexed column types: text, number, date, single select, multiple select, collaborators, creator, create date, modifier, modification date.
-
-Indexes are updated when:
-
-1. The table is archived the next time
-2. A user triggers index management from the "Big data management" menu in the base

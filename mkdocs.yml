@@ -105,6 +105,7 @@ plugins:
         'scripts/sql/functions.md': 'sql/functions.md'
         'sql/clauses.md': 'sql/select.md'
         'sql/extended-syntax.md': 'sql/index.md'
+        'sql/data-types.md': 'sql/limitations.md'
 
         # Old "Client APIs" section → new language sections
         'clients/index.md': 'index.md'
@@ -219,8 +220,9 @@ nav:
   - SQL:
       - sql/index.md
       - SELECT: sql/select.md
-      - INSERT, UPDATE, DELETE: sql/insert-update-delete.md
-      - Data Types: sql/data-types.md
+      - INSERT: sql/insert.md
+      - UPDATE, DELETE: sql/insert-update-delete.md
+      - Limitations: sql/limitations.md
       - Functions: sql/functions.md
   - Plugin Development:
       - plugins/index.md
