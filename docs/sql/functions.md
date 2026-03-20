@@ -15,6 +15,124 @@ The functions supported in SQL are roughly the same as the set of functions supp
 - [Logical functions](#logical-functions)
 - [Statistical functions](#statistical-functions)
 
+## Function support overview
+
+The following table shows at a glance which functions are supported in SeaTable SQL. Standard SQL/MySQL function names (e.g. `SUBSTR`, `CONCAT`) are **not** supported — use the SeaTable equivalents instead.
+
+??? note "Operators"
+
+    | Function | Supported | Notes |
+    | :------- | :-------: | :---- |
+    | `add(num1, num2)` | :white_check_mark: | |
+    | `subtract(num1, num2)` | :white_check_mark: | |
+    | `multiply(num1, num2)` | :white_check_mark: | |
+    | `divide(num1, num2)` | :white_check_mark: | |
+    | `mod(num1, num2)` | :white_check_mark: | |
+    | `power(num1, num2)` | :white_check_mark: | |
+    | `greater(num1, num2)` | :white_check_mark: | |
+    | `lessthan(num1, num2)` | :white_check_mark: | |
+    | `greatereq(num1, num2)` | :white_check_mark: | |
+    | `lessthaneq(num1, num2)` | :white_check_mark: | |
+    | `equal(num1, num2)` | :white_check_mark: | |
+    | `unequal(num1, num2)` | :white_check_mark: | |
+    | Standard `+`, `-`, `*`, `/` | :white_check_mark: | Work in `SELECT` expressions |
+
+??? note "Mathematical functions"
+
+    | Function | Supported | Notes |
+    | :------- | :-------: | :---- |
+    | `abs(number)` | :white_check_mark: | |
+    | `ceiling(number, significance)` | :white_check_mark: | MySQL `CEIL` is not supported |
+    | `even(number)` | :white_check_mark: | |
+    | `exp(number)` | :white_check_mark: | |
+    | `floor(number, significance)` | :white_check_mark: | |
+    | `int(number)` | :white_check_mark: | |
+    | `lg(number)` | :white_check_mark: | |
+    | `log(number, base)` | :white_check_mark: | |
+    | `odd(number)` | :white_check_mark: | |
+    | `round(number, digits)` | :white_check_mark: | |
+    | `rounddown(number, digits)` | :white_check_mark: | |
+    | `roundup(number, digits)` | :white_check_mark: | |
+    | `sign(number)` | :white_check_mark: | |
+    | `sqrt(number)` | :white_check_mark: | |
+
+??? note "Text functions"
+
+    | Function | Supported | Notes |
+    | :------- | :-------: | :---- |
+    | `concatenate(str1, str2, ...)` | :white_check_mark: | MySQL `CONCAT` is not supported |
+    | `exact(str1, str2)` | :white_check_mark: | |
+    | `find(findStr, sourceStr, start)` | :white_check_mark: | MySQL `LOCATE`/`INSTR` are not supported |
+    | `left(string, count)` | :white_check_mark: | |
+    | `len(string)` | :white_check_mark: | MySQL `LENGTH`/`CHAR_LENGTH` are not supported |
+    | `lower(string)` | :white_check_mark: | MySQL `LCASE` is not supported |
+    | `mid(string, start, count)` | :white_check_mark: | MySQL `SUBSTR`/`SUBSTRING` are not supported |
+    | `replace(str, start, count, new)` | :white_check_mark: | Different signature than MySQL `REPLACE(str, from, to)` |
+    | `rept(string, number)` | :white_check_mark: | MySQL `REPEAT` is not supported |
+    | `right(string, count)` | :white_check_mark: | |
+    | `search(findStr, sourceStr, start)` | :white_check_mark: | Case-insensitive version of `find` |
+    | `substitute(str, old, new, index)` | :white_check_mark: | |
+    | `T(value)` | :white_check_mark: | |
+    | `text(number, format)` | :white_check_mark: | |
+    | `trim(string)` | :white_check_mark: | |
+    | `upper(string)` | :white_check_mark: | MySQL `UCASE` is not supported |
+    | `value(string)` | :white_check_mark: | |
+
+??? note "Date functions"
+
+    | Function | Supported | Notes |
+    | :------- | :-------: | :---- |
+    | `date(year, month, day)` | :white_check_mark: | |
+    | `dateAdd(date, count, unit)` | :white_check_mark: | MySQL `DATE_ADD` with `INTERVAL` syntax is not supported |
+    | `dateDif(start, end, unit)` | :white_check_mark: | MySQL `DATEDIFF(d1, d2)` is not supported |
+    | `day(date)` | :white_check_mark: | |
+    | `eomonth(startDate, n)` | :white_check_mark: | |
+    | `hour(date)` | :white_check_mark: | |
+    | `hours(startDate, endDate)` | :x: | Not supported in SQL; use `dateDif` instead |
+    | `isodate(date)` | :white_check_mark: | |
+    | `isomonth(date)` | :white_check_mark: | |
+    | `isoweeknum(date)` | :x: | Not supported in SQL; use `weeknum(date, 21)` |
+    | `minute(date)` | :white_check_mark: | |
+    | `month(date)` | :white_check_mark: | |
+    | `months(startDate, endDate)` | :white_check_mark: | |
+    | `networkdays(start, end, ...)` | :white_check_mark: | |
+    | `now()` | :white_check_mark: | MySQL `CURDATE`/`CURRENT_DATE` are not supported |
+    | `quarter(date)` | :white_check_mark: | |
+    | `second(date)` | :white_check_mark: | |
+    | `startofweek(date, weekStart)` | :white_check_mark: | |
+    | `today()` | :white_check_mark: | |
+    | `weekday(date, weekStart)` | :white_check_mark: | |
+    | `weeknum(date, return_type)` | :white_check_mark: | Use `return_type` 21 for ISO week numbers |
+    | `year(date)` | :white_check_mark: | |
+
+??? note "Geo, logical, and statistical functions"
+
+    | Function | Supported | Notes |
+    | :------- | :-------: | :---- |
+    | `country(geolocation)` | :white_check_mark: | Requires geolocation column |
+    | `if(logical, trueVal, falseVal)` | :white_check_mark: | MySQL `CASE WHEN` is not supported |
+    | `ifs(logical1, val1, ...)` | :white_check_mark: | |
+    | `and(logical1, logical2, ...)` | :white_check_mark: | |
+    | `or(logical1, logical2, ...)` | :white_check_mark: | |
+    | `not(boolean)` | :white_check_mark: | |
+    | `switch(logical, m1, v1, ...)` | :white_check_mark: | |
+    | `xor(logical1, logical2, ...)` | :white_check_mark: | |
+    | `average(num1, num2, ...)` | :white_check_mark: | |
+    | `counta(val1, val2, ...)` | :white_check_mark: | |
+    | `countall(val1, val2, ...)` | :white_check_mark: | |
+    | `countblank(val1, val2, ...)` | :white_check_mark: | |
+    | `countItems(column)` | :white_check_mark: | Requires multi-select, collaborator, file, or image column |
+
+??? note "Standard SQL aggregate functions"
+
+    | Function | Supported | Notes |
+    | :------- | :-------: | :---- |
+    | `COUNT(*)` | :white_check_mark: | |
+    | `SUM(column)` | :white_check_mark: | |
+    | `MIN(column)` | :white_check_mark: | |
+    | `MAX(column)` | :white_check_mark: | |
+    | `AVG(column)` | :white_check_mark: | |
+
 !!! info "Backticks for table or column names containing or special characters or using reserved words"
     For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` select * from `My Table` ``. 
 
@@ -23,7 +141,7 @@ The functions supported in SQL are roughly the same as the set of functions supp
 
 ## Constants
 
-You can use the following constants in the functions:
+You can use the following constants as arguments inside functions (e.g., `multiply(pi, 2)`). Note: in SQL, constants cannot be used as standalone expressions in `SELECT` — `SELECT pi FROM table` will fail because `pi` is interpreted as a column name.
 
 | VARIABLE | DESCRIPTION                             |
 | :------- | :-------------------------------------- |
@@ -47,14 +165,14 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 
     __Example__ `add(1,2)` returns `3`
 
-!!! abstract "substract"
+!!! abstract "subtract"
     Subtracts one numeric value (`num2`) from another (`num1`).
 
     ```
-    substract(num1,num2)
+    subtract(num1,num2)
     ```
 
-    __Example__ `substract(5,4)` returns `1`
+    __Example__ `subtract(5,4)` returns `1`
 
 !!! abstract "multiply"
     Multiplies two numeric values.
@@ -571,17 +689,20 @@ When passing a parameter with time or date type, you can specify a constant in "
 
 !!! abstract "hours"
     Returns the number of hours between two date values (`startDate` and `endDate`). The minutes in the date values are not taken into account.
-    
+
     ```
     hours(startDate, endDate)
     ```
-    
+
     __Example__ `hours('2025-02-14 13:14', '2025-02-14 15:14')` returns `2`
 
     If no hours are included in the time specification (`startDate` or `endDate`), 0 o'clock on this day is automatically assumed.
-    
-    
+
+
     __Example__ `hours('2020-02-14', '2020-02-14 15:14')` returns `15`
+
+    !!! warning "Not supported in SQL"
+        `hours()` is only available in formulas, not in SQL queries. Use `dateDif(startDate, endDate, 'S')` and divide by 3600 as a workaround.
 
 !!! abstract "minute"
     Returns the minutes of a time specification (`date`) as a number. The number returned is between 0 and 59.
@@ -676,7 +797,7 @@ When passing a parameter with time or date type, you can specify a constant in "
     __Example__ `weekday('2025-01-01', 'Thursday') OR weekday('2025-01-01')` returns `4`
 
 !!! abstract "weeknum"
-    Returns the absolute week number of a `date` as a number. The returned number is between 1 and 53, where you can define the first day of the week (`return_type`). Enter the number 1 or 2, or 11 to 17, and 21 as `return_type` to define the start of a week: 1/Sunday, 2/Monday, 11/Monday, 12/Tuesday, 13/Wednesday, 14/Thursday, 15/Friday, 16/Saturday, 17/Sunday. If you want the week number to be returned according to ISO standard, specify the number of 21 as `return_type`, or use the function `isoweeknum`.
+    Returns the absolute week number of a `date` as a number. The returned number is between 1 and 53, where you can define the first day of the week (`return_type`). Enter the number 1 or 2, or 11 to 17, and 21 as `return_type` to define the start of a week: 1/Sunday, 2/Monday, 11/Monday, 12/Tuesday, 13/Wednesday, 14/Thursday, 15/Friday, 16/Saturday, 17/Sunday. If you want the week number to be returned according to ISO standard, specify the number of 21 as `return_type`. Note: the standalone function `isoweeknum` is only available in formulas, not in SQL queries — use `weeknum(date, 21)` instead.
     
     ```
     weeknum(date, return_type)

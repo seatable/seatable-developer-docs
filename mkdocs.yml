@@ -103,6 +103,8 @@ plugins:
         'scripts/javascript/examples/compute-attendance-statistics.md': 'javascript/index.md'
         'scripts/sql/introduction.md': 'sql/index.md'
         'scripts/sql/functions.md': 'sql/functions.md'
+        'sql/clauses.md': 'sql/select.md'
+        'sql/extended-syntax.md': 'sql/index.md'
 
         # Old "Client APIs" section → new language sections
         'clients/index.md': 'index.md'
@@ -218,9 +220,7 @@ nav:
       - sql/index.md
       - SELECT: sql/select.md
       - INSERT, UPDATE, DELETE: sql/insert-update-delete.md
-      - Clauses: sql/clauses.md
       - Data Types: sql/data-types.md
-      - Extended Syntax: sql/extended-syntax.md
       - Functions: sql/functions.md
   - Plugin Development:
       - plugins/index.md
