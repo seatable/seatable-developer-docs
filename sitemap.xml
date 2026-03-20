@@ -145,15 +145,19 @@
          <lastmod>2026-03-20</lastmod>
     </url>
     <url>
-         <loc>https://developer.seatable.com/sql/data-types/</loc>
-         <lastmod>2026-03-20</lastmod>
-    </url>
-    <url>
          <loc>https://developer.seatable.com/sql/functions/</loc>
          <lastmod>2026-03-20</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/sql/insert-update-delete/</loc>
+         <lastmod>2026-03-20</lastmod>
+    </url>
+    <url>
+         <loc>https://developer.seatable.com/sql/insert/</loc>
+         <lastmod>2026-03-20</lastmod>
+    </url>
+    <url>
+         <loc>https://developer.seatable.com/sql/limitations/</loc>
          <lastmod>2026-03-20</lastmod>
     </url>
     <url>
