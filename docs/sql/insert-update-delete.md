@@ -1,6 +1,6 @@
 # UPDATE and DELETE
 
-These statements modify existing data in a base. They work with both normal and big data storage. Available since SeaTable version 2.7.
+These statements modify existing data in a base. They work with both normal and Big Data storage.
 
 ## UPDATE
 

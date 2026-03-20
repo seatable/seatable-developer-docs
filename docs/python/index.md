@@ -4,6 +4,10 @@ Python scripts connect to SeaTable bases with the library [seatable-api](https:/
 
 The same library is used both **inside SeaTable scripts** and in **external Python programs**. The only difference is how you authenticate. All objects and methods work identically in both contexts.
 
+!!! info "Relationship to the SeaTable API"
+
+    Every `seatable-api` method is a wrapper around the [SeaTable REST API](https://api.seatable.com). The library covers the most common base operations but not every API endpoint (e.g. admin, webhooks, or team management). For anything not covered by this library, you can call the [API](https://api.seatable.com) directly. For column type formats and data models, see the [API model reference](https://api.seatable.com/reference/models).
+
 ## Installation
 
 ```
@@ -85,9 +89,9 @@ base.auth()
             base.auth()
     ```
 
-## Base Operation Limits
+## Rate and Size Limits
 
-Python scripts rely on the [SeaTable API](https://api.seatable.com) and are subject to [rate](https://api.seatable.com/reference/limits#general-rate-limits) and [size](https://api.seatable.com/reference/limits#size-limits) limits. Tips to stay within limits:
+Since every method call is an API request, scripts are subject to [rate](https://api.seatable.com/reference/limits#general-rate-limits) and [size](https://api.seatable.com/reference/limits#size-limits) limits. Tips to stay within limits:
 
 - Be careful with operations in `for` or `while` loops
 - Use **batch operations** whenever possible:

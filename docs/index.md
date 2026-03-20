@@ -8,7 +8,7 @@ This manual is for **developers** who want to:
 
 - Build external applications that communicate with SeaTable (Python, JavaScript, PHP)
 - Develop custom plugins for SeaTable
-- Look up the complete function reference of the SeaTable API libraries
+- Look up the function reference of the SeaTable client libraries (Python, JavaScript, PHP)
 
 !!! tip "Looking to write scripts inside SeaTable?"
 

@@ -4,7 +4,7 @@ With functions you can transform, calculate, combine or merge the values of othe
 
 The functions supported in SQL are roughly the same as the set of functions supported by formulas in SeaTable. The function parameters can be numbers, strings, constants, column names or other functions. Column name cannot be an alias. The function can be classified into the following categories:
 
-!!! info "Where can functions be used?"
+!!! danger "Where can functions be used?"
     Functions can be used in `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and `ORDER BY` clauses. They are **not supported** in the `SET` clause of `UPDATE` statements or in the `VALUES` list of `INSERT` statements. Only constant values can be used there.
 
 - [Operators](#operators)

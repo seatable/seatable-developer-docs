@@ -1,6 +1,6 @@
 # SQL
 
-SQL queries are the most powerful way to access data stored in a base. SeaTable supports `SELECT`, `INSERT`, `UPDATE`, and `DELETE` statements. SQL is not a standalone interface but is used through the [Python](../python/) or [JavaScript](../javascript/) API via `base.query()`:
+SeaTable provides an SQL interface for querying and modifying data. It supports `SELECT`, `INSERT`, `UPDATE`, and `DELETE` statements. SQL can be used from any programming language — through the [Python](../python/) and [JavaScript](../javascript/) client libraries via `base.query()`, or directly through the [REST API](https://api.seatable.com/reference/query-with-sql).
 
 === "Python"
 
@@ -14,7 +14,17 @@ SQL queries are the most powerful way to access data stored in a base. SeaTable 
     const results = await base.query("SELECT * FROM Table1 LIMIT 100");
     ```
 
-SQL syntax is case insensitive. We use upper-cased keywords for readability.
+=== "API"
+
+    ```bash
+    curl -X POST \
+      'https://cloud.seatable.io/api-gateway/api/v2/dtables/{base_uuid}/sql/' \
+      -H 'Authorization: Bearer {base_token}' \
+      -H 'Content-Type: application/json' \
+      -d '{"sql": "SELECT * FROM Table1 LIMIT 100", "convert_keys": true}'
+    ```
+
+All three methods use the same SQL engine and return identical results. SQL syntax is case insensitive. We use upper-cased keywords for readability.
 
 !!! tip "New to SQL?"
 
