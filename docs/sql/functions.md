@@ -15,123 +15,66 @@ The functions supported in SQL are roughly the same as the set of functions supp
 - [Logical functions](#logical-functions)
 - [Statistical functions](#statistical-functions)
 
-## Function support overview
+## MySQL/MariaDB equivalents
 
-The following table shows at a glance which functions are supported in SeaTable SQL. Standard SQL/MySQL function names (e.g. `SUBSTR`, `CONCAT`) are **not** supported — use the SeaTable equivalents instead.
+SeaTable SQL uses its own function names. Standard MySQL/MariaDB function names are **not supported** and will return a parse error. Use the SeaTable equivalents listed below.
 
-??? note "Operators"
+### String functions
 
-    | Function | Supported | Notes |
-    | :------- | :-------: | :---- |
-    | `add(num1, num2)` | :white_check_mark: | |
-    | `subtract(num1, num2)` | :white_check_mark: | |
-    | `multiply(num1, num2)` | :white_check_mark: | |
-    | `divide(num1, num2)` | :white_check_mark: | |
-    | `mod(num1, num2)` | :white_check_mark: | |
-    | `power(num1, num2)` | :white_check_mark: | |
-    | `greater(num1, num2)` | :white_check_mark: | |
-    | `lessthan(num1, num2)` | :white_check_mark: | |
-    | `greatereq(num1, num2)` | :white_check_mark: | |
-    | `lessthaneq(num1, num2)` | :white_check_mark: | |
-    | `equal(num1, num2)` | :white_check_mark: | |
-    | `unequal(num1, num2)` | :white_check_mark: | |
-    | Standard `+`, `-`, `*`, `/` | :white_check_mark: | Work in `SELECT` expressions |
+| MySQL/MariaDB | SeaTable equivalent |
+|:---|:---|
+| `SUBSTR(str, pos, len)` / `SUBSTRING(...)` | `mid(str, pos, len)` |
+| `CONCAT(str1, str2, ...)` / `CONCAT_WS(sep, ...)` | `concatenate(str1, str2, ...)` |
+| `LENGTH(str)` / `CHAR_LENGTH(str)` | `len(str)` |
+| `UPPER(str)` / `UCASE(str)` | `upper(str)` |
+| `LOWER(str)` / `LCASE(str)` | `lower(str)` |
+| `LOCATE(substr, str)` / `INSTR(str, substr)` | `find(substr, str)` (case-sensitive) or `search(substr, str)` (case-insensitive) |
+| `REPLACE(str, from, to)` | `substitute(str, old, new)` — note: SeaTable also has `replace(str, pos, count, new)` which is position-based |
+| `REPEAT(str, n)` | `rept(str, n)` |
+| `TRIM(str)` | `trim(str)` |
+| `LEFT(str, n)` / `RIGHT(str, n)` | `left(str, n)` / `right(str, n)` |
+| `FORMAT(num, dec)` | `text(num, format)` with format `'number'`, `'euro'`, `'percent'` etc. |
+| `LPAD` / `RPAD` / `REVERSE` | — not supported |
 
-??? note "Mathematical functions"
+### Date functions
 
-    | Function | Supported | Notes |
-    | :------- | :-------: | :---- |
-    | `abs(number)` | :white_check_mark: | |
-    | `ceiling(number, significance)` | :white_check_mark: | MySQL `CEIL` is not supported |
-    | `even(number)` | :white_check_mark: | |
-    | `exp(number)` | :white_check_mark: | |
-    | `floor(number, significance)` | :white_check_mark: | |
-    | `int(number)` | :white_check_mark: | |
-    | `lg(number)` | :white_check_mark: | |
-    | `log(number, base)` | :white_check_mark: | |
-    | `odd(number)` | :white_check_mark: | |
-    | `round(number, digits)` | :white_check_mark: | |
-    | `rounddown(number, digits)` | :white_check_mark: | |
-    | `roundup(number, digits)` | :white_check_mark: | |
-    | `sign(number)` | :white_check_mark: | |
-    | `sqrt(number)` | :white_check_mark: | |
+| MySQL/MariaDB | SeaTable equivalent |
+|:---|:---|
+| `CURDATE()` / `CURRENT_DATE()` | `today()` |
+| `NOW()` | `now()` |
+| `YEAR(date)` / `MONTH(date)` / `DAY(date)` | `year(date)` / `month(date)` / `day(date)` |
+| `HOUR(date)` / `MINUTE(date)` / `SECOND(date)` | `hour(date)` / `minute(date)` / `second(date)` |
+| `DATE_ADD(date, INTERVAL n unit)` | `dateAdd(date, n, 'unit')` |
+| `DATE_SUB(date, INTERVAL n unit)` | `dateAdd(date, -n, 'unit')` — use negative count |
+| `DATEDIFF(d1, d2)` | `dateDif(d1, d2, 'D')` — note: requires unit parameter |
+| `DATE_FORMAT(date, format)` | `isodate(date)` or `isomonth(date)` — limited formatting options |
+| `EXTRACT(YEAR FROM date)` | Use `year(date)`, `month(date)`, `day(date)` etc. |
 
-??? note "Text functions"
+### Math functions
 
-    | Function | Supported | Notes |
-    | :------- | :-------: | :---- |
-    | `concatenate(str1, str2, ...)` | :white_check_mark: | MySQL `CONCAT` is not supported |
-    | `exact(str1, str2)` | :white_check_mark: | |
-    | `find(findStr, sourceStr, start)` | :white_check_mark: | MySQL `LOCATE`/`INSTR` are not supported |
-    | `left(string, count)` | :white_check_mark: | |
-    | `len(string)` | :white_check_mark: | MySQL `LENGTH`/`CHAR_LENGTH` are not supported |
-    | `lower(string)` | :white_check_mark: | MySQL `LCASE` is not supported |
-    | `mid(string, start, count)` | :white_check_mark: | MySQL `SUBSTR`/`SUBSTRING` are not supported |
-    | `replace(str, start, count, new)` | :white_check_mark: | Different signature than MySQL `REPLACE(str, from, to)` |
-    | `rept(string, number)` | :white_check_mark: | MySQL `REPEAT` is not supported |
-    | `right(string, count)` | :white_check_mark: | |
-    | `search(findStr, sourceStr, start)` | :white_check_mark: | Case-insensitive version of `find` |
-    | `substitute(str, old, new, index)` | :white_check_mark: | |
-    | `T(value)` | :white_check_mark: | |
-    | `text(number, format)` | :white_check_mark: | |
-    | `trim(string)` | :white_check_mark: | |
-    | `upper(string)` | :white_check_mark: | MySQL `UCASE` is not supported |
-    | `value(string)` | :white_check_mark: | |
+| MySQL/MariaDB | SeaTable equivalent |
+|:---|:---|
+| `CEIL(n)` | `ceiling(n)` |
+| `ABS(n)` / `FLOOR(n)` / `ROUND(n)` / `SQRT(n)` | Same names: `abs(n)`, `floor(n)`, `round(n)`, `sqrt(n)` |
+| `MOD(a, b)` | `mod(a, b)` |
+| `POW(a, b)` / `POWER(a, b)` | `power(a, b)` |
+| `LOG(n)` / `LOG10(n)` | `log(n, base)` / `lg(n)` |
+| `TRUNCATE(n, d)` | `rounddown(n, d)` |
+| `RAND()` | — not supported |
 
-??? note "Date functions"
+### Logical and control flow
 
-    | Function | Supported | Notes |
-    | :------- | :-------: | :---- |
-    | `date(year, month, day)` | :white_check_mark: | |
-    | `dateAdd(date, count, unit)` | :white_check_mark: | MySQL `DATE_ADD` with `INTERVAL` syntax is not supported |
-    | `dateDif(start, end, unit)` | :white_check_mark: | MySQL `DATEDIFF(d1, d2)` is not supported |
-    | `day(date)` | :white_check_mark: | |
-    | `eomonth(startDate, n)` | :white_check_mark: | |
-    | `hour(date)` | :white_check_mark: | |
-    | `hours(startDate, endDate)` | :x: | Not supported in SQL; use `dateDif` instead |
-    | `isodate(date)` | :white_check_mark: | |
-    | `isomonth(date)` | :white_check_mark: | |
-    | `isoweeknum(date)` | :x: | Not supported in SQL; use `weeknum(date, 21)` |
-    | `minute(date)` | :white_check_mark: | |
-    | `month(date)` | :white_check_mark: | |
-    | `months(startDate, endDate)` | :white_check_mark: | |
-    | `networkdays(start, end, ...)` | :white_check_mark: | |
-    | `now()` | :white_check_mark: | MySQL `CURDATE`/`CURRENT_DATE` are not supported |
-    | `quarter(date)` | :white_check_mark: | |
-    | `second(date)` | :white_check_mark: | |
-    | `startofweek(date, weekStart)` | :white_check_mark: | |
-    | `today()` | :white_check_mark: | |
-    | `weekday(date, weekStart)` | :white_check_mark: | |
-    | `weeknum(date, return_type)` | :white_check_mark: | Use `return_type` 21 for ISO week numbers |
-    | `year(date)` | :white_check_mark: | |
+| MySQL/MariaDB | SeaTable equivalent |
+|:---|:---|
+| `CASE WHEN ... THEN ... END` | `if(condition, trueVal, falseVal)` or `ifs(cond1, val1, cond2, val2, ...)` |
+| `IFNULL(val, default)` / `COALESCE(...)` / `NULLIF(...)` | — not supported |
 
-??? note "Geo, logical, and statistical functions"
+### Aggregate functions
 
-    | Function | Supported | Notes |
-    | :------- | :-------: | :---- |
-    | `country(geolocation)` | :white_check_mark: | Requires geolocation column |
-    | `if(logical, trueVal, falseVal)` | :white_check_mark: | MySQL `CASE WHEN` is not supported |
-    | `ifs(logical1, val1, ...)` | :white_check_mark: | |
-    | `and(logical1, logical2, ...)` | :white_check_mark: | |
-    | `or(logical1, logical2, ...)` | :white_check_mark: | |
-    | `not(boolean)` | :white_check_mark: | |
-    | `switch(logical, m1, v1, ...)` | :white_check_mark: | |
-    | `xor(logical1, logical2, ...)` | :white_check_mark: | |
-    | `average(num1, num2, ...)` | :white_check_mark: | |
-    | `counta(val1, val2, ...)` | :white_check_mark: | |
-    | `countall(val1, val2, ...)` | :white_check_mark: | |
-    | `countblank(val1, val2, ...)` | :white_check_mark: | |
-    | `countItems(column)` | :white_check_mark: | Requires multi-select, collaborator, file, or image column |
-
-??? note "Standard SQL aggregate functions"
-
-    | Function | Supported | Notes |
-    | :------- | :-------: | :---- |
-    | `COUNT(*)` | :white_check_mark: | |
-    | `SUM(column)` | :white_check_mark: | |
-    | `MIN(column)` | :white_check_mark: | |
-    | `MAX(column)` | :white_check_mark: | |
-    | `AVG(column)` | :white_check_mark: | |
+| MySQL/MariaDB | SeaTable equivalent |
+|:---|:---|
+| `COUNT(*)` / `SUM(col)` / `MIN(col)` / `MAX(col)` / `AVG(col)` | Same names — standard SQL aggregates are supported |
+| `GROUP_CONCAT(col)` | — not supported |
 
 !!! info "Backticks for table or column names containing or special characters or using reserved words"
     For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` select * from `My Table` ``. 
