@@ -22,19 +22,6 @@ Not all column types can be written via SQL (`INSERT`, `UPDATE`). The following 
 
 All other column types (text, long-text, number, single-select, multiple-select, checkbox, date, duration, rate, url, email, collaborator) are both readable and writable.
 
-## Query result formats
-
-Some column types return data in a format that differs from the REST API:
-
-| Column type | SQL result format |
-|:---|:---|
-| date, \_ctime, \_mtime | RFC 3339 string (e.g. `2025-01-03T00:00:00+02:00`) |
-| collaborator, \_creator, \_last\_modifier | Internal user ID (`xxx@auth.local`) |
-| geolocation | JSON object: `{"country_region": "..."}` or `{"lat": ..., "lng": ...}` |
-| image | JSON array of URLs |
-| long-text | Raw Markdown |
-| duration | Number in seconds |
-
 ## List types
 
 Several column types contain multiple values: multiple-select, image, file, collaborator, link, and link formulas using `lookup`, `findmin`, or `findmax`.
@@ -53,8 +40,6 @@ Several column types contain multiple values: multiple-select, image, file, coll
 | datetime | Same rules as float | |
 | bool | `IS TRUE` | Uses first element; false if empty |
 | linked record | | Follows rules for the display column type |
-
-Only the first ten elements are returned in query results.
 
 ### Sorting list types
 
