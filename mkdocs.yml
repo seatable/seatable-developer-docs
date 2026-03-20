@@ -219,7 +219,8 @@ nav:
   - SQL:
       - sql/index.md
       - SELECT: sql/select.md
-      - INSERT, UPDATE, DELETE: sql/insert-update-delete.md
+      - INSERT: sql/insert.md
+      - UPDATE, DELETE: sql/insert-update-delete.md
       - Data Types: sql/data-types.md
       - Functions: sql/functions.md
   - Plugin Development:

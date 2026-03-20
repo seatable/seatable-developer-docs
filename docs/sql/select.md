@@ -5,7 +5,13 @@ The `SELECT` statement retrieves an optionally filtered, sorted, and grouped lis
 ## Syntax
 
 ```
-SELECT [Column List] FROM tableName [WHERE ...] [GROUP BY ...] [HAVING ...] [ORDER BY ...] [LIMIT ... OFFSET ...]
+SELECT [Column List]
+  FROM tableName
+  [WHERE ...]
+  [GROUP BY ...]
+  [HAVING ...]
+  [ORDER BY ...]
+  [LIMIT ... OFFSET ...]
 ```
 
 `[Column List]` is a comma-separated list of columns. Use `*` to retrieve all columns.

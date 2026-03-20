@@ -26,7 +26,8 @@ SQL syntax is case insensitive. We use upper-cased keywords for readability.
 
 | Feature | Notes |
 |:---|:---|
-| `SELECT`, `INSERT`, `UPDATE`, `DELETE` | [INSERT requires Big Data storage](insert-update-delete.md) |
+| `SELECT`, `UPDATE`, `DELETE` | |
+| `INSERT` | [Requires Big Data storage](insert.md) |
 | `WHERE` with `=`, `!=`, `<>`, `>`, `<`, `>=`, `<=` | |
 | `LIKE`, `ILIKE`, `IN`, `NOT IN`, `BETWEEN`, `IS [NOT] NULL` | |
 | `AND`, `OR`, `NOT` | |
