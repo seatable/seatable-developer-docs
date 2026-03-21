@@ -1,6 +1,6 @@
 # SeaTable Developer Manual
 
-> Official SeaTable Developer Manual.
+> Developer documentation for SeaTable — client libraries for Python, JavaScript, and PHP, SQL query reference, and plugin development guide.
 
 ## Sections
 
