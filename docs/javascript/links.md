@@ -69,12 +69,12 @@ Link columns connect rows between tables. Most link operations require the `link
 
     Replace all linked records of a row with a new set.
 
-    ``` js
-    base.updateLink(linkId, tableName, otherTableName, rowId, otherRowIds);
     ```js
+    base.updateLink(linkId, tableName, otherTableName, rowId, otherRowIds);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.updateLink('r4IJ', 'Table1', 'Table2', 'BXhEm9ucTNu3FjupIk7Xug', [
         'exkb56fAT66j8R0w6wD9Qg',
         'DjHjwmlRRB6WgU9uPnrWeA'
@@ -85,12 +85,12 @@ Link columns connect rows between tables. Most link operations require the `link
 
     Update links for multiple rows at once.
 
-    ``` js
-    base.batchUpdateLinks(linkId, tableName, otherTableName, rowIdList, otherRowsIdsMap);
     ```js
+    base.batchUpdateLinks(linkId, tableName, otherTableName, rowIdList, otherRowsIdsMap);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.batchUpdateLinks('WaW5', 'Table1', 'Table2',
         ['fRLglslWQYSGmkU7o6KyHw', 'eSQe9OpPQxih8A9zPXdMVA'],
         {
@@ -106,11 +106,11 @@ Link columns connect rows between tables. Most link operations require the `link
 
     Remove a link between two rows.
 
-    ``` js
-    base.removeLink(linkId, tableName, otherTableName, rowId, otherRowId);
     ```js
+    base.removeLink(linkId, tableName, otherTableName, rowId, otherRowId);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.removeLink('5WeC', 'Projects', 'Contacts', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ');
     ```

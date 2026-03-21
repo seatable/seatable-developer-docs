@@ -4,9 +4,9 @@
 
     Get the complete structure of a base -- tables, views, and columns. Does not include row data.
 
-    ``` js
+    ```js
     base.getMetadata();
-    ```json
+    ```
 
     __Example output__
     ```json

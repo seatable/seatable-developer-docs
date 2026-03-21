@@ -16,13 +16,13 @@ When the script is running in the cloud, the context object provides a context e
 
     Server URL, used to initialize Base.
 
-    ``` python
-    context.server_url
     ```python
+    context.server_url
+    ```
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     print(context.server_url)
     ```
@@ -33,13 +33,13 @@ When the script is running in the cloud, the context object provides a context e
 
     API token to access a base.
 
-    ``` python
-    context.api_token
     ```python
+    context.api_token
+    ```
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     print(context.api_token)
     ```
@@ -50,13 +50,13 @@ When the script is running in the cloud, the context object provides a context e
 
     The name of the table that the current user is viewing when the script is run.
 
-    ``` python
-    context.current_table
     ```python
+    context.current_table
+    ```
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     print(context.current_table)
     ```
@@ -71,13 +71,13 @@ When the script is running in the cloud, the context object provides a context e
     - the line from which the button to launch the script was clicked (if the script is run from a button-type column click)
     - each line triggering the automation (if the script is run by an automation rule)
 
-    ``` python
-    context.current_row
     ```python
+    context.current_row
+    ```
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     print(context.current_row)
     ```
@@ -88,13 +88,13 @@ When the script is running in the cloud, the context object provides a context e
 
     The system ID of the user who runs the script manually (it was previously called `current_user_id`). It is a unique identifier ending by `@auth.local`.
 
-    ``` python
-    context.current_username
     ```python
+    context.current_username
+    ```
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     print(context.current_username)
     ```
@@ -105,13 +105,13 @@ When the script is running in the cloud, the context object provides a context e
 
     The id of the user in the team, it can be set by the team admin via the web interface.
 
-    ``` python
-    context.current_id_in_org
     ```python
+    context.current_id_in_org
+    ```
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     print(context.current_id_in_org)
     ```
@@ -120,15 +120,15 @@ When the script is running in the cloud, the context object provides a context e
 
     Get a context setting by its key. This provides access to additional context data beyond the predefined properties above.
 
-    ``` python
-    context.get_setting_by_key(key)
     ```python
+    context.get_setting_by_key(key)
+    ```
 
     __Output__ The value of the setting, or `None` if not found
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import context
     value = context.get_setting_by_key('server_url')
     print(value)

@@ -14,9 +14,9 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get other users associated with the current base (collaborators of the table, the shared person of the table, etc.)
 
-    ``` js
-    dtable.getRelatedUsers()
     ```js
+    dtable.getRelatedUsers()
+    ```
 
     __Example__
 
@@ -28,9 +28,9 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
-    dtable.getCollaboratorsName(collaborators, value)
     ```js
+    dtable.getCollaboratorsName(collaborators, value)
+    ```
     Arguments
 
     * collaborators: collaborator list in this base
@@ -38,7 +38,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __Example__
 
-    ``` js
+    ```js
     const collaborators = dtable.getRelatedUsers();
     const value = ['abc@seafile.com', 'shun@seafile.com'];
     const name = dtable.getCollaboratorsName(collaborators, value); // 'abc, shun'
@@ -50,9 +50,9 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get the color attributes of the row data in the view
 
-    ``` js
-    dtable.getViewRowsColor(rows, view, table)
     ```js
+    dtable.getViewRowsColor(rows, view, table)
+    ```
 
     __Arguments__
 
@@ -62,7 +62,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __Example__
 
-    ``` js
+    ```js
     const tableName = 'tableName';
     const viewName = 'viewName';
     const table = dtable.getTableByName(tableName);
@@ -77,9 +77,9 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get the data in the calculation formula column of the table
 
-    ``` js
-    dtable.getTableFormulaResults(table, rows)
     ```js
+    dtable.getTableFormulaResults(table, rows)
+    ```
 
     __Arguments__
 
@@ -88,7 +88,7 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __Example__
 
-    ``` js
+    ```js
     const tableName = 'tableName';
     const viewName = 'viewName';
     const table = dtable.getTableByName(tableName);
@@ -101,84 +101,84 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getLinkDisplayString"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getLinkDisplayString"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getNumberDisplayString"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getGeolocationDisplayString"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getDurationDisplayString"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getDateDisplayString"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ## Tables
@@ -187,96 +187,96 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "deleteTable"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "renameTable"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getTables"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getActiveTable"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getTableByName"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getTableById"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "importDataIntoNewTable"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ## Views
@@ -285,132 +285,132 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "deleteView"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "renameView"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getViews"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getNonArchiveViews"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getActiveView"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getViewByName"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getViewById"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "isDefaultView"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "isGroupView"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "isFilterView"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ## Columns
@@ -419,72 +419,72 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getShownColumns"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getColumnsByType"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getColumnByName"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getColumnByKey"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "modifyColumnData"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ## Rows
@@ -493,9 +493,9 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Use sql statement to query a dtable
 
-    ``` js
-    dtable.sqlQuery(sql)
     ```js
+    dtable.sqlQuery(sql)
+    ```
 
     __Arguments__
 
@@ -513,11 +513,11 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __Example__
 
-    ``` js
+    ```js
     dtable.sqlQuery('select name, price, year from Bill')
     ```
 
-    ```javascript
+    ```json
     [
         {'_id': 'PzBiZklNTGiGJS-4c0_VLw', 'name': 'Bob', 'price': 300, 'year': 2019},
         {'_id': 'Ep7odyv1QC2vDQR2raMvSA', 'name': 'Bob', 'price': 300, 'year': 2021},
@@ -531,11 +531,11 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __WHERE__
 
-    ```javascript
+    ```js
     dtable.sqlQuery('select name, price from Bill where year = 2021 ')
     ```
 
-    ```javascript
+    ```json
     [
         {'_id': 'Ep7odyv1QC2vDQR2raMvSA', 'name': 'Bob', 'price': 300},
         {'_id': 'W0BrjGQpSES9nfSytvXgMA', 'name': 'Tom', 'price': 200},
@@ -545,11 +545,11 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __ORDER BY__
 
-    ```javascript
+    ```js
     dtable.sqlQuery('select name, price, year from Bill order by year')
     ```
 
-    ```javascript
+    ```json
     [
         {'_id': 'PzBiZklNTGiGJS-4c0_VLw', 'name': 'Bob', 'price': 300, 'year': 2019},
         {'_id': 'f1x3X_8uTtSDUe9D60VlYQ', 'name': 'Tom', 'price': 100, 'year': 2019},
@@ -563,11 +563,11 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __GROUP BY__
 
-    ```javascript
+    ```js
     dtable.sqlQuery('select name, sum(price) from Bill group by name')
     ```
 
-    ```javascript
+    ```json
     [
         {'SUM(price)': 600, 'name': 'Bob'},
         {'SUM(price)': 400, 'name': 'Tom'},
@@ -577,11 +577,11 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     __DISTINCT__
 
-    ```javascript
+    ```js
     dtable.sqlQuery('select distinct name from Bill')
     ```
 
-    ```javascript
+    ```json
     [
         {'_id': 'PzBiZklNTGiGJS-4c0_VLw', 'name': 'Bob'},
         {'_id': 'f1x3X_8uTtSDUe9D60VlYQ', 'name': 'Tom'},
@@ -593,144 +593,144 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "deleteRowById"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "deleteRowsByIds"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "modifyRow"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "forEachRow"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getTableLinkRows"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getViewRows"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getGroupRows"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getInsertedRowInitData"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getRowsByID"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "getRowById"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "moveGroupRows"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ## Plugins
@@ -739,36 +739,36 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "updatePluginSettings"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "deletePluginSettings"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ## Constants
@@ -777,70 +777,70 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "Column icon configs"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "Column options"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "Formula result type"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "Select option colors"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```
 
 ??? question "Table permission type"
 
     Get a list of names of collaborators
 
-    ``` js
     ```js
+    ```
 
     __Example__
 
-    ``` js
+    ```js
     ```

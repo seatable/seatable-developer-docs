@@ -31,14 +31,14 @@ For the following methods, you'll have to provide the URL of the file you want t
 
     Download a file to a local path. The save path naturally has to end with the same extension as the original file.
 
-    ``` python
-    base.download_file(file_url, save_path)
     ```python
+    base.download_file(file_url, save_path)
+    ```
     __Output__ Nothing (throws an error if the URL is invalid or if the save path is wrong)
 
     __Example__
     
-    ``` python
+    ```python
     file_url = "https://cloud.seatable.io/workspace/74/asset-preview/41cd05da-b29a-4428-bc31-bd66f4600817/files/2020-10/invoice.pdf"
     save_path = "/tmp/invoice.pdf"
     base.download_file(file_url, save_path)
@@ -82,15 +82,15 @@ For the following methods, you'll have to provide the URL of the file you want t
 
         The download link is only valid for some hours. After that the download link must be created again. That's why it's not possible to use permanent download links of files hosted on SeaTable in web pages. For such purpose, we recommend to store the files on public hosting services and to save only the links in SeaTable, which will allow direct use.
 
-    ``` python
-    base.get_file_download_link(file_path)
     ```python
+    base.get_file_download_link(file_path)
+    ```
 
     __Output__ The public download link (looking like `{server_url}/seafhttp/files/{access_token}/{file_name}`). Keep in mind that it's not permanent as the token expires! (throws an error if the file path is wrong)
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api import Base, context
     import requests
 
@@ -113,15 +113,15 @@ For the following methods, you'll have to provide the URL of the file you want t
     This method is specific for files stored in a custom folder. Compared to the file URL from the `base.download_file` method, the custom path needed here is just the part of the URL corresponding to the location of the file in the custom folders file system (part of the URL starting **after** `/custom/`). In the following example, we consider the file quote.pdf described in the `base.download_file` section uploaded in the custom folder `My Personal Folder` whose URL is `https://cloud.seatable.io/dtable-web/workspace/74/asset-preview/41cd05da-b29a-4428-bc31-bd66f4600817/custom/My Personal Folder/quote.pdf`.
 
 
-    ``` python
-    base.download_custom_file(custom_path, save_path)
     ```python
+    base.download_custom_file(custom_path, save_path)
+    ```
 
     __Output__ Nothing (throws an error if the URL is invalid or if the save path is wrong)
 
     __Example__
     
-    ``` python
+    ```python
     custom_file_path = "My Personal Folder/quote.pdf" # (1) !
     local_path = "/Users/Desktop/quote.pdf"
     base.download_custom_file(custom_file_path, local_path)
@@ -137,11 +137,11 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     Upload a file from your local drive, memory or a website.
 
-    ``` python
+    ```python
     base.upload_local_file(file_path, name=None, file_type='file', replace=False) # (1)!
     # or
     base.upload_bytes_file(name, content, file_type='file', replace=False) # (2)!
-    ```python
+    ```
 
     1. - `name`: the name of the file once uploaded. If `name` is not provided, the uploaded file will keep the same name than the original
 
@@ -154,23 +154,23 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     __Example: Upload a file from local hard drive__
 
-    ``` python
+    ```python
     local_file = '/Users/Markus/Downloads/seatable-logo.png'
     info_dict = base.upload_local_file(local_file, name='seatable-logo.png', file_type='image', replace=True)
     ```
 
     __Example: Upload a file from memory__
 
-    ``` python
+    ```python
     local_file = '/Users/Markus/Downloads/seatable-logo.png'
     with open (local_file, 'rb') as f:
       content = f.read()
     info_dict = base.upload_bytes_file('seatable-logo.png', content, file_type='image')
-    ```python
+    ```
 
     __Example: Upload a file from a website__
 
-    ``` python
+    ```python
     import requests
     file_url = 'https://seatable.io/wp-content/uploads/2021/09/seatable-logo.png'
     response = requests.get(file_url)
@@ -182,9 +182,9 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     As for the download detailed method, this method actually relies on two different steps: first getting a file upload link and then uploading it using a `POST` request. 
 
-    ``` python
-    base.get_file_upload_link()
     ```python
+    base.get_file_upload_link()
+    ```
 
     __Output__ - `base.get_file_upload_link` outputs a dict containing `upload_link`, `parent_path`, `img_relative_path` and `file_relative_path` keys
 
@@ -192,7 +192,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     
     __Example__
     
-    ``` python
+    ```python
     import requests
     from seatable_api import Base, context
 
@@ -229,9 +229,9 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     This method is specific for files to store in a custom folder. It is the counterpart of the `base.download_custom_file` method. Please note that using this method, existing files will not be replaced (a new `My file(2)` will be created if `My file` already exists).
 
-    ``` python
-    base.upload_local_file_to_custom_folder(local_path, custom_folder_path=None, name=None) # (1)!
     ```python
+    base.upload_local_file_to_custom_folder(local_path, custom_folder_path=None, name=None) # (1)!
+    ```
 
     1. - `custom_folder_path`: the path in the custom folders of the base where you want to upload the file
     - `name`: the name of the file once uploaded. If `name` is not provided, the uploaded file will keep the same name than the original
@@ -240,7 +240,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     
     __Example__
     
-    ``` python
+    ```python
     #Step 1: Uploading a file to the base
     local_path = "/Users/Desktop/sky.png"
     custom_path = "/Main/"
@@ -260,9 +260,9 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     List files in any folder of the custom folders file system (use `/` as path if you want to see the content of Custom folders). If you need to list the files present in a system (non-custom) folder, please refer to the [API Reference](https://api.seatable.com/reference/listbaseassets).
 
-    ``` python
-    base.list_custom_assets(path) # (1)!
     ```python
+    base.list_custom_assets(path) # (1)!
+    ```
 
     1. `path`: **Absolute** path of the directory you want to list the assets for (for example `/My Personal Folder/Photos` for a subdirectory `Photos` located in the directory `My Personal Folder`)
 
@@ -270,7 +270,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     __Example__
     
-    ``` python
+    ```python
     folder_dir = "/Main/photos"
     main_photos_content = base.list_custom_assets(folder_dir)
     print(main_photos_content)
@@ -278,7 +278,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     __Example: display the whole Custom folders file structure__
     
-    ``` python
+    ```python
     def list_assets(path):
         global indent
         if path == "/" :
@@ -299,7 +299,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     indent = ''
     list_assets('/') # (2)!
-    ```python
+    ```
 
     1. Recursive function: for each directory of the current directory, the functions calls itself
 
@@ -311,7 +311,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     This methods allows you to get the file dict of any `name` file in any folder (`path`) of the custom folders file system.
 
-    ``` python
+    ```python
     base.get_custom_file_info(path, name) # (1)!
     ```
 
@@ -323,7 +323,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     === "Replace existing content"
     
-        ``` python
+        ```python
         #Step 1: Get file info
         folder_dir = "/Main/"
         file_name = "sky.png"
@@ -333,7 +333,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
         row_id = "fDMHEdraSRuUMNPGEj-4kQ"
         FILE_COL_NAME = "File"
         base.update_row("Table1", row_id, {FILE_COL_NAME: [file_dict]})
-        ```python
+        ```
 
     === "Append to content (detailed version)"
 

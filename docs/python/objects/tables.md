@@ -17,13 +17,13 @@ You'll find below all the available methods to interact with the tables of a Sea
 
     Get all tables of the current base.
 
-    ``` python
-    base.list_tables()
     ```python
+    base.list_tables()
+    ```
     __Output__ List of table dicts
 
     __Example__
-    ``` python
+    ```python
     tables = base.list_tables()
     print(tables)
     ```
@@ -32,13 +32,13 @@ You'll find below all the available methods to interact with the tables of a Sea
 
     Get a table object by its name.
 
-    ``` python
-    base.get_table_by_name(table_name)
     ```python
+    base.get_table_by_name(table_name)
+    ```
     __Output__ Single table dict (`None` if there is no table named `table_name`)
     
     __Example__
-    ``` python
+    ```python
     table = base.get_table_by_name('Table1')
     print(table)
     ```
@@ -49,9 +49,9 @@ You'll find below all the available methods to interact with the tables of a Sea
 
     Add a table named `table_name` into a base. The `columns` argument is an optional list of [column objects](https://api.seatable.com/reference/models).
 
-    ``` python
-    base.add_table(table_name, lang='en', columns=[]) # (1)!
     ```python
+    base.add_table(table_name, lang='en', columns=[]) # (1)!
+    ```
 
     1. `lang` (optional): can be `en` (default) for English or `zh-cn` for Chinese and will determine the name of the first `Name` column (if no `columns` where specified)
         `columns` (optional): list of [column objects](https://api.seatable.com/reference/models) describing the columns of the new table.
@@ -59,12 +59,12 @@ You'll find below all the available methods to interact with the tables of a Sea
     __Output__ Single table dict (throws an error if a table named `table_name` already exists)
 
     __Example__
-    ``` python
+    ```python
     new_table = base.add_table('Investigation', lang='zh-cn')
     print(new_table)
     ```
 
-    ``` python
+    ```python
     columns=[
       {
         "column_type" : "text", 
@@ -77,7 +77,7 @@ You'll find below all the available methods to interact with the tables of a Sea
     ]
 
     base.add_table("ScriptTest", lang='en', columns=columns)
-    ```python
+    ```
 
 ## Rename table
 
@@ -85,18 +85,18 @@ You'll find below all the available methods to interact with the tables of a Sea
 
     Rename an existing table named `table_name` to `new_table_name`.
 
-    ``` python
+    ```python
     base.rename_table(table_name, new_table_name)
     ```
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists)
 
     __Example__
     === "Function call"
-        ``` python
-        print(base.rename_table('Table1', 'Table11'))
-        ```json
-    === "Output"
         ```python
+        print(base.rename_table('Table1', 'Table11'))
+        ```
+    === "Output"
+        ```json
         {'success': True}
         ```
 
@@ -106,14 +106,14 @@ You'll find below all the available methods to interact with the tables of a Sea
 
     Delete a table named `tableName` from the base. By the way, the table can be [restored from the logs](https://seatable.com/help/eine-geloeschte-tabelle-wiederherstellen/). Deleting the last table is not possible.
 
-    ``` python
-    base.delete_table(table_name)
     ```python
+    base.delete_table(table_name)
+    ```
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists or if you try to delete the last table)
 
     __Example__
-    ``` python
+    ```python
     delete_table_success = print(base.delete_table('Table1'))
     print(delete_table_success)
     ```

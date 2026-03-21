@@ -32,7 +32,7 @@ Of course, methods outputs with this format can be reused as input for other `da
 
 In this example as in the following of this section, the comment at the end of each line shows the expected result (what you should update if you `print` the result of the current line)
 
-``` python
+```python
 from seatable_api.date_utils import dateutils
 
 dt_now = dateutils.now()  # 2025-09-30 15:47:00
@@ -51,7 +51,7 @@ time_year = dateutils.year(time_str) # 2025
 time_hour = dateutils.hour(time_str) # 15 (! if local timezone is UTC+2 !)
 time_minute = dateutils.minute(time_str) # 57
 time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
-```python
+```
 
 ## Dealing with date and time 
 
@@ -61,18 +61,18 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the ISO formatted date string.
 
-    ``` python
+    ```python
     dateutils.date(year, month, day)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     custom_date = dateutils.date(2025, 9, 16)
     print(custom_date) # 2025-09-16
-    ```python
+    ```
 
 ### dateadd
 
@@ -80,13 +80,13 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Add a `number` of a specified `interval` to a datetime `datetime_str`. `interval` can represent the following units: `years`, `months`, `weeks`, `days`, `hours`, `minutes` and `seconds` (default is `days`). Negative values ​​can be used to subtract from `datetime_str`.
 
-    ``` python
+    ```python
     dateutils.dateadd(datetime_str, number, interval)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     date_str = "2025-9-15"
@@ -99,7 +99,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     dateutils.dateadd(datetime_str, 3, 'weeks') # 2025-10-06 15:23:21
     dateutils.dateadd(datetime_str, -3, 'hours') # 2025-09-15 12:23:21
     dateutils.dateadd(datetime_str, 3, 'seconds') # 2025-09-15 15:23:24
-    ```python
+    ```
 
 ### datediff
 
@@ -113,7 +113,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     - `MD`: The difference between the days in `start_date` and `end_date`. The months and years of the dates are ignored.
     - `YD`: The difference between the days of `start_date` and `end_date`. The years of the dates are ignored.
 
-    ``` python
+    ```python
     dateutils.datediff(start=start_date, end=end_date, unit=datetime_unit)
     dateutils.datediff(start_date, end_date, datetime_unit) # (1)!
     ```
@@ -122,7 +122,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils as dt # (1)!
 
     start_date = "2025-5-16"
@@ -136,7 +136,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     dt.datediff(start=start_date, end=end_date, unit='YM') # 0 (months) (from May to May)
     dt.datediff(start=start_date, end=end_date, unit='MD') # -1 (days) (from 16 to 15)
     dt.datediff("2025-1-28","2026-2-1", unit='YD') # 4 (days) (from January 28 to February 1)
-    ```python
+    ```
 
     1. To make calls shorter or more explicit, feel free to use an alternative name using `as` keyword. Here, we use `dt` instead of the default `dateutils`
 
@@ -146,17 +146,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the day of a given `date`.
 
-    ``` python
+    ```python
     dateutils.day(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
  
     dateutils.day('2025-6-15 14:23:21') # 15
-    ```python
+    ```
 
 ### days
 
@@ -164,17 +164,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the days difference between two given dates. The result can be negative if `end` is before `start`.
 
-    ``` python
+    ```python
     dateutils.days(start, end)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.days('2024-6-1', '2025-5-15') # 348
-    ```python
+    ```
 
 ### eomonth
 
@@ -182,20 +182,20 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the ISO formatted last day of the `n`th month before or after given date (depending on the sign of `n`).
 
-    ``` python
+    ```python
     dateutils.eomonth(date, months=n)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     date = "2025-7-4"
     dateutils.eomonth(date, months=0) # 2025-07-31 (months=0 => current month) 
     dateutils.eomonth(date, months=2) # 2025-09-30 (2 months after July => September)
     dateutils.eomonth(date, months=-5) # 2025-02-28 (5 months before July => February)
-    ```python
+    ```
 
 ### hour
 
@@ -203,17 +203,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the hour of a given `datetime`.
 
-    ``` python
+    ```python
     dateutils.hour(datetime)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
   
     dateutils.hour("2025-1-1 12:13:14") # 12
-    ```python
+    ```
 
 ### hours
 
@@ -221,17 +221,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the hours difference between two given datetime. The result can be negative if `end` is before `start`.
 
-    ``` python
+    ```python
     dateutils.hours(start, end)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.hours("2019-6-3 20:01:12", "2020-5-3 13:13:13") # 8009
-    ```python
+    ```
 
 ### minute
 
@@ -239,17 +239,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the minutes of a given `datetime`.
 
-    ``` python
+    ```python
     dateutils.minute(datetime)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.minute("2025-5-3 13:14:15") # 14
-    ```python
+    ```
 
 ### month
 
@@ -257,17 +257,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the month of a given `date`. The month number starts at 1, like when writing a date.
 
-    ``` python
+    ```python
     dateutils.month(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.month("2025-5-4") # 5
-    ```python
+    ```
 
 ### isomonth
 
@@ -275,17 +275,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the ISO formatted (`YYYY-MM`) month of a given `date`.
 
-    ``` python
+    ```python
     dateutils.isomonth(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
     
     dateutils.isomonth("2025-1-2") # 2025-01
-    ```python
+    ```
 
 ### months
 
@@ -293,17 +293,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the months difference between two given dates. The result can be negative if `end` is before `start`. 
 
-    ``` python
+    ```python
     dateutils.months(start, end)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.months("2024-5-1","2025-5-4") # 12
-    ```python
+    ```
     
 ### now
 
@@ -311,18 +311,18 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the ISO formatted current date and time, accurate to seconds.
 
-    ``` python
+    ```python
     dateutils.now()
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     now = dateutils.now()
     print(now) # 2025-09-30 12:56:41
-    ```python
+    ```
 
 ### second
 
@@ -330,17 +330,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the seconds of given datetime.
 
-    ``` python
+    ```python
     dateutils.second(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.second("2025-5-3 13:13:33") # 33
-    ```python
+    ```
 
 ### today
 
@@ -348,18 +348,18 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the ISO formatted current date as a string
 
-    ``` python
+    ```python
     dateutils.today()
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     today = dateutils.today()
     print(today) # 2025-09-30
-    ```python
+    ```
 
 ### weekday
 
@@ -367,17 +367,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the weekday of a `date`. The result (from 0 to 6) consider a week starting on Monday (returns 0) and ending on Sunday (returns 6).
 
-    ``` python
+    ```python
     dateutils.weekday(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.weekday("2025-6-2") # 0 (June 2, 2025 was a Monday)
-    ```python
+    ```
 
 ### isoweekday
 
@@ -385,17 +385,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the weekday of a `date` from 1 to 7 and considering a week starting on Monday (based on ISO standard).
 
-    ``` python
+    ```python
     dateutils.isoweekday(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.isoweekday("2025-6-2") # 1
-    ```python
+    ```
 
 ### weeknum
 
@@ -403,17 +403,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the week number of a given `date`, considering the week including January 1st as the first week.
 
-    ``` python
+    ```python
     dateutils.weeknum(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.weeknum('2027-1-2') # 1
-    ```python
+    ```
 
 ### isoweeknum
 
@@ -421,17 +421,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the week number of a given `date` based on ISO standard.
 
-    ``` python
+    ```python
     dateutils.isoweeknum(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
     
     dateutils.isoweeknum('2027-1-2') # 53
-    ```python
+    ```
 
 ### year
 
@@ -439,17 +439,17 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     Return the year of a given `date`.
 
-    ``` python
+    ```python
     dateutils.year(date)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     dateutils.year("2030-1-1") # 2030
-    ```python
+    ```
 
 ## Dealing with quarters
 
@@ -461,19 +461,19 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
 
     Return a DateQuarter object, from a given `year` and `quarter` (1 to 4 for current year). if `quarter` is n less than 1 (or n greater than 4), the returned DateQuarter object will correspond to the year and quarter shifted by n quarters before the first quarter (or n quarters after the fourth quarter) of the `year`.
 
-    ``` python
+    ```python
     dateutils.quarter_from_yq(year, quarter)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
     
     dateutils.quarter_from_yq(2025, 3) # DateQuarter obj:<DateQuarter-2025,3Q>
     dateutils.quarter_from_yq(2025, 0) # DateQuarter obj:<DateQuarter-2024,4Q>
     dateutils.quarter_from_yq(2025, 6) # DateQuarter obj:<DateQuarter-2026,2Q>
-    ```python
+    ```
 
 ### quarter_from_ym
 
@@ -481,17 +481,17 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
 
     Return a DateQuarter object, for specified `year` and `month`.
 
-    ``` python
+    ```python
     dateutils.quarter_from_ym(year, month)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
     
     dateutils.quarter_from_ym(2025, 3) # DateQuarter obj:<DateQuarter-2025,1Q>
-    ```python
+    ```
 
 ### to_quarter
 
@@ -499,17 +499,17 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
 
     Return a DateQuarter object from an ISO formatted date or datetime string `datetime_str`.
 
-    ``` python
+    ```python
     dateutils.to_quarter(datetime_str)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
     
     dateutils.to_quarter("2025-07-17") # DateQuarter obj: <DateQuarter-2025,3Q>
-    ```python
+    ```
 
 ### quarters_within
 
@@ -517,13 +517,13 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
 
     Return a generator which will generate the DateQuater objects between a `start` date and an `end` date. The last (not necessarily full) quarter isn't included by default. You can get it in the generator if you set param `include_last` to `True` (`False` by default).
 
-    ``` python
+    ```python
     dateutils.quarters_within(start, end, include_last=False)
     ```
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
     
     qs1 = dateutils.quarters_within("2024-03-28", "2025-07-17")
@@ -531,7 +531,7 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
     
     qs2 = dateutils.quarters_within("2024-03-28", "2025-07-17", include_last=True)
     print(list(qs2)) # [<DateQuarter-2024,1Q>, <DateQuarter-2024,2Q>,...., <DateQuarter-2025,2Q>, <DateQuarter-2025,3Q>]
-    ```python
+    ```
 
 ### DateQuarter properties and methods
 
@@ -575,7 +575,7 @@ Some operations/properties/methods are available for DateQuarter objects.
 
      __Example__
 
-    ``` python
+    ```python
     from seatable_api.date_utils import dateutils
 
     q = dateutils.quarter_from_yq(2026, 3)
@@ -587,4 +587,4 @@ Some operations/properties/methods are available for DateQuarter objects.
     q < q1 # False
     "2026-28" in q # False
     "2026-8-28" in q # True
-    ```python
+    ```

@@ -12,14 +12,14 @@
 
     Get the column object of a table, specified by the column name.
 
-    ``` js
-    base.getColumnByName(table, columnName);
     ```js
+    base.getColumnByName(table, columnName);
+    ```
 
     __Output__ Single column object (`undefined` if column doesn't exist)
 
     __Example__
-    ``` js
+    ```js
     const column = base.getColumnByName('Table1', 'Name');
     ```
 
@@ -27,14 +27,14 @@
 
     Get all columns of a table.
 
-    ``` js
-    base.getColumns(table);
     ```js
+    base.getColumns(table);
+    ```
 
     __Output__ Array of column objects
 
     __Example__
-    ``` js
+    ```js
     const columns = base.getColumns('Table1');
     columns.forEach((column) => {
         console.log(column.name);
@@ -45,14 +45,14 @@
 
     Get the columns of a table, optionally filtered by view. If no view is specified, all columns are returned.
 
-    ``` js
-    base.listColumns(tableName, viewName);
     ```js
+    base.listColumns(tableName, viewName);
+    ```
 
     __Output__ Array of column objects
 
     __Example__
-    ``` js
+    ```js
     const columns = base.listColumns('Table1', 'Default View');
     ```
 
@@ -60,14 +60,14 @@
 
     Get all visible columns of a table in a specific view (hidden columns are excluded). Only available in SeaTable scripts.
 
-    ``` js
-    base.getShownColumns(table, view);
     ```js
+    base.getShownColumns(table, view);
+    ```
 
     __Output__ Array of column objects
 
     __Example__
-    ``` js
+    ```js
     const columns = base.getShownColumns('Table1', 'Default View');
     ```
 
@@ -75,14 +75,14 @@
 
     Get all columns of a specific type in a table. See the [API Reference](https://api.seatable.com/reference/models#supported-column-types) for supported column types.
 
-    ``` js
-    base.getColumnsByType(table, type);
     ```js
+    base.getColumnsByType(table, type);
+    ```
 
     __Output__ Array of column objects (empty array if no match)
 
     __Example__
-    ``` js
+    ```js
     const textColumns = base.getColumnsByType('Table1', 'text');
     ```
 
@@ -92,12 +92,12 @@
 
     Add a new column to a table.
 
-    ``` js
-    base.insertColumn(tableName, columnName, columnType, columnKey='', columnData='');
     ```js
+    base.insertColumn(tableName, columnName, columnType, columnKey='', columnData='');
+    ```
 
     __Example__
-    ``` js
+    ```js
     import { ColumnTypes } from 'seatable-api';
 
     await base.insertColumn('Table1', 'Notes', ColumnTypes.TEXT);
@@ -118,12 +118,12 @@
 
     Rename a column, identified by its column key.
 
-    ``` js
-    base.renameColumn(tableName, columnKey, newColumnName);
     ```js
+    base.renameColumn(tableName, columnKey, newColumnName);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.renameColumn('Table1', 'kSiR', 'New Name');
     ```
 
@@ -131,23 +131,23 @@
 
 !!! abstract "resizeColumn"
 
-    ``` js
-    base.resizeColumn(tableName, columnKey, newColumnWidth);
     ```js
+    base.resizeColumn(tableName, columnKey, newColumnWidth);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.resizeColumn('Table1', 'asFV', 500);
     ```
 
 !!! abstract "freezeColumn"
 
-    ``` js
-    base.freezeColumn(tableName, columnKey, frozen);
     ```js
+    base.freezeColumn(tableName, columnKey, frozen);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.freezeColumn('Table1', '0000', true);
     ```
 
@@ -155,12 +155,12 @@
 
     Move a column to the right of the target column.
 
-    ``` js
-    base.moveColumn(tableName, columnKey, targetColumnKey);
     ```js
+    base.moveColumn(tableName, columnKey, targetColumnKey);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.moveColumn('Table1', 'loPx', '0000');
     ```
 
@@ -168,12 +168,12 @@
 
     Change the type of an existing column.
 
-    ``` js
-    base.modifyColumnType(tableName, columnKey, newColumnType);
     ```js
+    base.modifyColumnType(tableName, columnKey, newColumnType);
+    ```
 
     __Example__
-    ``` js
+    ```js
     import { ColumnTypes } from 'seatable-api';
     await base.modifyColumnType('Table1', 'nePI', ColumnTypes.NUMBER);
     ```
@@ -182,12 +182,12 @@
 
     Add options to a single-select or multiple-select column.
 
-    ``` js
-    base.addColumnOptions(tableName, columnName, options);
     ```js
+    base.addColumnOptions(tableName, columnName, options);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.addColumnOptions('Table1', 'Status', [
         {"name": "Done", "color": "#73d56e", "textColor": "#000000"},
         {"name": "Open", "color": "#ff8000", "textColor": "#ffffff"},
@@ -198,12 +198,12 @@
 
     Add cascade settings to a single-select column, limiting child options based on the parent column's selection.
 
-    ``` js
-    base.addColumnCascadeSettings(tableName, childColumn, parentColumn, cascadeSettings);
     ```js
+    base.addColumnCascadeSettings(tableName, childColumn, parentColumn, cascadeSettings);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.addColumnCascadeSettings('Table1', 'Sub-Category', 'Category', {
         "Electronics": ["Phones", "Laptops"],
         "Furniture": ["Chairs", "Tables"]
@@ -216,11 +216,11 @@
 
     Delete a column, identified by its column key.
 
-    ``` js
-    base.deleteColumn(tableName, columnKey);
     ```js
+    base.deleteColumn(tableName, columnKey);
+    ```
 
     __Example__
-    ``` js
+    ```js
     await base.deleteColumn('Table1', 'bsKL');
     ```

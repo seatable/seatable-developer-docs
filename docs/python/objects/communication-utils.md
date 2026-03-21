@@ -15,16 +15,16 @@ Several outgoing communications features are available within SeaTable. Whether 
 
     Send an email using a pre-configured email account in SeaTable. The email account must be set up in the system administration.
 
-    ``` python
-    base.send_email(account_name, msg, **kwargs)
     ```python
+    base.send_email(account_name, msg, **kwargs)
+    ```
 
     - `account_name`: name of the configured email account
     - `msg`: email message content
 
     __Example__
 
-    ``` python
+    ```python
     base.send_email('my-email-account', 'Hello from SeaTable!')
     ```
 

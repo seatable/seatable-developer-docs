@@ -55,15 +55,15 @@
 
     Get the link id of the column `column_name` from the table `table_name`.
 
-    ``` python
-    base.get_column_link_id(table_name, column_name)
     ```python
+    base.get_column_link_id(table_name, column_name)
+    ```
 
     __Output__ String (throws an error if no table named `table_name` exists or if no column named `column_name` exists)
 
     __Example__
     
-    ``` python
+    ```python
     link_id = base.get_column_link_id('Table1', 'Link column')
     print(link_id)
     ```
@@ -82,9 +82,9 @@
 
     List the records linked (in the column whose `key` is `link_column_key`) to one or more rows of the *source* table. The row(s) you want to get the linked records from are defined in the `rows` objects (see below).
 
-    ``` python
-    base.get_linked_records(table_id, link_column_key, rows) # (1)!
     ```python
+    base.get_linked_records(table_id, link_column_key, rows) # (1)!
+    ```
 
     1. `table_id`: the id of *source* table
 
@@ -144,9 +144,9 @@
 
     Add link in a link-type column. You'll need the *source* table's name `table_name`, the *target* table's name `other_table_name`, the link id from the link-type column and both the ids of the rows you want to link: `row_id` for the row from the *source* table and `other_row_id` for the record from the *target* table.
 
-    ``` python
-    base.add_link(link_id, table_name, other_table_name, row_id, other_row_id)
     ```python
+    base.add_link(link_id, table_name, other_table_name, row_id, other_row_id)
+    ```
 
     __Output__ Dict containing a single `success` key with the result of the operation (throws an error if no column with link id `link_id` exists in the *source* table, if no table named `table_name` or `other_table_name` exists or if no row with id `row_id` or `other_row_id` exists in their respective tables)
 
@@ -158,7 +158,7 @@
     
     __Example: Add link to current row__
     
-    ``` python
+    ```python
     from seatable_api import context
     # Do not hesitate to store the tables' and columns' names at the beginning of your script,
     # it will make it really easier to update if names change
@@ -169,7 +169,7 @@
     lin_id = base.get_column_link_id(TABLE1_NAME, TABLE1_LINK_COLUMN_NAME); # (1)!
     current_row_id = context.current_row['_id'];
     base.add_link(lin_id, TABLE1_NAME, TABLE2_NAME, current_row_id, 'J5St2clyTMu_OFf9WD8PbA')
-    ```python
+    ```
 
     1. Remember you can use `base.get_column_link_id` to get the link id of a specific link-type column.
 
@@ -177,7 +177,7 @@
 
     Add links for multiple rows at once. The `other_rows_ids_map` maps source row IDs to lists of target row IDs.
 
-    ``` python
+    ```python
     base.batch_add_links(link_id, table_name, other_table_name, other_rows_ids_map)
     ```
 
@@ -185,7 +185,7 @@
 
     __Example__
 
-    ``` python
+    ```python
     base.batch_add_links(
         'r4IJ',
         'Table1',
@@ -195,7 +195,7 @@
             'eSQe9OpPQxih8A9zPXdMVA': ['cWHbzQiTR8uHHzH_gVSKIg']
         }
     )
-    ```python
+    ```
 
 ## Update link(s)
 
@@ -203,7 +203,7 @@
 
     Update the content of the link-type column whose link id is `link_id` for the row with id `row_id` in the table `table_name`. It will remove all existing row links and add new links to records of table `other_table_name` with ids in the `other_rows_ids` list.
 
-    ``` python
+    ```python
     base.update_link(link_id, table_name, other_table_name, row_id, other_rows_ids)
     ```
 
@@ -211,7 +211,7 @@
 
     __Example__
     
-    ``` python
+    ```python
     base.update_link(
         link_id='r4IJ',
         table_name='Table1',
@@ -222,13 +222,13 @@
           'DjHjwmlRRB6WgU9uPnrWeA'
         ]
     )
-    ```python
+    ```
 
 !!! abstract "batch_update_links"
 
     Same than above, except that it allows you to batch update infos of link-type columns for several rows at once. Learn more about `other_rows_ids_map` in the [SeaTable API Reference](https://api.seatable.com/reference/createrowlink). This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset.
 
-    ``` python
+    ```python
     base.batch_update_links(link_id, table_name, other_table_name, row_id_list, other_rows_ids_map) # (1)!
     ```
 
@@ -236,20 +236,20 @@
 
         `other_rows_ids_map` is an object with the following syntax, the keys `id_1`,`id_2`,...,`id_n` being **all** the ids of `row_id_list`:
 
-        ``` python
+        ```python
         {
             'id_1': [record1['_id'], record2['_id']],
             'id_2': [record5['_id']],
             ...
             'id_n': [record1['_id'], recordn['_id']]
         }
-        ```python
+        ```
 
     __Output__ Dict containing a single `success` key with the result of the operation (throws an error if no column with link id `link_id` exists in the *source* table, if no table named `table_name` or `other_table_name` exists or if no row with one of the id `row_id_list` exists in the *source* table)
     
     __Example__
     
-    ``` python
+    ```python
     link_id = "WaW5"
     table_name = "Table1"
     other_table_name ="Table2"
@@ -267,15 +267,15 @@
 
     Delete the link to the record from table `other_table_name` whose id is `other_row_id` in the row from table `table_name` whose id is `row_id`.
 
-    ``` python
-    base.remove_link(link_id, table_name, other_table_name, row_id, other_row_id)
     ```python
+    base.remove_link(link_id, table_name, other_table_name, row_id, other_row_id)
+    ```
 
     __Output__ Dict containing a `success` key with the result of the operation and a `deleted_links_count` with the number of actually deleted links (throws an error if no column with link id `link_id` exists in the *source* table, if no table named `table_name` or `other_table_name` exists or if no row with id `row_id` or `other_row_id` exists in their respective tables)
     
     __Example__
     
-    ``` python
+    ```python
     base.remove_link('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
     ```
 
@@ -283,15 +283,15 @@
 
     Remove links for multiple rows at once. The `other_rows_ids_map` maps source row IDs to lists of target row IDs to unlink.
 
-    ``` python
-    base.batch_remove_links(link_id, table_name, other_table_name, other_rows_ids_map)
     ```python
+    base.batch_remove_links(link_id, table_name, other_table_name, other_rows_ids_map)
+    ```
 
     __Output__ Dict containing the result of the operation
 
     __Example__
 
-    ``` python
+    ```python
     base.batch_remove_links(
         'r4IJ',
         'Table1',

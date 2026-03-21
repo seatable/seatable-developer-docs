@@ -10,15 +10,15 @@ The `base.context` object provides information about the current user interactio
 
     The currently selected table name.
 
-    ``` js
-    const tableName = base.context.currentTable;
     ```js
+    const tableName = base.context.currentTable;
+    ```
 
 !!! abstract "currentRow"
 
     The current row when the script is triggered via a button. Contains the full row data.
 
-    ``` js
+    ```js
     const row = base.context.currentRow;
     output.text(row['Name']);
     ```
@@ -34,12 +34,12 @@ The `output` object displays results in the script output panel.
 
     Display text or any variable in the output panel. Accepts strings, numbers, objects, and arrays.
 
-    ``` js
-    output.text(anything);
     ```js
+    output.text(anything);
+    ```
 
     __Example__
-    ``` js
+    ```js
     output.text('Hello World');
     output.text(42);
     output.text(row);
@@ -49,12 +49,12 @@ The `output` object displays results in the script output panel.
 
     Display markdown-formatted content in the output panel.
 
-    ``` js
-    output.markdown(markdownString);
     ```js
+    output.markdown(markdownString);
+    ```
 
     __Example__
-    ``` js
+    ```js
     output.markdown('# Title\n\nSome **bold** text.');
     ```
 
@@ -66,12 +66,12 @@ The `base.utils` object provides helper functions.
 
     Format a date object to `YYYY-MM-DD`.
 
-    ``` js
-    base.utils.formatDate(date);
     ```js
+    base.utils.formatDate(date);
+    ```
 
     __Example__
-    ``` js
+    ```js
     const today = base.utils.formatDate(new Date());
     // Returns: "2026-03-18"
     ```
@@ -80,12 +80,12 @@ The `base.utils` object provides helper functions.
 
     Format a date object to `YYYY-MM-DD HH:mm`.
 
-    ``` js
-    base.utils.formatDateWithMinutes(date);
     ```js
+    base.utils.formatDateWithMinutes(date);
+    ```
 
     __Example__
-    ``` js
+    ```js
     const now = base.utils.formatDateWithMinutes(new Date());
     // Returns: "2026-03-18 14:30"
     ```
@@ -94,12 +94,12 @@ The `base.utils` object provides helper functions.
 
     Look up a value in another table and copy it. Similar to VLOOKUP in spreadsheets.
 
-    ``` js
-    base.utils.lookupAndCopy(targetTable, targetColumn, targetColumnToSearch, sourceTable, sourceColumn, sourceColumnToSearch);
     ```js
+    base.utils.lookupAndCopy(targetTable, targetColumn, targetColumnToSearch, sourceTable, sourceColumn, sourceColumnToSearch);
+    ```
 
     __Example__
-    ``` js
+    ```js
     // Copy "Email" from Contacts table where the Name matches
     base.utils.lookupAndCopy(
         'Orders', 'Customer Email', 'Customer Name',

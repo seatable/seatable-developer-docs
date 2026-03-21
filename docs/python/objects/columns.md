@@ -44,15 +44,15 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Get the column of the table `table_name`, given the column name `column_name`.
 
-    ``` python
-    base.get_column_by_name(table_name, column_name)
     ```python
+    base.get_column_by_name(table_name, column_name)
+    ```
 
     __Output__ Single column dict (`None` if no column named `column_name` exists, throws an error if no table named `table_name` exists)
 
     __Example__
         
-    ``` python
+    ```python
     column = base.get_column_by_name('Table1', 'Name')
     print(column)
     ```
@@ -61,15 +61,15 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Get the columns of a table (specified by its name `table_name`), optionally from a specific view (specified by its name `view_name`).
 
-    ``` python
-    base.list_columns(table_name, view_name=None)
     ```python
+    base.list_columns(table_name, view_name=None)
+    ```
 
     __Output__ List of column dicts (throws an error if no table named `table_name` exists or if no view named `view_name` exists)
 
     __Example__
         
-    ``` python
+    ```python
     columns = base.list_columns('Table1', 'Default View')
     print(columns)
     ```
@@ -78,15 +78,15 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Get all the columns of a specific `column_type` in the table `table_name`. See the [ColumnTypes constants](#columntypes-constants) above or the [API Reference](https://api.seatable.com/reference/models#supported-column-types) for more information about supported column types.
     
-    ``` python
-    base.get_columns_by_type(table_name, column_type)
     ```python
+    base.get_columns_by_type(table_name, column_type)
+    ```
     
     __Output__ List of column dicts (eventually empty; throws an error if no table named `table_name` exists or if `column_type` is not a valid `ColumnTypes` member)
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.constants import ColumnTypes
 
     columns = base.get_columns_by_type('Table1', ColumnTypes.TEXT)
@@ -99,9 +99,9 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Insert (inside the table) or append (at the end of the table) a column named `column_name` to the table `table_name`.
 
-    ``` python
-    base.insert_column(table_name, column_name, column_type, column_key=None, column_data=None) # (1)!
     ```python
+    base.insert_column(table_name, column_name, column_type, column_key=None, column_data=None) # (1)!
+    ```
 
     1. `column_type`: See the [ColumnTypes constants](#columntypes-constants) above or the [API Reference](https://api.seatable.com/reference/models#supported-column-types) for more information about supported column types
 
@@ -113,20 +113,20 @@ You'll find below all the available methods to interact with the columns of a Se
 
     __Example__
     
-    ``` python
+    ```python
     from seatable_api.constants import ColumnTypes
 
     base.insert_column('Table1', 'New long text column', ColumnTypes.LONG_TEXT)
     ```
 
-    ``` python
+    ```python
     from seatable_api.constants import ColumnTypes
 
     base.insert_column('Table1', 'Link', ColumnTypes.LINK, column_data={
         'table':'Table1',
         'other_table':'Test_User'
     })
-    ```python
+    ```
 
 ## Rename column
 
@@ -134,7 +134,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Rename the column in the table `table_name` whose key is `column_key`  with the new name `new_column_name`. Please ensure that you choose a `new_column_name` that doesn't already exist in your table `table_name`.
 
-    ``` python
+    ```python
     base.rename_column(table_name, column_key, new_column_name)
     ```
 
@@ -142,13 +142,13 @@ You'll find below all the available methods to interact with the columns of a Se
 
     __Example__
     
-    ``` python
-    base.rename_column('Table1', '0000', 'new column name') # (1)!
     ```python
+    base.rename_column('Table1', '0000', 'new column name') # (1)!
+    ```
 
     1. `0000` is always the key of the first column in each table
 
-    ``` python
+    ```python
     column_to_rename = base.get_column_by_name('Table1', 'My Column')
     base.rename_column('Table1', column_to_rename['key'], 'new column name') # (1)!
     ```
@@ -164,9 +164,9 @@ You'll find below all the available methods to interact with the columns of a Se
     !!! warning "(Un)freezing a group of columns"
         Please note that this method acts on a single column: to freeze the n-first left columns, please run it **for each column!**
 
-    ``` python
-    base.freeze_column(table_name, column_key, frozen) # (1)!
     ```python
+    base.freeze_column(table_name, column_key, frozen) # (1)!
+    ```
 
     1. `column_key`: the key of the column you want to (un)freeze
 
@@ -176,7 +176,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     __Example__
     
-    ``` python
+    ```python
     base.freeze_column('Table1', '0000', True)
     ```
 
@@ -186,9 +186,9 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Move the column of table `table_name` whose key is `column_key`.
 
-    ``` python
-    base.move_column(table_name, column_key, target_column_key) # (1)!
     ```python
+    base.move_column(table_name, column_key, target_column_key) # (1)!
+    ```
 
     1. `column_key`: the key of the column you want to move
 
@@ -198,7 +198,7 @@ You'll find below all the available methods to interact with the columns of a Se
     
     __Example__
     
-    ``` python
+    ```python
     base.move_column('Table1', 'loPx', '0000') # (1)!
     ```
 
@@ -213,9 +213,9 @@ You'll find below all the available methods to interact with the columns of a Se
     !!! warning "Don't change column type to ColumnTypes.LINK"
         This method doesn't allow to pass column data for the moment. Trying to change the column type to `ColumnTypes.LINK` will then lead to a "broken" column (you won't be able to edit the column's settings) as column data is mandatory for link-type columns.
 
-    ``` python
-    base.modify_column_type(table_name, column_key, new_column_type) # (1)!
     ```python
+    base.modify_column_type(table_name, column_key, new_column_type) # (1)!
+    ```
 
     1. `column_key` (optional): the key of the column you want to modify the type
 
@@ -225,7 +225,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     __Example__
  
-    ``` python
+    ```python
     from seatable_api.constants import ColumnTypes
 
     base.modify_column_type('Table1', 'nePI', ColumnTypes.CHECKBOX)
@@ -237,15 +237,15 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Delete the column whose key is `column_key` in the table `table_name`. You cannot delete the first column as explained [here](https://seatable.com/help/warum-kann-ich-die-erste-spalte-meiner-tabelle-nicht-loeschen/).
 
-    ``` python
-    base.delete_column(table_name, column_key)
     ```python
+    base.delete_column(table_name, column_key)
+    ```
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists, if no column with the key `column_key` exists or if you try to delete the first column)
 
     __Example__
     
-    ``` python
+    ```python
     base.delete_column('Table1', 'bsKL')
     ```
 
@@ -257,9 +257,9 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Used by both "single select" or "multiple select"-type columns to add new options to the column `column_name` of the table `table_name`.
 
-    ``` python
-    base.add_column_options(table_name, column_name, options) # (1)!
     ```python
+    base.add_column_options(table_name, column_name, options) # (1)!
+    ```
 
     1. `options`: list of option dict containing the following keys:
 
@@ -273,7 +273,7 @@ You'll find below all the available methods to interact with the columns of a Se
     
     __Example__
     
-    ``` python
+    ```python
     base.add_column_options('Table1', 'My choices', [
         {"name": "ddd", "color": "#aaa", "textColor": "#000000"},
         {"name": "eee", "color": "#aaa", "textColor": "#000000"},
@@ -287,9 +287,9 @@ You'll find below all the available methods to interact with the columns of a Se
 
     Used by "single select"-type column, to condition the available options (see cascading in the [user manual](https://seatable.com/help/die-einfachauswahl-spalte/#cascading-a-single-select-column-search) or in the [API Reference](https://api.seatable.com/reference/updatecolumncascade-1)) of a child column `child_column` based on the options of a parent column `parent_column`.
 
-    ``` python
-    base.add_column_cascade_settings(table_name, child_column, parent_column, cascade_settings) # (1)!
     ```python
+    base.add_column_cascade_settings(table_name, child_column, parent_column, cascade_settings) # (1)!
+    ```
 
     1. `child_column`: name of the column you want to condition the available options for
 
@@ -305,7 +305,7 @@ You'll find below all the available methods to interact with the columns of a Se
     
     __Example__
     
-    ``` python
+    ```python
     base.add_column_cascade_settings("Table1", "Child", "Parent", {
         "aaa": ["aaa-1", "aaa-2"], # (1)!
         "bbb": ["bbb-1", "bbb-2"],

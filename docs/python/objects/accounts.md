@@ -6,14 +6,14 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     Accessing the account object requires a specific authentication.
 
-    ``` python
+    ```python
     from seatable_api import Account # (1)!
     username = 'xxx@email.com' # (2)!
     password = 'xxxxxxx'
     server_url = 'https://cloud.seatable.io/'
     account = Account(username, password, server_url)
     account.auth()
-    ```python
+    ```
 
     1. Don't forget to import `Account` from `seatable_api`
 
@@ -25,7 +25,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     Get all your workspaces and their bases.
 
-    ``` python
+    ```python
     account.list_workspaces()
     ```
     __Output__ Dict with a single `workspace_list` key containing a list of every workspaces and for each a list of tables or shared tables of views
@@ -34,7 +34,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     === "Function call"
     
-        ``` python
+        ```python
         import json
         from seatable_api import Account
         username = 'xxx@email.com'
@@ -44,11 +44,11 @@ The account object provides an interface to list workspaces, add/copy/delete bas
         account.auth()
         workspaces = account.list_workspaces()
         print(json.dumps(workspaces, indent=' '))
-        ```python
+        ```
 
     === "Output example"
 
-        ``` json
+        ```json
         {
             "workspace_list": [
                 {
@@ -192,15 +192,15 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     Get the base named `base_name` in the workspace whose id is `workspace_id`. You'll be able to interact with this base using all the `base` methods presented in this manual. Please note that the base is authorized.
 
-    ``` python
-    account.get_base(workspace_id, base_name)
     ```python
+    account.get_base(workspace_id, base_name)
+    ```
 
     __Output__ base object (throws an error if no workspace with id `workspace_id` or no base `base_name` exists, or if you encounter permission issue)
 
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import Account
     username = 'xxx@email.com'
     password = 'xxxxxxx'
@@ -215,15 +215,15 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     Add a base named `base_name` to a Workspace. If no `workspace_id` is provided, the base will be created in the "My bases" section (workspace named "personal").
 
-    ``` python
-    account.add_base(base_name, workspace_id=None)
     ```python
+    account.add_base(base_name, workspace_id=None)
+    ```
 
     __Output__ Dict containing the same base metadata as members of the `table_list` of the workspace metadata (throws an error if no workspace with id `workspace_id` exists or if a base named `base_name` already exists in the workspace)
     
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import Account
     username = 'xxx@email.com'
     password = 'xxxxxxx'
@@ -238,15 +238,15 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     Copy the base base_name from the workspace whose id is `src_workspace_id` to the workspace whose id is `dst_workspace_id`.
 
-    ``` python
-    account.copy_base(src_workspace_id, base_name, dst_workspace_id)
     ```python
+    account.copy_base(src_workspace_id, base_name, dst_workspace_id)
+    ```
 
      __Output__ Dict containing the same base metadata as members of the `table_list` of the workspace metadata (throws an error if no workspace with id `workspace_id` exists or if a base named `base_name` already exists in the workspace) for the newly created base
     
     __Example__
 
-    ``` python
+    ```python
     from seatable_api import Account
     username = 'xxx@email.com'
     password = 'xxxxxxx'

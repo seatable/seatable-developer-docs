@@ -12,13 +12,13 @@
 
     Get the currently selected table. Only available in SeaTable scripts.
 
-    ``` js
-    base.getActiveTable();
     ```js
+    base.getActiveTable();
+    ```
     __Output__ Single table object
 
     __Example__
-    ``` js
+    ```js
     const table = base.getActiveTable();
     output.text(`The name of the active table is: ${table.name}`);
     ```
@@ -27,13 +27,13 @@
 
     Get all tables of the current base.
 
-    ``` js
-    base.getTables();
     ```js
+    base.getTables();
+    ```
     __Output__ Array of table objects
 
     __Example__
-    ``` js
+    ```js
     const tables = base.getTables();
     ```
 
@@ -41,9 +41,9 @@
 
     Get a table object by its name.
 
-    ``` js
-    base.getTableByName(tableName);
     ```js
+    base.getTableByName(tableName);
+    ```
 
     __Output__ Single table object (`undefined` if table doesn't exist)
 
@@ -58,14 +58,14 @@
 
     Add a new table to this base. Ensure the name doesn't already exist.
 
-    ``` js
-    base.addTable(tableName, lang='en', columns=[]);
     ```js
+    base.addTable(tableName, lang='en', columns=[]);
+    ```
 
     The `lang` and `columns` parameters are optional.
 
     __Example__
-    ``` js
+    ```js
     base.addTable('New table');
     ```
 
@@ -75,12 +75,12 @@
 
     Rename an existing table.
 
-    ``` js
-    base.renameTable(oldName, newName);
     ```js
+    base.renameTable(oldName, newName);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.renameTable('Table1', 'Projects 2023');
     ```
 
@@ -90,11 +90,11 @@
 
     Delete a table from the base. The table can be [restored from the logs](https://seatable.com/help/eine-geloeschte-tabelle-wiederherstellen/). Deleting the last table is not possible.
 
-    ``` js
-    base.deleteTable(tableName);
     ```js
+    base.deleteTable(tableName);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.deleteTable('Old table');
     ```

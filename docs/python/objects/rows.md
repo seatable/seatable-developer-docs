@@ -12,15 +12,15 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Get a row from table `table_name` via its `row_id`.
 
-    ``` python
-    base.get_row(table_name, row_id)
     ```python
+    base.get_row(table_name, row_id)
+    ```
 
     __Output__ Single row dict (throws an error if no table named `table_name` exists or if no row with the id `row_id` exists)
     
     __Example__
     
-    ``` python
+    ```python
     row = base.get_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
@@ -28,9 +28,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Lists multiple rows of the table `table_name`. If `view_name` is provided, only the rows displayed in this specific view will be returned. The default `limit` is 1000 which is also the maximum number of rows this method returns. The query method (see below) offers more filter options and can return more rows.
 
-    ``` python
-    base.list_rows(table_name, view_name=None, start=None, limit=None) # (1)!
     ```python
+    base.list_rows(table_name, view_name=None, start=None, limit=None) # (1)!
+    ```
 
     1. `view_name` (optional): the name of the view you want to get the rows from. If there is no view named `view_name`, all the rows from table `table_name` will be eventually returned (depending on `start` and `limit`)
 
@@ -45,7 +45,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     
     __Example__
     
-    ``` python
+    ```python
     rows = base.list_rows('Table1')
     rows = base.list_rows('Table1', view_name='Default View', start=5, limit=20)
     ```
@@ -54,9 +54,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Use SQL to query a base. SQL queries are the most powerful way access data stored in a base. If you're not familiar with SQL syntax, we recommend using first the [SQL query plugin](https://seatable.com/help/anleitung-zum-sql-abfrage-plugin/). Most SQL syntax is supported, you can check the [SQL Reference](/sql/) section of this manual for more information.
 
-    ``` python
-    base.query(sql_statement)
     ```python
+    base.query(sql_statement)
+    ```
 
     Unless the SQL statement specifies a higher limit, the method returns a maximum of 100 rows. The maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
 
@@ -84,7 +84,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     === "Function call"
 
-        ``` python
+        ```python
         import json
         json_data = base.query('select * from Bill') # (1)!
         print(json.dumps(json_data, indent=' '))
@@ -94,7 +94,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     === "Output"
 
-        ``` json
+        ```json
         [
             {
                 "name": "Bob",
@@ -188,7 +188,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
                 "_id": "HJi7wbUMQIOuIlPaoO9Fbg"
             }
         ]
-        ```python
+        ```
 
     __Example with WHERE__
 
@@ -279,20 +279,20 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     Add a row to the table `table_name`. This row contains the data specified in the dict `row_data`. No row will be added if `row_data` is an empty dict (`{}`) or if it contains only keys that don't exist in the table.
 
 
-    ``` python
-    base.append_row(table_name, row_data, apply_default=False) # (1)!
     ```python
+    base.append_row(table_name, row_data, apply_default=False) # (1)!
+    ```
 
     1. `row_data`: dict (pairs of `key`:`value`, each `key` being the name of a column), for example:
 
-        ```
+        ```json
         {
             'First Name': 'John',
             'Last Name': 'Doe',
             'Invoice amount': 100,
             'Products': ['Office Supplies', 'Computer']
         }
-        ```python
+        ```
 
         `apply_default` (optional): whether to use default values or not (default is `False`)
 
@@ -303,7 +303,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     __Example__
     
-    ``` python
+    ```python
     row_data = {
         "Name": "Ron"
     }
@@ -316,9 +316,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Append multiple rows to the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](/sql/) which supports up to 10,000 rows.
 
-    ``` python
-    base.batch_append_rows(table_name, rows_data, apply_default=False) # (1)!
     ```python
+    base.batch_append_rows(table_name, rows_data, apply_default=False) # (1)!
+    ```
 
     1. `rows_data`: list of `row_data` dict (see `base.append_row` above)
 
@@ -330,7 +330,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     
     === "Function call"
 
-        ``` python
+        ```python
         rows_data = [{
             'Name': 'Ron',
             'Birthday': '1975-01-01'
@@ -378,15 +378,15 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Insert one row to the table `table_name` under an *anchor* row whose id is `anchor_row_id`. If no row with id `anchor_row_id` exists, the row is added to the end of the table (similar to `base.append_row` in this case).
 
-    ``` python
-    base.insert_row(table_name, row_data, anchor_row_id, apply_default=False)
     ```python
+    base.insert_row(table_name, row_data, anchor_row_id, apply_default=False)
+    ```
 
     __Output__ Single row dict (`None` if no row were added, throws an error if no table named `table_name` exists)
 
     __Example__
     
-    ``` python
+    ```python
     row_data = {
         "Name": "Ron"
     }
@@ -401,15 +401,15 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Update the row whose id is `row_id` in the table `table_name`. The `row_data` dict (pairs of `key`:`value`, each `key` being the name of a column) need to contain only the data you want to update. To reset a value, specify the `key`:`value` pair with an empty string `''`.
 
-    ``` python
-    base.update_row(table_name, row_id, row_data)
     ```python
+    base.update_row(table_name, row_id, row_data)
+    ```
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists or if no row with the id `row_id` exists)
 
     __Example__
     
-    ``` python
+    ```python
     row_data = {
         "Name": "Ron"
     }
@@ -421,9 +421,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Updates multiple rows in the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](/sql/) which supports up to 10,000 rows.
 
-    ``` python
-    base.batch_update_rows(table_name, rows_data) # (1)!
     ```python
+    base.batch_update_rows(table_name, rows_data) # (1)!
+    ```
 
     1. `rows_data`: list of dicts containing two `key`:`value` pairs:
      
@@ -434,7 +434,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     
     __Example__
     
-    ``` python
+    ```python
     rows_data = [{
         "row_id" : "fMmCFyoxT4GN5Y2Powbl0Q",
         "row" : {
@@ -465,15 +465,15 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Delete a single row (whose id is `row_id`) from the table `table_name`.
 
-    ``` python
-    base.delete_row(table_name, row_id)
     ```python
+    base.delete_row(table_name, row_id)
+    ```
 
      __Output__ Dict containing a single `deleted_rows` key with the number of deleted rows (`0` if no row with id `row_id` exists, throws an error if no table named `table_name` exists)
 
     __Example__
     
-    ``` python
+    ```python
     base.delete_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
@@ -481,9 +481,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Delete multiple rows from the table `table_name` at once. This function can't operate more than 1000 rows at once. To handle more than 1000 rows, use a loop with offset or an [SQL query](/sql/) which supports up to 10,000 rows.
 
-    ``` python
-    base.batch_delete_rows(table_name, row_ids) # (1)!
     ```python
+    base.batch_delete_rows(table_name, row_ids) # (1)!
+    ```
 
     1. `row_ids`: list of the ids of the rows to delete
 
@@ -491,7 +491,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     __Example__
     
-    ``` python
+    ```python
     # Retrieving the rows of table 'Table1'
     rows = base.list_rows('Table1')
     #Getting only the three first rows
@@ -508,15 +508,15 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Batch insert rows into big data storage.
 
-    ``` python
-    base.big_data_insert_rows(table_name, rows_data)
     ```python
+    base.big_data_insert_rows(table_name, rows_data)
+    ```
 
     __Output__ Dict containing a single `inserted_row_count` key with the number of rows actually inserted.
 
     __Example__
 
-    ``` python
+    ```python
     rows = [
             {'Name': "A"},
             {'Name': "B"}
@@ -530,15 +530,15 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Filter rows using a condition string. Returns a QuerySet object with chainable methods: `.all()`, `.count()`, `.first()`, `.last()`, `.filter()`, `.get()`, `.delete()`, `.update()`.
 
-    ``` python
-    base.filter(table_name, conditions='', view_name=None)
     ```python
+    base.filter(table_name, conditions='', view_name=None)
+    ```
 
     __Output__ QuerySet object
 
     __Example__
 
-    ``` python
+    ```python
     # Get all rows where Status is "Done"
     queryset = base.filter('Table1', "Status = 'Done'")
     rows = queryset.all()
@@ -556,9 +556,9 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     Filter rows using structured filter objects. Supports combining multiple filters with `And` or `Or` conjunction.
 
-    ``` python
-    base.filter_rows(table_name, filters, view_name=None, filter_conjunction='And')
     ```python
+    base.filter_rows(table_name, filters, view_name=None, filter_conjunction='And')
+    ```
 
     - `filters`: list of filter dicts, each containing `column_name`, `filter_predicate`, and `filter_term`
     - `filter_conjunction`: `'And'` or `'Or'`
@@ -567,7 +567,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     __Example__
 
-    ``` python
+    ```python
     filters = [
         {
             "column_name": "Status",

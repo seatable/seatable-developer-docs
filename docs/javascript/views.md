@@ -12,14 +12,14 @@
 
     Get the current view of the active table. Only available in SeaTable scripts.
 
-    ``` js
-    base.getActiveView();
     ```js
+    base.getActiveView();
+    ```
 
     __Output__ Single view object
 
     __Example__
-    ``` js
+    ```js
     const view = base.getActiveView();
     output.text(view.name);
     ```
@@ -28,14 +28,14 @@
 
     Get a view of a table, specified by its name.
 
-    ``` js
-    base.getViewByName(table, viewName);
     ```js
+    base.getViewByName(table, viewName);
+    ```
 
     __Output__ Single view object (`undefined` if no view with that name exists)
 
     __Example__
-    ``` js
+    ```js
     const view = base.getViewByName('Table1', 'Default View');
     ```
 
@@ -43,14 +43,14 @@
 
     Get all the views of a table.
 
-    ``` js
-    base.listViews(table);
     ```js
+    base.listViews(table);
+    ```
 
     __Output__ Array of view objects
 
     __Example__
-    ``` js
+    ```js
     const views = base.listViews('Table1');
     ```
 
@@ -60,12 +60,12 @@
 
     Add a new view to a table.
 
-    ``` js
-    base.addView(table, viewName);
     ```js
+    base.addView(table, viewName);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.addView('Table1', 'My View');
     ```
 
@@ -75,12 +75,12 @@
 
     Rename an existing view.
 
-    ``` js
-    base.renameView(table, currentViewName, newViewName);
     ```js
+    base.renameView(table, currentViewName, newViewName);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.renameView('Table1', 'Default View', 'Main View');
     ```
 
@@ -90,11 +90,11 @@
 
     Delete a view. Deleting the last view is not possible.
 
-    ``` js
-    base.deleteView(table, viewName);
     ```js
+    base.deleteView(table, viewName);
+    ```
 
     __Example__
-    ``` js
+    ```js
     base.deleteView('Table1', 'Old View');
     ```
