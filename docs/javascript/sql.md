@@ -1,6 +1,6 @@
 # SQL Queries
 
-Use SQL to query a base. This is the most powerful way to access data. For the full SQL syntax reference, see the [SQL Reference](/sql/).
+Use SQL to query a base. This is the most powerful way to access data. For the full SQL syntax reference, see the [SQL Reference](../sql/index.md).
 
 !!! abstract "query"
 
@@ -9,7 +9,7 @@ Use SQL to query a base. This is the most powerful way to access data. For the f
     ```
 
     !!! info "Backticks for special names"
-        Escape table or column names that contain spaces, special characters, or are [SQL function names](/sql/functions/) with backticks: `` SELECT * FROM `My Table` ``
+        Escape table or column names that contain spaces, special characters, or are [SQL function names](../sql/functions.md) with backticks: `` SELECT * FROM `My Table` ``
 
     __Output__ Array of row objects
 

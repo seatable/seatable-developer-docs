@@ -6,7 +6,7 @@ Appends a new row to a table via SQL.
 
     `INSERT` **only** works with bases that have [Big Data storage](https://seatable.com/help/big-data-capabilities/) enabled. Rows are inserted into big data storage. This feature requires an [Enterprise subscription](https://seatable.com/help/subscription-plans/#seatable-cloud-enterprise-search).
 
-For non-archived bases, use the API functions instead (e.g. [Python `append_row`](/python/objects/rows/#add-rows) or [JavaScript `appendRow`](/javascript/rows/)).
+For non-archived bases, use the API functions instead (e.g. [Python `append_row`](../python/objects/rows.md#add-rows) or [JavaScript `appendRow`](../javascript/rows.md)).
 
 ## Syntax
 
