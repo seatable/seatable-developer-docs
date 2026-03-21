@@ -1,6 +1,6 @@
 # Rows
 
-You'll find below all the available methods to interact with the rows of a SeaTable table. In this section, you'll have to deal with the **id** of the rows. You can find few tips on how to get it in [the user manual](https://seatable.com/help/was-ist-die-zeilen-id/).
+You'll find below all the available methods to interact with the rows of a SeaTable table. In this section, you'll have to deal with the **id** of the rows. You can find few tips on how to get it in [the user manual](https://seatable.com/help/what-is-row-id/).
 
 !!! tip "Examples assume authenticated base"
 

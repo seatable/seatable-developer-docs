@@ -4,7 +4,7 @@ The SeaTable PHP Client encapsulates the SeaTable REST API. It is auto-generated
 
 - Source code on [GitHub](https://github.com/seatable/seatable-api-php)
 - Package on [Packagist](https://packagist.org/packages/seatable/seatable-api-php)
-- [Interactive API Reference](https://api.seatable.com) with code examples
+- [Interactive API Reference](https://api.seatable.com/reference/introduction) with code examples
 
 ## Installation
 

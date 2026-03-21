@@ -14,9 +14,9 @@ For the following methods, you'll have to provide the URL of the file you want t
 
 - `{server_url}` is the URL of your server, for example `https://cloud.seatable.io`
 
-- You can find the `workspace_id` by looking at any of your database URL which will look like `{server_url}/workspace/{workspace_id}/dtable/{base_name}`, or by checking the [user manual](https://seatable.com/help/workspace-id-einer-gruppe-ermitteln/)
+- You can find the `workspace_id` by looking at any of your database URL which will look like `{server_url}/workspace/{workspace_id}/dtable/{base_name}`, or by checking the [user manual](https://seatable.com/help/find-workspace-id-group/)
 
-- You can find the base uuid in your Team administration (see the [User manual](https://seatable.com/help/bases-in-der-teamverwaltung/), it's displayed as `ID` in the base right panel) or by looking for `dtableUuid` in the source code of the web page while consulting any of your bases
+- You can find the base uuid in your Team administration (see the [User manual](https://seatable.com/help/bases-in-team-administration/), it's displayed as `ID` in the base right panel) or by looking for `dtableUuid` in the source code of the web page while consulting any of your bases
 
 - The file location is what you can find in the [file manager](https://seatable.com/help/file-management-in-a-base/) of your base and will always have the same structure:
 
