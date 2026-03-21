@@ -6,63 +6,63 @@
 
 ### Introduction
 
-- [Introduction](https://developer.seatable.com/)
-- [Get support](https://developer.seatable.com/introduction/get_support/)
+- [Introduction](https://developer.seatable.com/): Developer documentation for SeaTable's client libraries (Python, JavaScript, PHP), SQL interface, and plugin development. Build integrations, automate workflows, and extend SeaTable programmatically.
+- [Get support](https://developer.seatable.com/introduction/get_support/): Find help for SeaTable development — community forum, API reference, admin manual, and enterprise support options.
 
 ### Python
 
-- [Python](https://developer.seatable.com/python/)
-- [Metadata](https://developer.seatable.com/python/objects/metadata/)
-- [Context](https://developer.seatable.com/python/objects/context/)
-- [Tables](https://developer.seatable.com/python/objects/tables/)
-- [Views](https://developer.seatable.com/python/objects/views/)
-- [Columns](https://developer.seatable.com/python/objects/columns/)
-- [Rows](https://developer.seatable.com/python/objects/rows/)
-- [Links](https://developer.seatable.com/python/objects/links/)
-- [Files](https://developer.seatable.com/python/objects/files/)
-- [Accounts](https://developer.seatable.com/python/objects/accounts/)
-- [Users](https://developer.seatable.com/python/objects/users/)
-- [Date utilities](https://developer.seatable.com/python/objects/date-utils/)
-- [Communication utilities](https://developer.seatable.com/python/objects/communication-utils/)
+- [Python](https://developer.seatable.com/python/): Get started with the seatable-api Python library. Install, authenticate, and connect to SeaTable bases from scripts or external applications.
+- [Metadata](https://developer.seatable.com/python/objects/metadata/): Retrieve the complete structural schema of a SeaTable base — tables, views, and columns — with the Python get_metadata() method.
+- [Context](https://developer.seatable.com/python/objects/context/): Access the context object in SeaTable Python scripts to get the server URL, API token, current table, current row, and user information.
+- [Tables](https://developer.seatable.com/python/objects/tables/): Python API reference for listing, creating, renaming, and deleting tables in a SeaTable base.
+- [Views](https://developer.seatable.com/python/objects/views/): Python API reference for listing, creating, renaming, and deleting views in SeaTable tables.
+- [Columns](https://developer.seatable.com/python/objects/columns/): Python API reference for managing columns — create, rename, move, freeze, modify types, and configure select options in SeaTable tables.
+- [Rows](https://developer.seatable.com/python/objects/rows/): Python API reference for row operations — query, append, batch insert, update, delete, and filter rows in SeaTable bases including Big Data storage.
+- [Links](https://developer.seatable.com/python/objects/links/): Python API reference for link columns — add, update, remove, and batch-manage linked records between SeaTable tables.
+- [Files](https://developer.seatable.com/python/objects/files/): Python API reference for uploading and downloading files and images in SeaTable — from local disk, memory, URLs, or custom asset folders.
+- [Accounts](https://developer.seatable.com/python/objects/accounts/): Python API reference for account-level operations — authenticate with username/password, list workspaces, and manage bases.
+- [Users](https://developer.seatable.com/python/objects/users/): Python API reference for retrieving user information and listing collaborators of a SeaTable base.
+- [Date utilities](https://developer.seatable.com/python/objects/date-utils/): Python date utility functions for SeaTable — create, compare, and manipulate dates with dateadd, datediff, eomonth, quarters, and more.
+- [Communication utilities](https://developer.seatable.com/python/objects/communication-utils/): Send emails, toast notifications, and receive real-time websocket events from SeaTable with the Python communication utilities.
 
 ### JavaScript
 
-- [JavaScript](https://developer.seatable.com/javascript/)
-- [Tables](https://developer.seatable.com/javascript/tables/)
-- [Views](https://developer.seatable.com/javascript/views/)
-- [Columns](https://developer.seatable.com/javascript/columns/)
-- [Rows](https://developer.seatable.com/javascript/rows/)
-- [Links](https://developer.seatable.com/javascript/links/)
-- [SQL Queries](https://developer.seatable.com/javascript/sql/)
-- [Metadata](https://developer.seatable.com/javascript/metadata/)
-- [Files](https://developer.seatable.com/javascript/files/)
-- [Constants](https://developer.seatable.com/javascript/constants/)
-- [Scripting Features](https://developer.seatable.com/javascript/scripting-features/)
+- [JavaScript](https://developer.seatable.com/javascript/): Get started with the SeaTable JavaScript API. Use it inside SeaTable scripts or from Node.js — installation, authentication, and async usage.
+- [Tables](https://developer.seatable.com/javascript/tables/): JavaScript API reference for listing, creating, renaming, and deleting tables in a SeaTable base.
+- [Views](https://developer.seatable.com/javascript/views/): JavaScript API reference for listing, creating, renaming, and deleting views in SeaTable tables.
+- [Columns](https://developer.seatable.com/javascript/columns/): JavaScript API reference for managing columns — create, rename, resize, freeze, move, modify types, and configure select options.
+- [Rows](https://developer.seatable.com/javascript/rows/): JavaScript API reference for row operations — query, append, insert, batch update, delete, and filter rows in SeaTable bases.
+- [Links](https://developer.seatable.com/javascript/links/): JavaScript API reference for link columns — retrieve linked records, add, update, and remove links between SeaTable tables.
+- [SQL Queries](https://developer.seatable.com/javascript/sql/): Run SQL queries from JavaScript with base.query() — examples for SELECT, WHERE, ORDER BY, GROUP BY, and DISTINCT in SeaTable.
+- [Metadata](https://developer.seatable.com/javascript/metadata/): Retrieve the complete structural schema of a SeaTable base — tables, views, and columns — with the JavaScript getMetadata() method.
+- [Files](https://developer.seatable.com/javascript/files/): Upload files and images to SeaTable from JavaScript using the REST API — step-by-step Node.js example with fetch and FormData.
+- [Constants](https://developer.seatable.com/javascript/constants/): ColumnTypes constants for the SeaTable JavaScript API — type-safe references for all supported column types.
+- [Scripting Features](https://developer.seatable.com/javascript/scripting-features/): SeaTable scripting-only JavaScript features — access the current table and row via context, render output, and use built-in utility helpers.
 
 ### PHP
 
-- [PHP](https://developer.seatable.com/php/)
-- [Examples](https://developer.seatable.com/php/examples/)
-- [API Reference](https://developer.seatable.com/php/api-reference/)
+- [PHP](https://developer.seatable.com/php/): Get started with the SeaTable PHP client — install via Composer, authenticate with API tokens, and connect to SeaTable bases.
+- [Examples](https://developer.seatable.com/php/examples/): PHP code examples for SeaTable — get account info, list bases, retrieve metadata, run SQL queries, and add rows.
+- [API Reference](https://developer.seatable.com/php/api-reference/): Complete PHP API reference for SeaTable — auto-generated endpoint documentation for auth, base operations, files, users, and admin APIs.
 
 ### Ruby
 
-- [Ruby](https://developer.seatable.com/ruby/)
+- [Ruby](https://developer.seatable.com/ruby/): Community-maintained Ruby gem for the SeaTable API — connect to SeaTable bases from Ruby applications.
 
 ### SQL
 
-- [SQL](https://developer.seatable.com/sql/)
-- [SELECT](https://developer.seatable.com/sql/select/)
-- [INSERT](https://developer.seatable.com/sql/insert/)
-- [UPDATE, DELETE](https://developer.seatable.com/sql/insert-update-delete/)
-- [Limitations](https://developer.seatable.com/sql/limitations/)
-- [Functions](https://developer.seatable.com/sql/functions/)
+- [SQL](https://developer.seatable.com/sql/): Query and modify SeaTable data with SQL — supports SELECT, INSERT, UPDATE, and DELETE via Python, JavaScript, or the REST API.
+- [SELECT](https://developer.seatable.com/sql/select/): SeaTable SQL SELECT reference — WHERE, GROUP BY, HAVING, ORDER BY, LIMIT, DISTINCT, aggregation functions, and implicit joins.
+- [INSERT](https://developer.seatable.com/sql/insert/): SeaTable SQL INSERT syntax for appending rows to Big Data tables — value rules, multi-value columns, and Enterprise Edition requirement.
+- [UPDATE, DELETE](https://developer.seatable.com/sql/insert-update-delete/): SeaTable SQL UPDATE and DELETE syntax — modify or remove rows with WHERE conditions, value restrictions, and multi-value column rules.
+- [Limitations](https://developer.seatable.com/sql/limitations/): SeaTable SQL limitations — read-only column types, list column behavior, NULL handling, and Big Data storage index management.
+- [Functions](https://developer.seatable.com/sql/functions/): Complete SeaTable SQL function reference — arithmetic, text, date, geo, logical, and statistical functions with syntax and examples.
 
 ### Plugin Development
 
-- [Plugin Development](https://developer.seatable.com/plugins/)
-- [Environments](https://developer.seatable.com/plugins/environments/)
-- [Available methods](https://developer.seatable.com/plugins/methods/)
+- [Plugin Development](https://developer.seatable.com/plugins/): Build custom SeaTable plugins with JavaScript and React — step-by-step guide from project setup to packaging and deployment.
+- [Environments](https://developer.seatable.com/plugins/environments/): Initialize dtable-sdk for SeaTable plugin development — differences between development and production environments, event subscription, and sync.
+- [Available methods](https://developer.seatable.com/plugins/methods/): Complete dtable-sdk method reference for SeaTable plugins — tables, views, columns, rows, SQL queries, users, and plugin settings.
 
 ## Complete Content
 
