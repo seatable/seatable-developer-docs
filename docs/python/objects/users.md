@@ -8,7 +8,7 @@
 
     ``` python
     base.get_user_info(username)
-    ```
+    ```python
 
     __Output__ Dict containing `id_in_org` and `name` keys
 
@@ -31,7 +31,7 @@
 
     ``` python
     base.get_related_users()
-    ```
+    ```python
 
     __Output__ List of user dicts
 

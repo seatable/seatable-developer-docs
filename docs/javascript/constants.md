@@ -4,7 +4,7 @@ When creating or modifying columns, use the `ColumnTypes` constants for type-saf
 
 ``` js
 import { ColumnTypes } from 'seatable-api';
-```
+```js
 
 ## ColumnTypes
 

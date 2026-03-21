@@ -4,7 +4,7 @@ The `SELECT` statement retrieves an optionally filtered, sorted, and grouped lis
 
 ## Syntax
 
-```
+```sql
 SELECT [Column List]
   FROM tableName
   [WHERE ...]
@@ -22,13 +22,13 @@ Unless you specify a higher limit, the method returns a maximum of **100 rows**.
 
 __Example__
 
-```
+```sql
 SELECT * FROM Table1 LIMIT 10000
 ```
 
 Returns the first 10,000 rows.
 
-```
+```sql
 SELECT * FROM Table1 LIMIT 10000 OFFSET 10000
 ```
 
@@ -42,7 +42,7 @@ By default, returned rows use column **names** as keys (when using `base.query` 
 
 Use `DISTINCT` to return only unique values:
 
-```
+```sql
 SELECT DISTINCT city FROM Contacts
 ```
 
@@ -50,7 +50,7 @@ SELECT DISTINCT city FROM Contacts
 
 Field aliases with `AS` are supported:
 
-```
+```sql
 SELECT table.amount AS a, COUNT(*) FROM Invoices AS i GROUP BY a HAVING a > 100
 ```
 
@@ -73,7 +73,7 @@ Most SQL syntax can be used in the `WHERE` clause: arithmetic expressions, compa
 
 __Example__
 
-```
+```sql
 SELECT `Full Name` FROM Contacts WHERE `Full Name` LIKE "% M%"
 ```
 
@@ -85,7 +85,7 @@ Returns every record with a last name starting with M.
 
 __Example__
 
-```
+```sql
 SELECT * FROM Contacts WHERE Age BETWEEN 18 AND 25
 ```
 
@@ -104,7 +104,7 @@ Values are enclosed in parentheses, like the `IN` operator.
 
 __Example__
 
-```
+```sql
 SELECT * FROM table WHERE city HAS ANY OF ("New York", "Paris")
 ```
 
@@ -122,7 +122,7 @@ Fields in the `ORDER BY` list can be columns, expressions, or functions.
 
 __Example__
 
-```
+```sql
 SELECT name, age FROM table ORDER BY age DESC
 SELECT name, abs(score) FROM table ORDER BY abs(score)
 ```
@@ -141,7 +141,7 @@ When using `GROUP BY`, these aggregation functions are available:
 
 __Example__
 
-```
+```sql
 SELECT Customer, SUM(Amount) FROM Invoices GROUP BY Customer
 ```
 
@@ -149,7 +149,7 @@ SELECT Customer, SUM(Amount) FROM Invoices GROUP BY Customer
 
 Since version 4.3, basic implicit join queries are supported:
 
-```
+```sql
 SELECT ...
   FROM Table1, Table2
   WHERE Table1.column1 = Table2.column2

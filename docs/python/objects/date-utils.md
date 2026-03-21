@@ -6,7 +6,7 @@ We provide a set of functions for the datetime (date and time) operations based 
 
     To use these functions, the dateutils module must be imported.
 
-    ```
+    ```python
     from seatable_api.date_utils import dateutils
     ```
 
@@ -51,7 +51,7 @@ time_year = dateutils.year(time_str) # 2025
 time_hour = dateutils.hour(time_str) # 15 (! if local timezone is UTC+2 !)
 time_minute = dateutils.minute(time_str) # 57
 time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
-```
+```python
 
 ## Dealing with date and time 
 
@@ -72,7 +72,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     custom_date = dateutils.date(2025, 9, 16)
     print(custom_date) # 2025-09-16
-    ```
+    ```python
 
 ### dateadd
 
@@ -99,7 +99,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     dateutils.dateadd(datetime_str, 3, 'weeks') # 2025-10-06 15:23:21
     dateutils.dateadd(datetime_str, -3, 'hours') # 2025-09-15 12:23:21
     dateutils.dateadd(datetime_str, 3, 'seconds') # 2025-09-15 15:23:24
-    ```
+    ```python
 
 ### datediff
 
@@ -136,7 +136,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     dt.datediff(start=start_date, end=end_date, unit='YM') # 0 (months) (from May to May)
     dt.datediff(start=start_date, end=end_date, unit='MD') # -1 (days) (from 16 to 15)
     dt.datediff("2025-1-28","2026-2-1", unit='YD') # 4 (days) (from January 28 to February 1)
-    ```
+    ```python
 
     1. To make calls shorter or more explicit, feel free to use an alternative name using `as` keyword. Here, we use `dt` instead of the default `dateutils`
 
@@ -156,7 +156,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
  
     dateutils.day('2025-6-15 14:23:21') # 15
-    ```
+    ```python
 
 ### days
 
@@ -174,7 +174,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.days('2024-6-1', '2025-5-15') # 348
-    ```
+    ```python
 
 ### eomonth
 
@@ -195,7 +195,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     dateutils.eomonth(date, months=0) # 2025-07-31 (months=0 => current month) 
     dateutils.eomonth(date, months=2) # 2025-09-30 (2 months after July => September)
     dateutils.eomonth(date, months=-5) # 2025-02-28 (5 months before July => February)
-    ```
+    ```python
 
 ### hour
 
@@ -213,7 +213,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
   
     dateutils.hour("2025-1-1 12:13:14") # 12
-    ```
+    ```python
 
 ### hours
 
@@ -231,7 +231,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.hours("2019-6-3 20:01:12", "2020-5-3 13:13:13") # 8009
-    ```
+    ```python
 
 ### minute
 
@@ -249,7 +249,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.minute("2025-5-3 13:14:15") # 14
-    ```
+    ```python
 
 ### month
 
@@ -267,7 +267,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.month("2025-5-4") # 5
-    ```
+    ```python
 
 ### isomonth
 
@@ -285,7 +285,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
     
     dateutils.isomonth("2025-1-2") # 2025-01
-    ```
+    ```python
 
 ### months
 
@@ -303,7 +303,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.months("2024-5-1","2025-5-4") # 12
-    ```
+    ```python
     
 ### now
 
@@ -322,7 +322,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     now = dateutils.now()
     print(now) # 2025-09-30 12:56:41
-    ```
+    ```python
 
 ### second
 
@@ -340,7 +340,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.second("2025-5-3 13:13:33") # 33
-    ```
+    ```python
 
 ### today
 
@@ -359,7 +359,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
 
     today = dateutils.today()
     print(today) # 2025-09-30
-    ```
+    ```python
 
 ### weekday
 
@@ -377,7 +377,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.weekday("2025-6-2") # 0 (June 2, 2025 was a Monday)
-    ```
+    ```python
 
 ### isoweekday
 
@@ -395,7 +395,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.isoweekday("2025-6-2") # 1
-    ```
+    ```python
 
 ### weeknum
 
@@ -413,7 +413,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.weeknum('2027-1-2') # 1
-    ```
+    ```python
 
 ### isoweeknum
 
@@ -431,7 +431,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
     
     dateutils.isoweeknum('2027-1-2') # 53
-    ```
+    ```python
 
 ### year
 
@@ -449,7 +449,7 @@ time_date = dateutils.date(time_year, time_month, time_day) # 2025-07-17
     from seatable_api.date_utils import dateutils
 
     dateutils.year("2030-1-1") # 2030
-    ```
+    ```python
 
 ## Dealing with quarters
 
@@ -473,7 +473,7 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
     dateutils.quarter_from_yq(2025, 3) # DateQuarter obj:<DateQuarter-2025,3Q>
     dateutils.quarter_from_yq(2025, 0) # DateQuarter obj:<DateQuarter-2024,4Q>
     dateutils.quarter_from_yq(2025, 6) # DateQuarter obj:<DateQuarter-2026,2Q>
-    ```
+    ```python
 
 ### quarter_from_ym
 
@@ -491,7 +491,7 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
     from seatable_api.date_utils import dateutils
     
     dateutils.quarter_from_ym(2025, 3) # DateQuarter obj:<DateQuarter-2025,1Q>
-    ```
+    ```python
 
 ### to_quarter
 
@@ -509,7 +509,7 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
     from seatable_api.date_utils import dateutils
     
     dateutils.to_quarter("2025-07-17") # DateQuarter obj: <DateQuarter-2025,3Q>
-    ```
+    ```python
 
 ### quarters_within
 
@@ -531,7 +531,7 @@ A specific DateQuarter object exists to deal with quarters. The operations/prope
     
     qs2 = dateutils.quarters_within("2024-03-28", "2025-07-17", include_last=True)
     print(list(qs2)) # [<DateQuarter-2024,1Q>, <DateQuarter-2024,2Q>,...., <DateQuarter-2025,2Q>, <DateQuarter-2025,3Q>]
-    ```
+    ```python
 
 ### DateQuarter properties and methods
 
@@ -587,4 +587,4 @@ Some operations/properties/methods are available for DateQuarter objects.
     q < q1 # False
     "2026-28" in q # False
     "2026-8-28" in q # True
-    ```
+    ```python

@@ -68,7 +68,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "add"
     Adds two numeric values (`num1` and `num2`) and returns the result.
 
-    ```
+    ```sql
     add(num1,num2)
     ```
 
@@ -77,7 +77,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "subtract"
     Subtracts one numeric value (`num2`) from another (`num1`).
 
-    ```
+    ```sql
     subtract(num1,num2)
     ```
 
@@ -86,7 +86,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "multiply"
     Multiplies two numeric values.
 
-    ```
+    ```sql
     multiply(num1,num2)
     ```
 
@@ -95,7 +95,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "divide"
     Divides one numeric value (`num1`) by another (`num2`).
 
-    ```
+    ```sql
     divide(num1,num2)
     ```
 
@@ -104,7 +104,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "mod"
     Calculates the remainder of a division.
 
-    ```
+    ```sql
     mod(num1,num2)
     ```
 
@@ -113,7 +113,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "power"
     Calculates the power (`num2`) of a number (`num1`).
 
-    ```
+    ```sql
     power(num1,num2)
     ```
 
@@ -124,7 +124,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "greater"
     Checks if a numeric value (`num1`) is greater than another (`num2`) and returns the logical value `true` or `false`.
 
-    ```
+    ```sql
     greater(num1,num2)
     ```
 
@@ -133,7 +133,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "lessthan"
     Checks if a numeric value (`num1`) is less than another (`num2`) and returns the logical value `true` or `false`.
 
-    ```
+    ```sql
     lessthan(num1,num2)
     ```
 
@@ -142,7 +142,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "greatereq"
     Checks if a numeric value (`num1`) is greater than or equal to another (`num2`) and returns the logical value `true` or `false`.
 
-    ```
+    ```sql
     greatereq(num1,num2)
     ```
 
@@ -151,7 +151,7 @@ Parameters must be strings or numbers. If a number is passed to a parameter that
 !!! abstract "lessthaneq"
     Checks if a numeric value (`num1`) is less than or equal to another (`num2`) and returns the logical value `true` or `false`.
 
-    ```
+    ```sql
     lessthaneq(num1,num2)
     ```
 
@@ -165,7 +165,7 @@ The functions work for both numbers and strings.
 !!! abstract "equal"
     Checks if two values (`num1`, `num2`) are equal and returns the logical value `true` or `false`.
 
-    ```
+    ```sql
     equal(num1,num2)
     ```
 
@@ -174,7 +174,7 @@ The functions work for both numbers and strings.
 !!! abstract "unequal"
     Checks if two values (`num1`, `num2`) are not equal and returns the logical value `true` or `false`.
 
-    ```
+    ```sql
     unequal(num1,num2)
     ```
 
@@ -187,7 +187,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "abs"
     Returns the absolute value of a `number`.
     
-    ```
+    ```sql
     abs(number)
     ```
     
@@ -196,7 +196,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "ceiling"
     Rounds a `number` to the nearest greater integer or to the nearest greater multiple of the specified `significance`. If either argument is non-numeric, the formula returns an empty value.
     
-    ```
+    ```sql
     ceiling(number, significance)
     ```
     
@@ -210,7 +210,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "even"
     Returns the nearest greater even `number`.
     
-    ```
+    ```sql
     even(number)
     ```
     
@@ -219,7 +219,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "exp"
     Exponential function for Euler's `number` e. Returns the value of e to the power of `number`.
     
-    ```
+    ```sql
     exp(number)
     ```
     
@@ -228,7 +228,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "floor"
     Rounds a `number` to the nearest smaller integer or to the nearest smaller multiple of the specified `significance`. If either argument is non-numeric, the formula returns an empty value.
     
-    ```
+    ```sql
     floor(number, significance)
     ```
     
@@ -242,7 +242,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "int"
     Assigns the nearest smaller integer to a real `number`.
     
-    ```
+    ```sql
     int(number)
     ```
     
@@ -251,7 +251,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "lg"
     Logarithm function with 10 as base.
     
-    ```
+    ```sql
     lg(number)
     ```
     
@@ -260,7 +260,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "log"
     Logarithm function with a definable `base`.
     
-    ```
+    ```sql
     log(number, base)
     ```
     
@@ -274,7 +274,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "odd"
     Returns the nearest greater odd `number`.
     
-    ```
+    ```sql
     odd(number)
     ```
     
@@ -283,7 +283,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "round"
     Rounds a `number` to the nearest integer. If no decimal place (`digits`) is specified, the `number` is rounded to an integer.
     
-    ```
+    ```sql
     round(number, digits)
     ```
     
@@ -302,7 +302,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "rounddown"
     Rounds a `number` towards zero. If no decimal place (`digits`) is given, the `number` is rounded to an integer.
     
-    ```
+    ```sql
     rounddown(number, digits)
     ```
     
@@ -311,7 +311,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "roundup"
     Rounds a `number` away from zero. If no decimal place (`digits`) is given, the `number` is rounded to an integer.
     
-    ```
+    ```sql
     roundup(number, digits)
     ```
     
@@ -320,7 +320,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "sign"
     Checks whether a `number` is greater, equal or less than 0. Returns the values 1, 0 and -1 respectively. In other words: it returns the sign of a `number`, for '+', 'zero' and '-' with 1, 0, and -1 respectively.
     
-    ```
+    ```sql
     sign(number)
     ```
     
@@ -329,7 +329,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "sqrt"
     Returns the square root of a `number`.
     
-    ```
+    ```sql
     sqrt(number)
     ```
     
@@ -340,7 +340,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "concatenate"
     Combines several strings (`string1`, `string 2`, ...) into one single string.
     
-    ```
+    ```sql
     concatenate(string1, string2, ...)
     ```
     
@@ -349,7 +349,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "exact (A≠a case sensitive)"
     Checks whether two strings (`string1`, `string2`) are exactly identical. Returns the values `true` or `false` respectively.
     
-    ```
+    ```sql
     exact(string1, string2)
     ```
     
@@ -358,7 +358,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "find (A≠a case sensitive)"
     Returns the start position of a string (`findString`) within another string (`sourceString`). The numbering starts at 1. If not found, 0 is returned. If the start position (`startPosition`) is given as decimal, it is rounded down. If the cell in the column for the keyword (`findString`) is empty, 1 is returned. If the cell in the column for the target string (`sourceString`) is empty, an empty value ('') is returned.
     
-    ```
+    ```sql
     find(findString, sourceString, startPosition)
     ```
     
@@ -372,7 +372,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "left"
     Returns the specified number (`count`) of characters at the beginning of a `string`.
     
-    ```
+    ```sql
     left(string, count)
     ```
     
@@ -381,7 +381,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "len"
     Returns the number of characters in a `string`.
     
-    ```
+    ```sql
     len(string)
     ```
     
@@ -390,7 +390,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "lower"
     Converts a character `string` to lower case letters.
     
-    ```
+    ```sql
     lower(string)
     ```
     
@@ -399,7 +399,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "mid"
     Returns the specified number (`count`) of characters from the specified start position (`startPosition`) of a `string`.
     
-    ```
+    ```sql
     mid(string, startPosition, count)
     ```
     
@@ -413,7 +413,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "replace"
     Replaces a part (`count`) of a character string (`sourceString`) from a certain start position (`startPosition`) with another character string (`newString`). The number (`count`) of characters is only taken into account for the old string (`sourceString`), but not for the new string (`newString`).
     
-    ```
+    ```sql
     replace(sourceString, startPosition, count, newString)
     ```
     
@@ -427,7 +427,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "rept"
     Repeats a `string` as often (`number`) as specified.
     
-    ```
+    ```sql
     rept(string, number)
     ```
     
@@ -436,7 +436,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "right"
     Returns the specified number (`count`) of characters at the end of a `string`.
     
-    ```
+    ```sql
     right(string, count)
     ```
     
@@ -445,7 +445,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "search ((A=a NOT case sensitive))"
     Returns the start position of a string (`findString`) within another string (`sourceString`). The numbering starts at 1. If not found, 0 is returned. If the start position (`startPosition`) is given as decimal, it is rounded down. If the cell in the column for the keyword (`findString`) is empty, 1 is returned. If the cell in the column for the target string (`sourceString`) is empty, an empty value ('') is returned.
     
-    ```
+    ```sql
     search(findString, sourceString, startPosition)
     ```
     
@@ -459,7 +459,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "substitute (A≠a case sensitive)"
     Replaces existing text (`oldString`) with new text (`newString`) in a string (`sourceString`). If there is more than one text (`oldString`) in the string (`sourceString`), only the `index`-th text is replaced.
     
-    ```
+    ```sql
     substitute(sourceString, oldString, newString, index)
     ```
     
@@ -473,7 +473,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "T"
     Checks whether a `value` is text. If so, the text is returned. If no, the return `value` is empty.
     
-    ```
+    ```sql
     T(value)
     ```
     
@@ -482,7 +482,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "text"
     Converts a `number` into text and `format`s it in the specified `format`. The `format` can be percent, number, dollar, euro or yuan.
     
-    ```
+    ```sql
     text(number, format)
     ```
     
@@ -496,7 +496,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "trim"
     Removes spaces at both the beginning and the end of a `string`.
     
-    ```
+    ```sql
     trim(string)
     ```
     
@@ -505,7 +505,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "upper"
     Converts a `string` to uppercase letters.
     
-    ```
+    ```sql
     upper(string)
     ```
     
@@ -514,7 +514,7 @@ Parameters must be numbers. If a string is passed as parameter, it will be conve
 !!! abstract "value"
     Converts a text (`string`) representing a number into a number.
     
-    ```
+    ```sql
     value(string)
     ```
     
@@ -528,7 +528,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "date"
     Returns a date in international format (ISO) from entered `year`, `month` and `day`. If the `year` is entered with two digits, it is automatically understood as a year in the 1900s. If the number of the `month` or `day` is too large (greater than 12 or 31 respectively), these months or days are automatically converted to the next year or month.
     
-    ```
+    ```sql
     date(year, month, day)
     ```
     
@@ -537,7 +537,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "dateAdd"
     Adds the specified number (`count`) of years ('years'), months ('months'), weeks ('weeks'), days ('days'), hours ('hours'), minutes ('minutes') or seconds ('seconds') to a datetime (`date`).
     
-    ```
+    ```sql
     dateAdd(date, count, unit)
     ```
     
@@ -551,7 +551,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "dateDif"
     Calculates the seconds, days, months, or years between two date values. The optional `unit` argument can be one of the following: S (seconds), D (full days), M (full months), Y (full years), YD (full days, ignoring years), YM (full months, ignoring days and years), MD (full days, ignoring months and years). If the `startDate` is empty, a default value of "1900-01-01" will be set. If both date values are empty, it will return 0.
     
-    ```
+    ```sql
     dateDif(startDate, endDate, unit)
     ```
     
@@ -563,7 +563,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "day"
     Returns the day of a `date` as a number. The returned number is between 1 and 31.
     
-    ```
+    ```sql
     day(date)
     ```
     
@@ -572,7 +572,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "eomonth"
     Determines the date of the last day of `n`th month before or after (depending on the sign of `n`) the specified date (`startDate`). If `n` is 0, the last day of the month is simply determined.
     
-    ```
+    ```sql
     eomonth(startDate, n)
     ```
     
@@ -585,7 +585,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "hour"
     Returns the hour of a `date` as a number. The number returned is between 0 and 23.
     
-    ```
+    ```sql
     hour(date)
     ```
     
@@ -599,7 +599,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "hours"
     Returns the number of hours between two date values (`startDate` and `endDate`). The minutes in the date values are not taken into account.
 
-    ```
+    ```sql
     hours(startDate, endDate)
     ```
 
@@ -616,7 +616,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "minute"
     Returns the minutes of a time specification (`date`) as a number. The number returned is between 0 and 59.
     
-    ```
+    ```sql
     minute(date)
     ```
     
@@ -630,7 +630,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "month"
     Returns the month of a `date` as a number. The returned number is between 1 (January) and 12 (December).
     
-    ```
+    ```sql
     month(date)
     ```
     
@@ -639,7 +639,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "months"
     Returns the number of months between two date values (`startDate` and `endDate`). The days and time in the date values are not taken into account.
     
-    ```
+    ```sql
     months(startDate, endDate)
     ```
     
@@ -649,7 +649,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "networkdays"
     Returns the number of full working days between two dates (`startDate` and `endDate`). You can also define holidays other than Saturday and Sunday (`holiday1`, `holiday2`, etc.), which are also deducted. If you do not want to include public holidays, you can simply omit these parameters.
     
-    ```
+    ```sql
     networkdays(startDate, endDate, holiday1, holiday2, ...)
     ```
     
@@ -663,7 +663,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "now"
     Returns the current date and time.
     
-    ```
+    ```sql
     now()
     ```
     
@@ -672,7 +672,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "second"
     Returns the seconds of a time (`date`) as a number. The number returned is between 0 and 59.
     
-    ```
+    ```sql
     second(date)
     ```
     
@@ -681,7 +681,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "today"
     Returns the current date.
     
-    ```
+    ```sql
     today()
     ```
     
@@ -694,7 +694,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "weekday"
     Returns the weekday of a `date` as a number. The returned number between 1 and 7, where you can define the first day of the week (`weekStart`). `weekStart` is Sunday by default, it can also be set to Monday ('Monday' or 'monday', not case sensitive).
     
-    ```
+    ```sql
     weekday(date, weekStart)
     ```
     
@@ -708,7 +708,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "weeknum"
     Returns the absolute week number of a `date` as a number. The returned number is between 1 and 53, where you can define the first day of the week (`return_type`). Enter the number 1 or 2, or 11 to 17, and 21 as `return_type` to define the start of a week: 1/Sunday, 2/Monday, 11/Monday, 12/Tuesday, 13/Wednesday, 14/Thursday, 15/Friday, 16/Saturday, 17/Sunday. If you want the week number to be returned according to ISO standard, specify the number of 21 as `return_type`. Note: the standalone function `isoweeknum` is only available in formulas, not in SQL queries — use `weeknum(date, 21)` instead.
     
-    ```
+    ```sql
     weeknum(date, return_type)
     ```
     
@@ -722,7 +722,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "year"
     Returns the year of a `date` as a number.
     
-    ```
+    ```sql
     year(date)
     ```
     
@@ -731,7 +731,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "startofweek"
     Returns the first day of the week in which the `date` is located. `weekStart` is Sunday by default, it can also be set to Monday ('Monday' or 'monday', not case sensitive).
     
-    ```
+    ```sql
     startofweek(date, weekStart)
     ```
     
@@ -740,7 +740,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "quarter"
     Returns the quarter of the `date`, the return value is 1, 2, 3, 4.
     
-    ```
+    ```sql
     quarter(date)
     ```
     
@@ -749,7 +749,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "isodate"
     Returns the ISO string representation of the `date`.
     
-    ```
+    ```sql
     isodate(date)
     ```
     
@@ -758,7 +758,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "isomonth"
     Returns the ISO string representation (of the year and month) of the month of a specified `date`.
     
-    ```
+    ```sql
     isomonth(date)
     ```
     
@@ -770,7 +770,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "country"
     Returns the country or region of a geolocation-type column. (Since version 5.1.0)
     
-    ```
+    ```sql
     country(geolocation)
     ```
     
@@ -781,7 +781,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "and"
     Checks if all arguments (`logical1`, `logical2`, ...) are true (valid, not empty and not equal to zero). If yes, `true` is returned, otherwise `false`.
     
-    ```
+    ```sql
     and(logical1, logical2, ...)
     ```
     
@@ -790,7 +790,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "if"
     Checks if an argument (`logical`) is true and returns `trueValue` or `falseValue` accordingly.
     
-    ```
+    ```sql
     if(logical, trueValue, falseValue)
     ```
     
@@ -804,7 +804,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "ifs"
     Checks if one or more conditions (`logical1`, `logical2`, ...) are true and returns a value (`value1`, `value2`, ...) that matches the **first** true condition.
     
-    ```
+    ```sql
     ifs(logical1, value1, logical2, value2, ...)
     ```
     
@@ -813,7 +813,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "not"
     Inverts the logical value (`boolean`). In other words: converts true to false and false to true.
     
-    ```
+    ```sql
     not(boolean)
     ```
     
@@ -822,7 +822,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "or"
     Checks if at least 1 of the arguments (`logical1`, `logical2`, ...) is true (valid, not empty and not equal to zero), and returns `true` in this case. If all arguments are false, then returns `false`.
     
-    ```
+    ```sql
     or(logical1, logical2, ...)
     ```
     
@@ -831,7 +831,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "switch"
     Evaluates an expression (`logical`) against a list of values (matcher) and returns the result (value) corresponding to the **first** matching value. If there is no match, an optional `default` value is returned. At least 3 parameters (`logical`, matcher, value) must be specified.
     
-    ```
+    ```sql
     switch(logical, matcher1, value1, matcher2, value2, ..., default)
     ```
     
@@ -845,7 +845,7 @@ When passing a parameter with time or date type, you can specify a constant in "
 !!! abstract "xor"
     Returns the logical inequality of all arguments. In other words, returns `true` if the number of true arguments is odd.
     
-    ```
+    ```sql
     xor(logical1, logical2, ...)
     ```
     
@@ -858,7 +858,7 @@ These are formula-style functions that operate on literal values or within a sin
 !!! abstract "average"
     Returns the average of the numbers (`number1`, `number2`, ...).
 
-    ```
+    ```sql
     average(number1, number2, ...)
     ```
 
@@ -870,7 +870,7 @@ These are formula-style functions that operate on literal values or within a sin
 !!! abstract "counta"
     Counts the number of non-empty cells (`textORnumber1`, `textORnumber2`, ...). These cells can be text or numbers. In this example, 1 and 2 are numbers, '3' is text, and '' is an empty value.
     
-    ```
+    ```sql
     counta(textORnumber1, textORnumber2, ...)
     ```
     
@@ -879,7 +879,7 @@ These are formula-style functions that operate on literal values or within a sin
 !!! abstract "countall"
     Counts the number of elements (`textORnumber1`, `textORnumber2`, ...) including numbers (1, 2), text ('3') and empty cells ('').
     
-    ```
+    ```sql
     countall(textORnumber1, textORnumber2, ...)
     ```
     
@@ -888,7 +888,7 @@ These are formula-style functions that operate on literal values or within a sin
 !!! abstract "countblank"
     Counts the number of empty cells.
     
-    ```
+    ```sql
     countblank(textORnumber1, textORnumber2, ...)
     ```
     
@@ -897,7 +897,7 @@ These are formula-style functions that operate on literal values or within a sin
 !!! abstract "countItems"
     Counts the number of items in a `column`. The supported `column` types are multiple select, collaborator, file, image (available since version 2.7.0).
     
-    ```
+    ```sql
     countItems(column)
     ```
     

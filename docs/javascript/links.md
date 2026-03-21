@@ -71,7 +71,7 @@ Link columns connect rows between tables. Most link operations require the `link
 
     ``` js
     base.updateLink(linkId, tableName, otherTableName, rowId, otherRowIds);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -87,7 +87,7 @@ Link columns connect rows between tables. Most link operations require the `link
 
     ``` js
     base.batchUpdateLinks(linkId, tableName, otherTableName, rowIdList, otherRowsIdsMap);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -108,7 +108,7 @@ Link columns connect rows between tables. Most link operations require the `link
 
     ``` js
     base.removeLink(linkId, tableName, otherTableName, rowId, otherRowId);
-    ```
+    ```js
 
     __Example__
     ``` js

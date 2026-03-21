@@ -53,7 +53,7 @@
 
     ``` python
     base.get_column_link_id(table_name, column_name)
-    ```
+    ```python
 
     __Output__ String (throws an error if no table named `table_name` exists or if no column named `column_name` exists)
 
@@ -84,7 +84,7 @@
 
     ``` python
     base.get_linked_records(table_id, link_column_key, rows) # (1)!
-    ```
+    ```python
 
     1. `table_id`: the id of *source* table
 
@@ -150,7 +150,7 @@
 
     ``` python
     base.add_link(link_id, table_name, other_table_name, row_id, other_row_id)
-    ```
+    ```python
 
     __Output__ Dict containing a single `success` key with the result of the operation (throws an error if no column with link id `link_id` exists in the *source* table, if no table named `table_name` or `other_table_name` exists or if no row with id `row_id` or `other_row_id` exists in their respective tables)
 
@@ -175,7 +175,7 @@
     lin_id = base.get_column_link_id(TABLE1_NAME, TABLE1_LINK_COLUMN_NAME); # (1)!
     current_row_id = context.current_row['_id'];
     base.add_link(lin_id, TABLE1_NAME, TABLE2_NAME, current_row_id, 'J5St2clyTMu_OFf9WD8PbA')
-    ```
+    ```python
 
     1. Remember you can use `base.get_column_link_id` to get the link id of a specific link-type column.
 
@@ -201,7 +201,7 @@
             'eSQe9OpPQxih8A9zPXdMVA': ['cWHbzQiTR8uHHzH_gVSKIg']
         }
     )
-    ```
+    ```python
 
 ## Update link(s)
 
@@ -232,7 +232,7 @@
           'DjHjwmlRRB6WgU9uPnrWeA'
         ]
     )
-    ```
+    ```python
 
 !!! abstract "batch_update_links"
 
@@ -253,7 +253,7 @@
             ...
             'id_n': [record1['_id'], recordn['_id']]
         }
-        ```
+        ```python
 
     __Output__ Dict containing a single `success` key with the result of the operation (throws an error if no column with link id `link_id` exists in the *source* table, if no table named `table_name` or `other_table_name` exists or if no row with one of the id `row_id_list` exists in the *source* table)
     
@@ -283,7 +283,7 @@
 
     ``` python
     base.remove_link(link_id, table_name, other_table_name, row_id, other_row_id)
-    ```
+    ```python
 
     __Output__ Dict containing a `success` key with the result of the operation and a `deleted_links_count` with the number of actually deleted links (throws an error if no column with link id `link_id` exists in the *source* table, if no table named `table_name` or `other_table_name` exists or if no row with id `row_id` or `other_row_id` exists in their respective tables)
     
@@ -303,7 +303,7 @@
 
     ``` python
     base.batch_remove_links(link_id, table_name, other_table_name, other_rows_ids_map)
-    ```
+    ```python
 
     __Output__ Dict containing the result of the operation
 

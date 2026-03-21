@@ -10,7 +10,7 @@ The same library is used both **inside SeaTable scripts** and in **external Pyth
 
 ## Installation
 
-```
+```bash
 pip install seatable-api
 ```
 

@@ -37,7 +37,7 @@ $ npm install
 
 Modify the info.json configuration file in the plugin-config folder.
 
-```
+```js
 "name": '',                   // The name can only contain letters, numbers and underscores
 "version": '',                // Plugin version number
 "display_name": '',           // The name displayed by the plugin

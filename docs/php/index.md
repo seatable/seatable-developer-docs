@@ -8,7 +8,7 @@ The SeaTable PHP Client encapsulates the SeaTable REST API. It is auto-generated
 
 ## Installation
 
-```
+```bash
 composer require seatable/seatable-api-php
 ```
 

@@ -16,7 +16,7 @@ You'll find below all the available methods to interact with the views of a SeaT
 
     ``` python
     base.get_view_by_name(table_name, view_name)
-    ```
+    ```python
     __Output__ Single view dict (throws an error if no view called `view_name` exists or if no table named `table_name` exists)
 
     __Example__
@@ -36,7 +36,7 @@ You'll find below all the available methods to interact with the views of a SeaT
 
     ``` python
     base.list_views(table_name)
-    ```
+    ```python
 
     __Output__ Dict with a single `views` key containing a list of the table's views (throws an error if no table named `table_name` exists)
 
@@ -59,7 +59,7 @@ You'll find below all the available methods to interact with the views of a SeaT
     
     ``` python
     base.add_view(table_name, view_name)
-    ```
+    ```python
 
     __Output__ Single view dict (throws an error if a view called `view_name` already exists or if no table named `table_name` exists)
 
@@ -82,7 +82,7 @@ You'll find below all the available methods to interact with the views of a SeaT
 
     ``` python
     base.rename_view(table_name, view_name, new_view_name)
-    ```
+    ```python
 
     __Output__ Single view dict (throws an error if no view called `view_name` exists or if no table named `table_name` exists)
 
@@ -105,7 +105,7 @@ You'll find below all the available methods to interact with the views of a SeaT
 
     ``` python
     base.delete_view(table_name, view_name)
-    ```
+    ```python
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists). Be careful, `{'success':True}` will be returned even if no view named `view_name` exists!
 

@@ -125,6 +125,7 @@ plugins:
 
         # Old introduction pages
         'introduction/coding_for_beginners.md': 'index.md'
+        'introduction/index.md': 'index.md'
 
 # Customization
 extra:

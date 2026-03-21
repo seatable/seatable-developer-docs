@@ -6,7 +6,7 @@ When the script is running in the cloud, the context object provides a context e
 
     To use these functions, the context module must be imported.
 
-    ```
+    ```python
     from seatable_api import context
     ```
 
@@ -18,7 +18,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.server_url
-    ```
+    ```python
 
     __Example__
 
@@ -35,7 +35,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.api_token
-    ```
+    ```python
 
     __Example__
 
@@ -52,7 +52,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.current_table
-    ```
+    ```python
 
     __Example__
 
@@ -73,7 +73,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.current_row
-    ```
+    ```python
 
     __Example__
 
@@ -90,7 +90,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.current_username
-    ```
+    ```python
 
     __Example__
 
@@ -107,7 +107,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.current_id_in_org
-    ```
+    ```python
 
     __Example__
 
@@ -122,7 +122,7 @@ When the script is running in the cloud, the context object provides a context e
 
     ``` python
     context.get_setting_by_key(key)
-    ```
+    ```python
 
     __Output__ The value of the setting, or `None` if not found
 

@@ -10,7 +10,7 @@ For non-archived bases, use the API functions instead (e.g. [Python `append_row`
 
 ## Syntax
 
-```
+```sql
 INSERT INTO tableName (column1, column2, ...)
   VALUES (value1, value2, ...)
 ```
@@ -22,6 +22,6 @@ INSERT INTO tableName (column1, column2, ...)
 
 __Example__
 
-```
+```sql
 INSERT INTO Table1 (Name, Age) VALUES ('Erika', 38)
 ```

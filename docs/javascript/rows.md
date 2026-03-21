@@ -14,7 +14,7 @@
 
     ``` js
     base.getRow(table, rowId);
-    ```
+    ```js
 
     __Output__ Single row object
 
@@ -29,7 +29,7 @@
 
     ``` js
     base.getRows(table, view);
-    ```
+    ```js
 
     __Output__ Array of row objects
 
@@ -44,7 +44,7 @@
 
     ``` js
     base.listRows(tableName, viewName='', orderBy='', desc='', start='', limit='');
-    ```
+    ```js
 
     __Output__ Array of row objects
 
@@ -63,7 +63,7 @@
 
     ``` js
     base.getGroupedRows(table, view);
-    ```
+    ```js
 
     __Output__ Array of group objects, each containing a `rows` array
 
@@ -80,7 +80,7 @@
 
     ``` js
     await base.query(sql);
-    ```
+    ```js
 
     !!! info "Backticks for special names"
         Escape table or column names that contain spaces or special characters with backticks: `` SELECT * FROM `My Table` ``
@@ -95,7 +95,7 @@
     ``` js
     // Aggregation
     const data = await base.query('SELECT name, SUM(price) FROM Bill GROUP BY name');
-    ```
+    ```js
 
 !!! abstract "filter :material-tag-outline:{ title='Scripting only' }"
 
@@ -114,7 +114,7 @@
     const rows = querySet.all();
     const count = querySet.count();
     const first = querySet.first();
-    ```
+    ```js
 
     QuerySet methods: `.all()`, `.count()`, `.first()`, `.last()`, `.get(filter)`, `.filter(filter)`, `.delete()`, `.update(rowData)`
 
@@ -136,7 +136,7 @@
         'Name': 'New entry',
         'Status': 'Open'
     });
-    ```
+    ```js
 
 !!! abstract "insertRow"
 
@@ -149,7 +149,7 @@
     __Example__
     ``` js
     await base.insertRow('Table1', {'Name': 'Inserted row'}, 'U_eTV7mDSmSd-K2P535Wzw');
-    ```
+    ```js
 
 !!! abstract "batchAppendRows"
 
@@ -166,7 +166,7 @@
         {'Name': 'Row 2', 'Status': 'Done'},
         {'Name': 'Row 3', 'Status': 'Open'}
     ]);
-    ```
+    ```js
 
 ## Update Row(s)
 
@@ -185,7 +185,7 @@
     base.updateRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw', {
         'Status': 'Done'
     });
-    ```
+    ```js
 
 !!! abstract "modifyRows :material-tag-outline:{ title='Scripting only' }"
 
@@ -202,7 +202,7 @@
     const selectedRows = rows.filter(row => row['Status'] === 'Open');
     const updates = selectedRows.map(() => ({'Status': 'Archived'}));
     base.modifyRows(table, selectedRows, updates);
-    ```
+    ```js
 
 !!! abstract "batchUpdateRows"
 
@@ -218,7 +218,7 @@
         {"row_id": "fMmCFyoxT4GN5Y2Powbl0Q", "row": {"Name": "Updated 1"}},
         {"row_id": "cF5JTE99Tae-VVx0BGT-3A", "row": {"Name": "Updated 2"}}
     ]);
-    ```
+    ```js
 
 ## Delete Row(s)
 
@@ -233,7 +233,7 @@
     __Example__
     ``` js
     base.deleteRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw');
-    ```
+    ```js
 
 !!! abstract "batchDeleteRows"
 
@@ -249,4 +249,4 @@
         'fMmCFyoxT4GN5Y2Powbl0Q',
         'cF5JTE99Tae-VVx0BGT-3A'
     ]);
-    ```
+    ```js

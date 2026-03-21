@@ -29,7 +29,7 @@ For the following methods, you'll have to provide the URL of the file you want t
 
     ``` python
     base.download_file(file_url, save_path)
-    ```
+    ```python
     __Output__ Nothing (throws an error if the URL is invalid or if the save path is wrong)
 
     __Example__
@@ -84,7 +84,7 @@ For the following methods, you'll have to provide the URL of the file you want t
 
     ``` python
     base.get_file_download_link(file_path)
-    ```
+    ```python
 
     __Output__ The public download link (looking like `{server_url}/seafhttp/files/{access_token}/{file_name}`). Keep in mind that it's not permanent as the token expires! (throws an error if the file path is wrong)
 
@@ -115,7 +115,7 @@ For the following methods, you'll have to provide the URL of the file you want t
 
     ``` python
     base.download_custom_file(custom_path, save_path)
-    ```
+    ```python
 
     __Output__ Nothing (throws an error if the URL is invalid or if the save path is wrong)
 
@@ -145,7 +145,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     base.upload_local_file(file_path, name=None, file_type='file', replace=False) # (1)!
     # or
     base.upload_bytes_file(name, content, file_type='file', replace=False) # (2)!
-    ```
+    ```python
 
     1. - `name`: the name of the file once uploaded. If `name` is not provided, the uploaded file will keep the same name than the original
 
@@ -170,7 +170,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     with open (local_file, 'rb') as f:
       content = f.read()
     info_dict = base.upload_bytes_file('seatable-logo.png', content, file_type='image')
-    ```
+    ```python
 
     __Example: Upload a file from a website__
 
@@ -188,7 +188,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     ``` python
     base.get_file_upload_link()
-    ```
+    ```python
 
     __Output__ - `base.get_file_upload_link` outputs a dict containing `upload_link`, `parent_path`, `img_relative_path` and `file_relative_path` keys
 
@@ -235,7 +235,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     ``` python
     base.upload_local_file_to_custom_folder(local_path, custom_folder_path=None, name=None) # (1)!
-    ```
+    ```python
 
     1. - `custom_folder_path`: the path in the custom folders of the base where you want to upload the file
     - `name`: the name of the file once uploaded. If `name` is not provided, the uploaded file will keep the same name than the original
@@ -271,7 +271,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
     ``` python
     base.list_custom_assets(path) # (1)!
-    ```
+    ```python
 
     1. `path`: **Absolute** path of the directory you want to list the assets for (for example `/My Personal Folder/Photos` for a subdirectory `Photos` located in the directory `My Personal Folder`)
 
@@ -316,7 +316,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     base.auth()
     indent = ''
     list_assets('/') # (2)!
-    ```
+    ```python
 
     1. Recursive function: for each directory of the current directory, the functions calls itself
 
@@ -354,7 +354,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
         row_id = "fDMHEdraSRuUMNPGEj-4kQ"
         FILE_COL_NAME = "File"
         base.update_row("Table1", row_id, {FILE_COL_NAME: [file_dict]})
-        ```
+        ```python
 
     === "Append to content (detailed version)"
 

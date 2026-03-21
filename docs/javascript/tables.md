@@ -14,7 +14,7 @@
 
     ``` js
     base.getActiveTable();
-    ```
+    ```js
     __Output__ Single table object
 
     __Example__
@@ -29,7 +29,7 @@
 
     ``` js
     base.getTables();
-    ```
+    ```js
     __Output__ Array of table objects
 
     __Example__
@@ -43,7 +43,7 @@
 
     ``` js
     base.getTableByName(tableName);
-    ```
+    ```js
 
     __Output__ Single table object (`undefined` if table doesn't exist)
 
@@ -60,7 +60,7 @@
 
     ``` js
     base.addTable(tableName, lang='en', columns=[]);
-    ```
+    ```js
 
     The `lang` and `columns` parameters are optional.
 
@@ -77,7 +77,7 @@
 
     ``` js
     base.renameTable(oldName, newName);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -92,7 +92,7 @@
 
     ``` js
     base.deleteTable(tableName);
-    ```
+    ```js
 
     __Example__
     ``` js

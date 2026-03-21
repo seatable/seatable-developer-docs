@@ -48,7 +48,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.get_column_by_name(table_name, column_name)
-    ```
+    ```python
 
     __Output__ Single column dict (`None` if no column named `column_name` exists, throws an error if no table named `table_name` exists)
 
@@ -69,7 +69,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.list_columns(table_name, view_name=None)
-    ```
+    ```python
 
     __Output__ List of column dicts (throws an error if no table named `table_name` exists or if no view named `view_name` exists)
 
@@ -90,7 +90,7 @@ You'll find below all the available methods to interact with the columns of a Se
     
     ``` python
     base.get_columns_by_type(table_name, column_type)
-    ```
+    ```python
     
     __Output__ List of column dicts (eventually empty; throws an error if no table named `table_name` exists or if `column_type` is not a valid `ColumnTypes` member)
 
@@ -114,7 +114,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.insert_column(table_name, column_name, column_type, column_key=None, column_data=None) # (1)!
-    ```
+    ```python
 
     1. `column_type`: See the [ColumnTypes constants](#columntypes-constants) above or the [API Reference](https://api.seatable.com/reference/models#supported-column-types) for more information about supported column types
 
@@ -145,7 +145,7 @@ You'll find below all the available methods to interact with the columns of a Se
         'table':'Table1',
         'other_table':'Test_User'
     })
-    ```
+    ```python
 
 ## Rename column
 
@@ -167,7 +167,7 @@ You'll find below all the available methods to interact with the columns of a Se
     base = Base(context.api_token, context.server_url)
     base.auth()
     base.rename_column('Table1', '0000', 'new column name') # (1)!
-    ```
+    ```python
 
     1. `0000` is always the key of the first column in each table
 
@@ -193,7 +193,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.freeze_column(table_name, column_key, frozen) # (1)!
-    ```
+    ```python
 
     1. `column_key`: the key of the column you want to (un)freeze
 
@@ -219,7 +219,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.move_column(table_name, column_key, target_column_key) # (1)!
-    ```
+    ```python
 
     1. `column_key`: the key of the column you want to move
 
@@ -250,7 +250,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.modify_column_type(table_name, column_key, new_column_type) # (1)!
-    ```
+    ```python
 
     1. `column_key` (optional): the key of the column you want to modify the type
 
@@ -277,7 +277,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.delete_column(table_name, column_key)
-    ```
+    ```python
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists, if no column with the key `column_key` exists or if you try to delete the first column)
 
@@ -301,7 +301,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.add_column_options(table_name, column_name, options) # (1)!
-    ```
+    ```python
 
     1. `options`: list of option dict containing the following keys:
 
@@ -335,7 +335,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
     ``` python
     base.add_column_cascade_settings(table_name, child_column, parent_column, cascade_settings) # (1)!
-    ```
+    ```python
 
     1. `child_column`: name of the column you want to condition the available options for
 

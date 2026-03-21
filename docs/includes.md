@@ -223,7 +223,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`link`"
 
-    ```
+    ```json
     {
         "display_column_key":"qqXZ",
         "table_id":"0000",
@@ -242,7 +242,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`number`"
 
-    ```
+    ```json
     {
         "format":"custom_currency",
         "precision":2,
@@ -257,7 +257,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`date`"
 
-    ```
+    ```json
     {
         "format":"M/D/YYYY HH:mm"
     }
@@ -265,7 +265,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`duration`"
 
-    ```
+    ```json
     {
         "format":"duration",
         "duration_format":"h:mm"
@@ -274,7 +274,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`single select, multiple select`"
 
-    ```
+    ```json
     {
         "options":
             [
@@ -312,7 +312,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`checkbox`"
 
-    ```
+    ```json
     {
         "default_value":false,
         "enable_fill_default_value":false
@@ -321,7 +321,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`rate`"
 
-    ```
+    ```json
     {
         "rate_max_number":5,
         "rate_style_color":"#FF8000",
@@ -332,7 +332,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`formula`"
 
-    ```
+    ```json
     {
         "formula":"left({Email},search(\"@\",{Email},1)-1)",
         "operated_columns":["JfP2"],
@@ -345,7 +345,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`link-formula`"
 
-    ```
+    ```json
     {
         "formula":"findmax",
         "result_type":"array",
@@ -364,7 +364,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`geolocation`"
 
-    ```
+    ```json
     {
         "geo_format":"lng_lat"
     }
@@ -372,7 +372,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`auto-number`"
 
-    ```
+    ```json
     {
         "format":"YYYYMMDD-00",
         "max_used_auto_number":33,
@@ -384,7 +384,7 @@ The `data` object keys will depend on the column `type` and will allow you to de
 
 ??? note "`button`"
 
-    ```
+    ```json
     {
         "button_type":"copy_row_to_another_table",
         "button_name":"Copy to Table2",

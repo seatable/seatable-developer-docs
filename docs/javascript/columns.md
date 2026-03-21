@@ -14,7 +14,7 @@
 
     ``` js
     base.getColumnByName(table, columnName);
-    ```
+    ```js
 
     __Output__ Single column object (`undefined` if column doesn't exist)
 
@@ -29,7 +29,7 @@
 
     ``` js
     base.getColumns(table);
-    ```
+    ```js
 
     __Output__ Array of column objects
 
@@ -47,7 +47,7 @@
 
     ``` js
     base.listColumns(tableName, viewName);
-    ```
+    ```js
 
     __Output__ Array of column objects
 
@@ -62,7 +62,7 @@
 
     ``` js
     base.getShownColumns(table, view);
-    ```
+    ```js
 
     __Output__ Array of column objects
 
@@ -77,7 +77,7 @@
 
     ``` js
     base.getColumnsByType(table, type);
-    ```
+    ```js
 
     __Output__ Array of column objects (empty array if no match)
 
@@ -94,7 +94,7 @@
 
     ``` js
     base.insertColumn(tableName, columnName, columnType, columnKey='', columnData='');
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -120,7 +120,7 @@
 
     ``` js
     base.renameColumn(tableName, columnKey, newColumnName);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -133,7 +133,7 @@
 
     ``` js
     base.resizeColumn(tableName, columnKey, newColumnWidth);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -144,7 +144,7 @@
 
     ``` js
     base.freezeColumn(tableName, columnKey, frozen);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -157,7 +157,7 @@
 
     ``` js
     base.moveColumn(tableName, columnKey, targetColumnKey);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -170,7 +170,7 @@
 
     ``` js
     base.modifyColumnType(tableName, columnKey, newColumnType);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -184,7 +184,7 @@
 
     ``` js
     base.addColumnOptions(tableName, columnName, options);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -200,7 +200,7 @@
 
     ``` js
     base.addColumnCascadeSettings(tableName, childColumn, parentColumn, cascadeSettings);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -218,7 +218,7 @@
 
     ``` js
     base.deleteColumn(tableName, columnKey);
-    ```
+    ```js
 
     __Example__
     ``` js

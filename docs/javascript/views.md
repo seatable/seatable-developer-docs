@@ -14,7 +14,7 @@
 
     ``` js
     base.getActiveView();
-    ```
+    ```js
 
     __Output__ Single view object
 
@@ -30,7 +30,7 @@
 
     ``` js
     base.getViewByName(table, viewName);
-    ```
+    ```js
 
     __Output__ Single view object (`undefined` if no view with that name exists)
 
@@ -45,7 +45,7 @@
 
     ``` js
     base.listViews(table);
-    ```
+    ```js
 
     __Output__ Array of view objects
 
@@ -62,7 +62,7 @@
 
     ``` js
     base.addView(table, viewName);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -77,7 +77,7 @@
 
     ``` js
     base.renameView(table, currentViewName, newViewName);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -92,7 +92,7 @@
 
     ``` js
     base.deleteView(table, viewName);
-    ```
+    ```js
 
     __Example__
     ``` js

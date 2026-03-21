@@ -6,7 +6,7 @@
 
     ``` js
     base.getMetadata();
-    ```
+    ```json
 
     __Example output__
     ```json

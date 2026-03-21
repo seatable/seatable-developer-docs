@@ -13,7 +13,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
     server_url = 'https://cloud.seatable.io/'
     account = Account(username, password, server_url)
     account.auth()
-    ```
+    ```python
 
     1. Don't forget to import `Account` from `seatable_api`
 
@@ -44,7 +44,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
         account.auth()
         workspaces = account.list_workspaces()
         print(json.dumps(workspaces, indent=' '))
-        ```
+        ```python
 
     === "Output example"
 
@@ -194,7 +194,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     ``` python
     account.get_base(workspace_id, base_name)
-    ```
+    ```python
 
     __Output__ base object (throws an error if no workspace with id `workspace_id` or no base `base_name` exists, or if you encounter permission issue)
 
@@ -217,7 +217,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     ``` python
     account.add_base(base_name, workspace_id=None)
-    ```
+    ```python
 
     __Output__ Dict containing the same base metadata as members of the `table_list` of the workspace metadata (throws an error if no workspace with id `workspace_id` exists or if a base named `base_name` already exists in the workspace)
     
@@ -240,7 +240,7 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
     ``` python
     account.copy_base(src_workspace_id, base_name, dst_workspace_id)
-    ```
+    ```python
 
      __Output__ Dict containing the same base metadata as members of the `table_list` of the workspace metadata (throws an error if no workspace with id `workspace_id` exists or if a base named `base_name` already exists in the workspace) for the newly created base
     

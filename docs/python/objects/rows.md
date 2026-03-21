@@ -16,7 +16,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.get_row(table_name, row_id)
-    ```
+    ```python
 
     __Output__ Single row dict (throws an error if no table named `table_name` exists or if no row with the id `row_id` exists)
     
@@ -36,7 +36,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.list_rows(table_name, view_name=None, start=None, limit=None) # (1)!
-    ```
+    ```python
 
     1. `view_name` (optional): the name of the view you want to get the rows from. If there is no view named `view_name`, all the rows from table `table_name` will be eventually returned (depending on `start` and `limit`)
 
@@ -66,7 +66,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.query(sql_statement)
-    ```
+    ```python
 
     Unless the SQL statement specifies a higher limit, the method returns a maximum of 100 rows. The maximum number of rows returned is 10000 no matter the limit specified in the SQL statement.
 
@@ -202,7 +202,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
                 "_id": "HJi7wbUMQIOuIlPaoO9Fbg"
             }
         ]
-        ```
+        ```python
 
     __Example with WHERE__
 
@@ -311,7 +311,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.append_row(table_name, row_data, apply_default=False) # (1)!
-    ```
+    ```python
 
     1. `row_data`: dict (pairs of `key`:`value`, each `key` being the name of a column), for example:
 
@@ -322,7 +322,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
             'Invoice amount': 100,
             'Products': ['Office Supplies', 'Computer']
         }
-        ```
+        ```python
 
         `apply_default` (optional): whether to use default values or not (default is `False`)
 
@@ -352,7 +352,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.batch_append_rows(table_name, rows_data, apply_default=False) # (1)!
-    ```
+    ```python
 
     1. `rows_data`: list of `row_data` dict (see `base.append_row` above)
 
@@ -418,7 +418,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.insert_row(table_name, row_data, anchor_row_id, apply_default=False)
-    ```
+    ```python
 
     __Output__ Single row dict (`None` if no row were added, throws an error if no table named `table_name` exists)
 
@@ -445,7 +445,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.update_row(table_name, row_id, row_data)
-    ```
+    ```python
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists or if no row with the id `row_id` exists)
 
@@ -469,7 +469,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.batch_update_rows(table_name, rows_data) # (1)!
-    ```
+    ```python
 
     1. `rows_data`: list of dicts containing two `key`:`value` pairs:
      
@@ -517,7 +517,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.delete_row(table_name, row_id)
-    ```
+    ```python
 
      __Output__ Dict containing a single `deleted_rows` key with the number of deleted rows (`0` if no row with id `row_id` exists, throws an error if no table named `table_name` exists)
 
@@ -537,7 +537,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.batch_delete_rows(table_name, row_ids) # (1)!
-    ```
+    ```python
 
     1. `row_ids`: list of the ids of the rows to delete
 
@@ -568,7 +568,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.big_data_insert_rows(table_name, rows_data)
-    ```
+    ```python
 
     __Output__ Dict containing a single `inserted_row_count` key with the number of rows actually inserted.
 
@@ -590,7 +590,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.filter(table_name, conditions='', view_name=None)
-    ```
+    ```python
 
     __Output__ QuerySet object
 
@@ -616,7 +616,7 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
     ``` python
     base.filter_rows(table_name, filters, view_name=None, filter_conjunction='And')
-    ```
+    ```python
 
     - `filters`: list of filter dicts, each containing `column_name`, `filter_predicate`, and `filter_term`
     - `filter_conjunction`: `'And'` or `'Or'`

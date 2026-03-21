@@ -23,7 +23,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
     ``` python
     base.list_tables()
-    ```
+    ```python
     __Output__ List of table dicts
 
     __Example__
@@ -42,7 +42,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
     ``` python
     base.get_table_by_name(table_name)
-    ```
+    ```python
     __Output__ Single table dict (`None` if there is no table named `table_name`)
     
     __Example__
@@ -63,7 +63,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
     ``` python
     base.add_table(table_name, lang='en', columns=[]) # (1)!
-    ```
+    ```python
 
     1. `lang` (optional): can be `en` (default) for English or `zh-cn` for Chinese and will determine the name of the first `Name` column (if no `columns` where specified)
         `columns` (optional): list of [column objects](./columns.md#global-structure) describing the columns of the new table.
@@ -98,7 +98,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
     ]
 
     base.add_table("ScriptTest", lang='en', columns=columns)
-    ```
+    ```python
 
 ## Rename table
 
@@ -119,7 +119,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
         base = Base(context.api_token, context.server_url)
         base.auth()
         print(base.rename_table('Table1', 'Table11'))
-        ```
+        ```json
     === "Output"
         ```python
         {'success': True}
@@ -133,7 +133,7 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
     ``` python
     base.delete_table(table_name)
-    ```
+    ```python
 
     __Output__ Dict containing a single `success` key with the result of the operation  (throws an error if no table named `table_name` exists or if you try to delete the last table)
 

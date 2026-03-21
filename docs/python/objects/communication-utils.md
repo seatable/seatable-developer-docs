@@ -14,7 +14,7 @@ Several outgoing communications features are available within SeaTable. Whether 
 
     ``` python
     base.send_email(account_name, msg, **kwargs)
-    ```
+    ```python
 
     - `account_name`: name of the configured email account
     - `msg`: email message content

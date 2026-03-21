@@ -12,7 +12,7 @@ The `base.context` object provides information about the current user interactio
 
     ``` js
     const tableName = base.context.currentTable;
-    ```
+    ```js
 
 !!! abstract "currentRow"
 
@@ -36,7 +36,7 @@ The `output` object displays results in the script output panel.
 
     ``` js
     output.text(anything);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -51,7 +51,7 @@ The `output` object displays results in the script output panel.
 
     ``` js
     output.markdown(markdownString);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -68,7 +68,7 @@ The `base.utils` object provides helper functions.
 
     ``` js
     base.utils.formatDate(date);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -82,7 +82,7 @@ The `base.utils` object provides helper functions.
 
     ``` js
     base.utils.formatDateWithMinutes(date);
-    ```
+    ```js
 
     __Example__
     ``` js
@@ -96,7 +96,7 @@ The `base.utils` object provides helper functions.
 
     ``` js
     base.utils.lookupAndCopy(targetTable, targetColumn, targetColumnToSearch, sourceTable, sourceColumn, sourceColumnToSearch);
-    ```
+    ```js
 
     __Example__
     ``` js

@@ -8,7 +8,7 @@ Updates one or multiple rows.
 
 ### Syntax
 
-```
+```sql
 UPDATE tableName
   SET column1 = value [, ...]
   [WHERE ...]
@@ -26,11 +26,11 @@ The same column restrictions and multi-value rules as [INSERT](insert.md) apply.
 
 __Example__
 
-```
+```sql
 UPDATE Contacts SET Adult=true WHERE Age>=18
 ```
 
-```
+```sql
 UPDATE Contacts SET Adult=true, `Age group`="18+" WHERE Age>=18
 ```
 
@@ -40,7 +40,7 @@ Deletes one or multiple rows.
 
 ### Syntax
 
-```
+```sql
 DELETE FROM tableName
   [WHERE ...]
 ```
@@ -51,6 +51,6 @@ DELETE FROM tableName
 
 __Example__
 
-```
+```sql
 DELETE FROM Contacts WHERE Age<18
 ```
