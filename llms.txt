@@ -1,0 +1,76 @@
+# SeaTable Developer Manual
+
+> Official SeaTable Developer Manual.
+
+## Sections
+
+### Introduction
+
+- [Introduction](https://developer.seatable.com/)
+- [Get support](https://developer.seatable.com/introduction/get_support/)
+
+### Python
+
+- [Python](https://developer.seatable.com/python/)
+- [Metadata](https://developer.seatable.com/python/objects/metadata/)
+- [Context](https://developer.seatable.com/python/objects/context/)
+- [Tables](https://developer.seatable.com/python/objects/tables/)
+- [Views](https://developer.seatable.com/python/objects/views/)
+- [Columns](https://developer.seatable.com/python/objects/columns/)
+- [Rows](https://developer.seatable.com/python/objects/rows/)
+- [Links](https://developer.seatable.com/python/objects/links/)
+- [Files](https://developer.seatable.com/python/objects/files/)
+- [Accounts](https://developer.seatable.com/python/objects/accounts/)
+- [Users](https://developer.seatable.com/python/objects/users/)
+- [Date utilities](https://developer.seatable.com/python/objects/date-utils/)
+- [Communication utilities](https://developer.seatable.com/python/objects/communication-utils/)
+
+### JavaScript
+
+- [JavaScript](https://developer.seatable.com/javascript/)
+- [Tables](https://developer.seatable.com/javascript/tables/)
+- [Views](https://developer.seatable.com/javascript/views/)
+- [Columns](https://developer.seatable.com/javascript/columns/)
+- [Rows](https://developer.seatable.com/javascript/rows/)
+- [Links](https://developer.seatable.com/javascript/links/)
+- [SQL Queries](https://developer.seatable.com/javascript/sql/)
+- [Metadata](https://developer.seatable.com/javascript/metadata/)
+- [Files](https://developer.seatable.com/javascript/files/)
+- [Constants](https://developer.seatable.com/javascript/constants/)
+- [Scripting Features](https://developer.seatable.com/javascript/scripting-features/)
+
+### PHP
+
+- [PHP](https://developer.seatable.com/php/)
+- [Examples](https://developer.seatable.com/php/examples/)
+- [API Reference](https://developer.seatable.com/php/api-reference/)
+
+### Ruby
+
+- [Ruby](https://developer.seatable.com/ruby/)
+
+### SQL
+
+- [SQL](https://developer.seatable.com/sql/)
+- [SELECT](https://developer.seatable.com/sql/select/)
+- [INSERT](https://developer.seatable.com/sql/insert/)
+- [UPDATE, DELETE](https://developer.seatable.com/sql/insert-update-delete/)
+- [Limitations](https://developer.seatable.com/sql/limitations/)
+- [Functions](https://developer.seatable.com/sql/functions/)
+
+### Plugin Development
+
+- [Plugin Development](https://developer.seatable.com/plugins/)
+- [Environments](https://developer.seatable.com/plugins/environments/)
+- [Available methods](https://developer.seatable.com/plugins/methods/)
+
+## Complete Content
+
+- [llms-full.txt](https://developer.seatable.com/llms-full.txt): Complete developer manual with all pages, code examples, and API references
+
+## Optional
+
+- [SeaTable Website](https://seatable.com): Product website with features, pricing, and use cases
+- [REST API Reference](https://api.seatable.com): Interactive REST API documentation with all endpoints
+- [Admin Manual](https://admin.seatable.com): Self-hosting installation, configuration, and administration
+- [Community Forum](https://forum.seatable.com): Community support, discussions, and feature requests
