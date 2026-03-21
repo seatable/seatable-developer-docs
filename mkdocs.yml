@@ -58,6 +58,11 @@ plugins:
   - minify:
       minify_html: true
   - git-revision-date-localized
+  - git-committers:
+      repository: seatable/seatable-developer-docs
+      branch: main
+      enabled: !ENV ["CI", false]
+      token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
   - include-markdown:
       rewrite_relative_urls: false
   - redirects:
