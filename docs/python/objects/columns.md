@@ -2,11 +2,9 @@
 
 You'll find below all the available methods to interact with the columns of a SeaTable table.
 
-{%
-    include-markdown "includes.md"
-    start="<!--columnstructure-start-->"
-    end="<!--columnstructure-end-->"
-%}
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page. For column type formats and data structures, see the [API model reference](https://api.seatable.com/reference/models).
 
 ## ColumnTypes constants
 
@@ -55,10 +53,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
         
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     column = base.get_column_by_name('Table1', 'Name')
     print(column)
     ```
@@ -76,10 +70,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
         
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     columns = base.list_columns('Table1', 'Default View')
     print(columns)
     ```
@@ -97,11 +87,8 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
     from seatable_api.constants import ColumnTypes
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     columns = base.get_columns_by_type('Table1', ColumnTypes.TEXT)
     print(columns)
     ```
@@ -120,7 +107,7 @@ You'll find below all the available methods to interact with the columns of a Se
 
         `column_key` (optional): argument specifying the key of the *anchor* column for the insertion (the newly created column will appear just to the right of the *anchor* column)
 
-        `column_data` (optional): For some particular `ColumnTypes`, specific column data may be provided in the `column_data` dict. See the [column data](#column-data) above for more information.
+        `column_data` (optional): For some particular `ColumnTypes`, specific column data may be provided in the `column_data` dict. See the [API model reference](https://api.seatable.com/reference/models) for column data details.
 
     __Output__ Single column dict (throws an error if no table named `table_name` exists, if a column named `column_name` already exists or if `column_type` is not a valid `ColumnTypes` member)
 
@@ -128,19 +115,13 @@ You'll find below all the available methods to interact with the columns of a Se
     
     ``` python
     from seatable_api.constants import ColumnTypes
-    from seatable_api import Base, context
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.insert_column('Table1', 'New long text column', ColumnTypes.LONG_TEXT)
     ```
 
     ``` python
     from seatable_api.constants import ColumnTypes
-    from seatable_api import Base, context
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.insert_column('Table1', 'Link', ColumnTypes.LINK, column_data={
         'table':'Table1',
         'other_table':'Test_User'
@@ -162,20 +143,12 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.rename_column('Table1', '0000', 'new column name') # (1)!
     ```python
 
     1. `0000` is always the key of the first column in each table
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     column_to_rename = base.get_column_by_name('Table1', 'My Column')
     base.rename_column('Table1', column_to_rename['key'], 'new column name') # (1)!
     ```
@@ -204,10 +177,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.freeze_column('Table1', '0000', True)
     ```
 
@@ -230,10 +199,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.move_column('Table1', 'loPx', '0000') # (1)!
     ```
 
@@ -262,10 +227,7 @@ You'll find below all the available methods to interact with the columns of a Se
  
     ``` python
     from seatable_api.constants import ColumnTypes
-    from seatable_api import Base, context
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.modify_column_type('Table1', 'nePI', ColumnTypes.CHECKBOX)
     ```
 
@@ -284,10 +246,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.delete_column('Table1', 'bsKL')
     ```
 
@@ -316,10 +274,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.add_column_options('Table1', 'My choices', [
         {"name": "ddd", "color": "#aaa", "textColor": "#000000"},
         {"name": "eee", "color": "#aaa", "textColor": "#000000"},
@@ -352,10 +306,6 @@ You'll find below all the available methods to interact with the columns of a Se
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.add_column_cascade_settings("Table1", "Child", "Parent", {
         "aaa": ["aaa-1", "aaa-2"], # (1)!
         "bbb": ["bbb-1", "bbb-2"],

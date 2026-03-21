@@ -1,5 +1,9 @@
 # Links
 
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
+
 !!! warning "link id and column key"
 
     `link_id` should not be mistaken with the column `key`! The `key` value is unique (like an id) whereas the link id will be shared between the two linked columns. Please note that `link_id` is used as argument to add/update/remove links, whereas you'll have to provide `link_column_key` (the link column `key`) to get linked records. Both information are available in the column object:
@@ -60,10 +64,6 @@
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     link_id = base.get_column_link_id('Table1', 'Link column')
     print(link_id)
     ```
@@ -106,10 +106,6 @@
     
         ```python
         import json
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         linked_records = base.get_linked_records('0000', '89o4', rows=[
             {'row_id': 'FzNqJxVUT8KrRjewBkPp8Q', 'limit': 2, 'offset': 0},
             {'row_id': 'Jmnrkn6TQdyRg1KmOM4zZg', 'limit': 20}
@@ -163,15 +159,13 @@
     __Example: Add link to current row__
     
     ``` python
-    from seatable_api import Base, context
+    from seatable_api import context
     # Do not hesitate to store the tables' and columns' names at the beginning of your script,
     # it will make it really easier to update if names change
     TABLE1_NAME = "Table1";
     TABLE1_LINK_COLUMN_NAME = "Table2 link";
     TABLE2_NAME = "Table2";
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     lin_id = base.get_column_link_id(TABLE1_NAME, TABLE1_LINK_COLUMN_NAME); # (1)!
     current_row_id = context.current_row['_id'];
     base.add_link(lin_id, TABLE1_NAME, TABLE2_NAME, current_row_id, 'J5St2clyTMu_OFf9WD8PbA')
@@ -218,10 +212,6 @@
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.update_link(
         link_id='r4IJ',
         table_name='Table1',
@@ -260,10 +250,6 @@
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     link_id = "WaW5"
     table_name = "Table1"
     other_table_name ="Table2"
@@ -290,10 +276,6 @@
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.remove_link('5WeC', 'Table1', 'Table2', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
     ```
 

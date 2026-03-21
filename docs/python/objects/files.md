@@ -1,5 +1,9 @@
 # Files
 
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
+
 ## Download
 
 For the following methods, you'll have to provide the URL of the file you want to download. The file URL structure is as follows: 
@@ -35,10 +39,6 @@ For the following methods, you'll have to provide the URL of the file you want t
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     file_url = "https://cloud.seatable.io/workspace/74/asset-preview/41cd05da-b29a-4428-bc31-bd66f4600817/files/2020-10/invoice.pdf"
     save_path = "/tmp/invoice.pdf"
     base.download_file(file_url, save_path)
@@ -122,10 +122,6 @@ For the following methods, you'll have to provide the URL of the file you want t
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     custom_file_path = "My Personal Folder/quote.pdf" # (1) !
     local_path = "/Users/Desktop/quote.pdf"
     base.download_custom_file(custom_file_path, local_path)
@@ -245,11 +241,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
-
     #Step 1: Uploading a file to the base
     local_path = "/Users/Desktop/sky.png"
     custom_path = "/Main/"
@@ -280,10 +271,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     folder_dir = "/Main/photos"
     main_photos_content = base.list_custom_assets(folder_dir)
     print(main_photos_content)
@@ -292,8 +279,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     __Example: display the whole Custom folders file structure__
     
     ``` python
-    from seatable_api import Base, context
-
     def list_assets(path):
         global indent
         if path == "/" :
@@ -312,8 +297,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
                     list_assets(path+'/'+d['name'])
             indent = indent[:-1]
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     indent = ''
     list_assets('/') # (2)!
     ```python
@@ -341,10 +324,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     === "Replace existing content"
     
         ``` python
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         #Step 1: Get file info
         folder_dir = "/Main/"
         file_name = "sky.png"
@@ -359,10 +338,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     === "Append to content (detailed version)"
 
         ```python
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         #Step 1: Get file info
         folder_dir = "/Main/"
         file_name = "sky.png"
@@ -380,10 +355,6 @@ Please note that uploading a file *to a cell* will require two or three steps, d
     === "Append to content (short version)"
 
         ```python
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         #Step 1: Get file info
         folder_dir = "/Main/"
         file_name = "sky.png"

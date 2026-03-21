@@ -2,11 +2,9 @@
 
 You'll find below all the available methods to interact with the rows of a SeaTable table. In this section, you'll have to deal with the **id** of the rows. You can find few tips on how to get it in [the user manual](https://seatable.com/help/was-ist-die-zeilen-id/).
 
-{%
-    include-markdown "includes.md"
-    start="<!--rowstructure-start-->"
-    end="<!--rowstructure-end-->"
-%}
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page. For the structure of objects returned by these methods, see the [API model reference](https://api.seatable.com/reference/models).
 
 ## Get row(s)
 
@@ -23,10 +21,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     row = base.get_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
@@ -52,10 +46,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     rows = base.list_rows('Table1')
     rows = base.list_rows('Table1', view_name='Default View', start=5, limit=20)
     ```
@@ -96,10 +86,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
         ``` python
         import json
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         json_data = base.query('select * from Bill') # (1)!
         print(json.dumps(json_data, indent=' '))
         ```
@@ -210,10 +196,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
         ```python
         import json
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         json_data = base.query('select name, price from Bill where year = 2021')
         print(json.dumps(json_data, indent=' '))
         ```
@@ -232,10 +214,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
         ```python
         import json
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         json_data = base.query('select name, price, year from Bill where name = "Bob"')
         print(json.dumps(json_data, indent=' '))
         ```
@@ -256,10 +234,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
         ```python
         import json
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         json_data = base.query('select name, sum(price) from Bill group by name')
         print(json.dumps(json_data, indent=' '))
         ```
@@ -280,10 +254,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
         ```python
         import json
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         json_data = base.query('select distinct name from Bill')
         print(json.dumps(json_data, indent=' '))
         ```
@@ -334,10 +304,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     row_data = {
         "Name": "Ron"
     }
@@ -365,10 +331,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     === "Function call"
 
         ``` python
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         rows_data = [{
             'Name': 'Ron',
             'Birthday': '1975-01-01'
@@ -425,10 +387,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     row_data = {
         "Name": "Ron"
     }
@@ -452,10 +410,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     row_data = {
         "Name": "Ron"
     }
@@ -481,10 +435,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     rows_data = [{
         "row_id" : "fMmCFyoxT4GN5Y2Powbl0Q",
         "row" : {
@@ -524,10 +474,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.delete_row('Table1', 'U_eTV7mDSmSd-K2P535Wzw')
     ```
 
@@ -546,10 +492,6 @@ You'll find below all the available methods to interact with the rows of a SeaTa
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     # Retrieving the rows of table 'Table1'
     rows = base.list_rows('Table1')
     #Getting only the three first rows

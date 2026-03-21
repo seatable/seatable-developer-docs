@@ -1,5 +1,9 @@
 # Users
 
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
+
 ## Get user info
 
 !!! abstract "get_user_info"
@@ -15,10 +19,6 @@
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     user_info = base.get_user_info("aea9e807bcfd4f3481d60294df74f6ee@auth.local")
     print(user_info)
     ```
@@ -38,10 +38,6 @@
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     users = base.get_related_users()
     for user in users:
         print(user)

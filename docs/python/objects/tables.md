@@ -2,13 +2,9 @@
 
 You'll find below all the available methods to interact with the tables of a SeaTable base.
 
-{%
-    include-markdown "includes.md"
-    start="<!--tablestructure-start-->"
-    end="<!--tablestructure-end-->"
-%}
+!!! tip "Examples assume authenticated base"
 
-You can have a look at the specific [view](./views.md#global-structure), [column](./columns.md#global-structure) or [row](./rows.md#global-structure) structure on the corresponding pages.
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page. For the structure of objects returned by these methods, see the [API model reference](https://api.seatable.com/reference/models).
 
 ## Retrieve table(s)
 
@@ -28,10 +24,6 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
     __Example__
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     tables = base.list_tables()
     print(tables)
     ```
@@ -47,10 +39,6 @@ You can have a look at the specific [view](./views.md#global-structure), [column
     
     __Example__
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     table = base.get_table_by_name('Table1')
     print(table)
     ```
@@ -59,33 +47,24 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
 !!! abstract "add_table"
 
-    Add a table named `table_name` into a base. The `columns` argument is an optional list of [column objects](./columns.md#global-structure).
+    Add a table named `table_name` into a base. The `columns` argument is an optional list of [column objects](https://api.seatable.com/reference/models).
 
     ``` python
     base.add_table(table_name, lang='en', columns=[]) # (1)!
     ```python
 
     1. `lang` (optional): can be `en` (default) for English or `zh-cn` for Chinese and will determine the name of the first `Name` column (if no `columns` where specified)
-        `columns` (optional): list of [column objects](./columns.md#global-structure) describing the columns of the new table.
+        `columns` (optional): list of [column objects](https://api.seatable.com/reference/models) describing the columns of the new table.
 
     __Output__ Single table dict (throws an error if a table named `table_name` already exists)
 
     __Example__
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     new_table = base.add_table('Investigation', lang='zh-cn')
     print(new_table)
     ```
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
-
     columns=[
       {
         "column_type" : "text", 
@@ -114,10 +93,6 @@ You can have a look at the specific [view](./views.md#global-structure), [column
     __Example__
     === "Function call"
         ``` python
-        from seatable_api import Base, context
-
-        base = Base(context.api_token, context.server_url)
-        base.auth()
         print(base.rename_table('Table1', 'Table11'))
         ```json
     === "Output"
@@ -139,10 +114,6 @@ You can have a look at the specific [view](./views.md#global-structure), [column
 
     __Example__
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     delete_table_success = print(base.delete_table('Table1'))
     print(delete_table_success)
     ```

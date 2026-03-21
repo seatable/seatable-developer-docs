@@ -2,6 +2,10 @@
 
 Metadata delivers the complete structure of a base with tables, views and columns.
 
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
+
 !!! abstract "get_metadata"
 
     Get the complete metadata of a table. The metadata will not contain the concrete rows of the table.
@@ -69,11 +73,6 @@ Metadata delivers the complete structure of a base with tables, views and column
     __Example__
 
     ```python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
-
     print(base.get_metadata())
     ```
 

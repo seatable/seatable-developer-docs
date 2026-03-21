@@ -2,6 +2,9 @@
 
 Several outgoing communications features are available within SeaTable. Whether you want to communicate with a user in the web interface or be alerted of database changes from another process, here are the methods you can use while scripting.
 
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
 
 !!! info "Going further"
     Keep in mind that communication methods will probably require other coding skills as they mostly make sense outside of SeaTable. The [API Reference](https://api.seatable.com/reference/getbaseactivitylog-1) also details other methods such as getting base or row activities logs, which might also help you stay informed about what's happening in the base (but without the automatic firing on the SeaTable side of the methods presented here).
@@ -22,10 +25,6 @@ Several outgoing communications features are available within SeaTable. Whether 
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.send_email('my-email-account', 'Hello from SeaTable!')
     ```
 
@@ -44,22 +43,16 @@ Several outgoing communications features are available within SeaTable. Whether 
     __Example__
 
     ```python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     base.send_toast_notification(
-    "aea9e807bcfd4f3481d60294df74f6ee@auth.local",
-    "error request",
-    "danger"
+        "aea9e807bcfd4f3481d60294df74f6ee@auth.local",
+        "error request",
+        "danger"
     )
     ```
 
     ```python
-    from seatable_api import Base, context
+    from seatable_api import context
 
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     # Time to cheer up yourself!
     my_username = context.current_username
     base.send_toast_notification(

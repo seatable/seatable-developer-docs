@@ -2,11 +2,9 @@
 
 You'll find below all the available methods to interact with the views of a SeaTable table.
 
-{%
-    include-markdown "includes.md"
-    start="<!--viewstructure-start-->"
-    end="<!--viewstructure-end-->"
-%}
+!!! tip "Examples assume authenticated base"
+
+    All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page. For the structure of objects returned by these methods, see the [API model reference](https://api.seatable.com/reference/models).
 
 ## Get view(s)
 
@@ -22,10 +20,6 @@ You'll find below all the available methods to interact with the views of a SeaT
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     view = base.get_view_by_name('Table1', 'Default View')
     print(view)
     ```
@@ -43,10 +37,6 @@ You'll find below all the available methods to interact with the views of a SeaT
     __Example__
     
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     views = base.list_views('Table1')
     print(views)
     ```
@@ -66,10 +56,6 @@ You'll find below all the available methods to interact with the views of a SeaT
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     view = base.add_view('Table1', 'New view')
     print(view)
     ```
@@ -89,10 +75,6 @@ You'll find below all the available methods to interact with the views of a SeaT
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     view = base.rename_view('Table1', 'MyView', 'NewView')
     print(view)
     ```
@@ -112,9 +94,5 @@ You'll find below all the available methods to interact with the views of a SeaT
     __Example__
 
     ``` python
-    from seatable_api import Base, context
-
-    base = Base(context.api_token, context.server_url)
-    base.auth()
     print(base.delete_view('Table1', 'MyView'))
     ```
