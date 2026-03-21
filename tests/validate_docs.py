@@ -49,6 +49,10 @@ _PermissiveLoader.add_multi_constructor(
     'tag:yaml.org,2002:python/',
     lambda loader, suffix, node: None,
 )
+_PermissiveLoader.add_constructor(
+    '!ENV',
+    lambda loader, node: None,
+)
 
 with open(MKDOCS_YML) as f:
     config = yaml.load(f, Loader=_PermissiveLoader)
