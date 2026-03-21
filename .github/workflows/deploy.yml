@@ -53,6 +53,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Generate llms.txt and llms-full.txt
+        run: python3 scripts/generate_llms_txt.py
+
       - name: Build with mkdocs (strict mode)
         run: mkdocs build --strict --verbose
 
