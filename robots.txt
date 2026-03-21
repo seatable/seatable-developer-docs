@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://developer.seatable.com/sitemap.xml
+Llms-txt: https://developer.seatable.com/llms.txt
