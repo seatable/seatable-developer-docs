@@ -24,7 +24,7 @@ SeaTable provides an SQL interface for querying and modifying data. It supports 
       -d '{"sql": "SELECT * FROM Table1 LIMIT 100", "convert_keys": true}'
     ```
 
-All three methods use the same SQL engine and return identical results. SQL syntax is case insensitive. We use upper-cased keywords for readability.
+All three methods use the same SQL engine and return identical results. SQL syntax is case insensitive — keywords, function names, and identifiers can be written in any case. We use upper-case for SQL keywords (`SELECT`, `WHERE`, ...) and lower-case for function names (`now()`, `round()`, ...) for readability.
 
 !!! tip "New to SQL?"
 

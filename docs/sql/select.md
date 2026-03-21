@@ -38,6 +38,14 @@ Returns the next 10,000 rows.
 
 By default, returned rows use column **names** as keys (when using `base.query` in Python or JavaScript). The raw API returns column **keys**. This can be controlled with the `convert_keys` parameter.
 
+## DISTINCT
+
+Use `DISTINCT` to return only unique values:
+
+```
+SELECT DISTINCT city FROM Contacts
+```
+
 ## Field aliases
 
 Field aliases with `AS` are supported:
@@ -142,7 +150,10 @@ SELECT Customer, SUM(Amount) FROM Invoices GROUP BY Customer
 Since version 4.3, basic implicit join queries are supported:
 
 ```
-SELECT ... FROM Table1, Table2 WHERE Table1.column1 = Table2.column2 AND ...
+SELECT ...
+  FROM Table1, Table2
+  WHERE Table1.column1 = Table2.column2
+    AND ...
 ```
 
 Restrictions:

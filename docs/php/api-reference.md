@@ -12,9 +12,3 @@ The PHP client is auto-generated from the SeaTable OpenAPI specification. Detail
 | **User** | Account info, bases, shared views, API tokens | [User API](https://github.com/seatable/seatable-api-php/blob/main/README_User.md) |
 | **Team Admin** | Team management, members, sharing | [TeamAdmin API](https://github.com/seatable/seatable-api-php/blob/main/README_TeamAdmin.md) |
 | **Sys Admin** | Server administration (self-hosted only) | [SysAdmin API](https://github.com/seatable/seatable-api-php/blob/main/README_SysAdmin.md) |
-
-## Additional resources
-
-- [Source code on GitHub](https://github.com/seatable/seatable-api-php)
-- [Package on Packagist](https://packagist.org/packages/seatable/seatable-api-php)
-- [Interactive API Reference](https://api.seatable.com) (language-agnostic, with code examples)

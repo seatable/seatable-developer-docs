@@ -9,7 +9,9 @@ Updates one or multiple rows.
 ### Syntax
 
 ```
-UPDATE table_name SET column_name = value [, ...] [WHERE ...]
+UPDATE tableName
+  SET column1 = value [, ...]
+  [WHERE ...]
 ```
 
 !!! warning "No WHERE = update all rows"
@@ -18,7 +20,7 @@ UPDATE table_name SET column_name = value [, ...] [WHERE ...]
 
 !!! warning "Only constant values in SET"
 
-    The `value` in SET must be a constant (string, number, or boolean). Functions, arithmetic expressions, and column references are **not supported** in SET. They can only be used in SELECT and WHERE.
+    The `value` in SET must be a constant (string, number, or boolean). Functions, arithmetic expressions, and column references are **not supported** in SET. They can only be used in `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and `ORDER BY`.
 
 The same column restrictions and multi-value rules as [INSERT](insert.md) apply.
 
@@ -39,7 +41,8 @@ Deletes one or multiple rows.
 ### Syntax
 
 ```
-DELETE FROM table_name [WHERE ...]
+DELETE FROM tableName
+  [WHERE ...]
 ```
 
 !!! warning "No WHERE = delete all rows"

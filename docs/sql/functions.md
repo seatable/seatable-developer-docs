@@ -1,86 +1,52 @@
 # SQL function reference
 
-With functions you can transform, calculate, combine or merge the values of other columns from the current table. On top of that, functions can refer to each other. In this article, we will show you a complete overview of all functions with examples. If you are looking for a specific function, you can use Ctrl+F or ⌘+F to quickly find an entry on this page.
-
-The functions supported in SQL are roughly the same as the set of functions supported by formulas in SeaTable. The function parameters can be numbers, strings, constants, column names or other functions. Column name cannot be an alias. The function can be classified into the following categories:
+The functions supported in SQL are roughly the same as the set of functions supported by formulas in SeaTable. The function parameters can be numbers, strings, constants, column names or other functions. Column name cannot be an alias.
 
 !!! danger "Where can functions be used?"
     Functions can be used in `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and `ORDER BY` clauses. They are **not supported** in the `SET` clause of `UPDATE` statements or in the `VALUES` list of `INSERT` statements. Only constant values can be used there.
 
-- [Operators](#operators)
-- [Mathematical functions](#mathematical-functions)
-- [Text functions](#text-functions)
-- [Date functions](#date-functions)
-- [Geo functions](#geo-functions)
-- [Logical functions](#logical-functions)
-- [Statistical functions](#statistical-functions)
+## Differences from MySQL/MariaDB
 
-## MySQL/MariaDB equivalents
+Where SeaTable and MySQL/MariaDB share the same function name (e.g. `now()`, `trim()`, `round()`), the syntax is identical. The table below lists only functions where the name or syntax differs. For the complete list of supported functions, see the [function reference](#operators) below.
 
-SeaTable SQL uses its own function names. Standard MySQL/MariaDB function names are **not supported** and will return a parse error. Use the SeaTable equivalents listed below.
-
-### String functions
-
-| MySQL/MariaDB | SeaTable equivalent |
-|:---|:---|
-| `SUBSTR(str, pos, len)` / `SUBSTRING(...)` | `mid(str, pos, len)` |
-| `CONCAT(str1, str2, ...)` / `CONCAT_WS(sep, ...)` | `concatenate(str1, str2, ...)` |
-| `LENGTH(str)` / `CHAR_LENGTH(str)` | `len(str)` |
-| `UPPER(str)` / `UCASE(str)` | `upper(str)` |
-| `LOWER(str)` / `LCASE(str)` | `lower(str)` |
-| `LOCATE(substr, str)` / `INSTR(str, substr)` | `find(substr, str)` (case-sensitive) or `search(substr, str)` (case-insensitive) |
-| `REPLACE(str, from, to)` | `substitute(str, old, new)` — note: SeaTable also has `replace(str, pos, count, new)` which is position-based |
-| `REPEAT(str, n)` | `rept(str, n)` |
-| `TRIM(str)` | `trim(str)` |
-| `LEFT(str, n)` / `RIGHT(str, n)` | `left(str, n)` / `right(str, n)` |
-| `FORMAT(num, dec)` | `text(num, format)` with format `'number'`, `'euro'`, `'percent'` etc. |
-| `LPAD` / `RPAD` / `REVERSE` | — not supported |
-
-### Date functions
-
-| MySQL/MariaDB | SeaTable equivalent |
-|:---|:---|
-| `CURDATE()` / `CURRENT_DATE()` | `today()` |
-| `NOW()` | `now()` |
-| `YEAR(date)` / `MONTH(date)` / `DAY(date)` | `year(date)` / `month(date)` / `day(date)` |
-| `HOUR(date)` / `MINUTE(date)` / `SECOND(date)` | `hour(date)` / `minute(date)` / `second(date)` |
-| `DATE_ADD(date, INTERVAL n unit)` | `dateAdd(date, n, 'unit')` |
-| `DATE_SUB(date, INTERVAL n unit)` | `dateAdd(date, -n, 'unit')` — use negative count |
-| `DATEDIFF(d1, d2)` | `dateDif(d1, d2, 'D')` — note: requires unit parameter |
-| `DATE_FORMAT(date, format)` | `isodate(date)` or `isomonth(date)` — limited formatting options |
-| `EXTRACT(YEAR FROM date)` | Use `year(date)`, `month(date)`, `day(date)` etc. |
-
-### Math functions
-
-| MySQL/MariaDB | SeaTable equivalent |
-|:---|:---|
-| `CEIL(n)` | `ceiling(n)` |
-| `ABS(n)` / `FLOOR(n)` / `ROUND(n)` / `SQRT(n)` | Same names: `abs(n)`, `floor(n)`, `round(n)`, `sqrt(n)` |
-| `MOD(a, b)` | `mod(a, b)` |
-| `POW(a, b)` / `POWER(a, b)` | `power(a, b)` |
-| `LOG(n)` / `LOG10(n)` | `log(n, base)` / `lg(n)` |
-| `TRUNCATE(n, d)` | `rounddown(n, d)` |
-| `RAND()` | — not supported |
-
-### Logical and control flow
-
-| MySQL/MariaDB | SeaTable equivalent |
-|:---|:---|
-| `CASE WHEN ... THEN ... END` | `if(condition, trueVal, falseVal)` or `ifs(cond1, val1, cond2, val2, ...)` |
-| `IFNULL(val, default)` / `COALESCE(...)` / `NULLIF(...)` | — not supported |
-
-### Aggregate functions
-
-| MySQL/MariaDB | SeaTable equivalent |
-|:---|:---|
-| `COUNT(*)` / `SUM(col)` / `MIN(col)` / `MAX(col)` / `AVG(col)` | Same names — standard SQL aggregates are supported |
-| `GROUP_CONCAT(col)` | — not supported |
-
-!!! info "Backticks for table or column names containing or special characters or using reserved words"
-    For SQL queries, you can use numbers, special characters or spaces in the names of your tables and columns. However, you'll **have to** escape these names with backticks in order for your query to be correctly interpreted, for example `` select * from `My Table` ``. 
-
-    Similarly, if some of your of table or column names are the same as SQL function names (for example a date-type column named `date`), you'll also **have to** escape them in order for the query interpreter to understand that it's not a function call missing parameters, but rather a table or column name.
-
+| MySQL/MariaDB | SeaTable equivalent | Notes |
+|:---|:---|:---|
+| `SUBSTR()` / `SUBSTRING()` | `mid(str, pos, len)` | |
+| `CONCAT()` / `CONCAT_WS()` | `concatenate(str1, str2, ...)` | |
+| `LENGTH()` / `CHAR_LENGTH()` | `len(str)` | |
+| `UCASE()` | `upper(str)` | |
+| `LCASE()` | `lower(str)` | |
+| `LOCATE()` / `INSTR()` | `find(substr, str)` or `search(substr, str)` | `find` is case-sensitive, `search` is not |
+| `REPLACE(str, from, to)` | `substitute(str, old, new)` | SeaTable also has `replace(str, pos, count, new)` which is position-based |
+| `REPEAT()` | `rept(str, n)` | |
+| `FORMAT()` | `text(num, format)` | Formats: `'number'`, `'euro'`, `'percent'` etc. |
+| `CURDATE()` / `CURRENT_DATE()` | `today()` | |
+| `DATE_ADD()` | `dateAdd(date, n, 'unit')` | |
+| `DATE_SUB()` | `dateAdd(date, -n, 'unit')` | Use negative count |
+| `DATEDIFF()` | `dateDif(d1, d2, 'D')` | Unit parameter is optional (defaults to days) |
+| `DATE_FORMAT()` | `isodate(date)` or `isomonth(date)` | Limited formatting options |
+| `EXTRACT(YEAR FROM date)` | `year(date)`, `month(date)`, `day(date)` | Separate functions per field |
+| `DAYOFWEEK()` | `weekday(date, weekStart)` | Optional `weekStart`: `'Monday'` or `'Sunday'` (default) |
+| `WEEK()` | `weeknum(date, return_type)` | Use `return_type` 21 for ISO week numbers |
+| `LAST_DAY()` | `eomonth(date, n)` | `n=0` for current month's last day |
+| `DAYOFMONTH()` | `day(date)` | |
+| `DATE()` | `isodate(date)` | Extracts date part as string |
+| `TIMESTAMPDIFF()` | `dateDif(d1, d2, unit)` | Different syntax, unit as string: `'D'`, `'M'`, `'Y'`, `'S'` |
+| `TIMESTAMPADD()` | `dateAdd(date, n, 'unit')` | Different syntax |
+| `CEIL()` | `ceiling(n)` | |
+| `POW()` | `power(a, b)` | |
+| `LOG10()` | `lg(n)` | |
+| `LOG2()` | — | Use `log(n, 2)` as workaround |
+| `TRUNCATE()` | `rounddown(n, d)` | |
+| `CASE WHEN ... THEN ... END` | `if(cond, trueVal, falseVal)` or `ifs(...)` | |
+| `CAST()` / `CONVERT()` | — | Not supported |
+| `GREATEST()` / `LEAST()` | — | Not supported |
+| `DAYNAME()` / `MONTHNAME()` | — | Not supported |
+| `STR_TO_DATE()` | — | Not supported |
+| `LPAD` / `RPAD` / `REVERSE` | — | Not supported |
+| `RAND()` | — | Not supported |
+| `IFNULL()` / `COALESCE()` / `NULLIF()` | — | Not supported |
+| `GROUP_CONCAT()` | — | Not supported |
 
 ## Constants
 
@@ -887,14 +853,19 @@ When passing a parameter with time or date type, you can specify a constant in "
 
 ## Statistical functions
 
+These are formula-style functions that operate on literal values or within a single row. They are **not** SQL aggregate functions — use the standard SQL aggregates `COUNT(*)`, `SUM()`, `MIN()`, `MAX()`, and `AVG()` with `GROUP BY` instead (see [aggregation functions](select.md#aggregation-functions)).
+
 !!! abstract "average"
     Returns the average of the numbers (`number1`, `number2`, ...).
-    
+
     ```
     average(number1, number2, ...)
     ```
-    
+
     __Example__ `average(1, 2, 3, 4, 5)` returns `3`
+
+    !!! warning "Not the same as AVG()"
+        `average()` is a formula function for literal values. For aggregation across rows (e.g. with `GROUP BY`), use the SQL aggregate `AVG(column)` instead.
 
 !!! abstract "counta"
     Counts the number of non-empty cells (`textORnumber1`, `textORnumber2`, ...). These cells can be text or numbers. In this example, 1 and 2 are numbers, '3' is text, and '' is an empty value.
