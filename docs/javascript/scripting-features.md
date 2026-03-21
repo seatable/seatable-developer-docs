@@ -1,3 +1,7 @@
+---
+description: SeaTable scripting-only JavaScript features — access the current table and row via context, render output, and use built-in utility helpers.
+---
+
 # Scripting Features
 
 These features are only available when running JavaScript scripts inside SeaTable. They provide access to the browser context, output functions, and utility helpers.

@@ -1,3 +1,7 @@
+---
+description: Complete SeaTable SQL function reference — arithmetic, text, date, geo, logical, and statistical functions with syntax and examples.
+---
+
 # SQL function reference
 
 The functions supported in SQL are roughly the same as the set of functions supported by formulas in SeaTable. The function parameters can be numbers, strings, constants, column names or other functions. Column name cannot be an alias.

@@ -1,3 +1,7 @@
+---
+description: ColumnTypes constants for the SeaTable JavaScript API — type-safe references for all supported column types.
+---
+
 # Constants
 
 When creating or modifying columns, use the `ColumnTypes` constants for type-safe column type references.

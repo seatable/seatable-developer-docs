@@ -1,3 +1,7 @@
+---
+description: Python API reference for link columns — add, update, remove, and batch-manage linked records between SeaTable tables.
+---
+
 # Links
 
 !!! tip "Examples assume authenticated base"

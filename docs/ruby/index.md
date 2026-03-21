@@ -1,3 +1,7 @@
+---
+description: Community-maintained Ruby gem for the SeaTable API — connect to SeaTable bases from Ruby applications.
+---
+
 # Ruby client
 
 One of our community members [made a first version](https://forum.seatable.com/t/seatable-ruby-ruby-gem-for-seatable/2366) of a SeaTable Ruby client.

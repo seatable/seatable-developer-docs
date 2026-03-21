@@ -1,3 +1,7 @@
+---
+description: SeaTable SQL limitations — read-only column types, list column behavior, NULL handling, and Big Data storage index management.
+---
+
 # Limitations
 
 This page documents SQL-specific behavior and restrictions. For general column type definitions, see the [API column model reference](https://api.seatable.com/reference/models).

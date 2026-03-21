@@ -1,3 +1,7 @@
+---
+description: Build custom SeaTable plugins with JavaScript and React — step-by-step guide from project setup to packaging and deployment.
+---
+
 # SeaTable plugin development process
 
 In this guide, we will demonstrate step by step how to write a plugin to SeaTable. This plugin can display the basic information of the base, including

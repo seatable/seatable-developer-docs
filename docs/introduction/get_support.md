@@ -1,3 +1,7 @@
+---
+description: Find help for SeaTable development — community forum, API reference, admin manual, and enterprise support options.
+---
+
 # Get Support
 
 Beyond this developer manual, SeaTable provides several other resources:

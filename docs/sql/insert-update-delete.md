@@ -1,3 +1,7 @@
+---
+description: SeaTable SQL UPDATE and DELETE syntax — modify or remove rows with WHERE conditions, value restrictions, and multi-value column rules.
+---
+
 # UPDATE and DELETE
 
 These statements modify existing data in a base. They work with both normal and Big Data storage.

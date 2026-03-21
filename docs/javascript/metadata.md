@@ -1,3 +1,7 @@
+---
+description: Retrieve the complete structural schema of a SeaTable base — tables, views, and columns — with the JavaScript getMetadata() method.
+---
+
 # Metadata
 
 !!! abstract "getMetadata"

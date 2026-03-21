@@ -1,3 +1,7 @@
+---
+description: JavaScript API reference for listing, creating, renaming, and deleting views in SeaTable tables.
+---
+
 # Views
 
 {%

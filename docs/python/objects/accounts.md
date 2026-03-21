@@ -1,3 +1,7 @@
+---
+description: Python API reference for account-level operations — authenticate with username/password, list workspaces, and manage bases.
+---
+
 # Accounts
 
 The account object provides an interface to list workspaces, add/copy/delete bases, and obtain access rights to a base.

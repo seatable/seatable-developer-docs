@@ -1,3 +1,7 @@
+---
+description: Upload files and images to SeaTable from JavaScript using the REST API — step-by-step Node.js example with fetch and FormData.
+---
+
 # Files
 
 The `seatable-api` npm package does not currently support file or image uploads. To upload files, you need to use the SeaTable REST API directly via `fetch()`.

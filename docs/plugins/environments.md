@@ -1,3 +1,7 @@
+---
+description: Initialize dtable-sdk for SeaTable plugin development — differences between development and production environments, event subscription, and sync.
+---
+
 # dtable
 
 ## Init

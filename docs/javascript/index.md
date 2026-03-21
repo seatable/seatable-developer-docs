@@ -1,3 +1,7 @@
+---
+description: Get started with the SeaTable JavaScript API. Use it inside SeaTable scripts or from Node.js — installation, authentication, and async usage.
+---
+
 # JavaScript
 
 SeaTable provides a JavaScript API that works in two contexts: inside SeaTable as a script, or externally via Node.js or a frontend application. The core methods (tables, views, columns, rows, links, SQL) are the same in both contexts. Features that are only available in one context are clearly marked on the respective pages.

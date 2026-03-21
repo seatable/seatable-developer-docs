@@ -1,3 +1,7 @@
+---
+description: Developer documentation for SeaTable's client libraries (Python, JavaScript, PHP), SQL interface, and plugin development. Build integrations, automate workflows, and extend SeaTable programmatically.
+---
+
 # SeaTable Developer Manual
 
 This manual covers the programmatic interfaces to SeaTable: client libraries, the scripting API reference, and plugin development.

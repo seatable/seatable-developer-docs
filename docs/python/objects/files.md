@@ -1,3 +1,7 @@
+---
+description: Python API reference for uploading and downloading files and images in SeaTable — from local disk, memory, URLs, or custom asset folders.
+---
+
 # Files
 
 !!! tip "Examples assume authenticated base"

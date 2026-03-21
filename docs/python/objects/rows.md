@@ -1,3 +1,7 @@
+---
+description: Python API reference for row operations — query, append, batch insert, update, delete, and filter rows in SeaTable bases including Big Data storage.
+---
+
 # Rows
 
 You'll find below all the available methods to interact with the rows of a SeaTable table. In this section, you'll have to deal with the **id** of the rows. You can find few tips on how to get it in [the user manual](https://seatable.com/help/what-is-row-id/).

@@ -1,3 +1,7 @@
+---
+description: SeaTable SQL INSERT syntax for appending rows to Big Data tables — value rules, multi-value columns, and Enterprise Edition requirement.
+---
+
 # INSERT
 
 Appends a new row to a table via SQL.

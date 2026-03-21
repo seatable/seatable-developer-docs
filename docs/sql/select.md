@@ -1,3 +1,7 @@
+---
+description: SeaTable SQL SELECT reference — WHERE, GROUP BY, HAVING, ORDER BY, LIMIT, DISTINCT, aggregation functions, and implicit joins.
+---
+
 # SELECT
 
 The `SELECT` statement retrieves an optionally filtered, sorted, and grouped list of rows from a table. Each returned row is a JSON object. `SELECT` works the same way regardless of whether the table uses normal or Big Data storage.

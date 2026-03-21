@@ -1,3 +1,7 @@
+---
+description: JavaScript API reference for link columns — retrieve linked records, add, update, and remove links between SeaTable tables.
+---
+
 # Links
 
 Link columns connect rows between tables. Most link operations require the `link_id`, which you can retrieve with `getColumnLinkId`.

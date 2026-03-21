@@ -1,3 +1,7 @@
+---
+description: Complete PHP API reference for SeaTable — auto-generated endpoint documentation for auth, base operations, files, users, and admin APIs.
+---
+
 # API Reference
 
 The PHP client is auto-generated from the SeaTable OpenAPI specification. Detailed documentation for all endpoints, including parameters and response types, is available on GitHub:

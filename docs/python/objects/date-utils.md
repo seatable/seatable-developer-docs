@@ -1,3 +1,7 @@
+---
+description: Python date utility functions for SeaTable — create, compare, and manipulate dates with dateadd, datediff, eomonth, quarters, and more.
+---
+
 # Date utility functions
 
 We provide a set of functions for the datetime (date and time) operations based on the datetime python library. These functions have the same behavior as the functions provided by the formula column of SeaTable.

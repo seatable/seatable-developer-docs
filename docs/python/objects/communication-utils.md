@@ -1,3 +1,7 @@
+---
+description: Send emails, toast notifications, and receive real-time websocket events from SeaTable with the Python communication utilities.
+---
+
 # Communication utility functions
 
 Several outgoing communications features are available within SeaTable. Whether you want to communicate with a user in the web interface or be alerted of database changes from another process, here are the methods you can use while scripting.

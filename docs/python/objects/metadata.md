@@ -1,3 +1,7 @@
+---
+description: Retrieve the complete structural schema of a SeaTable base — tables, views, and columns — with the Python get_metadata() method.
+---
+
 # Metadata
 
 Metadata delivers the complete structure of a base with tables, views and columns.

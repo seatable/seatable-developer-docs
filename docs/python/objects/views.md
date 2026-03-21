@@ -1,3 +1,7 @@
+---
+description: Python API reference for listing, creating, renaming, and deleting views in SeaTable tables.
+---
+
 # Views
 
 You'll find below all the available methods to interact with the views of a SeaTable table.

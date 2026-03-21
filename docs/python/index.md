@@ -1,3 +1,7 @@
+---
+description: Get started with the seatable-api Python library. Install, authenticate, and connect to SeaTable bases from scripts or external applications.
+---
+
 # Python
 
 Python scripts connect to SeaTable bases with the library [seatable-api](https://pypi.org/project/seatable-api/). The source code is available on [GitHub](https://github.com/seatable/seatable-api-python).

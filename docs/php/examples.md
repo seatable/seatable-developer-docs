@@ -1,3 +1,7 @@
+---
+description: PHP code examples for SeaTable — get account info, list bases, retrieve metadata, run SQL queries, and add rows.
+---
+
 # Examples
 
 ## Get account information

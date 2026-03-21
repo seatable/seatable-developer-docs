@@ -1,3 +1,7 @@
+---
+description: JavaScript API reference for managing columns — create, rename, resize, freeze, move, modify types, and configure select options.
+---
+
 # Columns
 
 {%

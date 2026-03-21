@@ -1,3 +1,7 @@
+---
+description: Python API reference for retrieving user information and listing collaborators of a SeaTable base.
+---
+
 # Users
 
 !!! tip "Examples assume authenticated base"

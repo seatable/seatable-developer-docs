@@ -1,3 +1,7 @@
+---
+description: Get started with the SeaTable PHP client — install via Composer, authenticate with API tokens, and connect to SeaTable bases.
+---
+
 # PHP
 
 The SeaTable PHP Client encapsulates the SeaTable REST API. It is auto-generated from the public [OpenAPI specification](https://api.seatable.com), which ensures all API endpoints are covered automatically.

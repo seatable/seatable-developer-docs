@@ -1,3 +1,7 @@
+---
+description: Python API reference for listing, creating, renaming, and deleting tables in a SeaTable base.
+---
+
 # Tables
 
 You'll find below all the available methods to interact with the tables of a SeaTable base.

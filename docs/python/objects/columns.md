@@ -1,3 +1,7 @@
+---
+description: Python API reference for managing columns — create, rename, move, freeze, modify types, and configure select options in SeaTable tables.
+---
+
 # Columns
 
 You'll find below all the available methods to interact with the columns of a SeaTable table.

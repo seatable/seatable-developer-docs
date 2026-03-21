@@ -1,3 +1,7 @@
+---
+description: Access the context object in SeaTable Python scripts to get the server URL, API token, current table, current row, and user information.
+---
+
 # Context
 
 When the script is running in the cloud, the context object provides a context environment. Here's how to use it.

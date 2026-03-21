@@ -1,3 +1,7 @@
+---
+description: JavaScript API reference for row operations — query, append, insert, batch update, delete, and filter rows in SeaTable bases.
+---
+
 # Rows
 
 {%

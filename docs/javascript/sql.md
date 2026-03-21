@@ -1,3 +1,7 @@
+---
+description: Run SQL queries from JavaScript with base.query() — examples for SELECT, WHERE, ORDER BY, GROUP BY, and DISTINCT in SeaTable.
+---
+
 # SQL Queries
 
 Use SQL to query a base. This is the most powerful way to access data. For the full SQL syntax reference, see the [SQL Reference](../sql/index.md).

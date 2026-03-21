@@ -1,3 +1,7 @@
+---
+description: Complete dtable-sdk method reference for SeaTable plugins — tables, views, columns, rows, SQL queries, users, and plugin settings.
+---
+
 # Methods
 
 This is a list of all available objects and methods in SeaTable you can use in the plugin development.
