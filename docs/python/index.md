@@ -103,7 +103,7 @@ Since every method call is an API request, scripts are subject to [rate](https:/
 
 ## Quick Start
 
-A minimal example that reads rows from a table and updates one of them:
+A minimal example assuming a table **Contacts** with columns **Name**, **Email** and **Status**:
 
 ```python
 from seatable_api import Base
