@@ -347,7 +347,7 @@ Please note that uploading a file *to a cell* will require two or three steps, d
         row_id = "fDMHEdraSRuUMNPGEj-4kQ"
         FILE_COL_NAME = "File"
         row = base.get_row("Table1", row_id)
-        current_files = row[file_col_name]
+        current_files = row[FILE_COL_NAME]
         current_files.append(file_dict)
         print(base.update_row("Table1", row_id, {FILE_COL_NAME: current_files}))
         ```

@@ -153,7 +153,7 @@
     __Example__
 
     ```python
-    base.add_link('5WeC', 'Team Members', 'Contacts', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ');
+    base.add_link('5WeC', 'Team Members', 'Contacts', 'CGtoJB1oQM60RiKT-c5J-g', 'PALm2wPKTCy-jdJNv_UWaQ')
     ```
     
     __Example: Add link to current row__
@@ -162,12 +162,12 @@
     from seatable_api import context
     # Do not hesitate to store the tables' and columns' names at the beginning of your script,
     # it will make it really easier to update if names change
-    TABLE1_NAME = "Table1";
-    TABLE1_LINK_COLUMN_NAME = "Table2 link";
-    TABLE2_NAME = "Table2";
+    TABLE1_NAME = "Table1"
+    TABLE1_LINK_COLUMN_NAME = "Table2 link"
+    TABLE2_NAME = "Table2"
 
-    lin_id = base.get_column_link_id(TABLE1_NAME, TABLE1_LINK_COLUMN_NAME); # (1)!
-    current_row_id = context.current_row['_id'];
+    lin_id = base.get_column_link_id(TABLE1_NAME, TABLE1_LINK_COLUMN_NAME) # (1)!
+    current_row_id = context.current_row['_id']
     base.add_link(lin_id, TABLE1_NAME, TABLE2_NAME, current_row_id, 'J5St2clyTMu_OFf9WD8PbA')
     ```
 

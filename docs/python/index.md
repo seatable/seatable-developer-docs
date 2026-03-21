@@ -100,3 +100,24 @@ Since every method call is an API request, scripts are subject to [rate](https:/
     - `base.batch_delete_rows`
     - `base.batch_update_links`
 - Learn more about [optimizing your API calls](https://seatable.com/api-optimization/)
+
+## Quick Start
+
+A minimal example that reads rows from a table and updates one of them:
+
+```python
+from seatable_api import Base
+
+base = Base('your-api-token', 'https://cloud.seatable.io')
+base.auth()
+
+# Read all rows from a table
+rows = base.list_rows('Contacts')
+print(f"{len(rows)} rows found")
+
+# Update the first row
+base.update_row('Contacts', rows[0]['_id'], {'Status': 'Done'})
+
+# Add a new row
+base.append_row('Contacts', {'Name': 'Alice', 'Email': 'alice@example.com'})
+```

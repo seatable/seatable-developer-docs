@@ -114,6 +114,6 @@ You'll find below all the available methods to interact with the tables of a Sea
 
     __Example__
     ```python
-    delete_table_success = print(base.delete_table('Table1'))
+    delete_table_success = base.delete_table('Table1')
     print(delete_table_success)
     ```
