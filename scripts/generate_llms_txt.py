@@ -33,6 +33,10 @@ def load_mkdocs_config():
         "tag:yaml.org,2002:python/",
         lambda loader, suffix, node: None,
     )
+    loader.add_constructor(
+        "!ENV",
+        lambda loader, node: None,
+    )
     with open(MKDOCS_YML, "r") as f:
         return yaml.load(f, Loader=loader)
 
