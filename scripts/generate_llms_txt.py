@@ -78,8 +78,25 @@ def read_md_file(md_path):
         return f.read()
 
 
+def extract_frontmatter(content):
+    """Extract YAML frontmatter and return (frontmatter_dict, remaining_content)."""
+    if content.startswith("---\n"):
+        end = content.find("\n---\n", 4)
+        if end != -1:
+            fm_text = content[4:end]
+            remaining = content[end + 5 :]
+            try:
+                fm = yaml.safe_load(fm_text)
+                return fm or {}, remaining
+            except yaml.YAMLError:
+                pass
+    return {}, content
+
+
 def clean_for_llm(content):
     """Remove MkDocs-specific syntax that adds noise for LLMs."""
+    # Strip YAML frontmatter
+    _, content = extract_frontmatter(content)
     # Remove include-markdown directives
     content = re.sub(
         r"\{%\s*include-markdown\s+.*?%\}", "", content, flags=re.DOTALL
@@ -126,7 +143,16 @@ def generate_llms_txt(config, nav_pages):
         for title, md_path in pages:
             url = md_path_to_url(md_path)
             label = title or section
-            lines.append(f"- [{label}]({url})")
+            # Include description from frontmatter if available
+            content = read_md_file(md_path)
+            desc = ""
+            if content:
+                fm, _ = extract_frontmatter(content)
+                desc = fm.get("description", "")
+            if desc:
+                lines.append(f"- [{label}]({url}): {desc}")
+            else:
+                lines.append(f"- [{label}]({url})")
         lines.append("")
 
     lines += [

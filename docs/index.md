@@ -22,10 +22,10 @@ This manual is for **developers** who want to:
 
 | Language | Use case |
 |---|---|
-| **[Python](python/)** | External apps, data pipelines, automations, scripts in SeaTable |
-| **[JavaScript](javascript/)** | Scripts in SeaTable, Node.js apps, frontend integrations |
-| **[PHP](php/)** | Web applications, server-side integrations |
-| **[Ruby](ruby/)** | Community client |
+| **[Python](python/index.md)** | External apps, data pipelines, automations, scripts in SeaTable |
+| **[JavaScript](javascript/index.md)** | Scripts in SeaTable, Node.js apps, frontend integrations |
+| **[PHP](php/index.md)** | Web applications, server-side integrations |
+| **[Ruby](ruby/index.md)** | Community client |
 
 !!! example "Other languages"
 
@@ -37,4 +37,4 @@ SeaTable organizes data in bases, tables, columns, rows, and views. The complete
 
 ## Plugin Development
 
-Custom plugins can visualize and interact with base data inside SeaTable. Plugin development requires JavaScript and React. See the [Plugin Development](plugins/) section for details.
+Custom plugins can visualize and interact with base data inside SeaTable. Plugin development requires JavaScript and React. See the [Plugin Development](plugins/index.md) section for details.

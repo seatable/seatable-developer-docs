@@ -4,7 +4,7 @@ description: Query and modify SeaTable data with SQL — supports SELECT, INSERT
 
 # SQL
 
-SeaTable provides an SQL interface for querying and modifying data. It supports `SELECT`, `INSERT`, `UPDATE`, and `DELETE` statements. SQL can be used from any programming language — through the [Python](../python/) and [JavaScript](../javascript/) client libraries via `base.query()`, or directly through the [REST API](https://api.seatable.com/reference/querysql).
+SeaTable provides an SQL interface for querying and modifying data. It supports `SELECT`, `INSERT`, `UPDATE`, and `DELETE` statements. SQL can be used from any programming language — through the [Python](../python/index.md) and [JavaScript](../javascript/index.md) client libraries via `base.query()`, or directly through the [REST API](https://api.seatable.com/reference/querysql).
 
 === "Python"
 
