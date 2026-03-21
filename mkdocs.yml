@@ -2,14 +2,14 @@ site_name: SeaTable Developer Manual
 site_url: https://developer.seatable.com/
 site_author: SeaTable GmbH
 site_description: >-
-  Official SeaTable Developer Manual.
+  Developer documentation for SeaTable — client libraries for Python, JavaScript, and PHP, SQL query reference, and plugin development guide.
 
 # Repository
 repo_name: seatable/seatable-developer-docs
 repo_url: https://github.com/seatable/seatable-developer-docs/
 
 # Copyright
-copyright: Copyright &copy; 2022 - 2025 SeaTable GmbH
+copyright: Copyright &copy; 2022 - 2026 SeaTable GmbH
 
 # Configuration
 theme:
