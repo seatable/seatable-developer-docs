@@ -8,6 +8,10 @@ Base URL: https://developer.seatable.com
 
 Source: https://developer.seatable.com/
 
+---
+description: Developer documentation for SeaTable's client libraries (Python, JavaScript, PHP), SQL interface, and plugin development. Build integrations, automate workflows, and extend SeaTable programmatically.
+---
+
 # SeaTable Developer Manual
 
 This manual covers the programmatic interfaces to SeaTable: client libraries, the scripting API reference, and plugin development.
@@ -45,6 +49,10 @@ Custom plugins can visualize and interact with base data inside SeaTable. Plugin
 
 Source: https://developer.seatable.com/introduction/get_support/
 
+---
+description: Find help for SeaTable development — community forum, API reference, admin manual, and enterprise support options.
+---
+
 # Get Support
 
 Beyond this developer manual, SeaTable provides several other resources:
@@ -62,6 +70,10 @@ The [Community Forum](https://forum.seatable.com) is a good place to ask questio
 ## Python
 
 Source: https://developer.seatable.com/python/
+
+---
+description: Get started with the seatable-api Python library. Install, authenticate, and connect to SeaTable bases from scripts or external applications.
+---
 
 # Python
 
@@ -187,6 +199,10 @@ base.append_row('Contacts', {'Name': 'Alice', 'Email': 'alice@example.com'})
 
 Source: https://developer.seatable.com/python/objects/metadata/
 
+---
+description: Retrieve the complete structural schema of a SeaTable base — tables, views, and columns — with the Python get_metadata() method.
+---
+
 # Metadata
 
 Metadata delivers the complete structure of a base with tables, views and columns.
@@ -266,6 +282,10 @@ Metadata delivers the complete structure of a base with tables, views and column
 ---
 
 Source: https://developer.seatable.com/python/objects/context/
+
+---
+description: Access the context object in SeaTable Python scripts to get the server URL, API token, current table, current row, and user information.
+---
 
 # Context
 
@@ -391,6 +411,10 @@ When the script is running in the cloud, the context object provides a context e
 
 Source: https://developer.seatable.com/python/objects/tables/
 
+---
+description: Python API reference for listing, creating, renaming, and deleting tables in a SeaTable base.
+---
+
 # Tables
 
 You'll find below all the available methods to interact with the tables of a SeaTable base.
@@ -501,6 +525,10 @@ You'll find below all the available methods to interact with the tables of a Sea
 
 Source: https://developer.seatable.com/python/objects/views/
 
+---
+description: Python API reference for listing, creating, renaming, and deleting views in SeaTable tables.
+---
+
 # Views
 
 You'll find below all the available methods to interact with the views of a SeaTable table.
@@ -591,6 +619,10 @@ You'll find below all the available methods to interact with the views of a SeaT
 ---
 
 Source: https://developer.seatable.com/python/objects/columns/
+
+---
+description: Python API reference for managing columns — create, rename, move, freeze, modify types, and configure select options in SeaTable tables.
+---
 
 # Columns
 
@@ -886,6 +918,10 @@ You'll find below all the available methods to interact with the columns of a Se
 ---
 
 Source: https://developer.seatable.com/python/objects/rows/
+
+---
+description: Python API reference for row operations — query, append, batch insert, update, delete, and filter rows in SeaTable bases including Big Data storage.
+---
 
 # Rows
 
@@ -1442,6 +1478,10 @@ You'll find below all the available methods to interact with the rows of a SeaTa
 
 Source: https://developer.seatable.com/python/objects/links/
 
+---
+description: Python API reference for link columns — add, update, remove, and batch-manage linked records between SeaTable tables.
+---
+
 # Links
 
     All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
@@ -1728,6 +1768,10 @@ Source: https://developer.seatable.com/python/objects/links/
 ---
 
 Source: https://developer.seatable.com/python/objects/files/
+
+---
+description: Python API reference for uploading and downloading files and images in SeaTable — from local disk, memory, URLs, or custom asset folders.
+---
 
 # Files
 
@@ -2081,6 +2125,10 @@ Please note that uploading a file *to a cell* will require two or three steps, d
 
 Source: https://developer.seatable.com/python/objects/accounts/
 
+---
+description: Python API reference for account-level operations — authenticate with username/password, list workspaces, and manage bases.
+---
+
 # Accounts
 
 The account object provides an interface to list workspaces, add/copy/delete bases, and obtain access rights to a base.
@@ -2334,6 +2382,10 @@ The account object provides an interface to list workspaces, add/copy/delete bas
 
 Source: https://developer.seatable.com/python/objects/users/
 
+---
+description: Python API reference for retrieving user information and listing collaborators of a SeaTable base.
+---
+
 # Users
 
     All examples on this page assume that `base` has been initialized and authenticated as described on the [introduction](../index.md#authentication) page.
@@ -2376,6 +2428,10 @@ Source: https://developer.seatable.com/python/objects/users/
 ---
 
 Source: https://developer.seatable.com/python/objects/date-utils/
+
+---
+description: Python date utility functions for SeaTable — create, compare, and manipulate dates with dateadd, datediff, eomonth, quarters, and more.
+---
 
 # Date utility functions
 
@@ -2918,6 +2974,10 @@ Some operations/properties/methods are available for DateQuarter objects.
 
 Source: https://developer.seatable.com/python/objects/communication-utils/
 
+---
+description: Send emails, toast notifications, and receive real-time websocket events from SeaTable with the Python communication utilities.
+---
+
 # Communication utility functions
 
 Several outgoing communications features are available within SeaTable. Whether you want to communicate with a user in the web interface or be alerted of database changes from another process, here are the methods you can use while scripting.
@@ -3078,6 +3138,10 @@ print(response.text) # (2)!
 
 Source: https://developer.seatable.com/javascript/
 
+---
+description: Get started with the SeaTable JavaScript API. Use it inside SeaTable scripts or from Node.js — installation, authentication, and async usage.
+---
+
 # JavaScript
 
 SeaTable provides a JavaScript API that works in two contexts: inside SeaTable as a script, or externally via Node.js or a frontend application. The core methods (tables, views, columns, rows, links, SQL) are the same in both contexts. Features that are only available in one context are clearly marked on the respective pages.
@@ -3129,6 +3193,10 @@ JavaScript calls are subject to [rate](https://api.seatable.com/reference/limits
 ---
 
 Source: https://developer.seatable.com/javascript/tables/
+
+---
+description: JavaScript API reference for listing, creating, renaming, and deleting tables in a SeaTable base.
+---
 
 # Tables
 
@@ -3217,6 +3285,10 @@ Source: https://developer.seatable.com/javascript/tables/
 
 Source: https://developer.seatable.com/javascript/views/
 
+---
+description: JavaScript API reference for listing, creating, renaming, and deleting views in SeaTable tables.
+---
+
 # Views
 
 ## Get View(s)
@@ -3303,6 +3375,10 @@ Source: https://developer.seatable.com/javascript/views/
 ---
 
 Source: https://developer.seatable.com/javascript/columns/
+
+---
+description: JavaScript API reference for managing columns — create, rename, resize, freeze, move, modify types, and configure select options.
+---
 
 # Columns
 
@@ -3500,6 +3576,10 @@ Source: https://developer.seatable.com/javascript/columns/
 ---
 
 Source: https://developer.seatable.com/javascript/rows/
+
+---
+description: JavaScript API reference for row operations — query, append, insert, batch update, delete, and filter rows in SeaTable bases.
+---
 
 # Rows
 
@@ -3724,6 +3804,10 @@ Source: https://developer.seatable.com/javascript/rows/
 
 Source: https://developer.seatable.com/javascript/links/
 
+---
+description: JavaScript API reference for link columns — retrieve linked records, add, update, and remove links between SeaTable tables.
+---
+
 # Links
 
 Link columns connect rows between tables. Most link operations require the `link_id`, which you can retrieve with `getColumnLinkId`.
@@ -3833,6 +3917,10 @@ Link columns connect rows between tables. Most link operations require the `link
 
 Source: https://developer.seatable.com/javascript/sql/
 
+---
+description: Run SQL queries from JavaScript with base.query() — examples for SELECT, WHERE, ORDER BY, GROUP BY, and DISTINCT in SeaTable.
+---
+
 # SQL Queries
 
 Use SQL to query a base. This is the most powerful way to access data. For the full SQL syntax reference, see the [SQL Reference](../sql/index.md).
@@ -3876,6 +3964,10 @@ const data = await base.query('SELECT DISTINCT name FROM Bill');
 
 Source: https://developer.seatable.com/javascript/metadata/
 
+---
+description: Retrieve the complete structural schema of a SeaTable base — tables, views, and columns — with the JavaScript getMetadata() method.
+---
+
 # Metadata
 
     Get the complete structure of a base -- tables, views, and columns. Does not include row data.
@@ -3915,6 +4007,10 @@ Source: https://developer.seatable.com/javascript/metadata/
 ---
 
 Source: https://developer.seatable.com/javascript/files/
+
+---
+description: Upload files and images to SeaTable from JavaScript using the REST API — step-by-step Node.js example with fetch and FormData.
+---
 
 # Files
 
@@ -4037,6 +4133,10 @@ The complete file and image API is documented at [api.seatable.com](https://api.
 
 Source: https://developer.seatable.com/javascript/constants/
 
+---
+description: ColumnTypes constants for the SeaTable JavaScript API — type-safe references for all supported column types.
+---
+
 # Constants
 
 When creating or modifying columns, use the `ColumnTypes` constants for type-safe column type references.
@@ -4072,6 +4172,10 @@ import { ColumnTypes } from 'seatable-api';
 ---
 
 Source: https://developer.seatable.com/javascript/scripting-features/
+
+---
+description: SeaTable scripting-only JavaScript features — access the current table and row via context, render output, and use built-in utility helpers.
+---
 
 # Scripting Features
 
@@ -4174,6 +4278,10 @@ The `base.utils` object provides helper functions.
 
 Source: https://developer.seatable.com/php/
 
+---
+description: Get started with the SeaTable PHP client — install via Composer, authenticate with API tokens, and connect to SeaTable bases.
+---
+
 # PHP
 
 The SeaTable PHP Client encapsulates the SeaTable REST API. It is auto-generated from the public [OpenAPI specification](https://api.seatable.com), which ensures all API endpoints are covered automatically.
@@ -4225,6 +4333,10 @@ $baseUuid = $result['dtable_uuid'];
 ---
 
 Source: https://developer.seatable.com/php/examples/
+
+---
+description: PHP code examples for SeaTable — get account info, list bases, retrieve metadata, run SQL queries, and add rows.
+---
 
 # Examples
 
@@ -4385,6 +4497,10 @@ try {
 
 Source: https://developer.seatable.com/php/api-reference/
 
+---
+description: Complete PHP API reference for SeaTable — auto-generated endpoint documentation for auth, base operations, files, users, and admin APIs.
+---
+
 # API Reference
 
 The PHP client is auto-generated from the SeaTable OpenAPI specification. Detailed documentation for all endpoints, including parameters and response types, is available on GitHub:
@@ -4406,6 +4522,10 @@ The PHP client is auto-generated from the SeaTable OpenAPI specification. Detail
 
 Source: https://developer.seatable.com/ruby/
 
+---
+description: Community-maintained Ruby gem for the SeaTable API — connect to SeaTable bases from Ruby applications.
+---
+
 # Ruby client
 
 One of our community members [made a first version](https://forum.seatable.com/t/seatable-ruby-ruby-gem-for-seatable/2366) of a SeaTable Ruby client.
@@ -4417,6 +4537,10 @@ The source code of the Ruby client API and additional explanations are available
 ## SQL
 
 Source: https://developer.seatable.com/sql/
+
+---
+description: Query and modify SeaTable data with SQL — supports SELECT, INSERT, UPDATE, and DELETE via Python, JavaScript, or the REST API.
+---
 
 # SQL
 
@@ -4493,6 +4617,10 @@ For the complete list of available functions, see the [function reference](./fun
 ---
 
 Source: https://developer.seatable.com/sql/select/
+
+---
+description: SeaTable SQL SELECT reference — WHERE, GROUP BY, HAVING, ORDER BY, LIMIT, DISTINCT, aggregation functions, and implicit joins.
+---
 
 # SELECT
 
@@ -4665,6 +4793,10 @@ Restrictions:
 
 Source: https://developer.seatable.com/sql/insert/
 
+---
+description: SeaTable SQL INSERT syntax for appending rows to Big Data tables — value rules, multi-value columns, and Enterprise Edition requirement.
+---
+
 # INSERT
 
 Appends a new row to a table via SQL.
@@ -4694,6 +4826,10 @@ INSERT INTO Table1 (Name, Age) VALUES ('Erika', 38)
 ---
 
 Source: https://developer.seatable.com/sql/insert-update-delete/
+
+---
+description: SeaTable SQL UPDATE and DELETE syntax — modify or remove rows with WHERE conditions, value restrictions, and multi-value column rules.
+---
 
 # UPDATE and DELETE
 
@@ -4749,6 +4885,10 @@ DELETE FROM Contacts WHERE Age<18
 ---
 
 Source: https://developer.seatable.com/sql/limitations/
+
+---
+description: SeaTable SQL limitations — read-only column types, list column behavior, NULL handling, and Big Data storage index management.
+---
 
 # Limitations
 
@@ -4832,6 +4972,10 @@ Indexes are updated when:
 ---
 
 Source: https://developer.seatable.com/sql/functions/
+
+---
+description: Complete SeaTable SQL function reference — arithmetic, text, date, geo, logical, and statistical functions with syntax and examples.
+---
 
 # SQL function reference
 
@@ -5661,6 +5805,10 @@ These are formula-style functions that operate on literal values or within a sin
 
 Source: https://developer.seatable.com/plugins/
 
+---
+description: Build custom SeaTable plugins with JavaScript and React — step-by-step guide from project setup to packaging and deployment.
+---
+
 # SeaTable plugin development process
 
 In this guide, we will demonstrate step by step how to write a plugin to SeaTable. This plugin can display the basic information of the base, including
@@ -5888,6 +6036,10 @@ Number of collaborators: X
 
 Source: https://developer.seatable.com/plugins/environments/
 
+---
+description: Initialize dtable-sdk for SeaTable plugin development — differences between development and production environments, event subscription, and sync.
+---
+
 # dtable
 
 ## Init
@@ -6007,6 +6159,10 @@ class App extends React.Component {
 ---
 
 Source: https://developer.seatable.com/plugins/methods/
+
+---
+description: Complete dtable-sdk method reference for SeaTable plugins — tables, views, columns, rows, SQL queries, users, and plugin settings.
+---
 
 # Methods
 
