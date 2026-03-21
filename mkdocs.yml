@@ -47,6 +47,10 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+# Hooks
+hooks:
+  - hooks/sitemap_xsl.py
+
 # Plugins
 plugins:
   - search:
