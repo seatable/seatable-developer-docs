@@ -232,7 +232,8 @@ nav:
       - sql/index.md
       - SELECT: sql/select.md
       - INSERT: sql/insert.md
-      - UPDATE, DELETE: sql/insert-update-delete.md
+      - UPDATE: sql/update.md
+      - DELETE: sql/delete.md
       - Limitations: sql/limitations.md
       - Functions: sql/functions.md
   - Plugin Development:
