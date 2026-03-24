@@ -54,7 +54,8 @@
 - [SQL](https://developer.seatable.com/sql/): Query and modify SeaTable data with SQL — supports SELECT, INSERT, UPDATE, and DELETE via Python, JavaScript, or the REST API.
 - [SELECT](https://developer.seatable.com/sql/select/): SeaTable SQL SELECT reference — WHERE, GROUP BY, HAVING, ORDER BY, LIMIT, DISTINCT, aggregation functions, and implicit joins.
 - [INSERT](https://developer.seatable.com/sql/insert/): SeaTable SQL INSERT syntax for appending rows to Big Data tables — value rules, multi-value columns, and Enterprise Edition requirement.
-- [UPDATE, DELETE](https://developer.seatable.com/sql/insert-update-delete/): SeaTable SQL UPDATE and DELETE syntax — modify or remove rows with WHERE conditions, value restrictions, and multi-value column rules.
+- [UPDATE](https://developer.seatable.com/sql/update/): SeaTable SQL UPDATE syntax — modify rows with WHERE conditions and constant values.
+- [DELETE](https://developer.seatable.com/sql/delete/): SeaTable SQL DELETE syntax — remove rows with WHERE conditions.
 - [Limitations](https://developer.seatable.com/sql/limitations/): SeaTable SQL limitations — read-only column types, list column behavior, NULL handling, and Big Data storage index management.
 - [Functions](https://developer.seatable.com/sql/functions/): Complete SeaTable SQL function reference — arithmetic, text, date, geo, logical, and statistical functions with syntax and examples.
 

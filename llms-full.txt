@@ -4693,57 +4693,105 @@ INSERT INTO Table1 (Name, Age) VALUES ('Erika', 38)
 
 ---
 
-Source: https://developer.seatable.com/sql/insert-update-delete/
+Source: https://developer.seatable.com/sql/update/
 
-# UPDATE and DELETE
+# UPDATE
 
-These statements modify existing data in a base. They work with both normal and Big Data storage.
+Updates one or more rows in a table. Works with both normal and Big Data storage.
 
-## UPDATE
-
-Updates one or multiple rows.
-
-### Syntax
+## Syntax
 
 ```sql
 UPDATE tableName
-  SET column1 = value [, ...]
+  SET column1 = value [, column2 = value, ...]
   [WHERE ...]
 ```
 
-    If you omit the WHERE clause, **all rows** will be updated.
+    If you omit the WHERE clause, **all rows** in the table will be updated.
 
-    The `value` in SET must be a constant (string, number, or boolean). Functions, arithmetic expressions, and column references are **not supported** in SET. They can only be used in `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and `ORDER BY`.
+The `value` in SET must be a **constant** (string, number, or boolean). Expressions and [functions](functions.md) are not supported in SET — see [not supported features](index.md#not-supported) for alternatives.
 
-The same column restrictions and multi-value rules as [INSERT](insert.md) apply.
+The same column restrictions and multi-value rules as [INSERT](insert.md) apply. Not all column types can be written via SQL — see [column writability](limitations.md#column-writability) for details.
 
-__Example__
+`LIMIT` is not supported in `UPDATE` statements.
+
+## Setting values to NULL
+
+To clear a cell, set the column to `NULL`. Setting a text column to an empty string `""` also results in NULL — see [NULL values](limitations.md#null-values).
+
+```sql
+UPDATE Contacts SET City=NULL WHERE Name="Alice"
+```
+
+## Response
+
+`UPDATE` returns `success: true` on success. The response does not include the number of affected rows. If no rows match the WHERE condition, the response is still `success: true`.
+
+```json
+{
+  "success": true,
+  "metadata": null,
+  "results": null
+}
+```
+
+## Examples
+
+Update a single column:
 
 ```sql
 UPDATE Contacts SET Adult=true WHERE Age>=18
 ```
 
+Update multiple columns at once:
+
 ```sql
 UPDATE Contacts SET Adult=true, `Age group`="18+" WHERE Age>=18
 ```
 
-## DELETE
+---
 
-Deletes one or multiple rows.
+Source: https://developer.seatable.com/sql/delete/
 
-### Syntax
+# DELETE
+
+Deletes one or more rows from a table. Works with both normal and Big Data storage.
+
+## Syntax
 
 ```sql
 DELETE FROM tableName
   [WHERE ...]
 ```
 
-    If you omit the WHERE clause, **all rows** will be deleted.
+    If you omit the WHERE clause, **all rows** in the table will be deleted.
 
-__Example__
+`LIMIT` is not supported in `DELETE` statements.
+
+## Response
+
+`DELETE` returns `success: true` on success. The response does not include the number of deleted rows. If no rows match the WHERE condition, the response is still `success: true`.
+
+```json
+{
+  "success": true,
+  "metadata": null,
+  "results": null
+}
+```
+
+## Examples
+
+Delete rows matching a condition:
 
 ```sql
 DELETE FROM Contacts WHERE Age<18
+```
+
+Delete rows with empty values:
+
+```sql
+DELETE FROM Contacts WHERE City IS NULL
 ```
 
 ---

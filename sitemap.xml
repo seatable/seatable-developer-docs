@@ -3,162 +3,166 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://developer.seatable.com/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/includes/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/introduction/get_support/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/columns/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/constants/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/files/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/links/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/metadata/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/rows/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/scripting-features/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/sql/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/tables/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/javascript/views/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/php/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/php/api-reference/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/php/examples/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/plugins/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/plugins/environments/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/plugins/methods/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/accounts/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/columns/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/communication-utils/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/context/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/date-utils/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/files/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/links/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/metadata/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/rows/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/tables/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/users/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/python/objects/views/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/ruby/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/sql/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
+    </url>
+    <url>
+         <loc>https://developer.seatable.com/sql/delete/</loc>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/sql/functions/</loc>
-         <lastmod>2026-03-22</lastmod>
-    </url>
-    <url>
-         <loc>https://developer.seatable.com/sql/insert-update-delete/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/sql/insert/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/sql/limitations/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
     </url>
     <url>
          <loc>https://developer.seatable.com/sql/select/</loc>
-         <lastmod>2026-03-22</lastmod>
+         <lastmod>2026-03-24</lastmod>
+    </url>
+    <url>
+         <loc>https://developer.seatable.com/sql/update/</loc>
+         <lastmod>2026-03-24</lastmod>
     </url>
 </urlset>
