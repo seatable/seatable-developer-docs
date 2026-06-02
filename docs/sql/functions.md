@@ -614,8 +614,8 @@ When passing a parameter with time or date type, you can specify a constant in "
 
     __Example__ `hours('2020-02-14', '2020-02-14 15:14')` returns `15`
 
-    !!! warning "Not supported in SQL"
-        `hours()` is only available in formulas, not in SQL queries. Use `dateDif(startDate, endDate, 'S')` and divide by 3600 as a workaround.
+    !!! info "SQL support"
+        Support for `hours()` in SQL queries was added in v6.2. In earlier versions, use `dateDif(startDate, endDate, 'S')` and divide by 3600 as a workaround.
 
 !!! abstract "minute"
     Returns the minutes of a time specification (`date`) as a number. The number returned is between 0 and 59.
