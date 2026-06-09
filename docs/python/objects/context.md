@@ -65,6 +65,25 @@ When the script is running in the cloud, the context object provides a context e
     print(context.current_table)
     ```
 
+## current_view
+
+!!! info "current_view"
+
+    The name of the view that the current user is viewing when the script is run.
+
+    **Note:** This was added in version 6.2.
+
+    ```python
+    context.current_view
+    ```
+
+    __Example__
+
+    ```python
+    from seatable_api import context
+    print(context.current_view)
+    ```
+
 ## current_row
 
 !!! info "current_row"
