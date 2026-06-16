@@ -23,6 +23,12 @@ Choose the approach that fits the complexity of your page. Both produce the same
 
     Create them in your base before running the page, or adapt the table and field names in the template's source.
 
+## Before you start: add an HTML Page in the app
+
+In your Universal App, add a new page and choose **Add HTML page**. This creates the empty page you will later upload your build to, and it surfaces the `server`, `appUuid` and `pageId` values you need for local development ([step 3](#3-configure-local-development)).
+
+![Adding an HTML Page to a Universal App](../media/html-page-add.png)
+
 ## 1. Get the template
 
 ```shell
@@ -63,7 +69,11 @@ These values are registered to `window.__HTML_PAGE_DEV_CONFIG__` and picked up b
 !!! note "Where the values come from"
 
     - `accountToken` — an API token you generate in the base in advance. See [how to create API tokens](https://seatable.com/help/create-api-tokens/).
-    - `server`, `appUuid` and `pageId` — shown in the prompts when you create a new blank HTML Page in the app.
+    - `server`, `appUuid` and `pageId` — shown under **HTML Page development information** in the page's configuration (see below).
+
+The HTML Page configuration shows these values ready to copy, alongside the upload area you will use later:
+
+![HTML Page configuration with development information and upload area](../media/html-page-config.png)
 
 ## 4. Run the development server
 
@@ -90,7 +100,7 @@ This single command cleans the output, runs the Vite build (into `dist`), and pa
 ## 6. Upload and test
 
 1. In SeaTable, open the configuration of the HTML Page in your Universal App.
-2. Upload the generated ZIP as the HTML page package.
+2. Drag the generated ZIP into the **Upload HTML page file** area (the same configuration shown in [step 3](#3-configure-local-development)).
 3. Open the app preview, fill in the form, and submit it.
 4. Return to the base and confirm that the corresponding records were created.
 
