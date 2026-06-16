@@ -1,5 +1,6 @@
 # Mkdocs build directory
 /site/
+/.cache/
 /.idea
 .vscode
 __pycache__/
