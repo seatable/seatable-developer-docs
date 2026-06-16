@@ -240,3 +240,11 @@ nav:
       - plugins/index.md
       - Environments: plugins/environments.md
       - Available methods: plugins/methods.md
+  - HTML Pages:
+      - html-pages/index.md
+      - Getting Started: html-pages/getting-started.md
+      - Example: html-pages/example.md
+      - SDK Reference:
+          - Initialization: html-pages/sdk/initialization.md
+          - Rows: html-pages/sdk/rows.md
+          - Files & Images: html-pages/sdk/files.md
