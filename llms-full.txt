@@ -6905,3 +6905,721 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
 ---
 
+## HTML Pages
+
+Source: https://developer.seatable.com/html-pages/
+
+# HTML Pages
+
+Starting with SeaTable 6.2, a Universal App can contain a new page type: the **HTML Page**. You upload a packaged HTML/JavaScript/CSS bundle, and SeaTable renders it as a full page inside the app.
+
+A static bundle on its own can only display fixed content. To turn an HTML Page into a real application — a custom form, a dashboard, a calculator — it needs to read from and write to the base. That data exchange runs through the [`seatable-html-page-sdk`](https://www.npmjs.com/package/seatable-html-page-sdk).
+
+This section is written for developers. It covers how to set up a project, how to develop and package a page, and the full SDK reference.
+
+## Architecture
+
+An HTML Page is rendered in a sandboxed context inside the Universal App. It never talks to the base directly. Instead, the SDK provides a messaging bridge to the app, which performs the actual data operations.
+
+```mermaid
+flowchart LR
+    A[HTML Page] -->|seatable-html-page-sdk| B[Universal App]
+    B -->|API| C[(Base)]
+    C --> B
+    B --> A
+```
+
+The SDK offers:
+
+- **Data APIs** — list, add, update and delete rows; upload files and images.
+- **Event propagation** — bidirectional events (mouse, keyboard, drag-and-drop) between the page and the app.
+
+## Prerequisites
+
+- SeaTable 6.2 or later.
+- A Universal App with an HTML Page added to it.
+- An API token generated in the base (used during local development).
+- Node.js and npm for building the page.
+
+## Where to start
+
+- [Getting Started](getting-started.md) — set up the project, develop locally, build and upload a page. We follow the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form) end to end.
+- [SDK Reference](sdk/initialization.md) — installation, initialization, and the full API for rows, files and images.
+
+    The [`seatable-html-page-template-simple-form`](https://github.com/seatable/seatable-html-page-template-simple-form) repository contains a complete, buildable form page. It is the running example used throughout this section.
+
+---
+
+Source: https://developer.seatable.com/html-pages/getting-started/
+
+# Getting Started
+
+This guide walks through building an HTML Page from the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form): a form that writes submitted records into a base. By the end you will have a packaged ZIP that you can upload to a Universal App.
+
+The template ships the build configuration and project structure you need. It supports two development styles:
+
+- **Modular** — HTML, JavaScript and CSS split across multiple files. Suited for complex pages.
+- **Non-modular** — everything in a single `index.html`. Suited for simple pages.
+
+Choose the approach that fits the complexity of your page. Both produce the same kind of uploadable package.
+
+    The form reads products from the base and writes orders back, so it expects three tables:
+
+    - **Products** — with `Product_name` (text) and `Unit_price` (number)
+    - **OrderItems** — with `Product` (link to Products) and `Quantity` (number)
+    - **Orders** — with `OrderItems` (link to OrderItems)
+
+    Create them in your base before running the page, or adapt the table and field names in the template's source.
+
+## Before you start: add an HTML Page in the app
+
+In your Universal App, add a new page and choose **Add HTML page**. This creates the empty page you will later upload your build to, and it surfaces the `server`, `appUuid` and `pageId` values you need for local development ([step 3](#3-configure-local-development)).
+
+![Adding an HTML Page to a Universal App](../media/html-page-add.png)
+
+## 1. Get the template
+
+```shell
+git clone https://github.com/seatable/seatable-html-page-template-simple-form.git
+cd seatable-html-page-template-simple-form
+npm install
+```
+
+## 2. Choose a development style
+
+The active style is controlled by the `ESM` variable in `.env`. Vite derives its `root` from it automatically (`src/esm` when `true`, `src/classic` when `false`) — you do not edit `vite.config.js`.
+
+=== "Modular"
+
+    JavaScript and CSS are split into multiple files under `src/esm`, and the entry file is imported into `index.html` with `type="module"`. The SDK is used via the npm package (`import { HTMLPageSDK } from "seatable-html-page-sdk"`).
+
+    Enable it by setting `ESM=true`. Either edit `.env` directly, or copy `.env` to `.env.local` (git-ignored) and set it there.
+
+=== "Non-modular"
+
+    All logic lives in a single `index.html` under `src/classic`, with the SDK loaded from a CDN. This is the template default (`ESM=false`), so no extra configuration is required.
+
+## 3. Configure local development
+
+During local development, the page needs to know which base to talk to. Create `src/setting.js` based on `setting.template.js`:
+
+```js
+export default {
+  server: "",
+  appUuid: "",
+  pageId: "",
+  accountToken: "",
+};
+```
+
+These values are registered to `window.__HTML_PAGE_DEV_CONFIG__` and picked up by the SDK when you call `init()` in development. See [Initialization](sdk/initialization.md) for how the SDK consumes them.
+
+    - `accountToken` — an API token you generate in the base in advance. See [how to create API tokens](https://seatable.com/help/create-api-tokens/).
+    - `server`, `appUuid` and `pageId` — shown under **HTML Page development information** in the page's configuration (see below).
+
+The HTML Page configuration shows these values ready to copy, alongside the upload area you will use later:
+
+![HTML Page configuration with development information and upload area](../media/html-page-config.png)
+
+## 4. Run the development server
+
+```shell
+npm run dev
+```
+
+Open the local development URL in your browser to preview and test the page. Changes reload live.
+
+## 5. Build and package
+
+Generate the uploadable ZIP:
+
+```shell
+npm run build-page
+```
+
+This single command cleans the output, runs the Vite build (into `dist`), and packages it into a ZIP under the `page-zip` directory. The ZIP is named after the project, for example `seatable-html-page-template-simple-form-0.0.1.zip` — bump the `version` in `package.json` before building so you can tell uploads apart.
+
+    `npm run build-page` already runs the build, so you do not call `npm run build` separately. Run `npm run build` on its own only if you want to inspect the unpackaged output in `dist`, or `npm run dev` to preview it live.
+
+## 6. Upload and test
+
+1. In SeaTable, open the configuration of the HTML Page in your Universal App.
+2. Drag the generated ZIP into the **Upload HTML page file** area (the same configuration shown in [step 3](#3-configure-local-development)).
+3. Open the app preview, fill in the form, and submit it.
+4. Return to the base and confirm that the corresponding records were created.
+
+Once the submitted records appear in the base, the page is fully integrated and ready to use.
+
+## Next steps
+
+- [SDK Reference: Initialization](sdk/initialization.md)
+- [SDK Reference: Rows](sdk/rows.md)
+- [SDK Reference: Files & Images](sdk/files.md)
+
+---
+
+Source: https://developer.seatable.com/html-pages/example/
+
+# Example: a form that reads and writes
+
+This page ties the SDK together into one working flow: load data on start, render it, and write new rows back on submit. It is a distilled version of the [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form) — a form that lists products from the base, lets the user pick quantities, and stores the result as an order.
+
+The data flow is always the same four steps:
+
+```mermaid
+flowchart LR
+    A[init SDK] --> B[listRows: load data]
+    B --> C[render UI]
+    C --> D[on submit: batchAddRows + addRow]
+```
+
+It assumes the three tables described in [Getting Started](getting-started.md): **Products**, **OrderItems** (link to Products), and **Orders** (link to OrderItems).
+
+## Single-file version (non-modular)
+
+This is the complete page. It loads the SDK from a CDN, so everything lives in one `index.html` — the non-modular style. Styling is omitted for clarity.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Order</title>
+  </head>
+  <body>
+    <div id="products"></div>
+    <button id="submit">Submit order</button>
+    <p id="status"></p>
+
+    <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
+    <script>
+      // Quantities chosen by the user: { productRowId: quantity }
+      const order = {};
+      let sdk;
+
+      async function init() {
+        // In production __HTML_PAGE_DEV_CONFIG__ is undefined and the SDK
+        // derives its context from the host app. In development the Vite
+        // server injects it from src/setting.js. The same line works in both.
+        sdk = new HTMLPageSDK(window.__HTML_PAGE_DEV_CONFIG__ || null);
+        await sdk.init();
+
+        // Read rows. The payload is under res.data (see SDK Reference > Rows).
+        const res = await sdk.listRows({ tableName: "Products" });
+        renderProducts(res.data.results);
+      }
+
+      function renderProducts(products) {
+        const container = document.getElementById("products");
+        container.innerHTML = "";
+
+        products.forEach((product) => {
+          const row = document.createElement("div");
+          row.innerHTML = `
+            <span>${product.Product_name} (${product.Unit_price})</span>
+            <input type="number" min="0" value="0" />
+          `;
+          // product._id is the row ID — we need it to create the link later.
+          row.querySelector("input").addEventListener("input", (e) => {
+            order[product._id] = parseInt(e.target.value, 10) || 0;
+          });
+          container.appendChild(row);
+        });
+      }
+
+      async function submitOrder() {
+        const status = document.getElementById("status");
+
+        // Build one OrderItems row per chosen product.
+        const orderItemsData = Object.keys(order)
+          .filter((productId) => order[productId] > 0)
+          .map((productId) => ({
+            Quantity: order[productId],
+            // Link columns take an array of linked row IDs.
+            Product: [productId],
+          }));
+
+        if (orderItemsData.length === 0) {
+          status.textContent = "Please choose at least one product.";
+          return;
+        }
+
+        try {
+          // 1. Create the order items in one batch call.
+          const itemsRes = await sdk.batchAddRows({
+            tableName: "OrderItems",
+            rowsData: orderItemsData,
+          });
+
+          // batchAddRows returns the created rows under res.data.rows.
+          // Collect their new IDs to link them to the order.
+          const orderItemIds = itemsRes.data.rows.map((row) => row._id);
+
+          // 2. Create the order, linking the items we just created.
+          await sdk.addRow({
+            tableName: "Orders",
+            rowData: { OrderItems: orderItemIds },
+          });
+
+          status.textContent = "Order submitted.";
+        } catch (error) {
+          // A 403 here usually means the API token lacks write permission.
+          status.textContent = "Submit failed: " + error.message;
+        }
+      }
+
+      document.getElementById("submit").addEventListener("click", submitOrder);
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>
+```
+
+    Notice the two-step write: first create the `OrderItems` rows with `batchAddRows`, then read their `_id` values from `res.data.rows` and pass them as an array to the `Orders` row's link column. Link columns always take an array of linked row IDs — see [`addRow`](sdk/rows.md#add-rows).
+
+## Modular version
+
+For anything beyond a simple page, split the logic into modules and import the SDK from the npm package. The template's `src/esm` directory does exactly this. A common pattern is to wrap all base access in a single `Context` class, keeping SDK calls out of your UI code:
+
+```js
+import { HTMLPageSDK } from "seatable-html-page-sdk";
+
+export default class Context {
+  async init(options) {
+    this.sdk = new HTMLPageSDK(options);
+    await this.sdk.init();
+  }
+
+  async loadProducts() {
+    const res = await this.sdk.listRows({ tableName: "Products" });
+    return {
+      columns: res.data.metadata,
+      rows: res.data.results,
+    };
+  }
+
+  async submitOrder(orderItemsData) {
+    const itemsRes = await this.sdk.batchAddRows({
+      tableName: "OrderItems",
+      rowsData: orderItemsData,
+    });
+    const orderItemIds = itemsRes.data.rows.map((row) => row._id);
+
+    await this.sdk.addRow({
+      tableName: "Orders",
+      rowData: { OrderItems: orderItemIds },
+    });
+  }
+}
+```
+
+The entry point reads the injected dev config and starts the app:
+
+```js
+// index.js
+import Context from "./context";
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const context = new Context();
+  await context.init(window.__HTML_PAGE_DEV_CONFIG__ || null);
+  const { rows } = await context.loadProducts();
+  // ... render rows, wire up submit -> context.submitOrder(...)
+});
+```
+
+## Next steps
+
+- [SDK Reference: Rows](sdk/rows.md) — full parameters and return shapes for every row method.
+- [SDK Reference: Files & Images](sdk/files.md) — add file and image uploads to your form.
+
+---
+
+## SDK Reference
+
+Source: https://developer.seatable.com/html-pages/sdk/initialization/
+
+# Initialization
+
+The `seatable-html-page-sdk` is the bridge between an HTML Page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
+
+## Installation
+
+=== "Package manager"
+
+    Install with npm or yarn — recommended for the [modular development style](../getting-started.md#2-choose-a-development-style).
+
+    ```shell
+    # npm
+    npm install seatable-html-page-sdk --save
+
+    # yarn
+    yarn add seatable-html-page-sdk
+    ```
+
+    ```js
+    import { HTMLPageSDK } from "seatable-html-page-sdk";
+    ```
+
+=== "CDN"
+
+    Load the SDK via CDN — convenient for the non-modular style, where everything lives in `index.html`. `HTMLPageSDK` becomes available as a global.
+
+    ```html
+    
+    <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
+
+    
+    
+
+    <script>
+      const sdk = new HTMLPageSDK();
+    </script>
+    ```
+
+    !!! tip "Pin a version"
+
+        `@latest` always resolves to the newest release. For production pages, pin an explicit version (for example `seatable-html-page-sdk@1.0.0`) so a new release cannot change behavior unexpectedly.
+
+## Initialize the SDK
+
+Create an instance, then call `init()` before making any data calls. Write the initialization **once** — the same code works in both development and production:
+
+```js
+const options = window.__HTML_PAGE_DEV_CONFIG__ || null;
+const sdk = new HTMLPageSDK(options);
+await sdk.init();
+```
+
+How `options` is resolved differs by environment, but your code does not change:
+
+=== "Production"
+
+    Inside the Universal App, `window.__HTML_PAGE_DEV_CONFIG__` is not defined, so `options` is `null`. The SDK derives the connection context from the host app automatically — no credentials in your code.
+
+=== "Development"
+
+    There is no host app locally, so the SDK needs connection details. You do **not** hardcode them: the Vite dev server reads [`src/setting.js`](../getting-started.md#3-configure-local-development) and injects the values into `window.__HTML_PAGE_DEV_CONFIG__` at serve time.
+
+    The injected object has this shape:
+
+    ```js
+    {
+      server: "your-html-page-server",
+      accountToken: "your-account-token",
+      appUuid: "your-app-uuid",
+      pageId: "your-app-page-id",
+    }
+    ```
+
+    Because `setting.js` is git-ignored and never bundled, your account token stays out of the build.
+
+## Basic usage
+
+Once initialized, call the data APIs on the instance:
+
+```js
+const sdk = new HTMLPageSDK(options);
+await sdk.init();
+
+const res = await sdk.listRows({
+  tableName: "Employees",
+  start: 0,
+  limit: 100,
+});
+const rows = res.data.results;
+```
+
+All SDK methods are asynchronous and return promises — always `await` them. Row methods resolve to the HTTP response, so the payload is under `.data` (see [Rows](rows.md)). Upload methods are the exception and return the result object directly (see [Files & Images](files.md)).
+
+## Next steps
+
+- [Rows](rows.md) — list, add, update and delete rows, including batch operations.
+- [Files & Images](files.md) — upload files and images for file and image columns.
+
+---
+
+Source: https://developer.seatable.com/html-pages/sdk/rows/
+
+# Rows
+
+Row operations on the `seatable-html-page-sdk`. All methods are asynchronous — `await` them. The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+
+    Row methods resolve to the underlying HTTP response — the payload is under `.data`, not the return value itself. For example, `listRows` gives you the rows via `res.data.results` and the column metadata via `res.data.metadata`. The `Returns` sections below describe the shape of `.data`.
+
+    Single-select and multi-select fields — including those returned via linked records and lookup formulas — return the **option names**, not their internal IDs.
+
+## List rows
+
+    List rows from a specific table, with pagination.
+
+    ```js
+    sdk.listRows({ tableName, start, limit });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `start`
+    :   number — starting index for pagination
+
+    `limit`
+    :   number — number of rows to retrieve
+
+    __Returns__ `.data` holds `{ metadata, results }` — `results` is the array of row objects, `metadata` the column definitions.
+
+    __Example__
+    ```js
+    const res = await sdk.listRows({ tableName: "Employees", start: 0, limit: 50 });
+    const rows = res.data.results;
+    const columns = res.data.metadata;
+    ```
+
+## Add rows
+
+    Add a new row to the specified table.
+
+    ```js
+    sdk.addRow({ tableName, rowData });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `rowData`
+    :   object — key-value pairs of column names and values
+
+    __Returns__ `.data` holds `{ row }` — the newly created row object.
+
+    __Example__
+    ```js
+    const res = await sdk.addRow({
+      tableName: "Employees",
+      rowData: {
+        Name: "Jane Smith",
+        Age: 28,
+        Department: "Engineering",
+
+        // IDs of records linked in the Manager field
+        Manager: ["NSPa_fd4SEqRESqOZzRqyg", "eA6rQDuxQyGITmD1hrfyzw"],
+      },
+    });
+    ```
+
+    !!! tip "Linked record fields"
+
+        Set a link column with `{ "link_column_name": ["linked_row_id1", "linked_row_id2", ...] }`.
+
+    Add multiple rows to the specified table in one call.
+
+    ```js
+    sdk.batchAddRows({ tableName, rowsData });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `rowsData`
+    :   array — an array of row objects
+
+    __Returns__ `.data` holds `{ rows }` — the list of created row objects. Each row carries its new `_id`, which you can use to populate link fields in a follow-up call.
+
+    __Example__
+    ```js
+    await sdk.batchAddRows({
+      tableName: "Employees",
+      rowsData: [
+        {
+          Name: "Jane Smith",
+          Age: 28,
+          Department: "Engineering",
+          Manager: ["NSPa_fd4SEqRESqOZzRqyg", "eA6rQDuxQyGITmD1hrfyzw"],
+        },
+        {
+          Name: "Tom",
+          Age: 24,
+          Department: "Product Management",
+          Manager: ["QgK2KMf8Sxad8duPcq6gQA", "bBDbhbzXReSPWpcxq225xA"],
+        },
+      ],
+    });
+    ```
+
+## Update rows
+
+    Update an existing row.
+
+    ```js
+    sdk.updateRow({ tableName, rowId, rowData });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `rowId`
+    :   string — the unique ID of the row to update
+
+    `rowData`
+    :   object — the fields to update
+
+    __Returns__ `.data` holds `{ success: true, row: {...} }`
+
+    __Example__
+    ```js
+    await sdk.updateRow({
+      tableName: "Employees",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+      rowData: { Age: 18 },
+    });
+    ```
+
+    Update multiple rows in one call.
+
+    ```js
+    sdk.batchUpdateRows({ tableName, rowsData });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `rowsData`
+    :   array — objects containing a `row_id` and the updated `row` data
+
+    __Returns__ `.data` holds `{ success: true, rows: [{...}, ...] }`
+
+    __Example__
+    ```js
+    await sdk.batchUpdateRows({
+      tableName: "Employees",
+      rowsData: [
+        { row_id: "fcHIocncTsOygA3FjL-toQ", row: { Age: 18 } },
+        { row_id: "BIXJ_dUMS1OW8Lyoxrx4Fw", row: { Age: 24 } },
+      ],
+    });
+    ```
+
+## Delete rows
+
+    Delete a single row.
+
+    ```js
+    sdk.deleteRow({ tableName, rowId });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `rowId`
+    :   string — the unique ID of the row to delete
+
+    __Returns__ `.data` holds `{ success: true }`
+
+    __Example__
+    ```js
+    await sdk.deleteRow({
+      tableName: "Employees",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+    });
+    ```
+
+    Delete multiple rows in one call.
+
+    ```js
+    sdk.batchDeleteRows({ tableName, rowsIds });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the target table
+
+    `rowsIds`
+    :   array — the row IDs to delete
+
+    __Returns__ `.data` holds `{ success: true }`
+
+    __Example__
+    ```js
+    await sdk.batchDeleteRows({
+      tableName: "Employees",
+      rowsIds: ["fcHIocncTsOygA3FjL-toQ", "BIXJ_dUMS1OW8Lyoxrx4Fw"],
+    });
+    ```
+
+---
+
+Source: https://developer.seatable.com/html-pages/sdk/files/
+
+# Files & Images
+
+Upload files and images from an HTML Page. The returned data is used to populate a file or image column — typically by passing it into `updateRow` or `addRow` (see [Rows](rows.md)). The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+
+    Unlike the row methods, the upload methods resolve to the result object **directly** — there is no `.data` wrapper.
+
+    Upload a file for use in a **file** column.
+
+    ```js
+    sdk.uploadFile({ file });
+    ```
+
+    __Parameters__
+
+    `file`
+    :   object — the file to upload (for example, a `File` from an `<input type="file">`)
+
+    __Returns__ `{ name, size, type, url }` — pass this object as the value of a file column.
+
+    __Example__
+    ```js
+    fileInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      const { name, size, type, url } = await sdk.uploadFile({ file });
+
+      await sdk.updateRow({
+        tableName: "Documents",
+        rowId: "fcHIocncTsOygA3FjL-toQ",
+        rowData: { Attachment: [{ name, size, type, url }] },
+      });
+    });
+    ```
+
+    Upload an image for use in an **image** column.
+
+    ```js
+    sdk.uploadImage({ file });
+    ```
+
+    __Parameters__
+
+    `file`
+    :   object — the image file to upload
+
+    __Returns__ `{ name, size, type, url }` — same shape as `uploadFile`, with `type` set to `"image"`. Pass the URL as the value of an image column.
+
+    __Example__
+    ```js
+    fileInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      const { url } = await sdk.uploadImage({ file });
+
+      await sdk.updateRow({
+        tableName: "Products",
+        rowId: "fcHIocncTsOygA3FjL-toQ",
+        rowData: { Photo: [url] },
+      });
+    });
+    ```
+
+---
+
