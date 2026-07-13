@@ -240,9 +240,10 @@ nav:
       - plugins/index.md
       - Environments: plugins/environments.md
       - Available methods: plugins/methods.md
-  - HTML Pages:
+  - HTML pages:
       - html-pages/index.md
-      - Getting Started: html-pages/getting-started.md
+      - Low-code quickstart: html-pages/low-code-quickstart.md
+      - Developer setup: html-pages/getting-started.md
       - Example: html-pages/example.md
       - SDK Reference:
           - Initialization: html-pages/sdk/initialization.md

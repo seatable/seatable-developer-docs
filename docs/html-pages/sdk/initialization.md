@@ -1,10 +1,10 @@
 ---
-description: Install and initialize the seatable-html-page-sdk. Set up the SDK via npm or CDN and connect an HTML Page to its SeaTable base.
+description: Install and initialize the seatable-html-page-sdk. Set up the SDK via npm or CDN and connect an HTML page to its SeaTable base.
 ---
 
 # Initialization
 
-The `seatable-html-page-sdk` is the bridge between an HTML Page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
+The `seatable-html-page-sdk` is the bridge between an HTML page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
 
 ## Installation
 
