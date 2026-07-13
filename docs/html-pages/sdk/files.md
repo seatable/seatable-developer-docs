@@ -1,10 +1,10 @@
 ---
-description: seatable-html-page-sdk reference for uploading files and images from an HTML Page into file and image columns of a base.
+description: seatable-html-page-sdk reference for uploading files and images from an HTML page into file and image columns of a base.
 ---
 
 # Files & Images
 
-Upload files and images from an HTML Page. The returned data is used to populate a file or image column — typically by passing it into `updateRow` or `addRow` (see [Rows](rows.md)). The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+Upload files and images from an HTML page. The returned data is used to populate a file or image column — typically by passing it into `updateRow` or `addRow` (see [Rows](rows.md)). The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
 
 !!! note "Return value"
 

@@ -1,5 +1,5 @@
 ---
-description: seatable-html-page-sdk reference for row operations — list, add, update, delete, and batch-modify rows in a base from an HTML Page.
+description: seatable-html-page-sdk reference for row operations — list, add, update, delete, and batch-modify rows in a base from an HTML page.
 ---
 
 # Rows
