@@ -6922,25 +6922,25 @@ Base represents a table in SeaTable. The `base` object provide a way to read, ma
 
 ---
 
-## HTML Pages
+## HTML pages
 
 Source: https://developer.seatable.com/html-pages/
 
-# HTML Pages
+# HTML pages
 
-Starting with SeaTable 6.2, a Universal App can contain a new page type: the **HTML Page**. You upload a packaged HTML/JavaScript/CSS bundle, and SeaTable renders it as a full page inside the app.
+Starting with SeaTable 6.2, a Universal App can contain a new page type: the **HTML page**. You upload a packaged HTML/JavaScript/CSS bundle, and SeaTable renders it as a full page inside the app.
 
-A static bundle on its own can only display fixed content. To turn an HTML Page into a real application — a custom form, a dashboard, a calculator — it needs to read from and write to the base. That data exchange runs through the [`seatable-html-page-sdk`](https://www.npmjs.com/package/seatable-html-page-sdk).
+A static bundle on its own can only display fixed content. To turn an HTML page into a real application — a custom form, a dashboard, a calculator — it needs to read from and write to the base. That data exchange runs through the [`seatable-html-page-sdk`](https://www.npmjs.com/package/seatable-html-page-sdk).
 
 This section is written for developers. It covers how to set up a project, how to develop and package a page, and the full SDK reference.
 
 ## Architecture
 
-An HTML Page is rendered in a sandboxed context inside the Universal App. It never talks to the base directly. Instead, the SDK provides a messaging bridge to the app, which performs the actual data operations.
+An HTML page is rendered in a sandboxed context inside the Universal App. It never talks to the base directly. Instead, the SDK provides a messaging bridge to the app, which performs the actual data operations.
 
 ```mermaid
 flowchart LR
-    A[HTML Page] -->|seatable-html-page-sdk| B[Universal App]
+    A[HTML page] -->|seatable-html-page-sdk| B[Universal App]
     B -->|API| C[(Base)]
     C --> B
     B --> A
@@ -6954,24 +6954,419 @@ The SDK offers:
 ## Prerequisites
 
 - SeaTable 6.2 or later.
-- A Universal App with an HTML Page added to it.
-- An API token generated in the base (used during local development).
-- Node.js and npm for building the page.
+- A Universal App with an HTML page added to it.
+
+The developer setup additionally needs Node.js and npm, and an API token generated in the base for local development. The low-code approach needs neither.
+
+## Two ways to build
+
+The same kind of page can be built two ways. Pick the one that matches how you like to work — both produce the same uploadable ZIP and use the same SDK.
+
+<div class="grid cards" markdown>
+
+- :material-cursor-default-click:{ .lg .middle } __Low-code quickstart__
+
+    ---
+
+    Design the page in any visual (WYSIWYG) HTML editor, connect it to your base with ready-made copy-paste snippets, and upload. No Node.js, no npm, no dev server.
+
+    Best for forms, dashboards and small tools.
+
+    [:octicons-arrow-right-24: Low-code quickstart](low-code-quickstart.md)
+
+- :material-code-tags:{ .lg .middle } __Developer setup__
+
+    ---
+
+    Clone the official template and use a full toolchain: modular files, a live-reload dev server, npm scripts and a real build.
+
+    Best for larger or more complex pages.
+
+    [:octicons-arrow-right-24: Developer setup](getting-started.md)
+
+</div>
 
 ## Where to start
 
-- [Getting Started](getting-started.md) — set up the project, develop locally, build and upload a page. We follow the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form) end to end.
+- [Low-code quickstart](low-code-quickstart.md) — build a page with a visual editor and copy-paste snippets, no toolchain.
+- [Developer setup](getting-started.md) — set up the project, develop locally, build and upload a page. We follow the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form) end to end.
 - [SDK Reference](sdk/initialization.md) — installation, initialization, and the full API for rows, files and images.
 
-    The [`seatable-html-page-template-simple-form`](https://github.com/seatable/seatable-html-page-template-simple-form) repository contains a complete, buildable form page. It is the running example used throughout this section.
+    The [`seatable-html-page-template-simple-form`](https://github.com/seatable/seatable-html-page-template-simple-form) repository contains a complete, buildable form page. It is the running example used throughout the developer setup.
+
+---
+
+Source: https://developer.seatable.com/html-pages/low-code-quickstart/
+
+# Low-code quickstart
+
+You do not necessarily need Node.js, npm or a development server to build an HTML page. If you can edit an HTML file and change a few names, you can publish a **custom-looking page that reads from and writes to your base** — a styled form, a landing page, a simple read-and-submit tool.
+
+The fastest way in is not to build one from scratch. It is to **copy a page that already works and rename it** to match your base.
+
+    Custom-looking **forms, lists and info pages** that read and write the base in
+    simple ways — the kind of page where the value is the *design* and *simple
+    read/write*, not complex logic. If parts of your page need to **react to each
+    other** (a running total, a list that reloads when a dropdown changes,
+    conditional fields), that is a real application — jump to the
+    [developer setup](getting-started.md) instead. See
+    [When this approach stops](#when-this-approach-stops) below.
+
+## What this page does
+
+The example below is a small **event sign-up page**. It:
+
+1. reads a list of upcoming **sessions** from your base and shows them as styled cards;
+2. lets a visitor pick a session, type their name and email, and click **Sign up**;
+3. writes that as a new row in a **Signups** table, linked back to the chosen session.
+
+![The rendered sign-up page: session cards showing date and duration, and a labelled sign-up form.](../media/html-page-quickstart.png)
+
+That is the whole loop: **read a table → show it → write a row back**. Everything else on this page is styling.
+
+## Required tables
+
+The page expects two tables. Create them as below, or rename the code (in [step 3](#3-change-the-names-to-match-your-base)) to match tables you already have.
+
+**Sessions** — the events people can sign up for.
+
+| Name     | Type     | Description                              |
+| -------- | -------- | ---------------------------------------- |
+| Title    | text     | the session name shown on the card       |
+| Time     | date     | when the session takes place             |
+| Duration | duration | how long it runs (comes back in seconds) |
+
+**Signups** — one row is written here per sign-up.
+
+| Name    | Type  | Description              |
+| ------- | ----- | ------------------------ |
+| Name    | text  | the visitor's name       |
+| Email   | email | the visitor's email      |
+| Session | link  | link to **Sessions**     |
+
+## What you need
+
+- A **text or visual HTML editor** — anything from Notepad/TextEdit to a WYSIWYG editor. You only need to change some text.
+- A way to make a **ZIP** file (built into Windows, macOS and Linux).
+- A **Universal App** where you can add an HTML page ([step 5](#5-add-an-html-page-to-your-app)).
+
+You do not need an API token for this approach — the page gets its connection from the app once it is uploaded.
+
+## The recipe at a glance
+
+Building the page is eight short steps. Each one is detailed below.
+
+1. **Copy** the code into a text editor.
+2. **Save** it as `index.html`.
+3. **Change** the table and column names to match your base.
+4. **Zip** it — with `index.html` at the top level.
+5. **Add** an HTML page to your Universal App.
+6. **Upload** the ZIP.
+7. **Grant** the page access to its tables.
+8. **Open** the page and use it.
+
+The two steps people miss are **3** (some names are changed differently from others) and **7** (skip it and the page loads blank). Both are spelled out below.
+
+## 1. Copy the code into a text editor
+
+This is the complete, working page. Copy all of it into a plain text editor (or paste it into your visual editor's code view).
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event sign-up</title>
+    
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Upcoming sessions</h1>
+      <div id="session-list"></div>
+
+      <form id="signup-form">
+        <h2>Sign up</h2>
+        
+        <label for="session-select">Session</label>
+        <select id="session-select"></select>
+        <label for="name">Your name</label>
+        <input id="name" type="text" required />
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+        <button type="submit">Sign up</button>
+        <p id="status"></p>
+      </form>
+    </div>
+
+    <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
+    <script>
+      let sdk;
+
+      // Reads EVERY row of a table (the base returns ~100 at a time) and renames the
+      // columns back to the names you see in SeaTable. Leave this helper as it is.
+      async function loadTable(tableName) {
+        let rows = [], metadata = null, start = 0;
+        while (true) {
+          const res = await sdk.listRows({ tableName, start, limit: 1000 });
+          metadata = metadata || res.data.metadata;
+          const page = res.data.results || [];
+          rows = rows.concat(page);
+          if (page.length === 0) break;
+          start += page.length;
+        }
+        const nameByKey = {};
+        (metadata || []).forEach((c) => { nameByKey[c.key] = c.name; });
+        return rows.map((row) => {
+          const named = { _id: row._id };
+          for (const key in row) if (nameByKey[key]) named[nameByKey[key]] = row[key];
+          return named;
+        });
+      }
+
+      // A Duration column comes back as a number of seconds — format it as HH:MM.
+      // Leave this helper as it is.
+      function formatDuration(seconds) {
+        const h = Math.floor(seconds / 3600);
+        const m = Math.floor((seconds % 3600) / 60);
+        return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+      }
+
+      async function start() {
+        sdk = new HTMLPageSDK(window.__HTML_PAGE_DEV_CONFIG__ || null);
+        await sdk.init();
+
+        // --- Read the Sessions table -------------------------------------------
+        const sessions = await loadTable("Sessions");        // ← your table name (keep the quotes)
+
+        // Show them as cards
+        document.getElementById("session-list").innerHTML = sessions
+          .map((s) => `<div class="card"><h3>${s.Title}</h3><p>🗓 ${s.Time} · 🕓 ${formatDuration(s.Duration)}</p></div>`)
+          //                                   ↑ keep "s." — rename Title / Time / Duration to your columns
+          .join("");
+
+        // Fill the dropdown (its value is the row id, used to link the sign-up)
+        document.getElementById("session-select").innerHTML = sessions
+          .map((s) => `<option value="${s._id}">${s.Title}</option>`)  // ← keep s._id ; rename Title
+          .join("");
+
+        // --- Write a Signups row on submit -------------------------------------
+        document.getElementById("signup-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const status = document.getElementById("status");
+          try {
+            await sdk.addRow({
+              tableName: "Signups",                            // ← your table name (keep the quotes)
+              rowData: {
+                Name: document.getElementById("name").value,   // ← rename "Name" to your text column
+                Email: document.getElementById("email").value, // ← rename "Email" to your email column
+                Session: [document.getElementById("session-select").value],
+                //  ↑ a LINK column always takes a list of row IDs — the [ ] is that list
+              },
+            });
+            status.textContent = "Thanks — you're signed up!";
+            e.target.reset();
+          } catch (err) {
+            status.textContent = "Something went wrong: " + err.message;
+          }
+        });
+      }
+      document.addEventListener("DOMContentLoaded", start);
+    </script>
+  </body>
+</html>
+```
+
+## 2. Save it as `index.html`
+
+Save the file with the exact name **`index.html`**. The name matters — this is the file SeaTable opens first. You can now edit and preview it like any web page.
+
+## 3. Change the names to match your base
+
+This is the one step where you touch the code — and the part where a first page usually goes wrong. **You only change names.** The rest — the whole `loadTable` helper, the structure, the `sdk` calls — stays exactly as it is.
+
+There are **three kinds of names**, and they are changed *differently*:
+
+| In the code                     | What it is                     | How to change it                                   |
+| ------------------------------- | ------------------------------ | -------------------------------------------------- |
+| `"Sessions"`, `"Signups"`       | **table names**, in quotes     | replace the text **inside** the quotes             |
+| `s.Title`, `s.Time`             | **columns you read**           | keep the `s.` — replace **only** `Title` / `Time`  |
+| `Name:`, `Email:`, `Session:`   | **columns you write**          | replace the whole word **before the `:`**          |
+
+    `s` means "the current session row"; `.Title` is the column on it. So `s.Title`
+    becomes `s.YourColumn` — **not** `YourColumn`. This one trips everybody up.
+
+    `Session` is a **link** column (it points at the Sessions table). A link column is
+    always written as a **list of row IDs**, even for a single link — that is what the
+    `[ ]` around the value is. The value inside (`...select-select").value`) is the id
+    of the chosen session.
+
+    Two more value facts, for when you adapt the page:
+
+    - **Single-select / multi-select** values come back as the option **text** you see
+      in SeaTable, not a hidden code.
+    - For every operation and value shape, see the [SDK Reference](sdk/rows.md).
+
+The look — all the HTML and CSS in `<style>` — is ordinary web design. Change it however you like; it cannot break the base connection. Just **keep one `<label>` per input** so visitors know which field is the name and which is the email.
+
+Save the file again when you are done.
+
+## 4. Zip it
+
+Make a **ZIP** archive that contains `index.html` at the **top level** — not inside a folder — together with any other files the page needs (images, etc.). The ZIP can have any name.
+
+    If you zip the *folder* instead of its *contents*, `index.html` ends up one level
+    down and the upload will not render. Select the files inside the folder, not the
+    folder itself.
+
+    Use images you add to your page's files (they travel inside the ZIP). Images stored
+    in a base **image column will not display** on an HTML page — the app blocks them
+    for security.
+
+## 5. Add an HTML page to your app
+
+In your Universal App, add a new page and choose **Add HTML page**.
+
+![Adding an HTML page to a Universal App](../media/html-page-add.png)
+
+## 6. Upload the ZIP
+
+Open the page's configuration and drag your ZIP into the **Upload HTML page file** area.
+
+![HTML page configuration and upload area](../media/html-page-config.png)
+
+## 7. Grant table access
+
+    In the page's settings, explicitly grant access to **each table** the page reads or
+    writes (here, `Sessions` **and** `Signups`). Without this, the page uploads and loads,
+    but every read returns nothing and every save is rejected — so it looks empty even
+    though nothing is broken. This is the single most common reason a freshly uploaded
+    page "doesn't work."
+
+## 8. Open the page
+
+Open the app and use the page: you should see the sessions as cards, and signing up should add a row you can find in the **Signups** table. If the page is blank, go back to [step 7](#7-grant-table-access) first.
+
+## How it works (the mental model)
+
+The page is **one `index.html`** with three parts:
+
+1. The **look** — your HTML and CSS. Design it however you want.
+2. The **SDK** — one `<script>` line that loads the bridge to your base.
+3. The **connection** — a small script that reads a table (`loadTable`) and writes a row (`sdk.addRow`) on submit.
+
+Everything tricky about reading data — paging past 100 rows, translating column IDs back to names — is already handled inside the `loadTable` helper, so you never touch it.
+
+## Snippets to adapt
+
+Once you are comfortable, this is a small catalogue to **pick from**. Each snippet is two pieces: an **HTML element** to drop into your page, and a bit of **JS** to add inside `start()` (after `sdk.init()`). Rename the quoted table names, the `s.Column` reads and the element `id`s to match your base — the same three kinds of names as in [step 3](#3-change-the-names-to-match-your-base). The snippets use this page's own `Sessions` and `Signups` tables as stand-ins.
+
+=== "List a table as cards"
+
+    ```html
+    <div id="my-list"></div>
+    ```
+
+    ```js
+    const rows = await loadTable("Sessions");                     // ← your table
+    document.getElementById("my-list").innerHTML = rows
+      .map((s) => `<div class="card"><h3>${s.Title}</h3></div>`)  // ← your column(s) / element id
+      .join("");
+    ```
+
+=== "Fill a dropdown"
+
+    ```html
+    <select id="my-select"></select>
+    ```
+
+    ```js
+    const rows = await loadTable("Sessions");                     // ← your table
+    document.getElementById("my-select").innerHTML = rows
+      .map((s) => `<option value="${s._id}">${s.Title}</option>`) // ← keep s._id ; rename Title
+      .join("");
+    ```
+
+=== "Add a row from a form"
+
+    Give every field its own `<label>` so visitors can tell them apart:
+
+    ```html
+    <form id="my-form">
+      <label for="who">Name</label>
+      <input id="who" />
+      <button type="submit">Save</button>
+    </form>
+    ```
+
+    ```js
+    document.getElementById("my-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      await sdk.addRow({
+        tableName: "Signups",                                     // ← your table
+        rowData: { Name: document.getElementById("who").value },  // ← your column / element id
+      });
+    });
+    ```
+
+=== "Update a row"
+
+    Needs the row's `_id` — take it from a row you loaded (like `s._id`):
+
+    ```js
+    await sdk.updateRow({
+      tableName: "Signups",                                       // ← your table
+      rowId: someRow._id,
+      rowData: { Name: "New name" },                              // ← your column
+    });
+    ```
+
+=== "Delete a row"
+
+    ```js
+    await sdk.deleteRow({ tableName: "Signups", rowId: someRow._id });
+    ```
+
+For every operation and the exact value shapes, see the [SDK Reference](sdk/rows.md).
+
+## If something doesn't work
+
+Check these in order — they cover almost every first-upload problem:
+
+1. **Nothing loads / a save is rejected / the page is blank.** The page is missing **table access** — grant it in the page settings ([step 7](#7-grant-table-access)). This is by far the most common cause.
+2. **Only part of a big table shows.** Make sure you kept the `loadTable()` helper; it is what pages through every row.
+3. **A value is wrong or empty.** Check the **column name** matches the base exactly (capitalisation included), and that you kept the `s.` on columns you read (`s.Title`, not `Title`). Select values are the visible text.
+4. **A base image doesn't appear.** Image-column images can't display here — put the image in the ZIP instead.
+
+## When this approach stops
+
+This approach is deliberately limited to **reading and writing the base in simple, one-shot ways** with a custom look. It stops being enough the moment your page needs its parts to **react to each other** — for example:
+
+- greying out a session once it is full — counting sign-ups against a capacity, and keeping that count right as people register;
+- a total that recalculates as quantities change;
+- a list that reloads when a dropdown selection changes;
+- fields that appear or hide depending on another field;
+- writing to several linked tables from one screen based on what the user did.
+
+That is a genuine application, not a static page. When you reach that point, move to the [developer setup](getting-started.md): same base, same SDK, but a real project structure that can hold that logic.
+
+## Next steps
+
+- [SDK Reference: Rows](sdk/rows.md) — every read/write operation and the exact value shapes.
+- [SDK Reference: Files & Images](sdk/files.md) — let visitors upload files from your page.
+- [Developer setup](getting-started.md) — when you outgrow a single file.
 
 ---
 
 Source: https://developer.seatable.com/html-pages/getting-started/
 
-# Getting Started
+# Developer setup
 
-This guide walks through building an HTML Page from the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form): a form that writes submitted records into a base. By the end you will have a packaged ZIP that you can upload to a Universal App.
+This is the **developer setup**: you clone the official template and use a full JavaScript toolchain (Node.js, npm, a Vite dev server with live reload, and a build step). It suits larger or more complex pages.
+
+    If you just want a form or a small tool, you can build a page in a visual editor with no Node.js or npm at all — see the [Low-code quickstart](low-code-quickstart.md). You can always move up to this setup later.
+
+This guide walks through building an HTML page from the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form): a form that writes submitted records into a base. By the end you will have a packaged ZIP that you can upload to a Universal App.
 
 The template ships the build configuration and project structure you need. It supports two development styles:
 
@@ -6988,11 +7383,11 @@ Choose the approach that fits the complexity of your page. Both produce the same
 
     Create them in your base before running the page, or adapt the table and field names in the template's source.
 
-## Before you start: add an HTML Page in the app
+## Before you start: add an HTML page in the app
 
 In your Universal App, add a new page and choose **Add HTML page**. This creates the empty page you will later upload your build to, and it surfaces the `server`, `appUuid` and `pageId` values you need for local development ([step 3](#3-configure-local-development)).
 
-![Adding an HTML Page to a Universal App](../media/html-page-add.png)
+![Adding an HTML page to a Universal App](../media/html-page-add.png)
 
 ## 1. Get the template
 
@@ -7032,11 +7427,11 @@ export default {
 These values are registered to `window.__HTML_PAGE_DEV_CONFIG__` and picked up by the SDK when you call `init()` in development. See [Initialization](sdk/initialization.md) for how the SDK consumes them.
 
     - `accountToken` — an API token you generate in the base in advance. See [how to create API tokens](https://seatable.com/help/create-api-tokens/).
-    - `server`, `appUuid` and `pageId` — shown under **HTML Page development information** in the page's configuration (see below).
+    - `server`, `appUuid` and `pageId` — shown under **HTML page development information** in the page's configuration (see below).
 
-The HTML Page configuration shows these values ready to copy, alongside the upload area you will use later:
+The HTML page configuration shows these values ready to copy, alongside the upload area you will use later:
 
-![HTML Page configuration with development information and upload area](../media/html-page-config.png)
+![HTML page configuration with development information and upload area](../media/html-page-config.png)
 
 ## 4. Run the development server
 
@@ -7060,7 +7455,7 @@ This single command cleans the output, runs the Vite build (into `dist`), and pa
 
 ## 6. Upload and test
 
-1. In SeaTable, open the configuration of the HTML Page in your Universal App.
+1. In SeaTable, open the configuration of the HTML page in your Universal App.
 2. Drag the generated ZIP into the **Upload HTML page file** area (the same configuration shown in [step 3](#3-configure-local-development)).
 3. Open the app preview, fill in the form, and submit it.
 4. Return to the base and confirm that the corresponding records were created.
@@ -7090,113 +7485,21 @@ flowchart LR
     C --> D[on submit: batchAddRows + addRow]
 ```
 
-It assumes the three tables described in [Getting Started](getting-started.md): **Products**, **OrderItems** (link to Products), and **Orders** (link to OrderItems).
+It assumes the three tables described in [Developer setup](getting-started.md): **Products**, **OrderItems** (link to Products), and **Orders** (link to OrderItems).
 
-## Single-file version (non-modular)
+    If your page is one `index.html` loading the SDK from a CDN — no build step — start
+    from the [low-code quickstart](low-code-quickstart.md) instead. This example covers the
+    **modular** developer structure: SDK imported from npm, logic split into modules.
 
-This is the complete page. It loads the SDK from a CDN, so everything lives in one `index.html` — the non-modular style. Styling is omitted for clarity.
+    Modules do not unlock anything a single file cannot do — the
+    [low-code quickstart](low-code-quickstart.md) reads and writes linked tables from one
+    `index.html` too. Splitting into modules pays off as a page *grows*: easier to
+    navigate, test and reuse. Reach for them when the file gets unwieldy, not when the
+    logic gets ambitious.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Product Order</title>
-  </head>
-  <body>
-    <div id="products"></div>
-    <button id="submit">Submit order</button>
-    <p id="status"></p>
+## Wrap base access in a Context class
 
-    <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
-    <script>
-      // Quantities chosen by the user: { productRowId: quantity }
-      const order = {};
-      let sdk;
-
-      async function init() {
-        // In production __HTML_PAGE_DEV_CONFIG__ is undefined and the SDK
-        // derives its context from the host app. In development the Vite
-        // server injects it from src/setting.js. The same line works in both.
-        sdk = new HTMLPageSDK(window.__HTML_PAGE_DEV_CONFIG__ || null);
-        await sdk.init();
-
-        // Read rows. The payload is under res.data (see SDK Reference > Rows).
-        const res = await sdk.listRows({ tableName: "Products" });
-        renderProducts(res.data.results);
-      }
-
-      function renderProducts(products) {
-        const container = document.getElementById("products");
-        container.innerHTML = "";
-
-        products.forEach((product) => {
-          const row = document.createElement("div");
-          row.innerHTML = `
-            <span>${product.Product_name} (${product.Unit_price})</span>
-            <input type="number" min="0" value="0" />
-          `;
-          // product._id is the row ID — we need it to create the link later.
-          row.querySelector("input").addEventListener("input", (e) => {
-            order[product._id] = parseInt(e.target.value, 10) || 0;
-          });
-          container.appendChild(row);
-        });
-      }
-
-      async function submitOrder() {
-        const status = document.getElementById("status");
-
-        // Build one OrderItems row per chosen product.
-        const orderItemsData = Object.keys(order)
-          .filter((productId) => order[productId] > 0)
-          .map((productId) => ({
-            Quantity: order[productId],
-            // Link columns take an array of linked row IDs.
-            Product: [productId],
-          }));
-
-        if (orderItemsData.length === 0) {
-          status.textContent = "Please choose at least one product.";
-          return;
-        }
-
-        try {
-          // 1. Create the order items in one batch call.
-          const itemsRes = await sdk.batchAddRows({
-            tableName: "OrderItems",
-            rowsData: orderItemsData,
-          });
-
-          // batchAddRows returns the created rows under res.data.rows.
-          // Collect their new IDs to link them to the order.
-          const orderItemIds = itemsRes.data.rows.map((row) => row._id);
-
-          // 2. Create the order, linking the items we just created.
-          await sdk.addRow({
-            tableName: "Orders",
-            rowData: { OrderItems: orderItemIds },
-          });
-
-          status.textContent = "Order submitted.";
-        } catch (error) {
-          // A 403 here usually means the API token lacks write permission.
-          status.textContent = "Submit failed: " + error.message;
-        }
-      }
-
-      document.getElementById("submit").addEventListener("click", submitOrder);
-      document.addEventListener("DOMContentLoaded", init);
-    </script>
-  </body>
-</html>
-```
-
-    Notice the two-step write: first create the `OrderItems` rows with `batchAddRows`, then read their `_id` values from `res.data.rows` and pass them as an array to the `Orders` row's link column. Link columns always take an array of linked row IDs — see [`addRow`](sdk/rows.md#add-rows).
-
-## Modular version
-
-For anything beyond a simple page, split the logic into modules and import the SDK from the npm package. The template's `src/esm` directory does exactly this. A common pattern is to wrap all base access in a single `Context` class, keeping SDK calls out of your UI code:
+As a page grows, split the logic into modules and import the SDK from the npm package. The template's `src/esm` directory does exactly this. A common pattern is to wrap all base access in a single `Context` class, keeping SDK calls out of your UI code:
 
 ```js
 import { HTMLPageSDK } from "seatable-html-page-sdk";
@@ -7244,6 +7547,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 ```
 
+    Notice the two-step write in `submitOrder`: first create the `OrderItems` rows with
+    `batchAddRows`, then read their `_id` values from `res.data.rows` and pass them as an
+    array to the `Orders` row's link column. Link columns always take an array of linked
+    row IDs — see [`addRow`](sdk/rows.md#add-rows).
+
 ## Next steps
 
 - [SDK Reference: Rows](sdk/rows.md) — full parameters and return shapes for every row method.
@@ -7257,7 +7565,7 @@ Source: https://developer.seatable.com/html-pages/sdk/initialization/
 
 # Initialization
 
-The `seatable-html-page-sdk` is the bridge between an HTML Page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
+The `seatable-html-page-sdk` is the bridge between an HTML page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
 
 ## Installation
 
@@ -7580,7 +7888,7 @@ Source: https://developer.seatable.com/html-pages/sdk/files/
 
 # Files & Images
 
-Upload files and images from an HTML Page. The returned data is used to populate a file or image column — typically by passing it into `updateRow` or `addRow` (see [Rows](rows.md)). The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+Upload files and images from an HTML page. The returned data is used to populate a file or image column — typically by passing it into `updateRow` or `addRow` (see [Rows](rows.md)). The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
 
     Unlike the row methods, the upload methods resolve to the result object **directly** — there is no `.data` wrapper.
 

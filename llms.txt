@@ -65,17 +65,18 @@
 - [Environments](https://developer.seatable.com/plugins/environments/): Initialize dtable-sdk for SeaTable plugin development — differences between development and production environments, event subscription, and sync.
 - [Available methods](https://developer.seatable.com/plugins/methods/): Complete dtable-sdk method reference for SeaTable plugins — tables, views, columns, rows, SQL queries, users, and plugin settings.
 
-### HTML Pages
+### HTML pages
 
-- [HTML Pages](https://developer.seatable.com/html-pages/): Build interactive HTML Pages for SeaTable Universal Apps. Learn how a page reads and writes base data through the seatable-html-page-sdk.
-- [Getting Started](https://developer.seatable.com/html-pages/getting-started/): Set up, develop, build and upload a SeaTable HTML Page. Walks through the simple form template with Vite, the SDK, and the uploadable ZIP package.
-- [Example](https://developer.seatable.com/html-pages/example/): A complete, minimal HTML Page example — initialize the SDK, read rows from the base, render them, and write new linked rows back on submit.
+- [HTML pages](https://developer.seatable.com/html-pages/): Build interactive HTML pages for SeaTable Universal Apps. Learn how a page reads and writes base data through the seatable-html-page-sdk.
+- [Low-code quickstart](https://developer.seatable.com/html-pages/low-code-quickstart/): Build a custom-looking SeaTable HTML page without a build toolchain. Clone one working single-file page, rename it to match your base, zip it and upload — no Node.js, no npm.
+- [Developer setup](https://developer.seatable.com/html-pages/getting-started/): Set up, develop, build and upload a SeaTable HTML page with the full developer toolchain. Walks through the simple form template with Vite, the SDK, and the uploadable ZIP package.
+- [Example](https://developer.seatable.com/html-pages/example/): A complete, minimal HTML page example — initialize the SDK in a Context module, read rows from the base, render them, and write new linked rows back on submit.
 
 ### SDK Reference
 
-- [Initialization](https://developer.seatable.com/html-pages/sdk/initialization/): Install and initialize the seatable-html-page-sdk. Set up the SDK via npm or CDN and connect an HTML Page to its SeaTable base.
-- [Rows](https://developer.seatable.com/html-pages/sdk/rows/): seatable-html-page-sdk reference for row operations — list, add, update, delete, and batch-modify rows in a base from an HTML Page.
-- [Files & Images](https://developer.seatable.com/html-pages/sdk/files/): seatable-html-page-sdk reference for uploading files and images from an HTML Page into file and image columns of a base.
+- [Initialization](https://developer.seatable.com/html-pages/sdk/initialization/): Install and initialize the seatable-html-page-sdk. Set up the SDK via npm or CDN and connect an HTML page to its SeaTable base.
+- [Rows](https://developer.seatable.com/html-pages/sdk/rows/): seatable-html-page-sdk reference for row operations — list, add, update, delete, and batch-modify rows in a base from an HTML page.
+- [Files & Images](https://developer.seatable.com/html-pages/sdk/files/): seatable-html-page-sdk reference for uploading files and images from an HTML page into file and image columns of a base.
 
 ## Complete Content
 
