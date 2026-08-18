@@ -3097,7 +3097,7 @@ Source: https://developer.seatable.com/javascript/
 
 # JavaScript
 
-SeaTable provides a JavaScript API that works in two contexts: inside SeaTable as a script, or externally via Node.js or a frontend application. The core methods (tables, views, columns, rows, links, SQL) are the same in both contexts. Features that are only available in one context are clearly marked on the respective pages.
+SeaTable provides a JavaScript API that works in two contexts: inside SeaTable as a script, or externally via Node.js or a frontend application. Many methods exist in both contexts, but the two are **not** identical -- most notably, columns can only be created or modified from an external client. Every method that is limited to one context carries a marker on the respective page.
 
 ## Script vs. External Client
 
@@ -3108,6 +3108,18 @@ SeaTable provides a JavaScript API that works in two contexts: inside SeaTable a
 | Execution | In the browser | Node.js or frontend app |
 | `await` required | Only for `query()` and `getLinkedRecords()` | For all calls |
 | Exclusive features | [Context, Output, Utilities, Filter/QuerySet](scripting-features.md) | [Constants](constants.md) |
+| Column management | Read only | Full (create, modify, delete) |
+
+### Context markers
+
+Methods that are not available in both contexts are marked in the reference pages:
+
+| Marker | Meaning |
+|---|---|
+| :material-tag-outline:{ title='Scripting only' } | Available **only** in scripts inside SeaTable. Calling it from an external client returns `undefined`. |
+| :material-package-variant-closed:{ title='External client only' } | Available **only** in the external `seatable-api` client. Calling it in a SeaTable script returns `undefined`. |
+
+Methods without a marker work in both contexts.
 
 ## Installation
 
@@ -3322,6 +3334,10 @@ Source: https://developer.seatable.com/javascript/views/
 Source: https://developer.seatable.com/javascript/columns/
 
 # Columns
+
+    Reading columns works in both contexts, but every write method on this page -- *Add Column*, *Rename Column*, *Column Settings* and *Delete Column* -- is only available in the external `seatable-api` client. In a JavaScript script inside a base, `base.insertColumn`, `base.deleteColumn` and the others are `undefined`.
+
+    To create or modify columns from within SeaTable, use a [Python script](../python/objects/columns.md) instead: the Python library supports the full range of column operations in both contexts, including link columns. Alternatively, call the [REST API](https://api.seatable.com/reference/insertcolumn-1) directly.
 
 ## Get Column(s)
 
@@ -3808,9 +3824,27 @@ Link columns connect rows between tables. Most link operations require the `link
     base.updateLink(linkId, tableName, otherTableName, rowId, otherRowIds);
     ```
 
+    !!! warning "Different name in scripts"
+
+        In a SeaTable script, this method is called `updateLinks` (plural) -- see below. `base.updateLink` is `undefined` in the script context.
+
     __Example__
     ```js
     base.updateLink('r4IJ', 'Table1', 'Table2', 'BXhEm9ucTNu3FjupIk7Xug', [
+        'exkb56fAT66j8R0w6wD9Qg',
+        'DjHjwmlRRB6WgU9uPnrWeA'
+    ]);
+    ```
+
+    Replace all linked records of a row with a new set. This is the script equivalent of `updateLink`; the parameters are identical.
+
+    ```js
+    base.updateLinks(linkId, tableName, otherTableName, rowId, otherRowIds);
+    ```
+
+    __Example__
+    ```js
+    base.updateLinks('r4IJ', 'Table1', 'Table2', 'BXhEm9ucTNu3FjupIk7Xug', [
         'exkb56fAT66j8R0w6wD9Qg',
         'DjHjwmlRRB6WgU9uPnrWeA'
     ]);
@@ -3937,6 +3971,8 @@ Source: https://developer.seatable.com/javascript/files/
 
 The `seatable-api` npm package does not currently support file or image uploads. To upload files, you need to use the SeaTable REST API directly via `fetch()`.
 
+    The example on this page runs in Node.js: it reads from the local filesystem and authenticates with an API token. Neither is available in the SeaTable script editor.
+
 ## Upload workflow
 
 Uploading a file to SeaTable requires three steps:
@@ -4061,6 +4097,8 @@ When creating or modifying columns, use the `ColumnTypes` constants for type-saf
 ```js
 import { ColumnTypes } from 'seatable-api';
 ```
+
+    `ColumnTypes` comes from the `seatable-api` npm package. There is no `import` in the SeaTable script editor, so these constants are not available there. Since columns cannot be created or modified from a script anyway, this is not a limitation in practice -- see [Columns](columns.md).
 
 ## ColumnTypes
 
