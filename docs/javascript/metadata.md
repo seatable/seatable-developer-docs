@@ -4,7 +4,7 @@ description: Retrieve the complete structural schema of a SeaTable base — tabl
 
 # Metadata
 
-!!! abstract "getMetadata"
+!!! abstract "getMetadata :material-package-variant-closed:{ title='External client only' }"
 
     Get the complete structure of a base -- tables, views, and columns. Does not include row data.
 

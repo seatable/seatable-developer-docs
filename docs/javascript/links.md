@@ -69,13 +69,17 @@ Link columns connect rows between tables. Most link operations require the `link
 
 ## Update Link(s)
 
-!!! abstract "updateLink"
+!!! abstract "updateLink :material-package-variant-closed:{ title='External client only' }"
 
     Replace all linked records of a row with a new set.
 
     ```js
     base.updateLink(linkId, tableName, otherTableName, rowId, otherRowIds);
     ```
+
+    !!! warning "Different name in scripts"
+
+        In a SeaTable script, this method is called `updateLinks` (plural) -- see below. `base.updateLink` is `undefined` in the script context.
 
     __Example__
     ```js
@@ -85,7 +89,23 @@ Link columns connect rows between tables. Most link operations require the `link
     ]);
     ```
 
-!!! abstract "batchUpdateLinks"
+!!! abstract "updateLinks :material-tag-outline:{ title='Scripting only' }"
+
+    Replace all linked records of a row with a new set. This is the script equivalent of `updateLink`; the parameters are identical.
+
+    ```js
+    base.updateLinks(linkId, tableName, otherTableName, rowId, otherRowIds);
+    ```
+
+    __Example__
+    ```js
+    base.updateLinks('r4IJ', 'Table1', 'Table2', 'BXhEm9ucTNu3FjupIk7Xug', [
+        'exkb56fAT66j8R0w6wD9Qg',
+        'DjHjwmlRRB6WgU9uPnrWeA'
+    ]);
+    ```
+
+!!! abstract "batchUpdateLinks :material-package-variant-closed:{ title='External client only' }"
 
     Update links for multiple rows at once.
 

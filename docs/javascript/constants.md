@@ -10,6 +10,10 @@ When creating or modifying columns, use the `ColumnTypes` constants for type-saf
 import { ColumnTypes } from 'seatable-api';
 ```
 
+!!! info "External client only"
+
+    `ColumnTypes` comes from the `seatable-api` npm package. There is no `import` in the SeaTable script editor, so these constants are not available there. Since columns cannot be created or modified from a script anyway, this is not a limitation in practice -- see [Columns](columns.md).
+
 ## ColumnTypes
 
 | Constant | Column type |

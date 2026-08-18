@@ -4,7 +4,7 @@ description: Get started with the SeaTable JavaScript API. Use it inside SeaTabl
 
 # JavaScript
 
-SeaTable provides a JavaScript API that works in two contexts: inside SeaTable as a script, or externally via Node.js or a frontend application. The core methods (tables, views, columns, rows, links, SQL) are the same in both contexts. Features that are only available in one context are clearly marked on the respective pages.
+SeaTable provides a JavaScript API that works in two contexts: inside SeaTable as a script, or externally via Node.js or a frontend application. Many methods exist in both contexts, but the two are **not** identical -- most notably, columns can only be created or modified from an external client. Every method that is limited to one context carries a marker on the respective page.
 
 ## Script vs. External Client
 
@@ -15,6 +15,18 @@ SeaTable provides a JavaScript API that works in two contexts: inside SeaTable a
 | Execution | In the browser | Node.js or frontend app |
 | `await` required | Only for `query()` and `getLinkedRecords()` | For all calls |
 | Exclusive features | [Context, Output, Utilities, Filter/QuerySet](scripting-features.md) | [Constants](constants.md) |
+| Column management | Read only | Full (create, modify, delete) |
+
+### Context markers
+
+Methods that are not available in both contexts are marked in the reference pages:
+
+| Marker | Meaning |
+|---|---|
+| :material-tag-outline:{ title='Scripting only' } | Available **only** in scripts inside SeaTable. Calling it from an external client returns `undefined`. |
+| :material-package-variant-closed:{ title='External client only' } | Available **only** in the external `seatable-api` client. Calling it in a SeaTable script returns `undefined`. |
+
+Methods without a marker work in both contexts.
 
 ## Installation
 
