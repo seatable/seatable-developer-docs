@@ -4,6 +4,12 @@ description: JavaScript API reference for managing columns — create, rename, r
 
 # Columns
 
+!!! warning "Columns cannot be created or modified from a SeaTable script"
+
+    Reading columns works in both contexts, but every write method on this page -- *Add Column*, *Rename Column*, *Column Settings* and *Delete Column* -- is only available in the external `seatable-api` client. In a JavaScript script inside a base, `base.insertColumn`, `base.deleteColumn` and the others are `undefined`.
+
+    To create or modify columns from within SeaTable, use a [Python script](../python/objects/columns.md) instead: the Python library supports the full range of column operations in both contexts, including link columns. Alternatively, call the [REST API](https://api.seatable.com/reference/insertcolumn-1) directly.
+
 {%
     include-markdown "includes.md"
     start="<!--columnstructure-start-->"
@@ -27,7 +33,7 @@ description: JavaScript API reference for managing columns — create, rename, r
     const column = base.getColumnByName('Table1', 'Name');
     ```
 
-!!! abstract "getColumns"
+!!! abstract "getColumns :material-tag-outline:{ title='Scripting only' }"
 
     Get all columns of a table.
 
@@ -92,7 +98,7 @@ description: JavaScript API reference for managing columns — create, rename, r
 
 ## Add Column
 
-!!! abstract "insertColumn"
+!!! abstract "insertColumn :material-package-variant-closed:{ title='External client only' }"
 
     Add a new column to a table.
 
@@ -118,7 +124,7 @@ description: JavaScript API reference for managing columns — create, rename, r
 
 ## Rename Column
 
-!!! abstract "renameColumn"
+!!! abstract "renameColumn :material-package-variant-closed:{ title='External client only' }"
 
     Rename a column, identified by its column key.
 
@@ -133,7 +139,7 @@ description: JavaScript API reference for managing columns — create, rename, r
 
 ## Column Settings
 
-!!! abstract "resizeColumn"
+!!! abstract "resizeColumn :material-package-variant-closed:{ title='External client only' }"
 
     ```js
     base.resizeColumn(tableName, columnKey, newColumnWidth);
@@ -144,7 +150,7 @@ description: JavaScript API reference for managing columns — create, rename, r
     await base.resizeColumn('Table1', 'asFV', 500);
     ```
 
-!!! abstract "freezeColumn"
+!!! abstract "freezeColumn :material-package-variant-closed:{ title='External client only' }"
 
     ```js
     base.freezeColumn(tableName, columnKey, frozen);
@@ -155,7 +161,7 @@ description: JavaScript API reference for managing columns — create, rename, r
     await base.freezeColumn('Table1', '0000', true);
     ```
 
-!!! abstract "moveColumn"
+!!! abstract "moveColumn :material-package-variant-closed:{ title='External client only' }"
 
     Move a column to the right of the target column.
 
@@ -168,7 +174,7 @@ description: JavaScript API reference for managing columns — create, rename, r
     await base.moveColumn('Table1', 'loPx', '0000');
     ```
 
-!!! abstract "modifyColumnType"
+!!! abstract "modifyColumnType :material-package-variant-closed:{ title='External client only' }"
 
     Change the type of an existing column.
 
@@ -182,7 +188,7 @@ description: JavaScript API reference for managing columns — create, rename, r
     await base.modifyColumnType('Table1', 'nePI', ColumnTypes.NUMBER);
     ```
 
-!!! abstract "addColumnOptions"
+!!! abstract "addColumnOptions :material-package-variant-closed:{ title='External client only' }"
 
     Add options to a single-select or multiple-select column.
 
@@ -198,7 +204,7 @@ description: JavaScript API reference for managing columns — create, rename, r
     ]);
     ```
 
-!!! abstract "addColumnCascadeSettings"
+!!! abstract "addColumnCascadeSettings :material-package-variant-closed:{ title='External client only' }"
 
     Add cascade settings to a single-select column, limiting child options based on the parent column's selection.
 
@@ -216,7 +222,7 @@ description: JavaScript API reference for managing columns — create, rename, r
 
 ## Delete Column
 
-!!! abstract "deleteColumn"
+!!! abstract "deleteColumn :material-package-variant-closed:{ title='External client only' }"
 
     Delete a column, identified by its column key.
 

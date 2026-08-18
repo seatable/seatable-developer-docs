@@ -27,7 +27,7 @@ description: JavaScript API reference for row operations — query, append, inse
     const row = base.getRow('Table1', 'M_lSEOYYTeuKTaHCEOL7nw');
     ```
 
-!!! abstract "getRows"
+!!! abstract "getRows :material-tag-outline:{ title='Scripting only' }"
 
     Get all rows displayed in a view.
 
@@ -42,7 +42,7 @@ description: JavaScript API reference for row operations — query, append, inse
     const rows = base.getRows('Table1', 'Default View');
     ```
 
-!!! abstract "listRows"
+!!! abstract "listRows :material-package-variant-closed:{ title='External client only' }"
 
     Get rows with optional sorting and pagination. Particularly useful for large tables.
 
@@ -142,7 +142,7 @@ description: JavaScript API reference for row operations — query, append, inse
     });
     ```
 
-!!! abstract "insertRow"
+!!! abstract "insertRow :material-package-variant-closed:{ title='External client only' }"
 
     Insert a row after a specific anchor row.
 
@@ -155,7 +155,7 @@ description: JavaScript API reference for row operations — query, append, inse
     await base.insertRow('Table1', {'Name': 'Inserted row'}, 'U_eTV7mDSmSd-K2P535Wzw');
     ```
 
-!!! abstract "batchAppendRows"
+!!! abstract "batchAppendRows :material-package-variant-closed:{ title='External client only' }"
 
     Append multiple rows at once. More efficient than calling `appendRow` in a loop.
 
@@ -208,7 +208,7 @@ description: JavaScript API reference for row operations — query, append, inse
     base.modifyRows(table, selectedRows, updates);
     ```
 
-!!! abstract "batchUpdateRows"
+!!! abstract "batchUpdateRows :material-package-variant-closed:{ title='External client only' }"
 
     Update multiple rows at once. Each entry specifies a row ID and the data to update.
 
@@ -239,7 +239,7 @@ description: JavaScript API reference for row operations — query, append, inse
     base.deleteRow('Table1', 'U_eTV7mDSmSd-K2P535Wzw');
     ```
 
-!!! abstract "batchDeleteRows"
+!!! abstract "batchDeleteRows :material-package-variant-closed:{ title='External client only' }"
 
     Delete multiple rows at once.
 
