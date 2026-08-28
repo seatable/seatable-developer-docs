@@ -40,7 +40,7 @@ The `seatable-html-page-sdk` is the bridge between an HTML page and its Universa
     </script>
     ```
 
-    !!! tip "Pin a version"
+    !!! warning "Pin a version"
 
         `@latest` always resolves to the newest release. For production pages, pin an explicit version (for example `seatable-html-page-sdk@1.0.0`) so a new release cannot change behavior unexpectedly.
 
