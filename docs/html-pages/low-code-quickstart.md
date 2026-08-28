@@ -120,7 +120,8 @@ This is the complete, working page. Copy all of it into a plain text editor (or 
       </form>
     </div>
 
-    <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
+    <!-- Using the "latest" tag is not recommended for production - use a pinned version to ensure stability -->
+    <script src="https://unpkg.com/seatable-html-page-sdk@0.0.13/dist/index.min.js"></script>
     <script>
       let sdk;
 
