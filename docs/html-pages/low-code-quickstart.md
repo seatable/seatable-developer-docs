@@ -239,6 +239,17 @@ Save the file again when you are done.
 
 ## 4. Zip it
 
+!!! warning "Update resource URLs when you update the page"
+
+    HTML pages cache JavaScript, CSS, images and other static resources for performance. When you change a resource, update its URL in `index.html` by adding a new query parameter, for example:
+
+    ```html
+    <script src="./app.js?t=1788316923728"></script>
+    <link rel="stylesheet" href="./style.css?t=1788316923728">
+    ```
+
+    Use a new value each time the resource changes. Otherwise, the browser may continue to use the older cached file.
+
 Make a **ZIP** archive that contains `index.html` at the **top level** — not inside a folder — together with any other files the page needs (images, etc.). The ZIP can have any name.
 
 !!! warning "`index.html` must be at the root of the ZIP"
