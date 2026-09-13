@@ -58,6 +58,49 @@ git push
 ./preview.sh -stop
 ```
 
+## Editing the JavaScript reference
+
+Read this before touching `docs/javascript/`. These pages document **two different APIs** that both call their object `base`, and they are not identical:
+
+- **Script in SeaTable** — runs in the browser, no authentication. `base` is provided by the script environment.
+- **External client** — `npm install seatable-api`, runs in Node.js or a frontend app, authenticates with an API token.
+
+Most methods exist in both, but not all. The differences are not obvious and have caused documented methods to be `undefined` for readers in the wrong context. Two kinds of divergence exist:
+
+**Capability** — columns can only be created or modified from the external client. `insertColumn`, `renameColumn`, `modifyColumnType`, `addColumnOptions`, `deleteColumn` and the other write methods do not exist in a script. Scripts have read-only access to columns.
+
+**Naming** — the same method has different names in the two contexts:
+
+| Script in SeaTable | External client |
+|---|---|
+| `getRows` | `listRows` |
+| `updateLinks` | `updateLink` |
+| `getColumns` | `listColumns` (works in both) |
+
+### The marker convention
+
+Every method that is limited to one context carries a marker in its `!!! abstract` heading:
+
+```markdown
+!!! abstract "getShownColumns :material-tag-outline:{ title='Scripting only' }"
+!!! abstract "insertColumn :material-package-variant-closed:{ title='External client only' }"
+```
+
+The markers are the authoritative per-method record. **When you add or move a method, determine its context first and mark it** — do not assume parity. A missing marker is read as "works in both".
+
+### How to check a method
+
+The external client is machine-readable:
+
+```bash
+npm pack seatable-api && tar xzf seatable-api-*.tgz
+grep -oE 'key: "[a-zA-Z0-9_]+"' package/lib/base.js | sed 's/key: //' | tr -d '"' | sort -u
+```
+
+The scripting API is not — it lives in the SeaTable frontend, not in a published package. Run [`scripts/dump-script-api.js`](scripts/dump-script-api.js) in any base's script editor to get its current method list.
+
+Note that `dtable-sdk` on npm is **not** a reliable stand-in for the scripting API. The script environment wraps it and adds methods; the SDK contains no link methods at all, for example.
+
 # Feedback and Support
 
 Feel free to raise issues or reach out with any questions, feedback, or suggestions. We're here to support your SeaTable development endeavors! We welcome contributions and feedback from the SeaTable developer community.
