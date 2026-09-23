@@ -248,4 +248,7 @@ nav:
       - SDK Reference:
           - Initialization: html-pages/sdk/initialization.md
           - Rows: html-pages/sdk/rows.md
+          - Links: html-pages/sdk/links.md
+          - Users: html-pages/sdk/users.md
+          - Actions: html-pages/sdk/actions.md
           - Files & Images: html-pages/sdk/files.md

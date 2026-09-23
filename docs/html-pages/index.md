@@ -24,7 +24,9 @@ flowchart LR
 
 The SDK offers:
 
-- **Data APIs** — list, add, update and delete rows; upload files and images.
+- **Data APIs** — list, add, update and delete rows; manage links; upload files and images.
+- **User APIs** — read the signed-in user and resolve collaborators.
+- **Action APIs** — send notifications and emails, and run configured Python scripts.
 - **Event propagation** — bidirectional events (mouse, keyboard, drag-and-drop) between the page and the app.
 
 ## Prerequisites
@@ -66,7 +68,7 @@ The same kind of page can be built two ways. Pick the one that matches how you l
 
 - [Low-code quickstart](low-code-quickstart.md) — build a page with a visual editor and copy-paste snippets, no toolchain.
 - [Developer setup](getting-started.md) — set up the project, develop locally, build and upload a page. We follow the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form) end to end.
-- [SDK Reference](sdk/initialization.md) — installation, initialization, and the full API for rows, files and images.
+- [SDK Reference](sdk/initialization.md) — installation, initialization, and the full API for rows, links, users, actions, files and images.
 
 !!! tip "Example project"
 
