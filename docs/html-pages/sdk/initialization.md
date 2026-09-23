@@ -4,7 +4,7 @@ description: Install and initialize the seatable-html-page-sdk. Set up the SDK v
 
 # Initialization
 
-The `seatable-html-page-sdk` is the bridge between an HTML page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
+The `seatable-html-page-sdk` is the bridge between an HTML page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For API details, see [Rows](rows.md), [Links](links.md), [Users](users.md), [Actions](actions.md), and [Files & Images](files.md).
 
 ## Installation
 
@@ -98,4 +98,7 @@ All SDK methods are asynchronous and return promises — always `await` them. Ro
 ## Next steps
 
 - [Rows](rows.md) — list, add, update and delete rows, including batch operations.
+- [Links](links.md) — incrementally add and remove linked records.
+- [Users](users.md) — read the signed-in user and resolve collaborators.
+- [Actions](actions.md) — send notifications and emails, and run configured Python scripts.
 - [Files & Images](files.md) — upload files and images for file and image columns.
