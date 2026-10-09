@@ -16,6 +16,8 @@ Action operations on the `seatable-html-page-sdk`. They start asynchronous notif
 
     Create a notification task associated with one row.
 
+    **Note:** This was added in SDK version 1.0-latest.
+
     ```js
     sdk.sendNotification({ tableName, rowId, emails, msg });
     ```
@@ -50,6 +52,8 @@ Action operations on the `seatable-html-page-sdk`. They start asynchronous notif
 !!! abstract "sendEmail"
 
     Create an email task associated with one row.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.sendEmail({
@@ -122,6 +126,8 @@ Action operations on the `seatable-html-page-sdk`. They start asynchronous notif
 
     Get the status of a notification or email task returned by `sendNotification` or `sendEmail`.
 
+    **Note:** This was added in SDK version 1.0-latest.
+
     ```js
     sdk.getMessageStatus({ taskId });
     ```
@@ -146,6 +152,8 @@ Action operations on the `seatable-html-page-sdk`. They start asynchronous notif
 !!! abstract "runScript"
 
     Start a configured Python script.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.runScript({ scriptName, tableName, rowId });
@@ -179,6 +187,8 @@ Action operations on the `seatable-html-page-sdk`. They start asynchronous notif
 !!! abstract "getScriptResult"
 
     Get the result of a script started by `runScript`.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.getScriptResult({ scriptName, taskId });

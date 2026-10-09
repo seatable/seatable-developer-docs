@@ -16,6 +16,8 @@ User operations on the `seatable-html-page-sdk`. Use them to personalize a page 
 
     Get the signed-in user of the current Universal App. This method takes no parameters and does not require a `tableName`.
 
+    **Note:** This was added in SDK version 1.0-latest.
+
     ```js
     sdk.getCurrentUser();
     ```
@@ -38,6 +40,8 @@ User operations on the `seatable-html-page-sdk`. Use them to personalize a page 
 
     List the collaborators available to the HTML page. Use this method to load the initial choices for a collaborator control.
 
+    **Note:** This was added in SDK version 1.0-latest.
+
     ```js
     sdk.listCollaborators();
     ```
@@ -53,6 +57,8 @@ User operations on the `seatable-html-page-sdk`. Use them to personalize a page 
 !!! abstract "resolveUsers"
 
     Resolve user identifiers found in loaded row data that are not already present in the collaborator list.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.resolveUsers({ userIds });
