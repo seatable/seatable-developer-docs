@@ -16,6 +16,8 @@ Link operations on the `seatable-html-page-sdk`. Use these methods to add or rem
 
     Add one linked record to a link-column cell without replacing its existing links.
 
+    **Note:** This was added in SDK version 1.0-latest.
+
     ```js
     sdk.addLink({ tableName, rowId, linkColumnName, otherRowId });
     ```
@@ -50,6 +52,8 @@ Link operations on the `seatable-html-page-sdk`. Use these methods to add or rem
 !!! abstract "deleteLink"
 
     Delete one linked record from a link-column cell without changing its other links.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.deleteLink({ tableName, rowId, linkColumnName, otherRowId });
@@ -87,6 +91,8 @@ Link operations on the `seatable-html-page-sdk`. Use these methods to add or rem
 !!! abstract "batchAddLinks"
 
     Add links to one or more rows in the same source table.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.batchAddLinks({ tableName, linksData });
@@ -128,6 +134,8 @@ Link operations on the `seatable-html-page-sdk`. Use these methods to add or rem
 !!! abstract "batchDeleteLinks"
 
     Delete specified links from one or more rows in the same source table. Links not listed in `linksData` remain unchanged.
+
+    **Note:** This was added in SDK version 1.0-latest.
 
     ```js
     sdk.batchDeleteLinks({ tableName, linksData });
