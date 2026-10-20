@@ -74,8 +74,17 @@ These values are registered to `window.__HTML_PAGE_DEV_CONFIG__` and picked up b
 
 !!! note "Where the values come from"
 
-    - `accountToken` — an API token you generate in the base in advance. See [how to create API tokens](https://seatable.com/help/create-api-tokens/).
+    - `accountToken` — your account token, available under **Personal settings -> Profile -> Account-Token**. This is not a base API token.
     - `server`, `appUuid` and `pageId` — shown under **HTML page development information** in the page's configuration (see below).
+
+!!! note "Why use accountToken instead of baseAPIToken?"
+
+    Some HTML page features require user information that a base API token cannot provide. Local development therefore uses an account token for:
+
+    - Checking HTML page access permissions.
+    - Calling APIs that retrieve the current user's information.
+
+    If view support is added in the future, some view filters may also require user information.
 
 The HTML page configuration shows these values ready to copy, alongside the upload area you will use later:
 
