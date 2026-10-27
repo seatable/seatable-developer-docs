@@ -8,7 +8,17 @@ Starting with SeaTable 6.2, a Universal App can contain a new page type: the **H
 
 A static bundle on its own can only display fixed content. To turn an HTML page into a real application — a custom form, a dashboard, a calculator — it needs to read from and write to the base. That data exchange runs through the [`seatable-html-page-sdk`](https://www.npmjs.com/package/seatable-html-page-sdk).
 
-This section is written for developers. It covers how to set up a project, how to develop and package a page, and the full SDK reference.
+This section covers how to build a page, from a single copy-and-rename file to a full project, plus the complete SDK reference.
+
+## How a page is built
+
+However you build it, an HTML page is three parts:
+
+1. The **look** — your HTML and CSS. Design it however you want.
+2. The **SDK** — one script that loads the bridge to your base.
+3. The **connection** — the code that reads tables and writes rows through the SDK.
+
+The [low-code quickstart](low-code-quickstart.md) keeps all three in a single `index.html`; the [developer setup](getting-started.md) splits them across modular files. The parts are the same either way — only how they are organised differs.
 
 ## Architecture
 
