@@ -29,6 +29,8 @@ Choose the approach that fits the complexity of your page. Both produce the same
 
     Create them in your base before running the page, or adapt the table and field names in the template's source.
 
+    You can use the [example base](https://cloud.seatable.io/dtable/external-links/c3593e011ef841238d99/) to test the page.
+
 ## Before you start: add an HTML page in the app
 
 In your Universal App, add a new page and choose **Add HTML page**. This creates the empty page you will later upload your build to, and it surfaces the `server`, `appUuid` and `pageId` values you need for local development ([step 3](#3-configure-local-development)).
@@ -114,10 +116,25 @@ This single command cleans the output, runs the Vite build (into `dist`), and pa
 
 ## 6. Upload and test
 
-1. In SeaTable, open the configuration of the HTML page in your Universal App.
-2. Drag the generated ZIP into the **Upload HTML page file** area (the same configuration shown in [step 3](#3-configure-local-development)).
-3. Open the app preview, fill in the form, and submit it.
-4. Return to the base and confirm that the corresponding records were created.
+Step 1: In SeaTable, open the configuration of the HTML page in your Universal App.
+
+![Create an HTML page in the app](../media/html-pages/01-create-html-page-in-app.png)
+
+Step 2: Drag the generated ZIP into the **Upload HTML page file** area (the same configuration shown in [step 3](#3-configure-local-development)).
+
+![Upload the ZIP file into the HTML page](../media/html-pages/02-upload-zip-file-into-html-page.png)
+
+Step 3: Open the app preview, fill in the form.
+
+![Enter order information in the HTML page](../media/html-pages/03-input-order-info-into-html-page.png)
+
+Step 4: Submit the order.
+
+![Submit the order](../media/html-pages/04-submit-order.png)
+
+Step 5: Return to the base and confirm that the corresponding records were created.
+
+![Confirm the data was updated in the tables](../media/html-pages/05-data-updated-in-tables.png)
 
 Once the submitted records appear in the base, the page is fully integrated and ready to use.
 
