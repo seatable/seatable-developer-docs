@@ -117,9 +117,22 @@ This single command cleans the output, runs the Vite build (into `dist`), and pa
 ## 6. Upload and test
 
 1. In SeaTable, open the configuration of the HTML page in your Universal App.
+
+   ![Create an HTML page in the app](../media/html-pages/01-create-html-page-in-app.png)
+
 2. Drag the generated ZIP into the **Upload HTML page file** area (the same configuration shown in [step 3](#3-configure-local-development)).
+
+   ![Upload the ZIP file into the HTML page](../media/html-pages/02-upload-zip-file-into-html-page.png)
+
 3. Open the app preview, fill in the form, and submit it.
+
+   ![Enter order information in the HTML page](../media/html-pages/03-input-order-info-into-html-page.png)
+
+   ![Submit the order](../media/html-pages/04-submit-order.png)
+
 4. Return to the base and confirm that the corresponding records were created.
+
+   ![Confirm the data was updated in the tables](../media/html-pages/05-data-updated-in-tables.png)
 
 Once the submitted records appear in the base, the page is fully integrated and ready to use.
 
