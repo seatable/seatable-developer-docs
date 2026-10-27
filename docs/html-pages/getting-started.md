@@ -29,6 +29,8 @@ Choose the approach that fits the complexity of your page. Both produce the same
 
     Create them in your base before running the page, or adapt the table and field names in the template's source.
 
+    You can use the [example base](https://cloud.seatable.io/dtable/external-links/c3593e011ef841238d99/) to test the page.
+
 ## Before you start: add an HTML page in the app
 
 In your Universal App, add a new page and choose **Add HTML page**. This creates the empty page you will later upload your build to, and it surfaces the `server`, `appUuid` and `pageId` values you need for local development ([step 3](#3-configure-local-development)).
