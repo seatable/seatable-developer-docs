@@ -23,7 +23,7 @@ Choose the approach that fits the complexity of your page. Both produce the same
 
     The form reads products from the base and writes orders back, so it expects three tables:
 
-    - **Products** — with `Product_name` (text) and `Unit_price` (number)
+    - **Products** — with `ProductName` (text) and `UnitPrice` (number)
     - **OrderItems** — with `Product` (link to Products) and `Quantity` (number)
     - **Orders** — with `OrderItems` (link to OrderItems)
 
