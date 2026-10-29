@@ -1,68 +1,62 @@
 ---
-description: Generate, preview, and package a SeaTable HTML page with ChatGPT codex. Includes setup, permissions, example prompts, and upload steps.
+description: Generate, preview, and package a SeaTable HTML page with ChatGPT Codex. Includes setup, permissions, example prompts, and upload steps.
 ---
 
-# Build an HTML Page with ChatGPT codex
+# Build an HTML page with ChatGPT Codex
 
-This document demonstrates how to use the SeaTable HTML Page skill in the ChatGPT client to generate an HTML page for an app. It walks through the process of creating a form as an example.
+This guide shows how to use the SeaTable HTML Page skill in the ChatGPT client to build an HTML page. It uses a customer registration form as an example.
 
-The example form is designed for a customer management scenario involving two linked tables: a customer registration table and a sales personnel table.
+The example uses two linked tables for customer management: a customer registration table and a sales personnel table.
 
-When creating a customer record, users must provide basic customer information and link one or more sales personnel records.
+When creating a customer record, users enter basic customer information and link one or more sales personnel records.
 
-## 1. Preliminary Preparations
+## Prepare for page generation
 
-### 1.1 Associated App and HTML Page
+### Set up the app and HTML page
 
-Base containing the app:
-
-Create an app and an HTML Page in the associated Base.
+In the relevant base, create an app and add an HTML page to it.
 
 ![](../media/build-page-with-chatgpt-codex/01-create-html-page.jpg)
 
-### 1.2 HTML Page Permission Configuration
+### Configure permissions
 
-#### 1.2.1 Page Permissions
-
-As shown in the screenshot, configure page access permissions according to the page's intended use.
+Configure page access permissions according to the page's intended use, as shown below.
 
 ![](../media/build-page-with-chatgpt-codex/02-configure-page-permissions.jpg)
 
-#### 1.2.2 Table-Related Permissions
+Configure table permissions as shown below.
 
 ![](../media/build-page-with-chatgpt-codex/03-configure-table-permissions.jpg)
 
 **Table 1: Customer Registration**
 
-Records must be added to this table and linked records must be updated, so enable the "Can add records" and "Can modify records" permissions for this table.
+The page needs to add customer records to this table and update linked records. Enable the "Can add records" and "Can modify records" permissions for this table.
 
 !!! warning "Review field permissions"
 
-    For convenience during testing, permissions to add values to all fields are enabled. Adjust these permissions to suit your needs, especially before using the page in production.
+    For testing, this example enables adding values to all fields. Adjust the field permissions to suit your needs, especially before using the page in production.
 
 ![](../media/build-page-with-chatgpt-codex/04-customer-table-permissions.jpg)
 
 **Table 2: Sales Personnel**
 
-When adding a customer record, it must be linked to a record in this table. To do so, the page needs to be able to list records in this table, so enable the table's "Can list records" permission.
+When adding a customer record, users select one or more records from this table to link. Enable the table's "Can list records" permission so the page can display the available records.
 
 !!! warning "Review field permissions"
 
-    For testing purposes, permissions for all fields are also enabled here. Adjust them to suit your needs, especially before using the page in production.
+    For testing, this example also enables access to all fields. Adjust the field permissions to suit your needs, especially before using the page in production.
 
 ![](../media/build-page-with-chatgpt-codex/05-sales-personnel-table-permissions.jpg)
 
 
 
-### 1.3 Install the Skill
+### Install the skill
 
-If this is your first time using the skill, install it first. This assumes that you have already installed the ChatGPT client on your local machine.
-
-#### 1.3.1 Installation
+If you have not used the skill before, install it first. This guide assumes that the ChatGPT client is already installed on your computer.
 
 You can install the skill in either of the following ways.
 
-**Method 1**: Send an Installation Command
+**Method 1**: Send an installation command
 
 In a conversation with the ChatGPT client, send the following command:
 
@@ -72,45 +66,39 @@ npx skills add seatable/skills@seatable-html-page
 
 !!! note "GitHub connection required"
 
-    This method may fail if the ChatGPT client cannot connect to GitHub. Resolve the connection issue and try again, or use Method 2 instead.
+    If the ChatGPT client cannot connect to GitHub, this method may fail. Resolve the connection issue and try again, or use Method 2.
 
-**Method 2 (Recommended)**: Copy the Skill to Your Local AI Tool's Skills Directory
+**Method 2 (recommended)**: Copy the skill to your local AI tool's skills directory
 
-The skill is available in the [seatable/skills repository](https://github.com/seatable/skills). Download the repository to your computer using whichever method you prefer. Then copy the `seatable-html-page` skill from the repository's `skills` directory to the directory where your local AI tool stores its skills.
+The skill is available in the [seatable/skills repository](https://github.com/seatable/skills). Download the repository using your preferred method, then copy `seatable-html-page` from its `skills` directory to the directory where your AI tool stores skills.
 
-The following screenshots show the directory where the `seatable-html-page` skill is installed on my computer.
+The following screenshots show where the `seatable-html-page` skill is installed on a local computer.
 
 ![](../media/build-page-with-chatgpt-codex/06-skill-installation-path.jpg)
 
 ![](../media/build-page-with-chatgpt-codex/07-skill-files.jpg)
 
-#### 1.3.2 Verification
-
-Open **ChatGPT -> Plugins -> Skills** and check that "SeaTable HTML Page" appears in the list of skills.
+In ChatGPT, open **Plugins -> Skills** and check that "SeaTable HTML Page" appears in the list.
 
 ![](../media/build-page-with-chatgpt-codex/08-verify-skill-installation.jpg)
 
-You can also enter `/seatable` in a conversation. If "SeaTable HTML Page" appears in the list of available skills, the installation was successful.
+You can also enter `/seatable` in a conversation. If "SeaTable HTML Page" appears in the list of available skills, the skill is installed.
 
 ![](../media/build-page-with-chatgpt-codex/09-find-html-page-skill.jpg)
 
-## 2. Create a Project
+### Create a ChatGPT project
 
-To better manage the generated pages, create a ChatGPT project for each HTML page. Associate each project with the local folder that contains the page.
+To keep your work organized, create a ChatGPT project for each HTML page. You will create a local folder for the page and link it to the project in the following steps.
 
 ![](../media/build-page-with-chatgpt-codex/10-create-chatgpt-project.jpg)
 
 
 
-### 2.1 Create a Project Folder on Your Local Machine
-
-As shown in the screenshot, use whichever method you prefer to create the folder in a suitable location.
+Create a folder for the page in a convenient location, using any method you prefer.
 
 ![](../media/build-page-with-chatgpt-codex/11-create-project-folder.jpg)
 
-### 2.2 Link the Folder to a ChatGPT Project
-
-The project name is optional. If you do not specify one, the folder name is used by default.
+The project name is optional. If you leave it blank, ChatGPT uses the folder name by default.
 
 ![](../media/build-page-with-chatgpt-codex/12-link-folder-to-project.jpg)
 
@@ -120,9 +108,9 @@ Once the project has been created, a new conversation for it starts automaticall
 
 
 
-## 3. Generate a Page with the Skill
+## Generate a page with ChatGPT Codex
 
-### 3.1 Select a Skill
+### Select the skill and configure the local development environment
 
 Enter `/seatable` and select the page-generation skill from the pop-up list.
 
@@ -132,31 +120,25 @@ Enter `/seatable` and select the page-generation skill from the pop-up list.
 
 
 
-### 3.2 Configure the Local Development Environment
-
-#### 3.2.1 Start Configuration
-
-After selecting the skill, ask it to configure the local development environment. For example, you can request help with the development setup.
+After selecting the skill, ask it to set up the local development environment.
 
 ![](../media/build-page-with-chatgpt-codex/16-configure-local-environment.jpg)
 
 
 
-In the configuration file, enter the server, `appUuid`, and `pageId` shown for the blank HTML Page you created in the "Preliminary Preparations" section.
+In the configuration file, enter the server address, `appUuid`, and `pageId` shown for the blank HTML page you created during setup.
 
 !!! warning "Keep your account token private"
 
-    Find your `accountToken` under **Personal Settings -> Personal Information -> Account Token**. Do not share it in the conversation, as doing so could expose your account.
-
-#### 3.2.2 Configuration Complete and Verified by AI
+    Find your `accountToken` under **Personal Settings -> Personal Information -> Account Token**. Do not share it in the conversation, because it could give others access to your account.
 
 ![](../media/build-page-with-chatgpt-codex/17-verify-local-configuration.jpg)
 
 
 
-### 3.3 Describe the Page to Generate
+### Describe the page and data structure
 
-In this step, describe the page you want to generate, including its functions, features, workflow, and style. The more detail you provide, the less time you will need to spend revising it later. See the example below:
+Describe the page you want to generate, including its functionality, workflow, and visual style. Providing detailed requirements can reduce the amount of revision needed later. For example:
 
 ![](../media/build-page-with-chatgpt-codex/18-customer-registration-prompt.jpg)
 
@@ -178,13 +160,11 @@ In this step, describe the page you want to generate, including its functions, f
     5. Style the "Submit" button with a purple gradient.
     ```
 
-### 3.4 Provide Additional Information
+The skill may ask for details about the tables, fields, and other data structures the page needs. If you have not already provided this information, the AI will prompt you for it.
 
-The page-generation skill will ask you to describe the tables, fields, and other structures needed for the page. If you have not included these details in your earlier instructions, the AI will prompt you to provide them.
+You can also include these details in your initial request. If the AI detects that you have already specified the data structure, it will proceed directly to generating the page.
 
-You can also provide all of this information in the previous step. If the AI detects that you have already specified the data structure, it will proceed directly to page generation.
-
-**Providing additional data structure details:**
+**Example of additional data structure details:**
 
 ![](../media/build-page-with-chatgpt-codex/19-provide-table-schema.jpg)
 
@@ -209,69 +189,67 @@ You can also provide all of this information in the previous step. If the AI det
     ```
 
 
-### 3.5 Generate the Page
+### Generate and refine the page
 
-After you describe the requirements and data structure, the AI begins generating the page.
+After you provide the requirements and data structure, the AI begins generating the page.
 
-If a confirmation prompt like the one below appears, click "Allow once."
+If a confirmation prompt like the one below appears, select "Allow once."
 
 ![](../media/build-page-with-chatgpt-codex/20-allow-sdk-download.jpg)
 
 ![](../media/build-page-with-chatgpt-codex/21-allow-api-docs-access.jpg)
 
-The AI will handle the rest of the generation process.
+The AI then completes the generation process.
 
-Once generation is complete, the AI will display a message similar to the following:
+When generation is complete, the AI displays a summary similar to the following:
 
 ![](../media/build-page-with-chatgpt-codex/22-page-generation-summary.jpg)
 
-Generated Page:
+Generated page:
 
 ![](../media/build-page-with-chatgpt-codex/23-generated-customer-form.jpg)
 
-You can also find the generated files in the corresponding folder on your local machine:
+The generated files are also saved in the corresponding local folder:
 
 ![](../media/build-page-with-chatgpt-codex/24-generated-project-files.jpg)
 
 
 
-Next, choose **Preview Page** to preview the page or **Package as an upload ZIP** to create a ZIP file for uploading to the associated HTML Page.
+Choose **Preview Page** to preview the result. After making any needed changes, package the page for upload.
 
-### 3.6 Modify the Page (Optional)
-
-If the generated page does not meet your requirements, you can ask the AI to make further changes. For example, some field definitions in the instructions above are incorrect, so we will correct them here.
+If the page does not meet your requirements, ask the AI to revise it. For example, you can correct field definitions, as shown below.
 
 ![](../media/build-page-with-chatgpt-codex/25-request-page-changes.jpg)
 
 
 
-## 4. Preview the Page
+## Preview page
 
-Once the preview service starts, the preview opens automatically in ChatGPT. You can also open the service address in your usual local browser (default: [http://127.0.0.1:3005](http://127.0.0.1:3005/)):
+When the preview service starts, the page opens automatically in ChatGPT. You can also open the service address in your preferred browser. By default, the address is [http://127.0.0.1:3005](http://127.0.0.1:3005/).
 
 ![](../media/build-page-with-chatgpt-codex/26-preview-customer-form.jpg)
 
-When you are finished previewing the page, send the **Cancel Preview** command to stop the preview service.
+When you finish testing, send the **Cancel Preview** command to stop the preview service.
 
 **Test features such as input validation and form submission:**
 
 ![](../media/build-page-with-chatgpt-codex/27-test-form-validation.jpg)
 
-**Check the data submitted to the Base:**
+**Check the data submitted to the base:**
 
 ![](../media/build-page-with-chatgpt-codex/29-verify-submitted-record.jpg)
 
 
-## 5. Package and Upload the Page
+## Package and upload the page
 
-Once you have tested the generated page in the preview and confirmed that it works properly, send the instruction "Package as an upload ZIP" and wait for the AI to run the packaging script.
+After testing the page and confirming that it works as expected, send the instruction "Package as an upload ZIP". The AI will then run the packaging script.
 
 ![](../media/build-page-with-chatgpt-codex/30-package-upload-zip.jpg)
 
-Upload the ZIP file to the associated HTML Page in the app.
+Upload the ZIP file to the HTML page in the app.
 
 ![](../media/build-page-with-chatgpt-codex/31-upload-package-files.jpg)
 
-Result after uploading the page to the app:
+The uploaded page appears in the app as follows:
 
 ![](../media/build-page-with-chatgpt-codex/32-uploaded-html-page.jpg)
