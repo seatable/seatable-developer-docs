@@ -231,14 +231,11 @@ When the preview service starts, the page opens automatically in ChatGPT. You ca
 
 When you finish testing, send the **Cancel Preview** command to stop the preview service.
 
-**Test features such as input validation and form submission:**
+Test features such as input validation and form submission.
 
 ![](../media/build-page-with-chatgpt-codex/27-test-form-validation.jpg)
 
-**Check the data submitted to the base:**
-
-![](../media/build-page-with-chatgpt-codex/29-verify-submitted-record.jpg)
-
+Check the data submitted to the base.
 
 ## Package and upload the page
 
