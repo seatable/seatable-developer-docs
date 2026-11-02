@@ -70,6 +70,7 @@
 - [HTML pages](https://developer.seatable.com/html-pages/): Build interactive HTML pages for SeaTable Universal Apps. Learn how a page reads and writes base data through the seatable-html-page-sdk.
 - [Low-code quickstart](https://developer.seatable.com/html-pages/low-code-quickstart/): Build a custom-looking SeaTable HTML page without a build toolchain. Clone one working single-file page, rename it to match your base, zip it and upload — no Node.js, no npm.
 - [Developer setup](https://developer.seatable.com/html-pages/getting-started/): Set up, develop, build and upload a SeaTable HTML page with the full developer toolchain. Walks through the simple form template with Vite, the SDK, and the uploadable ZIP package.
+- [Build page with ChatGPT Codex](https://developer.seatable.com/html-pages/build-page-with-chatgpt-codex/): Generate, preview, and package a SeaTable HTML page with ChatGPT Codex. Includes setup, permissions, example prompts, and upload steps.
 - [Example](https://developer.seatable.com/html-pages/example/): A complete, minimal HTML page example — initialize the SDK in a Context module, read rows from the base, render them, and write new linked rows back on submit.
 
 ### SDK Reference
