@@ -244,6 +244,7 @@ nav:
       - html-pages/index.md
       - Low-code quickstart: html-pages/low-code-quickstart.md
       - Developer setup: html-pages/getting-started.md
+      - Build page with ChatGPT Codex: html-pages/build-page-with-chatgpt-codex.md
       - Example: html-pages/example.md
       - SDK Reference:
           - Initialization: html-pages/sdk/initialization.md

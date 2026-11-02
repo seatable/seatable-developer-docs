@@ -8,3 +8,5 @@ __pycache__/
 # Generated at build time by scripts/generate_llms_txt.py
 docs/llms.txt
 docs/llms-full.txt
+
+.DS_Store
