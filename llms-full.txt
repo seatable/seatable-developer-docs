@@ -7986,7 +7986,7 @@ Row operations on the `seatable-html-page-sdk`. All methods are asynchronous —
     :   number — starting index for pagination
 
     `limit`
-    :   number — number of rows to retrieve
+    :   number — number of rows to retrieve. 100 by default, maximum 10,000. Larger values are silently capped to 10,000 without an error. To load more rows, call `listRows` repeatedly, increase `start` by the number of rows actually returned and stop when a page returns no rows.
 
     __Returns__ `.data` holds `{ metadata, results }` — `results` is the array of row objects, `metadata` the column definitions.
 
