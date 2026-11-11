@@ -77,6 +77,9 @@
 
 - [Initialization](https://developer.seatable.com/html-pages/sdk/initialization/): Install and initialize the seatable-html-page-sdk. Set up the SDK via npm or CDN and connect an HTML page to its SeaTable base.
 - [Rows](https://developer.seatable.com/html-pages/sdk/rows/): seatable-html-page-sdk reference for row operations — list, add, update, delete, and batch-modify rows in a base from an HTML page.
+- [Links](https://developer.seatable.com/html-pages/sdk/links/): seatable-html-page-sdk reference for incrementally adding and removing linked records from link columns in an HTML page.
+- [Users](https://developer.seatable.com/html-pages/sdk/users/): seatable-html-page-sdk reference for reading the signed-in user, page collaborators, and user profiles in an HTML page.
+- [Actions](https://developer.seatable.com/html-pages/sdk/actions/): seatable-html-page-sdk reference for sending notifications and emails, and running configured Python scripts from an HTML page.
 - [Files & Images](https://developer.seatable.com/html-pages/sdk/files/): seatable-html-page-sdk reference for uploading files and images from an HTML page into file and image columns of a base.
 
 ## Complete Content

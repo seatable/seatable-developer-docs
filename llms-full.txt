@@ -6986,7 +6986,9 @@ flowchart LR
 
 The SDK offers:
 
-- **Data APIs** — list, add, update and delete rows; upload files and images.
+- **Data APIs** — list, add, update and delete rows; manage links; upload files and images.
+- **User APIs** — read the signed-in user and resolve collaborators.
+- **Action APIs** — send notifications and emails, and run configured Python scripts.
 - **Event propagation** — bidirectional events (mouse, keyboard, drag-and-drop) between the page and the app.
 
 ## Prerequisites
@@ -7028,7 +7030,7 @@ The same kind of page can be built two ways. Pick the one that matches how you l
 
 - [Low-code quickstart](low-code-quickstart.md) — build a page with a visual editor and copy-paste snippets, no toolchain.
 - [Developer setup](getting-started.md) — set up the project, develop locally, build and upload a page. We follow the official [simple form template](https://github.com/seatable/seatable-html-page-template-simple-form) end to end.
-- [SDK Reference](sdk/initialization.md) — installation, initialization, and the full API for rows, files and images.
+- [SDK Reference](sdk/initialization.md) — installation, initialization, and the full API for rows, links, users, actions, files and images.
 
     The [`seatable-html-page-template-simple-form`](https://github.com/seatable/seatable-html-page-template-simple-form) repository contains a complete, buildable form page. It is the running example used throughout the developer setup.
 
@@ -7861,7 +7863,7 @@ Source: https://developer.seatable.com/html-pages/sdk/initialization/
 
 # Initialization
 
-The `seatable-html-page-sdk` is the bridge between an HTML page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For data operations, see [Rows](rows.md) and [Files & Images](files.md).
+The `seatable-html-page-sdk` is the bridge between an HTML page and its Universal App. It exposes APIs for data interaction and event subscription. This page covers installation and initialization. For API details, see [Rows](rows.md), [Links](links.md), [Users](users.md), [Actions](actions.md), and [Files & Images](files.md).
 
 ## Installation
 
@@ -7955,6 +7957,9 @@ All SDK methods are asynchronous and return promises — always `await` them. Ro
 ## Next steps
 
 - [Rows](rows.md) — list, add, update and delete rows, including batch operations.
+- [Links](links.md) — incrementally add and remove linked records.
+- [Users](users.md) — read the signed-in user and resolve collaborators.
+- [Actions](actions.md) — send notifications and emails, and run configured Python scripts.
 - [Files & Images](files.md) — upload files and images for file and image columns.
 
 ---
@@ -8177,6 +8182,486 @@ Row operations on the `seatable-html-page-sdk`. All methods are asynchronous —
       rowsIds: ["fcHIocncTsOygA3FjL-toQ", "BIXJ_dUMS1OW8Lyoxrx4Fw"],
     });
     ```
+
+---
+
+Source: https://developer.seatable.com/html-pages/sdk/links/
+
+# Links
+
+Link operations on the `seatable-html-page-sdk`. Use these methods to add or remove particular relationships without replacing the entire value of a link column. All methods are asynchronous — `await` them. The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+
+    Link methods resolve to the underlying HTTP response. Read the payload from `.data`. Single-row methods return the updated source row in `.data.row`; batch methods return updated source rows in `.data.rows`.
+
+## Add and delete one link
+
+    Add one linked record to a link-column cell without replacing its existing links.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.addLink({ tableName, rowId, linkColumnName, otherRowId });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the table containing the link column
+
+    `rowId`
+    :   string — the `_id` of the source row in `tableName`
+
+    `linkColumnName`
+    :   string — name of the link column; use its display name, not its internal key
+
+    `otherRowId`
+    :   string — the `_id` of the record to add from the link column's configured target table
+
+    __Returns__ `.data` holds `{ success: true, row }` — `row` is the updated source row.
+
+    __Example__
+    ```js
+    const res = await sdk.addLink({
+      tableName: "Tasks",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+      linkColumnName: "Related projects",
+      otherRowId: "NSPa_fd4SEqRESqOZzRqyg",
+    });
+    const updatedRow = res.data.row;
+    ```
+
+    Delete one linked record from a link-column cell without changing its other links.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.deleteLink({ tableName, rowId, linkColumnName, otherRowId });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the table containing the link column
+
+    `rowId`
+    :   string — the `_id` of the source row in `tableName`
+
+    `linkColumnName`
+    :   string — name of the link column; use its display name, not its internal key
+
+    `otherRowId`
+    :   string — the `_id` of the record to remove from the link column's configured target table
+
+    __Returns__ `.data` holds `{ success: true, row }` — `row` is the updated source row.
+
+    __Example__
+    ```js
+    const res = await sdk.deleteLink({
+      tableName: "Tasks",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+      linkColumnName: "Related projects",
+      otherRowId: "NSPa_fd4SEqRESqOZzRqyg",
+    });
+    const updatedRow = res.data.row;
+    ```
+
+## Add and delete links in batches
+
+    Add links to one or more rows in the same source table.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.batchAddLinks({ tableName, linksData });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the table containing the link columns
+
+    `linksData`
+    :   array — row-oriented link changes. Each item has a `row_id` source-row ID and a `links` object. Each `links` key is a link column display name and its value is an array of linked row IDs.
+
+    __Returns__ `.data` holds `{ success: true, rows }` — `rows` is the array of updated source rows.
+
+    __Example__
+    ```js
+    const res = await sdk.batchAddLinks({
+      tableName: "Tasks",
+      linksData: [
+        {
+          row_id: "fcHIocncTsOygA3FjL-toQ",
+          links: {
+            "Related projects": ["NSPa_fd4SEqRESqOZzRqyg", "eA6rQDuxQyGITmD1hrfyzw"],
+            Reviewers: ["bBDbhbzXReSPWpcxq225xA", "NSPa_fd4SEqRESqOZzRqyg"],
+          },
+        },
+        {
+          row_id: "BIXJ_dUMS1OW8Lyoxrx4Fw",
+          links: {
+            "Related projects": ["eA6rQDuxQyGITmD1hrfyzw", "QgK2KMf8Sxad8duPcq6gQA"],
+          },
+        },
+      ],
+    });
+    const updatedRows = res.data.rows;
+    ```
+
+    Delete specified links from one or more rows in the same source table. Links not listed in `linksData` remain unchanged.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.batchDeleteLinks({ tableName, linksData });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — name of the table containing the link columns
+
+    `linksData`
+    :   array — row-oriented link changes. Each item has a `row_id` source-row ID and a `links` object. Each `links` key is a link column display name and its value is an array of linked row IDs to remove.
+
+    __Returns__ `.data` holds `{ success: true, rows }` — `rows` is the array of updated source rows.
+
+    __Example__
+    ```js
+    const res = await sdk.batchDeleteLinks({
+      tableName: "Tasks",
+      linksData: [
+        {
+          row_id: "fcHIocncTsOygA3FjL-toQ",
+          links: {
+            "Related projects": ["NSPa_fd4SEqRESqOZzRqyg", "eA6rQDuxQyGITmD1hrfyzw"],
+          },
+        },
+        {
+          row_id: "BIXJ_dUMS1OW8Lyoxrx4Fw",
+          links: {
+            "Related projects": ["eA6rQDuxQyGITmD1hrfyzw"],
+          },
+        },
+      ],
+    });
+    const updatedRows = res.data.rows;
+    ```
+
+## Notes
+
+- Use `updateRow` or `batchUpdateRows` from [Rows](rows.md) when you want to replace a link-column value with the complete array of linked row IDs while updating other fields. Use the APIs on this page for incremental additions or removals.
+
+---
+
+Source: https://developer.seatable.com/html-pages/sdk/users/
+
+# Users
+
+User operations on the `seatable-html-page-sdk`. Use them to personalize a page and to resolve the user identifiers stored by collaborator-related fields. All methods are asynchronous — `await` them. The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+
+    User methods resolve to the underlying HTTP response. Read the payload from `.data`.
+
+## Current user
+
+    Get the signed-in user of the current Universal App. This method takes no parameters and does not require a `tableName`.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.getCurrentUser();
+    ```
+
+    __Returns__ `.data` holds the current user's identity and profile fields, for example `{ username, name, user_id, avatar_url, role_id }`.
+
+    __Example__
+    ```js
+    const res = await sdk.getCurrentUser();
+    const currentUser = res.data;
+    const displayName = currentUser.name || currentUser.username;
+    const avatarUrl = currentUser.avatar_url;
+    ```
+
+    Use `name` and `avatar_url` to personalize the page UI, and fall back to `username` when `name` is empty. `user_id` identifies a user; it is not a table row ID.
+
+## Collaborators
+
+    List the collaborators available to the HTML page. Use this method to load the initial choices for a collaborator control.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.listCollaborators();
+    ```
+
+    __Returns__ `.data` holds `{ collaborator_list }`. Each entry provides user profile information such as `email`, `name`, and `avatar_url`.
+
+    __Example__
+    ```js
+    const res = await sdk.listCollaborators();
+    const collaborators = res.data.collaborator_list || [];
+    ```
+
+    Resolve user identifiers found in loaded row data that are not already present in the collaborator list.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.resolveUsers({ userIds });
+    ```
+
+    __Parameters__
+
+    `userIds`
+    :   array — user identifiers to resolve
+
+    __Returns__ `.data` holds `{ user_list }`. Each entry provides user profile information such as `email`, `name`, and `avatar_url`.
+
+    __Example__
+    ```js
+    const res = await sdk.resolveUsers({
+      userIds: ["user@example.com", "former-user@example.com"],
+    });
+    const users = res.data.user_list || [];
+    ```
+
+## Resolve user values in rows
+
+Collaborator, creator, and last-modifier fields store user identifiers rather than display names. Load collaborators first, then resolve only the identifiers from your loaded rows that are missing from that list. Merge both results before rendering names or building collaborator choices.
+
+```js
+function addUsersToMap(users, userMap) {
+  (users || []).forEach((user) => {
+    if (user.email) userMap.set(user.email, user);
+  });
+}
+
+const userMap = new Map();
+
+const collaboratorsRes = await sdk.listCollaborators();
+addUsersToMap(collaboratorsRes.data.collaborator_list, userMap);
+
+const missingUserIds = userIdsFromRows.filter((userId) => !userMap.has(userId));
+if (missingUserIds.length > 0) {
+  const usersRes = await sdk.resolveUsers({ userIds: missingUserIds });
+  addUsersToMap(usersRes.data.user_list, userMap);
+}
+
+const collaboratorOptions = [...userMap.values()];
+```
+
+---
+
+Source: https://developer.seatable.com/html-pages/sdk/actions/
+
+# Actions
+
+Action operations on the `seatable-html-page-sdk`. They start asynchronous notification, email, or Python-script tasks. All methods are asynchronous — `await` them. The `sdk` instance below is created and initialized as shown in [Initialization](initialization.md).
+
+    Action methods resolve to the underlying HTTP response. Read the payload from `.data`. Methods that start a task return its identifier in `.data.task_id`; retain this ID when the page needs to query task progress or results.
+
+## Notifications and email
+
+    Create a notification task associated with one row.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.sendNotification({ tableName, rowId, emails, msg });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — display name of the table containing the row
+
+    `rowId`
+    :   string — `_id` of the row associated with the notification
+
+    `emails`
+    :   array — non-empty list of recipient email addresses
+
+    `msg`
+    :   string — non-empty notification text. It can contain row-value template placeholders such as `{Order number}`.
+
+    __Returns__ `.data` holds `{ task_id }` — use `task_id` with `getMessageStatus`.
+
+    __Example__
+    ```js
+    const res = await sdk.sendNotification({
+      tableName: "Orders",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+      emails: ["a7f34c91e2bd4d6b8a50f1c73e9d2a48@auth.local"],
+      msg: "Your order {Order number} has been shipped.",
+    });
+    const taskId = res.data.task_id;
+    ```
+
+    Create an email task associated with one row.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.sendEmail({
+      tableName,
+      rowId,
+      accountName,
+      sendTo,
+      copyTo,
+      replyTo,
+      subject,
+      message,
+      htmlMessage,
+      attachmentColumnNames,
+    });
+    ```
+
+    __Parameters__
+
+    `tableName`
+    :   string — display name of the table containing the row
+
+    `rowId`
+    :   string — `_id` of the row associated with the email
+
+    `accountName`
+    :   string — name of the configured email account
+
+    `sendTo`
+    :   array — non-empty list of recipient email addresses or row-value templates
+
+    `copyTo`
+    :   array — optional list of CC email addresses or row-value templates
+
+    `replyTo`
+    :   string — optional Reply-To email address or row-value template
+
+    `subject`
+    :   string — non-empty plain-text email subject
+
+    `message`
+    :   string — plain-text body template
+
+    `htmlMessage`
+    :   string — HTML body template
+
+    `attachmentColumnNames`
+    :   array — optional list of FILE column display names; do not use column keys
+
+    `message` and `htmlMessage` must provide exactly one body: do not pass both, and do not omit both. Recipient values and the message body can use row-value template placeholders such as `{Customer email}` and `{Order number}`.
+
+    __Returns__ `.data` holds `{ task_id }` — use `task_id` with `getMessageStatus`.
+
+    __Example__
+    ```js
+    const res = await sdk.sendEmail({
+      tableName: "Orders",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+      accountName: "Operations SMTP",
+      sendTo: ["customer@example.com"],
+      copyTo: ["orders-audit@example.com"],
+      replyTo: "support@example.com",
+      subject: "Order shipment notification",
+      htmlMessage: "<p>Your order <strong>{Order number}</strong> has been shipped.</p>",
+      attachmentColumnNames: ["Invoice"],
+    });
+    const taskId = res.data.task_id;
+    ```
+
+    Get the status of a notification or email task returned by `sendNotification` or `sendEmail`.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.getMessageStatus({ taskId });
+    ```
+
+    __Parameters__
+
+    `taskId`
+    :   string — task identifier returned in `response.data.task_id`
+
+    __Example__
+    ```js
+    const res = await sdk.getMessageStatus({ taskId });
+    if (res.data.is_finished) {
+      // Stop polling and update the UI.
+    }
+    ```
+
+    Do not query the status until the task-starting method has returned its `task_id`.
+
+## Python scripts
+
+    Start a configured Python script.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.runScript({ scriptName, tableName, rowId });
+    ```
+
+    __Parameters__
+
+    `scriptName`
+    :   string — displayed name of the configured script, not its internal ID or file name
+
+    `tableName`
+    :   string — optional display name of the table that supplies the row context
+
+    `rowId`
+    :   string — optional `_id` of the row that supplies the row context
+
+    Provide `tableName` and `rowId` together when the script needs a row context, or omit both when it does not.
+
+    __Returns__ `.data` holds `{ task_id }` — use `task_id` with `getScriptResult`.
+
+    __Example__
+    ```js
+    const res = await sdk.runScript({
+      scriptName: "Generate order report",
+      tableName: "Orders",
+      rowId: "fcHIocncTsOygA3FjL-toQ",
+    });
+    const taskId = res.data.task_id;
+    ```
+
+    Get the result of a script started by `runScript`.
+
+    **Note:** This was added in SDK version 1.0-latest.
+
+    ```js
+    sdk.getScriptResult({ scriptName, taskId });
+    ```
+
+    __Parameters__
+
+    `scriptName`
+    :   string — the same displayed script name used to start the task
+
+    `taskId`
+    :   string — task identifier returned in `runScript` response `.data.task_id`
+
+    __Returns__ `.data` holds `{ script }`. The `script` object includes `state`, `success`, `output`, `return_code`, `started_at`, and `finished_at`.
+
+    __Example__
+    ```js
+    const res = await sdk.getScriptResult({
+      scriptName: "Generate order report",
+      taskId,
+    });
+    const scriptResult = res.data.script;
+
+    if (scriptResult.state === "finished") {
+      if (scriptResult.success) {
+        // The script completed successfully.
+      } else {
+        // Inspect scriptResult.return_code and scriptResult.output.
+      }
+    }
+    ```
+
+    Query the result only with the `taskId` returned by the corresponding `runScript` call. Treat `success: false` or a non-zero `return_code` as a failed execution, and render `output` as plain text rather than HTML.
 
 ---
 
