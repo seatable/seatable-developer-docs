@@ -18,9 +18,9 @@ The fastest way in is not to build one from scratch. It is to **copy a page that
     [developer setup](getting-started.md) instead. See
     [When this approach stops](#when-this-approach-stops) below.
 
-## What this page does
+## The example: an event sign-up page
 
-The example below is a small **event sign-up page**. It:
+Rather than start from a blank file, you copy one complete, working page and adapt it. The example here is a small **event sign-up page** — not the only thing this approach makes, but a worked example that puts the whole pattern in one place. It:
 
 1. reads a list of upcoming **sessions** from your base and shows them as styled cards;
 2. lets a visitor pick a session, type their name and email, and click **Sign up**;
@@ -29,6 +29,8 @@ The example below is a small **event sign-up page**. It:
 ![The rendered sign-up page: session cards showing date and duration, and a labelled sign-up form.](../media/html-page-quickstart.png)
 
 That is the whole loop: **read a table → show it → write a row back**. Everything else on this page is styling.
+
+A plain form, a read-only list or an info page is just a *subset* of this loop — build one by keeping only the pieces you need and deleting the rest. [Two smaller shapes](#two-smaller-shapes) below shows exactly that, as complete pages; the [Snippets to adapt](#snippets-to-adapt) section then breaks the loop into individual pieces you can recombine.
 
 ## Required tables
 
@@ -290,15 +292,120 @@ Open the page's configuration and drag your ZIP into the **Upload HTML page file
 
 Open the app and use the page: you should see the sessions as cards, and signing up should add a row you can find in the **Signups** table. If the page is blank, go back to [step 7](#7-grant-table-access) first.
 
-## How it works (the mental model)
+## Two smaller shapes
 
-The page is **one `index.html`** with three parts:
+The sign-up page reads **and** writes — most pages need only one half. Here is the same page with a half removed. Each one is complete and runnable; both drop the `<style>` block for brevity, so add your own look (or copy it from the example above).
 
-1. The **look** — your HTML and CSS. Design it however you want.
-2. The **SDK** — one `<script>` line that loads the bridge to your base.
-3. The **connection** — a small script that reads a table (`loadTable`) and writes a row (`sdk.addRow`) on submit.
+=== "A form only (write)"
 
-Everything tricky about reading data — paging past 100 rows, translating column IDs back to names — is already handled inside the `loadTable` helper, so you never touch it.
+    A page that only **writes** — no reading, so no `loadTable`. This is all a contact or feedback form needs.
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Feedback</title>
+      </head>
+      <body>
+        <form id="feedback-form">
+          <h1>Send feedback</h1>
+          <!-- One <label> per field, same as the main example. -->
+          <label for="name">Your name</label>
+          <input id="name" type="text" required />
+          <label for="message">Message</label>
+          <input id="message" type="text" required />
+          <button type="submit">Send</button>
+          <p id="status"></p>
+        </form>
+
+        <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
+        <script>
+          async function start() {
+            const sdk = new HTMLPageSDK(window.__HTML_PAGE_DEV_CONFIG__ || null);
+            await sdk.init();
+
+            document.getElementById("feedback-form").addEventListener("submit", async (e) => {
+              e.preventDefault();
+              const status = document.getElementById("status");
+              try {
+                await sdk.addRow({
+                  tableName: "Feedback",                              // ← your table (keep the quotes)
+                  rowData: {
+                    Name: document.getElementById("name").value,      // ← rename to your text column
+                    Message: document.getElementById("message").value // ← rename to your text column
+                  },
+                });
+                status.textContent = "Thanks — sent!";
+                e.target.reset();
+              } catch (err) {
+                status.textContent = "Something went wrong: " + err.message;
+              }
+            });
+          }
+          document.addEventListener("DOMContentLoaded", start);
+        </script>
+      </body>
+    </html>
+    ```
+
+=== "A list only (read)"
+
+    A page that only **reads** — no form, nothing written back. A directory, a schedule, an info page. It keeps the `loadTable` helper unchanged.
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sessions</title>
+      </head>
+      <body>
+        <h1>Upcoming sessions</h1>
+        <div id="session-list"></div>
+
+        <script src="https://unpkg.com/seatable-html-page-sdk@latest/dist/index.min.js"></script>
+        <script>
+          let sdk;
+
+          // Same helper as the main example — reads every row and restores column names. Leave it as is.
+          async function loadTable(tableName) {
+            let rows = [], metadata = null, start = 0;
+            while (true) {
+              const res = await sdk.listRows({ tableName, start, limit: 1000 });
+              metadata = metadata || res.data.metadata;
+              const page = res.data.results || [];
+              rows = rows.concat(page);
+              if (page.length === 0) break;
+              start += page.length;
+            }
+            const nameByKey = {};
+            (metadata || []).forEach((c) => { nameByKey[c.key] = c.name; });
+            return rows.map((row) => {
+              const named = { _id: row._id };
+              for (const key in row) if (nameByKey[key]) named[nameByKey[key]] = row[key];
+              return named;
+            });
+          }
+
+          async function start() {
+            sdk = new HTMLPageSDK(window.__HTML_PAGE_DEV_CONFIG__ || null);
+            await sdk.init();
+
+            const sessions = await loadTable("Sessions");          // ← your table (keep the quotes)
+            document.getElementById("session-list").innerHTML = sessions
+              .map((s) => `<div class="card"><h3>${s.Title}</h3><p>${s.Time}</p></div>`) // ← keep s. ; rename Title / Time
+              .join("");
+          }
+          document.addEventListener("DOMContentLoaded", start);
+        </script>
+      </body>
+    </html>
+    ```
+
+Both are the sign-up page minus a half: drop the read and you have a form; drop the form and you have a list. For finer pieces to mix back in — a dropdown, an update, a delete — see the catalogue below.
 
 ## Snippets to adapt
 
@@ -395,6 +502,7 @@ That is a genuine application, not a static page. When you reach that point, mov
 
 ## Next steps
 
+- [How a page is built](index.md#how-a-page-is-built) — the look / SDK / connection mental model, on the overview.
 - [SDK Reference: Rows](sdk/rows.md) — every read/write operation and the exact value shapes.
 - [SDK Reference: Files & Images](sdk/files.md) — let visitors upload files from your page.
 - [Developer setup](getting-started.md) — when you outgrow a single file.
