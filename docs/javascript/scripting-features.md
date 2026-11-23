@@ -72,12 +72,14 @@ The `output` object displays results in the script output panel.
     console.log(...values);
     ```
 
-    Use these specifiers in the first argument to format subsequent arguments in the output panel.
+    When the first argument is a string and at least one more argument is provided, the output panel uses these specifiers to format subsequent arguments.
 
     - `%o` or `%O` outputs an object or array as JSON.
     - `%d` or `%i` outputs an integer.
     - `%s` outputs a string.
     - `%f` outputs a floating-point number.
+    - `%c` consumes a CSS style argument. The output panel ignores the style, while the browser console applies it to following text.
+    - `%%` outputs a literal `%` without consuming an argument. It is only interpreted when format-string processing is active.
 
     __Example__
     ```js
@@ -85,6 +87,9 @@ The `output` object displays results in the script output panel.
     // Rows processed: 42
     console.log('User: %s, data: %o', 'Alex', { id: 1 });
     // User: Alex, data: {"id":1}
+    console.log('Progress: 100%%, status: %c%s', 'color: red', 'complete');
+    // Output panel: Progress: 100%, status: complete
+    // Browser console: "complete" is displayed in red
     ```
 
 ## Utilities
