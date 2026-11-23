@@ -62,6 +62,31 @@ The `output` object displays results in the script output panel.
     output.markdown('# Title\n\nSome **bold** text.');
     ```
 
+## Console
+
+!!! abstract "console.log"
+
+    Log one or more values as plain text in the script editor's output panel. The same values also appear in the browser console. When you pass values without a format string, the panel separates them with spaces and displays objects and arrays as JSON.
+
+    ```js
+    console.log(...values);
+    ```
+
+    Use these specifiers in the first argument to format subsequent arguments in the output panel.
+
+    - `%o` or `%O` outputs an object or array as JSON.
+    - `%d` or `%i` outputs an integer.
+    - `%s` outputs a string.
+    - `%f` outputs a floating-point number.
+
+    __Example__
+    ```js
+    console.log('Rows processed:', 42);
+    // Rows processed: 42
+    console.log('User: %s, data: %o', 'Alex', { id: 1 });
+    // User: Alex, data: {"id":1}
+    ```
+
 ## Utilities
 
 The `base.utils` object provides helper functions.
